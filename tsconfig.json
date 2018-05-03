@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "noUnusedLocals": true,
+    "outDir": "./dist",
+    "sourceMap": false,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true
+  },
+  "typeRoots": [
+    "./node_modules/@types"
+  ],
+  "exclude": [
+    "node_modules",
+    "__tests__",
+    "__mocks__"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

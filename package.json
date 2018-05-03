@@ -1,0 +1,32 @@
+{
+  "name": "tsmeta",
+  "main": "dist/index.js",
+  "bin": "dist/bin.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "version": "0.0.1",
+  "description": "typescript project meta analysis",
+  "scripts": {
+    "test": "jest --config jest.config.json",
+    "prebuild": "tslint --project tslint.json -e '__tests__/**'",
+    "build": "tsc --project tsconfig.json",
+    "dev": "npm run build && node dist/bin.js && node dist/http.server.js",
+    "start": "node dist/bin.js",
+    "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
+  },
+  "author": "mafh",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.12",
+    "typescript": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.0",
+    "@types/reflect-metadata": "^0.1.0",
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.4",
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.3"
+  }
+}

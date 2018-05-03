@@ -1,0 +1,63 @@
+{
+  "rulesDirectory": [
+    "./node_modules/tslint-microsoft-contrib/tslint.json"
+  ],
+  "extends": "./node_modules/tslint-microsoft-contrib/tslint.json",
+  "rules": {
+    "align": true,
+    "arrow-parens": true,
+    "arrow-return-shorthand": true,
+    "ban": [true,
+      {"name": "parseInt", "message": "tsstyle#type-coercion"},
+      {"name": "parseFloat", "message": "tsstyle#type-coercion"},
+      {"name": "Array", "message": "tsstyle#array-constructor"}
+    ],
+    "ban-types": [true,
+      ["Object", "Use {} instead."],
+      ["String", "Use 'string' instead."],
+      ["Number", "Use 'number' instead."],
+      ["Boolean", "Use 'boolean' instead."]
+    ],
+    "comment-format": [true, "check-lowercase", {
+      "ignore-words": ["TODO"]
+    }],
+    "completed-docs": [true, "classes", "functions", "interfaces", "methods"],
+    "curly": false,
+    "deprecation": true,
+    "indent": [true, "spaces", 2],
+    "interface-name": [true, "never-prefix"],
+    "linebreak-style": [true, "LF"],
+    "max-classes-per-file": [true, 1],
+    "max-file-line-count": [true, 300],
+    "mocha-no-side-effect-code": false,
+    "no-any": false,
+    "no-angle-bracket-type-assertion": false,
+    "no-backbone-get-set-outside-model": false,
+    "no-console": true,
+    "no-import-side-effect": [true, {"ignore-modules": ["reflect-metadata", "jest" ]}],
+    "no-inferred-empty-object-type": true,
+    "no-magic-numbers": true,
+    "no-namespace": [true, "allow-declarations"],
+    "no-null-keyword": true,
+    "no-relative-imports": false,
+    "no-switch-case-fall-through": true,
+    "no-unbound-method": [true, "ignore-static"],
+    "no-unused-variable": true,
+    "object-literal-shorthand": true,
+    "only-arrow-functions": true,
+    "prefer-switch": [true, {"min-cases": 2}],
+    "quotemark": [true, "single", "avoid-template"],
+    "semicolon": [true, "never"],
+    "strict-boolean-expressions": false,
+    "no-unnecessary-type-assertion": false,
+
+    // bug-prevention? imported methods recognized as any even if its a valid type?!
+    "no-unsafe-any": false,
+
+    // supress deprecated warning
+    "no-stateless-class": false,
+    "no-var-self": false,
+    "no-duplicate-case": false,
+    "valid-typeof": false
+  }
+}
