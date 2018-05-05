@@ -40,8 +40,8 @@ export interface TsFile {
   filename: string
   tsClass: TsClass
   tsMains: TsMain[]
-  tsimports: TsImport[]
-  tsexports: TsExport[]
+  tsImports: TsImport[]
+  tsExports: TsExport[]
 }
 /**
  * TsMain interface
@@ -61,9 +61,21 @@ export interface TsClass extends TsMain {
  * TsImports interface
  */
 export interface TsImport {
+  /**
+   * import strict
+   */
   name: string
+  /**
+   * import as alias
+   */
   alias: string
+  /**
+   * source file / package
+   */
   source: string
+  /**
+   * full import path
+   */
   fullpath: string
 }
 /**

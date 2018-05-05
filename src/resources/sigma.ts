@@ -18,6 +18,7 @@ export interface SigmaNode {
   label: string
   color: string
   size: number
+  etype: string
   x: number
   y: number
 }
@@ -26,6 +27,7 @@ export interface SigmaNode {
  * interface SigmaData
  */
 export interface SigmaEdge {
+  id: string
   source: string
   target: string
 }

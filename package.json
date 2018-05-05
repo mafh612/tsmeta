@@ -10,7 +10,7 @@
     "test": "jest --config jest.config.json",
     "prebuild": "tslint --project tslint.json -e '__tests__/**'",
     "build": "tsc --project tsconfig.json",
-    "dev": "npm run build && node dist/bin.js && node dist/http.server.js",
+    "dev": "npm run build && node dist/bin.js",
     "start": "node dist/bin.js",
     "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
   },
