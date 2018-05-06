@@ -1,4 +1,4 @@
-import { CallExpression, Decorator, Expression, Identifier } from 'typescript'
+import { CallExpression, Decorator, Expression, Identifier, isCallExpression } from 'typescript'
 
 import { IdentifierToString } from '../../lib/ts.methods'
 import { TsArgument, TsDecorator } from '../../resources/tsmeta.schema'
@@ -17,10 +17,22 @@ class TsMetaDecoratorFactory {
    */
   public build(decorator: Decorator): TsDecorator {
     // console.log(JSON.stringify(decorator, undefined, 4)) // tslint:disable-line
-    const callExpression: CallExpression = <CallExpression> decorator.expression
+    let expression: any
+    if (isCallExpression(decorator.expression)) {
+      expression = <CallExpression> decorator.expression
+    } else {
+      expression = <Identifier> decorator.expression
+    }
 
-    const name: string = IdentifierToString(<Identifier> callExpression.expression)
-    const tsarguments: TsArgument[] = callExpression.arguments.map((expression: Expression) => this.tsMetaArgumentFactory.build(expression))
+    let name: string
+    let tsarguments: TsArgument[]
+
+    if (expression.expression) name = IdentifierToString(<Identifier> expression.expression)
+    else name = IdentifierToString(<Identifier> expression)
+
+    if (expression.arguments) tsarguments = expression.arguments
+      .map((expression: Expression) => this.tsMetaArgumentFactory.build(expression))
+    else tsarguments = undefined
 
     return {
       name,

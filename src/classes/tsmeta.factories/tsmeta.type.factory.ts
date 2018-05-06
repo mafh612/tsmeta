@@ -12,6 +12,12 @@ class TsMetaTypeFactory {
   public build(typeNode: TypeNode): TsType {
     let representation: string
 
+    if (!typeNode) {
+      return {
+        representation: 'not typed'
+      }
+    }
+
     switch (typeNode.kind) {
       case SyntaxKind.BooleanKeyword:
         representation = 'boolean'

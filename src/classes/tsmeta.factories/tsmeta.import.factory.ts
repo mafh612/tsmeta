@@ -18,6 +18,17 @@ class TsMetaImportFactory {
     const importClause: ImportClause = importDeclaration.importClause
     const moduleSpecifier: Expression = importDeclaration.moduleSpecifier
 
+    if (!importDeclaration.importClause) {
+      return [
+        {
+          alias: undefined,
+          fullpath: undefined,
+          name: ExpressionToString(moduleSpecifier),
+          source: ExpressionToString(moduleSpecifier)
+        }
+      ]
+    }
+
     importClause.namedBindings.forEachChild((node: ImportSpecifier) => {
       tsImports.push(this.createTsImport(node, moduleSpecifier))
     })

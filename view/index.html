@@ -41,7 +41,7 @@
     sigmaInstance.settings('minArrowSize', 12)
     sigmaInstance.settings('drawLabels', true)
 
-    axios.get('/linked/out/sigmaData.json')
+    axios.get('/sigmaData.json')
     .then(response => {
       sigmaInstance.graph.read(response.data)
       sigma.plugins.dragNodes(sigmaInstance, sigmaInstance.renderers[0])

@@ -15,6 +15,7 @@ class TsMetaPropertyFactory {
    * @param propertyDeclaration
    */
   public build(property: PropertyDeclaration|PropertySignature): TsProperty {
+
     const name: string = PropertyNameToString(property.name)
     const tstype: TsType = this.tsMetaTypeFactory.build(property.type)
 

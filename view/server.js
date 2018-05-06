@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const server = http.createServer((message, response) => {
   const urlPath = url.parse(message.url).path.substring(1)
-  const resolvedPath = path.resolve(urlPath)
+  const resolvedPath = path.resolve('view/', urlPath)
 
   fs.readFile(resolvedPath, { encoding: 'utf8'}, (err, html) => {
     if (err) reject(err, response)

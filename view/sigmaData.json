@@ -1,0 +1,8321 @@
+{
+  "nodes": [
+    {
+      "color": "#ff0000",
+      "id": "DecoratedParam",
+      "label": "DecoratedParam | 6",
+      "size": 16,
+      "etype": "class",
+      "x": 12,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamindex",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 99
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 30,
+      "y": 87
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamfn",
+      "label": "fn | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamfnArg",
+      "label": "fnArg | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamsindex",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 0,
+      "y": 71
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamsname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamsfn",
+      "label": "fn | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedParamsfnArg",
+      "label": "fnArg | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 76,
+      "y": 37
+    },
+    {
+      "color": "#ff9900",
+      "id": "DecoratedParams",
+      "label": "DecoratedParams | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 19,
+      "y": 9
+    },
+    {
+      "color": "#ff0000",
+      "id": "DecoratedRoute",
+      "label": "DecoratedRoute | 8",
+      "size": 18,
+      "etype": "class",
+      "x": 12,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutemethod",
+      "label": "method | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutepath",
+      "label": "path | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutename",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 60,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutemiddleware",
+      "label": "middleware | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRouteparams",
+      "label": "params | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 66
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutesmethod",
+      "label": "method | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 18
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutespath",
+      "label": "path | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 38,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutesname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 87
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutesmiddleware",
+      "label": "middleware | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 83,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratedRoutesparams",
+      "label": "params | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 12,
+      "y": 45
+    },
+    {
+      "color": "#ff9900",
+      "id": "DecoratedRoutes",
+      "label": "DecoratedRoutes | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 56,
+      "y": 73
+    },
+    {
+      "color": "#ff0000",
+      "id": "RTLLogger",
+      "label": "RTLLogger | 10",
+      "size": 20,
+      "etype": "class",
+      "x": 69,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RTLLoggerdebugInstance",
+      "label": "debugInstance | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RTLLoggerwinstonLogger",
+      "label": "winstonLogger | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 95
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggerensureLogDir",
+      "label": "ensureLogDir | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 70,
+      "y": 22
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggererror",
+      "label": "error | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 27,
+      "y": 41
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggerwarn",
+      "label": "warn | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 49,
+      "y": 89
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggerinfo",
+      "label": "info | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 51,
+      "y": 71
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggerdebug",
+      "label": "debug | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 9,
+      "y": 86
+    },
+    {
+      "color": "#9999ff",
+      "id": "RTLLoggerclose",
+      "label": "close | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 31,
+      "y": 70
+    },
+    {
+      "color": "#ff0000",
+      "id": "Config",
+      "label": "Config | 5",
+      "size": 15,
+      "etype": "class",
+      "x": 39,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ConfigenvConfigs",
+      "label": "envConfigs | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ConfigmergedConfig",
+      "label": "mergedConfig | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 29
+    },
+    {
+      "color": "#9999ff",
+      "id": "ConfiggetVar",
+      "label": "getVar | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 62,
+      "y": 47
+    },
+    {
+      "color": "#9999ff",
+      "id": "ConfiggetOriginal",
+      "label": "getOriginal | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 9,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestConnectionOptionsfollowRedirect",
+      "label": "followRedirect | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestConnectionOptionstimeout",
+      "label": "timeout | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 52
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestConnectionOptionsagent",
+      "label": "agent | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 79,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParamsToAndFromServicecookie",
+      "label": "cookie | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParamsToAndFromServiceheader",
+      "label": "header | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TenantEntryparamsToService",
+      "label": "paramsToService | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 55
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TenantEntryparamsFromService",
+      "label": "paramsFromService | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 72
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TenantEntrybaseUrl",
+      "label": "baseUrl | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 87,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TenantEntryheaders",
+      "label": "headers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 16,
+      "y": 54
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TenantEntryrestOptions",
+      "label": "restOptions | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 42,
+      "y": 82
+    },
+    {
+      "color": "#ff9900",
+      "id": "RestConnectionOptions",
+      "label": "RestConnectionOptions | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 23,
+      "y": 28
+    },
+    {
+      "color": "#ff9900",
+      "id": "ParamsToAndFromService",
+      "label": "ParamsToAndFromService | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 47,
+      "y": 35
+    },
+    {
+      "color": "#ff9900",
+      "id": "TenantEntry",
+      "label": "TenantEntry | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 57,
+      "y": 64
+    },
+    {
+      "color": "#ff0000",
+      "id": "Layer",
+      "label": "Layer | 1",
+      "size": 11,
+      "etype": "class",
+      "x": 67,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Layerpath",
+      "label": "path | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StaticOptsroot",
+      "label": "root | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StaticOptsindex",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 98
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StaticOptsrootPath",
+      "label": "rootPath | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StaticOptsnotFoundFile",
+      "label": "notFoundFile | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 47,
+      "y": 80
+    },
+    {
+      "color": "#ff9900",
+      "id": "StaticOpts",
+      "label": "StaticOpts | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 14,
+      "y": 89
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceListWrappertotalItems",
+      "label": "totalItems | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 41
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceListWrapperpageNumber",
+      "label": "pageNumber | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceListWrappertotalPages",
+      "label": "totalPages | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 66,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceListWrapperresultsPerPage",
+      "label": "resultsPerPage | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 47,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceListWrappercontent",
+      "label": "content | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 80
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServiceListWrapper",
+      "label": "ServiceListWrapper | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 37,
+      "y": 40
+    },
+    {
+      "color": "#ff0000",
+      "id": "ResponseError",
+      "label": "ResponseError | 9",
+      "size": 19,
+      "etype": "class",
+      "x": 59,
+      "y": 39
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseErrorstatusCode",
+      "label": "statusCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 46,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseErrormessage",
+      "label": "message | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseErrorboom",
+      "label": "boom | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 61,
+      "y": 21
+    },
+    {
+      "color": "#9999ff",
+      "id": "ResponseErrorgetError",
+      "label": "getError | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 92,
+      "y": 28
+    },
+    {
+      "color": "#9999ff",
+      "id": "ResponseErrorsend",
+      "label": "send | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 41,
+      "y": 89
+    },
+    {
+      "color": "#9999ff",
+      "id": "ResponseErrorthrow",
+      "label": "throw | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 19,
+      "y": 68
+    },
+    {
+      "color": "#9999ff",
+      "id": "ResponseErrorsetupBoom",
+      "label": "setupBoom | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 95,
+      "y": 76
+    },
+    {
+      "color": "#ff0000",
+      "id": "RestClient",
+      "label": "RestClient | 20",
+      "size": 30,
+      "etype": "class",
+      "x": 3,
+      "y": 59
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestClientcontext",
+      "label": "context | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 85
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestClientconfig",
+      "label": "config | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 5
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClienthandleError",
+      "label": "handleError | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 6,
+      "y": 34
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientgetAction",
+      "label": "getAction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 71,
+      "y": 59
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientcreateAction",
+      "label": "createAction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 46,
+      "y": 21
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientupdateAction",
+      "label": "updateAction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 36,
+      "y": 11
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientreplaceAction",
+      "label": "replaceAction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 87,
+      "y": 12
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientdeleteAction",
+      "label": "deleteAction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 23,
+      "y": 33
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientdoRequest",
+      "label": "doRequest | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 84,
+      "y": 61
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientaddHeadersToContext",
+      "label": "addHeadersToContext | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 97,
+      "y": 29
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientaddCookiesToContext",
+      "label": "addCookiesToContext | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 79,
+      "y": 36
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientsetConfig",
+      "label": "setConfig | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 90,
+      "y": 55
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientcreateRequestOptions",
+      "label": "createRequestOptions | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 31,
+      "y": 74
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientaddCookiesFromContext",
+      "label": "addCookiesFromContext | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 1,
+      "y": 28
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientaddHeadersFromContext",
+      "label": "addHeadersFromContext | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 79,
+      "y": 94
+    },
+    {
+      "color": "#9999ff",
+      "id": "RestClientcleanPath",
+      "label": "cleanPath | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 16,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseHeadercookie",
+      "label": "cookie | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseHeaderheader",
+      "label": "header | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 18,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestResponsestatusCode",
+      "label": "statusCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestResponsebody",
+      "label": "body | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 43
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestResponseheaders",
+      "label": "headers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 82
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RestResponseoriginalResponse",
+      "label": "originalResponse | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 76,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtendedErrorstatusCode",
+      "label": "statusCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 92,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtendedErrorresult",
+      "label": "result | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 77,
+      "y": 83
+    },
+    {
+      "color": "#ff9900",
+      "id": "ResponseHeader",
+      "label": "ResponseHeader | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 71,
+      "y": 77
+    },
+    {
+      "color": "#ff9900",
+      "id": "RestResponse",
+      "label": "RestResponse | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 74,
+      "y": 15
+    },
+    {
+      "color": "#ff9900",
+      "id": "ExtendedError",
+      "label": "ExtendedError | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 24,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProgramDatacontrollerData",
+      "label": "controllerData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 51,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProgramDatamodelData",
+      "label": "modelData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 87,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ControllerDataclassName",
+      "label": "className | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 12,
+      "y": 26
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ControllerDatadecoratorData",
+      "label": "decoratorData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ControllerDatamethodData",
+      "label": "methodData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 13,
+      "y": 18
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MethodDatamethodName",
+      "label": "methodName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MethodDatamethodType",
+      "label": "methodType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 13,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MethodDatadecoratorData",
+      "label": "decoratorData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 0,
+      "y": 44
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MethodDataparameterData",
+      "label": "parameterData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 54
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterDataparameterName",
+      "label": "parameterName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 79,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterDataparameterType",
+      "label": "parameterType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterDatadecoratorData",
+      "label": "decoratorData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ModelDataclassName",
+      "label": "className | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ModelDatadecoratorData",
+      "label": "decoratorData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ModelDatapropertyData",
+      "label": "propertyData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PropertyDatapropertyName",
+      "label": "propertyName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PropertyDatapropertyType",
+      "label": "propertyType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PropertyDatadecoratorData",
+      "label": "decoratorData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 30,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TypeDatatypeName",
+      "label": "typeName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 76,
+      "y": 63
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TypeDatatypeType",
+      "label": "typeType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratorDatadecoratorName",
+      "label": "decoratorName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DecoratorDatadecoratorArguments",
+      "label": "decoratorArguments | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 28
+    },
+    {
+      "color": "#ff9900",
+      "id": "ProgramData",
+      "label": "ProgramData | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 65,
+      "y": 24
+    },
+    {
+      "color": "#ff9900",
+      "id": "ControllerData",
+      "label": "ControllerData | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 29,
+      "y": 53
+    },
+    {
+      "color": "#ff9900",
+      "id": "MethodData",
+      "label": "MethodData | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 56,
+      "y": 92
+    },
+    {
+      "color": "#ff9900",
+      "id": "ParameterData",
+      "label": "ParameterData | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 88,
+      "y": 44
+    },
+    {
+      "color": "#ff9900",
+      "id": "ModelData",
+      "label": "ModelData | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 81,
+      "y": 97
+    },
+    {
+      "color": "#ff9900",
+      "id": "PropertyData",
+      "label": "PropertyData | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 94,
+      "y": 62
+    },
+    {
+      "color": "#ff9900",
+      "id": "TypeData",
+      "label": "TypeData | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 98,
+      "y": 72
+    },
+    {
+      "color": "#ff9900",
+      "id": "DecoratorData",
+      "label": "DecoratorData | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 22,
+      "y": 32
+    },
+    {
+      "color": "#ff0000",
+      "id": "ExtractData",
+      "label": "ExtractData | 9",
+      "size": 19,
+      "etype": "class",
+      "x": 41,
+      "y": 78
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtractDataignorePaths",
+      "label": "ignorePaths | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtractDataprogram",
+      "label": "program | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtractDatasourceFiles",
+      "label": "sourceFiles | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 22,
+      "y": 40
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExtractDataprogramData",
+      "label": "programData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 9
+    },
+    {
+      "color": "#9999ff",
+      "id": "ExtractDataextract",
+      "label": "extract | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 71,
+      "y": 14
+    },
+    {
+      "color": "#9999ff",
+      "id": "ExtractDatasetSourceFiles",
+      "label": "setSourceFiles | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 36,
+      "y": 33
+    },
+    {
+      "color": "#9999ff",
+      "id": "ExtractDatagetClassDecoratorNames",
+      "label": "getClassDecoratorNames | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 77,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Callbackexpression",
+      "label": "expression | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentsschemas",
+      "label": "schemas | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 99,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentsresponses",
+      "label": "responses | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 84,
+      "y": 81
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentsparameters",
+      "label": "parameters | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 20,
+      "y": 41
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentsexamples",
+      "label": "examples | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ComponentsrequestBodies",
+      "label": "requestBodies | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 61,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentsheaders",
+      "label": "headers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 40,
+      "y": 51
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ComponentssecuritySchemes",
+      "label": "securitySchemes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 16,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentslinks",
+      "label": "links | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 38,
+      "y": 53
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Componentscallbacks",
+      "label": "callbacks | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Contactname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 0,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Contacturl",
+      "label": "url | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Contactemail",
+      "label": "email | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 14,
+      "y": 82
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "DiscriminatorpropertyName",
+      "label": "propertyName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 2,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Discriminatormapping",
+      "label": "mapping | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 62,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "EncodingcontentType",
+      "label": "contentType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 26
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Encodingheaders",
+      "label": "headers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 41,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Encodingstyle",
+      "label": "style | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 44
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Encodingexplode",
+      "label": "explode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "EncodingallowReserved",
+      "label": "allowReserved | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Examplesummary",
+      "label": "summary | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 36,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Exampledescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 93
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Examplevalue",
+      "label": "value | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExampleexternalValue",
+      "label": "externalValue | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExternalDocumentationdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 69,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ExternalDocumentationurl",
+      "label": "url | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Headerdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 78
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Headerschema",
+      "label": "schema | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 73,
+      "y": 0
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Infotitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Infodescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "InfotermsOfService",
+      "label": "termsOfService | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 85
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Infocontact",
+      "label": "contact | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 44,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Infolicense",
+      "label": "license | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 81
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Infoversion",
+      "label": "version | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Licensename",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 72,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Licenseurl",
+      "label": "url | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 98
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "LinkoperationRef",
+      "label": "operationRef | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 99,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "LinkoperationId",
+      "label": "operationId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 39,
+      "y": 5
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Linkparameters",
+      "label": "parameters | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "LinkrequestBody",
+      "label": "requestBody | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 53
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Linkdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Linkserver",
+      "label": "server | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MediaTypeschema",
+      "label": "schema | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MediaTypeexample",
+      "label": "example | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 43
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MediaTypeexamples",
+      "label": "examples | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 14,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MediaTypeencoding",
+      "label": "encoding | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowauthorizationUrl",
+      "label": "authorizationUrl | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 92,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowtokenUrl",
+      "label": "tokenUrl | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowrefreshUrl",
+      "label": "refreshUrl | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 39
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowscopes",
+      "label": "scopes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowsimplicit",
+      "label": "implicit | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowspassword",
+      "label": "password | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowsclientCredentials",
+      "label": "clientCredentials | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OAuthFlowsauthorizationCode",
+      "label": "authorizationCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 84,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapiopenapi",
+      "label": "openapi | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 78
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapiinfo",
+      "label": "info | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 20
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapiservers",
+      "label": "servers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 88
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapipaths",
+      "label": "paths | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 44,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapicomponents",
+      "label": "components | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapisecurity",
+      "label": "security | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Openapitags",
+      "label": "tags | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 54
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationtags",
+      "label": "tags | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationsummary",
+      "label": "summary | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 77,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 36
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OperationexternalDocs",
+      "label": "externalDocs | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OperationoperationId",
+      "label": "operationId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 73
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationparameters",
+      "label": "parameters | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 66
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OperationrequestBody",
+      "label": "requestBody | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationresponses",
+      "label": "responses | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 79,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationcallbacks",
+      "label": "callbacks | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 55
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationdeprecated",
+      "label": "deprecated | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 41
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationsecurity",
+      "label": "security | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 17,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Operationservers",
+      "label": "servers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 19
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parametername",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 73,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterin",
+      "label": "in | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterschema",
+      "label": "schema | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterexample",
+      "label": "example | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 32
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterrequired",
+      "label": "required | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Parameterdeprecated",
+      "label": "deprecated | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 76,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterallowEmptyValue",
+      "label": "allowEmptyValue | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 13,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemsummary",
+      "label": "summary | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 93,
+      "y": 50
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemget",
+      "label": "get | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 22,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemput",
+      "label": "put | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItempost",
+      "label": "post | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemdelete",
+      "label": "delete | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 44,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemoptions",
+      "label": "options | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 86
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemhead",
+      "label": "head | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItempatch",
+      "label": "patch | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 37,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemtrace",
+      "label": "trace | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 46,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemservers",
+      "label": "servers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 15,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PathItemparameters",
+      "label": "parameters | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 26,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Reference$ref",
+      "label": "$ref | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RequestBodydescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RequestBodycontent",
+      "label": "content | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RequestBodyrequired",
+      "label": "required | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 45,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Responsedescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Responseheaders",
+      "label": "headers | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Responsecontent",
+      "label": "content | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 22,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Responselinks",
+      "label": "links | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schematitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemamultipleOf",
+      "label": "multipleOf | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 92,
+      "y": 5
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemamaximum",
+      "label": "maximum | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 26,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaexclusiveMaximum",
+      "label": "exclusiveMaximum | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 40
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaminimum",
+      "label": "minimum | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaexclusiveMinimum",
+      "label": "exclusiveMinimum | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 20,
+      "y": 43
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemamaxLength",
+      "label": "maxLength | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 10,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaminLength",
+      "label": "minLength | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemapattern",
+      "label": "pattern | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemamaxItems",
+      "label": "maxItems | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 40,
+      "y": 6
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaminItems",
+      "label": "minItems | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 43,
+      "y": 18
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemauniqueItems",
+      "label": "uniqueItems | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemamaxProperties",
+      "label": "maxProperties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 6
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaminProperties",
+      "label": "minProperties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 14
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemarequired",
+      "label": "required | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 66,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaenum",
+      "label": "enum | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 29,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schematype",
+      "label": "type | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 32
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaallOf",
+      "label": "allOf | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 95,
+      "y": 82
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaoneOf",
+      "label": "oneOf | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaanyOf",
+      "label": "anyOf | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 72,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemanot",
+      "label": "not | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 10,
+      "y": 98
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaitems",
+      "label": "items | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 21,
+      "y": 96
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaproperties",
+      "label": "properties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 22
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaadditionalProperties",
+      "label": "additionalProperties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 9,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemadescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 34
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaformat",
+      "label": "format | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 65
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemadefault",
+      "label": "default | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemanullable",
+      "label": "nullable | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 24
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemadiscriminator",
+      "label": "discriminator | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 2,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemareadOnly",
+      "label": "readOnly | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 11
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemawriteOnly",
+      "label": "writeOnly | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaxml",
+      "label": "xml | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 39,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SchemaexternalDocs",
+      "label": "externalDocs | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 22
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemaexample",
+      "label": "example | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Schemadeprecated",
+      "label": "deprecated | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecurityRequirementname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemetype",
+      "label": "type | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemedescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 34
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemename",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemein",
+      "label": "in | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemescheme",
+      "label": "scheme | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 96,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemebearerFormat",
+      "label": "bearerFormat | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 84,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemeflows",
+      "label": "flows | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SecuritySchemeopenIdConnectUrl",
+      "label": "openIdConnectUrl | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 88
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Serverurl",
+      "label": "url | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Serverdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 22,
+      "y": 54
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Servervariables",
+      "label": "variables | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Tagname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 16,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Tagdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TagexternalDocs",
+      "label": "externalDocs | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 72,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "XMLname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 73,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "XMLnamespace",
+      "label": "namespace | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "XMLprefix",
+      "label": "prefix | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 93,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "XMLattribute",
+      "label": "attribute | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "XMLwrapped",
+      "label": "wrapped | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 74
+    },
+    {
+      "color": "#ff9900",
+      "id": "Callback",
+      "label": "Callback | 1",
+      "size": 11,
+      "etype": "interface",
+      "x": 23,
+      "y": 63
+    },
+    {
+      "color": "#ff9900",
+      "id": "Components",
+      "label": "Components | 9",
+      "size": 19,
+      "etype": "interface",
+      "x": 48,
+      "y": 53
+    },
+    {
+      "color": "#ff9900",
+      "id": "Contact",
+      "label": "Contact | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 7,
+      "y": 26
+    },
+    {
+      "color": "#ff9900",
+      "id": "Discriminator",
+      "label": "Discriminator | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 4,
+      "y": 18
+    },
+    {
+      "color": "#ff9900",
+      "id": "Encoding",
+      "label": "Encoding | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 66,
+      "y": 41
+    },
+    {
+      "color": "#ff9900",
+      "id": "Example",
+      "label": "Example | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 27,
+      "y": 99
+    },
+    {
+      "color": "#ff9900",
+      "id": "ExternalDocumentation",
+      "label": "ExternalDocumentation | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 7,
+      "y": 94
+    },
+    {
+      "color": "#ff9900",
+      "id": "Header",
+      "label": "Header | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 96,
+      "y": 4
+    },
+    {
+      "color": "#ff9900",
+      "id": "Info",
+      "label": "Info | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 4,
+      "y": 8
+    },
+    {
+      "color": "#ff9900",
+      "id": "License",
+      "label": "License | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 49,
+      "y": 41
+    },
+    {
+      "color": "#ff9900",
+      "id": "Link",
+      "label": "Link | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 2,
+      "y": 47
+    },
+    {
+      "color": "#ff9900",
+      "id": "MediaType",
+      "label": "MediaType | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 5,
+      "y": 78
+    },
+    {
+      "color": "#ff9900",
+      "id": "OAuthFlow",
+      "label": "OAuthFlow | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 67,
+      "y": 50
+    },
+    {
+      "color": "#ff9900",
+      "id": "OAuthFlows",
+      "label": "OAuthFlows | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 20,
+      "y": 68
+    },
+    {
+      "color": "#ff9900",
+      "id": "Openapi",
+      "label": "Openapi | 8",
+      "size": 18,
+      "etype": "interface",
+      "x": 37,
+      "y": 72
+    },
+    {
+      "color": "#ff9900",
+      "id": "Operation",
+      "label": "Operation | 12",
+      "size": 22,
+      "etype": "interface",
+      "x": 60,
+      "y": 48
+    },
+    {
+      "color": "#ff9900",
+      "id": "Parameter",
+      "label": "Parameter | 8",
+      "size": 18,
+      "etype": "interface",
+      "x": 21,
+      "y": 25
+    },
+    {
+      "color": "#ff9900",
+      "id": "PathItem",
+      "label": "PathItem | 12",
+      "size": 22,
+      "etype": "interface",
+      "x": 70,
+      "y": 94
+    },
+    {
+      "color": "#ff9900",
+      "id": "Reference",
+      "label": "Reference | 1",
+      "size": 11,
+      "etype": "interface",
+      "x": 56,
+      "y": 43
+    },
+    {
+      "color": "#ff9900",
+      "id": "RequestBody",
+      "label": "RequestBody | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 3,
+      "y": 20
+    },
+    {
+      "color": "#ff9900",
+      "id": "Response",
+      "label": "Response | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 72,
+      "y": 99
+    },
+    {
+      "color": "#ff9900",
+      "id": "Schema",
+      "label": "Schema | 35",
+      "size": 45,
+      "etype": "interface",
+      "x": 79,
+      "y": 51
+    },
+    {
+      "color": "#ff9900",
+      "id": "SecurityRequirement",
+      "label": "SecurityRequirement | 1",
+      "size": 11,
+      "etype": "interface",
+      "x": 59,
+      "y": 85
+    },
+    {
+      "color": "#ff9900",
+      "id": "SecurityScheme",
+      "label": "SecurityScheme | 8",
+      "size": 18,
+      "etype": "interface",
+      "x": 83,
+      "y": 33
+    },
+    {
+      "color": "#ff9900",
+      "id": "Server",
+      "label": "Server | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 95,
+      "y": 38
+    },
+    {
+      "color": "#ff9900",
+      "id": "Tag",
+      "label": "Tag | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 26,
+      "y": 62
+    },
+    {
+      "color": "#ff9900",
+      "id": "XML",
+      "label": "XML | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 97,
+      "y": 10
+    },
+    {
+      "color": "#ff0000",
+      "id": "GenerateOas",
+      "label": "GenerateOas | 5",
+      "size": 15,
+      "etype": "class",
+      "x": 70,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GenerateOasopenapi",
+      "label": "openapi | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 2,
+      "y": 20
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GenerateOasprogramData",
+      "label": "programData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 51,
+      "y": 52
+    },
+    {
+      "color": "#9999ff",
+      "id": "GenerateOasgenerate",
+      "label": "generate | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 73,
+      "y": 86
+    },
+    {
+      "color": "#ff0000",
+      "id": "OpenapispecGeneration",
+      "label": "OpenapispecGeneration | 16",
+      "size": 26,
+      "etype": "class",
+      "x": 29,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationpackageJson",
+      "label": "packageJson | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 96,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationentryFile",
+      "label": "entryFile | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationcompilerOptions",
+      "label": "compilerOptions | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationignorePaths",
+      "label": "ignorePaths | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 23,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationextractData",
+      "label": "extractData | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationdata",
+      "label": "data | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 31,
+      "y": 59
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationopenapi",
+      "label": "openapi | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 51
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OpenapispecGenerationgenerateOas",
+      "label": "generateOas | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 14,
+      "y": 68
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationextractAndGenerate",
+      "label": "extractAndGenerate | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 19,
+      "y": 86
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationsetPackageJson",
+      "label": "setPackageJson | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 33,
+      "y": 97
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationsetEntryFile",
+      "label": "setEntryFile | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 66,
+      "y": 31
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationsetCompilerOptions",
+      "label": "setCompilerOptions | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 98,
+      "y": 25
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationsetIgnorePaths",
+      "label": "setIgnorePaths | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 75,
+      "y": 2
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationstartDataExtraction",
+      "label": "startDataExtraction | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 53,
+      "y": 46
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationstartOasGeneration",
+      "label": "startOasGeneration | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 27,
+      "y": 18
+    },
+    {
+      "color": "#9999ff",
+      "id": "OpenapispecGenerationsaveOpenapiSpec",
+      "label": "saveOpenapiSpec | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 94,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsonname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsonversion",
+      "label": "version | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsondescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsonauthor",
+      "label": "author | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 36,
+      "y": 15
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsonlicense",
+      "label": "license | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 2,
+      "y": 81
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PackageJsonmain",
+      "label": "main | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 49
+    },
+    {
+      "color": "#ff9900",
+      "id": "PackageJson",
+      "label": "PackageJson | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 17,
+      "y": 25
+    },
+    {
+      "color": "#ff0000",
+      "id": "ProductConfig",
+      "label": "ProductConfig | 1",
+      "size": 11,
+      "etype": "class",
+      "x": 20,
+      "y": 97
+    },
+    {
+      "color": "#ff0000",
+      "id": "GraphQLQueryFactory",
+      "label": "GraphQLQueryFactory | 13",
+      "size": 23,
+      "etype": "class",
+      "x": 13,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GraphQLQueryFactoryratingsQueryType",
+      "label": "ratingsQueryType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 45,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GraphQLQueryFactoryproductQueryType",
+      "label": "productQueryType | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 46,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GraphQLQueryFactoryschemaLocation",
+      "label": "schemaLocation | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 50
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GraphQLQueryFactoryschemaString",
+      "label": "schemaString | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 57
+    },
+    {
+      "color": "#9999ff",
+      "id": "GraphQLQueryFactoryproductQueryGraphQLSchema",
+      "label": "productQueryGraphQLSchema | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 78,
+      "y": 97
+    },
+    {
+      "color": "#9999ff",
+      "id": "GraphQLQueryFactoryratingsQueryGraphQLSchema",
+      "label": "ratingsQueryGraphQLSchema | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 19,
+      "y": 24
+    },
+    {
+      "color": "#9999ff",
+      "id": "GraphQLQueryFactoryloadSchema",
+      "label": "loadSchema | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 92,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceInfoindex",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceInfotext",
+      "label": "text | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceamount",
+      "label": "amount | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 6
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePricenet",
+      "label": "net | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 72
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePricecurrency",
+      "label": "currency | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceinfo",
+      "label": "info | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 22
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceListlistPrice",
+      "label": "listPrice | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 83,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePriceListretailPrice",
+      "label": "retailPrice | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 92,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceStockStatusstatus",
+      "label": "status | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 52
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceStockStatusstatusColor",
+      "label": "statusColor | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 31,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceStockStatusstatusReason",
+      "label": "statusReason | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 15
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsrefrigerated",
+      "label": "refrigerated | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 77,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsprescriptionMedicine",
+      "label": "prescriptionMedicine | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsveterinaryDrug",
+      "label": "veterinaryDrug | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsvegetarian",
+      "label": "vegetarian | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 69,
+      "y": 91
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsvegan",
+      "label": "vegan | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 13
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagshomoeopathisch",
+      "label": "homoeopathisch | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 11
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagspflanzlich",
+      "label": "pflanzlich | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 0,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceFlagsmedicament",
+      "label": "medicament | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 85
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProductcode",
+      "label": "code | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 43,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProductcodes",
+      "label": "codes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 60,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProductheadline",
+      "label": "headline | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProducttype",
+      "label": "type | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 63
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProductdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServicePromotionProductpackshot",
+      "label": "packshot | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 96
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductamountInCart",
+      "label": "amountInCart | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductapo_activeSubstances",
+      "label": "apo_activeSubstances | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 17,
+      "y": 71
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductapo_additiveSubstances",
+      "label": "apo_additiveSubstances | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductapo_showFoodInformation",
+      "label": "apo_showFoodInformation | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 95,
+      "y": 60
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductbrandId",
+      "label": "brandId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 41,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductbrandName",
+      "label": "brandName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductcanonicalURL",
+      "label": "canonicalURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 87
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductcategory",
+      "label": "category | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 0
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductdescriptionLong",
+      "label": "descriptionLong | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductdescriptionShort",
+      "label": "descriptionShort | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 66,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductdiscount",
+      "label": "discount | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 89,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductdisplayCode",
+      "label": "displayCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 9,
+      "y": 87
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductdocuments",
+      "label": "documents | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductendDateRP",
+      "label": "endDateRP | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 36
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductflags",
+      "label": "flags | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 69,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductmanufacturer",
+      "label": "manufacturer | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductmaxAmountInCart",
+      "label": "maxAmountInCart | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductmedia",
+      "label": "media | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 99
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductmultiplierRP",
+      "label": "multiplierRP | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 43
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductnumberOfRatings",
+      "label": "numberOfRatings | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 82
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductonNotepad",
+      "label": "onNotepad | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 77,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductpackageNormSize",
+      "label": "packageNormSize | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 40,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductpackageVariants",
+      "label": "packageVariants | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 32
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductprices",
+      "label": "prices | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductpromotion",
+      "label": "promotion | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 95,
+      "y": 66
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductpromotionProduct",
+      "label": "promotionProduct | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 16,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductrating",
+      "label": "rating | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 26,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductredPoints",
+      "label": "redPoints | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 42,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductredPointsIsActive",
+      "label": "redPointsIsActive | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductredPointsMultiplierIsValid",
+      "label": "redPointsMultiplierIsValid | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductstockStatus",
+      "label": "stockStatus | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 15,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductsubtitle",
+      "label": "subtitle | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 31,
+      "y": 24
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductthumbnailURL",
+      "label": "thumbnailURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 36,
+      "y": 50
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProducttitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 24,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProducttitleLong",
+      "label": "titleLong | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProducttopsellerFamId",
+      "label": "topsellerFamId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 21,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductunit",
+      "label": "unit | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductunitPricing",
+      "label": "unitPricing | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 54,
+      "y": 94
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductunitQuantityString",
+      "label": "unitQuantityString | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 30,
+      "y": 93
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductvariants",
+      "label": "variants | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 26,
+      "y": 18
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceProductvideos",
+      "label": "videos | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 18,
+      "y": 27
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServicePriceInfo",
+      "label": "ServicePriceInfo | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 58,
+      "y": 11
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServicePrice",
+      "label": "ServicePrice | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 8,
+      "y": 51
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServicePriceList",
+      "label": "ServicePriceList | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 72,
+      "y": 41
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServiceStockStatus",
+      "label": "ServiceStockStatus | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 96,
+      "y": 88
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServiceFlags",
+      "label": "ServiceFlags | 9",
+      "size": 19,
+      "etype": "interface",
+      "x": 20,
+      "y": 64
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServicePromotionProduct",
+      "label": "ServicePromotionProduct | 7",
+      "size": 17,
+      "etype": "interface",
+      "x": 49,
+      "y": 81
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServiceProduct",
+      "label": "ServiceProduct | 45",
+      "size": 55,
+      "etype": "interface",
+      "x": 9,
+      "y": 19
+    },
+    {
+      "color": "#ff0000",
+      "id": "Flags",
+      "label": "Flags | 12",
+      "size": 22,
+      "etype": "class",
+      "x": 27,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagsherbal",
+      "label": "herbal | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 13,
+      "y": 84
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagshomeopathic",
+      "label": "homeopathic | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 22
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagsmedicament",
+      "label": "medicament | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "FlagsprescriptionMedicine",
+      "label": "prescriptionMedicine | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 60,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagsrefrigerated",
+      "label": "refrigerated | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagsvegan",
+      "label": "vegan | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 88,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Flagsvegetarian",
+      "label": "vegetarian | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 46,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "FlagsveterinaryDrug",
+      "label": "veterinaryDrug | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 43
+    },
+    {
+      "color": "#9999ff",
+      "id": "FlagsMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 92,
+      "y": 22
+    },
+    {
+      "color": "#ff0000",
+      "id": "PriceInfo",
+      "label": "PriceInfo | 6",
+      "size": 16,
+      "etype": "class",
+      "x": 18,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PriceInfoindex",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 55
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PriceInfotext",
+      "label": "text | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 73
+    },
+    {
+      "color": "#9999ff",
+      "id": "PriceInfoMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 17,
+      "y": 70
+    },
+    {
+      "color": "#ff0000",
+      "id": "Price",
+      "label": "Price | 9",
+      "size": 19,
+      "etype": "class",
+      "x": 22,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Priceamount",
+      "label": "amount | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 13
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Pricecurrency",
+      "label": "currency | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 50,
+      "y": 24
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Pricenet",
+      "label": "net | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 96,
+      "y": 72
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Priceinfo",
+      "label": "info | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 19,
+      "y": 80
+    },
+    {
+      "color": "#9999ff",
+      "id": "PriceMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 4,
+      "y": 98
+    },
+    {
+      "color": "#ff0000",
+      "id": "PriceList",
+      "label": "PriceList | 7",
+      "size": 17,
+      "etype": "class",
+      "x": 63,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PriceListlistPrice",
+      "label": "listPrice | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 73,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PriceListretailPrice",
+      "label": "retailPrice | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 25
+    },
+    {
+      "color": "#9999ff",
+      "id": "PriceListMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 96,
+      "y": 91
+    },
+    {
+      "color": "#ff0000",
+      "id": "PromotionProduct",
+      "label": "PromotionProduct | 10",
+      "size": 20,
+      "etype": "class",
+      "x": 16,
+      "y": 91
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProductcode",
+      "label": "code | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProductcodes",
+      "label": "codes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProductheadline",
+      "label": "headline | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 95,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProducttype",
+      "label": "type | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 84,
+      "y": 2
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProductdescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 39,
+      "y": 51
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "PromotionProductpackshot",
+      "label": "packshot | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 59
+    },
+    {
+      "color": "#9999ff",
+      "id": "PromotionProductMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 9,
+      "y": 40
+    },
+    {
+      "color": "#ff0000",
+      "id": "StockStatus",
+      "label": "StockStatus | 7",
+      "size": 17,
+      "etype": "class",
+      "x": 68,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StockStatusstatus",
+      "label": "status | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 86,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StockStatusstatusColor",
+      "label": "statusColor | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "StockStatusstatusReason",
+      "label": "statusReason | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 23,
+      "y": 65
+    },
+    {
+      "color": "#9999ff",
+      "id": "StockStatusMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 11,
+      "y": 25
+    },
+    {
+      "color": "#ff0000",
+      "id": "Product",
+      "label": "Product | 51",
+      "size": 61,
+      "etype": "class",
+      "x": 14,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductactiveSubstances",
+      "label": "activeSubstances | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductadditiveSubstances",
+      "label": "additiveSubstances | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductamountInCart",
+      "label": "amountInCart | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductbrandId",
+      "label": "brandId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 64,
+      "y": 40
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductbrandName",
+      "label": "brandName | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 4,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductcanonicalURL",
+      "label": "canonicalURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 87,
+      "y": 71
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productcategory",
+      "label": "category | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 0
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductdescriptionShort",
+      "label": "descriptionShort | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 24
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductdescriptionLong",
+      "label": "descriptionLong | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 67,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productdiscount",
+      "label": "discount | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 64,
+      "y": 82
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductdisplayCode",
+      "label": "displayCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 50,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productdocuments",
+      "label": "documents | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductendDateRP",
+      "label": "endDateRP | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 62,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productflags",
+      "label": "flags | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 34
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 5
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductnumberOfRatings",
+      "label": "numberOfRatings | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 88,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productmanufacturer",
+      "label": "manufacturer | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 32
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductmaxAmountInCart",
+      "label": "maxAmountInCart | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 93,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductmultiplierRP",
+      "label": "multiplierRP | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productmedia",
+      "label": "media | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductonNotepad",
+      "label": "onNotepad | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 38,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductpackageNormSize",
+      "label": "packageNormSize | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 17,
+      "y": 73
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductpackageVariants",
+      "label": "packageVariants | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productprice",
+      "label": "price | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 96,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productpromotion",
+      "label": "promotion | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductpromotionProduct",
+      "label": "promotionProduct | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 38,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productrating",
+      "label": "rating | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 10
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductredPoints",
+      "label": "redPoints | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductredPointsIsActive",
+      "label": "redPointsIsActive | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 41
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductredPointsMultiplierIsValid",
+      "label": "redPointsMultiplierIsValid | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 65,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductshowFoodInformation",
+      "label": "showFoodInformation | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 72,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductstockStatus",
+      "label": "stockStatus | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 50
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productsubtitle",
+      "label": "subtitle | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 19
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductthumbnailURL",
+      "label": "thumbnailURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Producttitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 19,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProducttopsellerFamId",
+      "label": "topsellerFamId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 60,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productunit",
+      "label": "unit | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 88,
+      "y": 78
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductunitPricing",
+      "label": "unitPricing | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 72
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductunitQuantityString",
+      "label": "unitQuantityString | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 95,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productvariants",
+      "label": "variants | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 83,
+      "y": 97
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Productvideos",
+      "label": "videos | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 2,
+      "y": 32
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 60,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 65
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingauthor",
+      "label": "author | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 85
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingdate",
+      "label": "date | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 15,
+      "y": 66
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingrating",
+      "label": "rating | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 93
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingtitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 39,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingtext",
+      "label": "text | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 66,
+      "y": 44
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingproductId",
+      "label": "productId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 19,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingproductTitle",
+      "label": "productTitle | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 14,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingthumbnailURL",
+      "label": "thumbnailURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingfeedbackPositive",
+      "label": "feedbackPositive | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatingfeedbackNegative",
+      "label": "feedbackNegative | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ServiceRatinginReview",
+      "label": "inReview | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 23
+    },
+    {
+      "color": "#ff9900",
+      "id": "ServiceRating",
+      "label": "ServiceRating | 15",
+      "size": 25,
+      "etype": "interface",
+      "x": 12,
+      "y": 3
+    },
+    {
+      "color": "#ff0000",
+      "id": "Rating",
+      "label": "Rating | 16",
+      "size": 26,
+      "etype": "class",
+      "x": 33,
+      "y": 14
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingauthor",
+      "label": "author | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 74,
+      "y": 80
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingdate",
+      "label": "date | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 49,
+      "y": 85
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatingfeedbackNegative",
+      "label": "feedbackNegative | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatingfeedbackPositive",
+      "label": "feedbackPositive | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 43
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 31,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatinginReview",
+      "label": "inReview | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 62,
+      "y": 65
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatingproductId",
+      "label": "productId | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 11
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatingproductTitle",
+      "label": "productTitle | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 15,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingrating",
+      "label": "rating | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 53
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingtext",
+      "label": "text | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 35,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "RatingthumbnailURL",
+      "label": "thumbnailURL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 52,
+      "y": 75
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingtitle",
+      "label": "title | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 86
+    },
+    {
+      "color": "#9999ff",
+      "id": "RatingMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 33,
+      "y": 45
+    },
+    {
+      "color": "#ff0000",
+      "id": "Ratings",
+      "label": "Ratings | 8",
+      "size": 18,
+      "etype": "class",
+      "x": 77,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "Ratingsratings",
+      "label": "ratings | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 99,
+      "y": 49
+    },
+    {
+      "color": "#9999ff",
+      "id": "RatingsMAP_SERVICE_RESULT",
+      "label": "MAP_SERVICE_RESULT | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 50,
+      "y": 95
+    },
+    {
+      "color": "#ff0000",
+      "id": "ProductClient",
+      "label": "ProductClient | 17",
+      "size": 27,
+      "etype": "class",
+      "x": 55,
+      "y": 41
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ProductClientgraphQLQueryFactory",
+      "label": "graphQLQueryFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 76,
+      "y": 63
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientgetProductByGraphQLQuery",
+      "label": "getProductByGraphQLQuery | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 37,
+      "y": 63
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientgetRatingsByGraphQLQuery",
+      "label": "getRatingsByGraphQLQuery | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 13,
+      "y": 7
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientgetProductById",
+      "label": "getProductById | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 88,
+      "y": 2
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientgetRatingsById",
+      "label": "getRatingsById | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 9,
+      "y": 29
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientfetchProductResolver",
+      "label": "fetchProductResolver | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 39,
+      "y": 30
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductClientfetchRatingsResolver",
+      "label": "fetchRatingsResolver | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 75,
+      "y": 44
+    },
+    {
+      "color": "#ff0000",
+      "id": "ProductController",
+      "label": "ProductController | 10",
+      "size": 20,
+      "etype": "class",
+      "x": 17,
+      "y": 58
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductControllergetProductGraphQL",
+      "label": "getProductGraphQL | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 71,
+      "y": 45
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductControllergetRatingsGraphQL",
+      "label": "getRatingsGraphQL | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 27,
+      "y": 43
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductControllergetProduct",
+      "label": "getProduct | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 80,
+      "y": 23
+    },
+    {
+      "color": "#9999ff",
+      "id": "ProductControllergetRatings",
+      "label": "getRatings | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 18,
+      "y": 18
+    },
+    {
+      "color": "#ffffff",
+      "id": "reflect-metadata",
+      "label": "reflect-metadata | 5",
+      "size": 15,
+      "etype": "package",
+      "x": 57,
+      "y": 58
+    },
+    {
+      "color": "#ffffff",
+      "id": "required.d",
+      "label": "required.d | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 64,
+      "y": 74
+    },
+    {
+      "color": "#ffffff",
+      "id": "REQUIRED",
+      "label": "REQUIRED | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 17,
+      "y": 22
+    },
+    {
+      "color": "#ffffff",
+      "id": "index.d",
+      "label": "index.d | 30",
+      "size": 40,
+      "etype": "package",
+      "x": 95,
+      "y": 77
+    },
+    {
+      "color": "#ffffff",
+      "id": "SUCCESSREPONSE",
+      "label": "SUCCESSREPONSE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 95,
+      "y": 64
+    },
+    {
+      "color": "#ffffff",
+      "id": "controller.d",
+      "label": "controller.d | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 8,
+      "y": 24
+    },
+    {
+      "color": "#ffffff",
+      "id": "model.d",
+      "label": "model.d | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 81,
+      "y": 64
+    },
+    {
+      "color": "#ffffff",
+      "id": "koa-router",
+      "label": "koa-router | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 21,
+      "y": 68
+    },
+    {
+      "color": "#ffffff",
+      "id": "CONTROLLER",
+      "label": "CONTROLLER | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 32,
+      "y": 91
+    },
+    {
+      "color": "#ffffff",
+      "id": "getRoutesFromController",
+      "label": "getRoutesFromController | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 56,
+      "y": 12
+    },
+    {
+      "color": "#ffffff",
+      "id": "EXAMPLE",
+      "label": "EXAMPLE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 91,
+      "y": 20
+    },
+    {
+      "color": "#ffffff",
+      "id": "MODEL",
+      "label": "MODEL | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 42,
+      "y": 57
+    },
+    {
+      "color": "#ffffff",
+      "id": "VERSION",
+      "label": "VERSION | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 42,
+      "y": 8
+    },
+    {
+      "color": "#ffffff",
+      "id": "BODY",
+      "label": "BODY | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 33,
+      "y": 43
+    },
+    {
+      "color": "#ffffff",
+      "id": "CTX",
+      "label": "CTX | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 94,
+      "y": 69
+    },
+    {
+      "color": "#ffffff",
+      "id": "DESCRIPTION",
+      "label": "DESCRIPTION | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 22,
+      "y": 92
+    },
+    {
+      "color": "#ffffff",
+      "id": "LOCALE",
+      "label": "LOCALE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 78,
+      "y": 98
+    },
+    {
+      "color": "#ffffff",
+      "id": "PARAM",
+      "label": "PARAM | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 41,
+      "y": 49
+    },
+    {
+      "color": "#ffffff",
+      "id": "QUERYPARAM",
+      "label": "QUERYPARAM | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 78,
+      "y": 36
+    },
+    {
+      "color": "#ffffff",
+      "id": "REQUEST",
+      "label": "REQUEST | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 36,
+      "y": 77
+    },
+    {
+      "color": "#ffffff",
+      "id": "RESPONSE",
+      "label": "RESPONSE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 35,
+      "y": 27
+    },
+    {
+      "color": "#ffffff",
+      "id": "TENANT",
+      "label": "TENANT | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 12,
+      "y": 74
+    },
+    {
+      "color": "#ffffff",
+      "id": "RESTCLIENT",
+      "label": "RESTCLIENT | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 25,
+      "y": 14
+    },
+    {
+      "color": "#ffffff",
+      "id": "DELETE",
+      "label": "DELETE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 5,
+      "y": 22
+    },
+    {
+      "color": "#ffffff",
+      "id": "GET",
+      "label": "GET | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 36,
+      "y": 75
+    },
+    {
+      "color": "#ffffff",
+      "id": "HEAD",
+      "label": "HEAD | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 39,
+      "y": 5
+    },
+    {
+      "color": "#ffffff",
+      "id": "HTTP_METHODS",
+      "label": "HTTP_METHODS | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 50,
+      "y": 19
+    },
+    {
+      "color": "#ffffff",
+      "id": "OPTIONS",
+      "label": "OPTIONS | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 90,
+      "y": 55
+    },
+    {
+      "color": "#ffffff",
+      "id": "PATCH",
+      "label": "PATCH | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 10,
+      "y": 81
+    },
+    {
+      "color": "#ffffff",
+      "id": "POST",
+      "label": "POST | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 92,
+      "y": 26
+    },
+    {
+      "color": "#ffffff",
+      "id": "PUT",
+      "label": "PUT | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 63,
+      "y": 71
+    },
+    {
+      "color": "#ffffff",
+      "id": "INJECT",
+      "label": "INJECT | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 44,
+      "y": 64
+    },
+    {
+      "color": "#ffffff",
+      "id": "INJECTABLE",
+      "label": "INJECTABLE | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 74,
+      "y": 65
+    },
+    {
+      "color": "#ffffff",
+      "id": "debug",
+      "label": "debug | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 39,
+      "y": 4
+    },
+    {
+      "color": "#ffffff",
+      "id": "winston",
+      "label": "winston | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 36,
+      "y": 49
+    },
+    {
+      "color": "#ffffff",
+      "id": "Store",
+      "label": "Store | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 87,
+      "y": 12
+    },
+    {
+      "color": "#ffffff",
+      "id": "boom",
+      "label": "boom | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 86,
+      "y": 79
+    },
+    {
+      "color": "#ffffff",
+      "id": "koa",
+      "label": "koa | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 17,
+      "y": 25
+    },
+    {
+      "color": "#ffffff",
+      "id": "request",
+      "label": "request | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 62,
+      "y": 92
+    },
+    {
+      "color": "#ffffff",
+      "id": "request-promise",
+      "label": "request-promise | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 86,
+      "y": 53
+    },
+    {
+      "color": "#ffffff",
+      "id": "Context",
+      "label": "Context | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 33,
+      "y": 64
+    },
+    {
+      "color": "#ffffff",
+      "id": "typescript",
+      "label": "typescript | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 15,
+      "y": 97
+    },
+    {
+      "color": "#ffffff",
+      "id": "api-utils",
+      "label": "api-utils | 3",
+      "size": 13,
+      "etype": "package",
+      "x": 18,
+      "y": 28
+    },
+    {
+      "color": "#ffffff",
+      "id": "fs",
+      "label": "fs | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 25,
+      "y": 33
+    },
+    {
+      "color": "#ffffff",
+      "id": "graphql",
+      "label": "graphql | 2",
+      "size": 12,
+      "etype": "package",
+      "x": 18,
+      "y": 48
+    },
+    {
+      "color": "#ffffff",
+      "id": "path",
+      "label": "path | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 62,
+      "y": 93
+    },
+    {
+      "color": "#ffffff",
+      "id": "api-decorator",
+      "label": "api-decorator | 12",
+      "size": 22,
+      "etype": "package",
+      "x": 24,
+      "y": 36
+    },
+    {
+      "color": "#ffffff",
+      "id": "api-logger",
+      "label": "api-logger | 2",
+      "size": 12,
+      "etype": "package",
+      "x": 26,
+      "y": 6
+    },
+    {
+      "color": "#ffffff",
+      "id": "config",
+      "label": "config | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 70,
+      "y": 82
+    },
+    {
+      "color": "#ffffff",
+      "id": "index",
+      "label": "index | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 27,
+      "y": 21
+    }
+  ],
+  "edges": [
+    {
+      "id": "reflect-metadatarequired.d",
+      "source": "reflect-metadata",
+      "target": "required.d"
+    },
+    {
+      "id": "REQUIREDindex.d",
+      "source": "REQUIRED",
+      "target": "index.d"
+    },
+    {
+      "id": "SUCCESSREPONSEindex.d",
+      "source": "SUCCESSREPONSE",
+      "target": "index.d"
+    },
+    {
+      "id": "reflect-metadatacontroller.d",
+      "source": "reflect-metadata",
+      "target": "controller.d"
+    },
+    {
+      "id": "reflect-metadatamodel.d",
+      "source": "reflect-metadata",
+      "target": "model.d"
+    },
+    {
+      "id": "DecoratedParamindexDecoratedParam",
+      "source": "DecoratedParamindex",
+      "target": "DecoratedParam"
+    },
+    {
+      "id": "DecoratedParamnameDecoratedParam",
+      "source": "DecoratedParamname",
+      "target": "DecoratedParam"
+    },
+    {
+      "id": "DecoratedParamfnDecoratedParam",
+      "source": "DecoratedParamfn",
+      "target": "DecoratedParam"
+    },
+    {
+      "id": "DecoratedParamfnArgDecoratedParam",
+      "source": "DecoratedParamfnArg",
+      "target": "DecoratedParam"
+    },
+    {
+      "id": "DecoratedParamsindexDecoratedParams",
+      "source": "DecoratedParamsindex",
+      "target": "DecoratedParams"
+    },
+    {
+      "id": "DecoratedParamsnameDecoratedParams",
+      "source": "DecoratedParamsname",
+      "target": "DecoratedParams"
+    },
+    {
+      "id": "DecoratedParamsfnDecoratedParams",
+      "source": "DecoratedParamsfn",
+      "target": "DecoratedParams"
+    },
+    {
+      "id": "DecoratedParamsfnArgDecoratedParams",
+      "source": "DecoratedParamsfnArg",
+      "target": "DecoratedParams"
+    },
+    {
+      "id": "reflect-metadataDecoratedParam",
+      "source": "reflect-metadata",
+      "target": "DecoratedParam"
+    },
+    {
+      "id": "DecoratedRoutemethodDecoratedRoute",
+      "source": "DecoratedRoutemethod",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedRoutepathDecoratedRoute",
+      "source": "DecoratedRoutepath",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedRoutenameDecoratedRoute",
+      "source": "DecoratedRoutename",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedRoutemiddlewareDecoratedRoute",
+      "source": "DecoratedRoutemiddleware",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedRouteparamsDecoratedRoute",
+      "source": "DecoratedRouteparams",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedRoutesmethodDecoratedRoutes",
+      "source": "DecoratedRoutesmethod",
+      "target": "DecoratedRoutes"
+    },
+    {
+      "id": "DecoratedRoutespathDecoratedRoutes",
+      "source": "DecoratedRoutespath",
+      "target": "DecoratedRoutes"
+    },
+    {
+      "id": "DecoratedRoutesnameDecoratedRoutes",
+      "source": "DecoratedRoutesname",
+      "target": "DecoratedRoutes"
+    },
+    {
+      "id": "DecoratedRoutesmiddlewareDecoratedRoutes",
+      "source": "DecoratedRoutesmiddleware",
+      "target": "DecoratedRoutes"
+    },
+    {
+      "id": "DecoratedRoutesparamsDecoratedRoutes",
+      "source": "DecoratedRoutesparams",
+      "target": "DecoratedRoutes"
+    },
+    {
+      "id": "reflect-metadataDecoratedRoute",
+      "source": "reflect-metadata",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "koa-routerDecoratedRoute",
+      "source": "koa-router",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "DecoratedParamsDecoratedRoute",
+      "source": "DecoratedParams",
+      "target": "DecoratedRoute"
+    },
+    {
+      "id": "CONTROLLERindex.d",
+      "source": "CONTROLLER",
+      "target": "index.d"
+    },
+    {
+      "id": "getRoutesFromControllerindex.d",
+      "source": "getRoutesFromController",
+      "target": "index.d"
+    },
+    {
+      "id": "EXAMPLEindex.d",
+      "source": "EXAMPLE",
+      "target": "index.d"
+    },
+    {
+      "id": "MODELindex.d",
+      "source": "MODEL",
+      "target": "index.d"
+    },
+    {
+      "id": "VERSIONindex.d",
+      "source": "VERSION",
+      "target": "index.d"
+    },
+    {
+      "id": "BODYindex.d",
+      "source": "BODY",
+      "target": "index.d"
+    },
+    {
+      "id": "CTXindex.d",
+      "source": "CTX",
+      "target": "index.d"
+    },
+    {
+      "id": "DecoratedParamindex.d",
+      "source": "DecoratedParam",
+      "target": "index.d"
+    },
+    {
+      "id": "DecoratedParamsindex.d",
+      "source": "DecoratedParams",
+      "target": "index.d"
+    },
+    {
+      "id": "DESCRIPTIONindex.d",
+      "source": "DESCRIPTION",
+      "target": "index.d"
+    },
+    {
+      "id": "LOCALEindex.d",
+      "source": "LOCALE",
+      "target": "index.d"
+    },
+    {
+      "id": "PARAMindex.d",
+      "source": "PARAM",
+      "target": "index.d"
+    },
+    {
+      "id": "QUERYPARAMindex.d",
+      "source": "QUERYPARAM",
+      "target": "index.d"
+    },
+    {
+      "id": "REQUESTindex.d",
+      "source": "REQUEST",
+      "target": "index.d"
+    },
+    {
+      "id": "RESPONSEindex.d",
+      "source": "RESPONSE",
+      "target": "index.d"
+    },
+    {
+      "id": "TENANTindex.d",
+      "source": "TENANT",
+      "target": "index.d"
+    },
+    {
+      "id": "RESTCLIENTindex.d",
+      "source": "RESTCLIENT",
+      "target": "index.d"
+    },
+    {
+      "id": "DELETEindex.d",
+      "source": "DELETE",
+      "target": "index.d"
+    },
+    {
+      "id": "GETindex.d",
+      "source": "GET",
+      "target": "index.d"
+    },
+    {
+      "id": "HEADindex.d",
+      "source": "HEAD",
+      "target": "index.d"
+    },
+    {
+      "id": "HTTP_METHODSindex.d",
+      "source": "HTTP_METHODS",
+      "target": "index.d"
+    },
+    {
+      "id": "OPTIONSindex.d",
+      "source": "OPTIONS",
+      "target": "index.d"
+    },
+    {
+      "id": "PATCHindex.d",
+      "source": "PATCH",
+      "target": "index.d"
+    },
+    {
+      "id": "POSTindex.d",
+      "source": "POST",
+      "target": "index.d"
+    },
+    {
+      "id": "PUTindex.d",
+      "source": "PUT",
+      "target": "index.d"
+    },
+    {
+      "id": "INJECTindex.d",
+      "source": "INJECT",
+      "target": "index.d"
+    },
+    {
+      "id": "INJECTABLEindex.d",
+      "source": "INJECTABLE",
+      "target": "index.d"
+    },
+    {
+      "id": "RTLLoggerdebugInstanceRTLLogger",
+      "source": "RTLLoggerdebugInstance",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggerwinstonLoggerRTLLogger",
+      "source": "RTLLoggerwinstonLogger",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggerensureLogDirRTLLogger",
+      "source": "RTLLoggerensureLogDir",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggererrorRTLLogger",
+      "source": "RTLLoggererror",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggerwarnRTLLogger",
+      "source": "RTLLoggerwarn",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggerinfoRTLLogger",
+      "source": "RTLLoggerinfo",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggerdebugRTLLogger",
+      "source": "RTLLoggerdebug",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "RTLLoggercloseRTLLogger",
+      "source": "RTLLoggerclose",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "debugRTLLogger",
+      "source": "debug",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "winstonRTLLogger",
+      "source": "winston",
+      "target": "RTLLogger"
+    },
+    {
+      "id": "ConfigenvConfigsConfig",
+      "source": "ConfigenvConfigs",
+      "target": "Config"
+    },
+    {
+      "id": "ConfigmergedConfigConfig",
+      "source": "ConfigmergedConfig",
+      "target": "Config"
+    },
+    {
+      "id": "ConfiggetVarConfig",
+      "source": "ConfiggetVar",
+      "target": "Config"
+    },
+    {
+      "id": "ConfiggetOriginalConfig",
+      "source": "ConfiggetOriginal",
+      "target": "Config"
+    },
+    {
+      "id": "RestConnectionOptionsfollowRedirectRestConnectionOptions",
+      "source": "RestConnectionOptionsfollowRedirect",
+      "target": "RestConnectionOptions"
+    },
+    {
+      "id": "RestConnectionOptionstimeoutRestConnectionOptions",
+      "source": "RestConnectionOptionstimeout",
+      "target": "RestConnectionOptions"
+    },
+    {
+      "id": "RestConnectionOptionsagentRestConnectionOptions",
+      "source": "RestConnectionOptionsagent",
+      "target": "RestConnectionOptions"
+    },
+    {
+      "id": "ParamsToAndFromServicecookieParamsToAndFromService",
+      "source": "ParamsToAndFromServicecookie",
+      "target": "ParamsToAndFromService"
+    },
+    {
+      "id": "ParamsToAndFromServiceheaderParamsToAndFromService",
+      "source": "ParamsToAndFromServiceheader",
+      "target": "ParamsToAndFromService"
+    },
+    {
+      "id": "TenantEntryparamsToServiceTenantEntry",
+      "source": "TenantEntryparamsToService",
+      "target": "TenantEntry"
+    },
+    {
+      "id": "TenantEntryparamsFromServiceTenantEntry",
+      "source": "TenantEntryparamsFromService",
+      "target": "TenantEntry"
+    },
+    {
+      "id": "TenantEntrybaseUrlTenantEntry",
+      "source": "TenantEntrybaseUrl",
+      "target": "TenantEntry"
+    },
+    {
+      "id": "TenantEntryheadersTenantEntry",
+      "source": "TenantEntryheaders",
+      "target": "TenantEntry"
+    },
+    {
+      "id": "TenantEntryrestOptionsTenantEntry",
+      "source": "TenantEntryrestOptions",
+      "target": "TenantEntry"
+    },
+    {
+      "id": "LayerpathLayer",
+      "source": "Layerpath",
+      "target": "Layer"
+    },
+    {
+      "id": "StaticOptsrootStaticOpts",
+      "source": "StaticOptsroot",
+      "target": "StaticOpts"
+    },
+    {
+      "id": "StaticOptsindexStaticOpts",
+      "source": "StaticOptsindex",
+      "target": "StaticOpts"
+    },
+    {
+      "id": "StaticOptsrootPathStaticOpts",
+      "source": "StaticOptsrootPath",
+      "target": "StaticOpts"
+    },
+    {
+      "id": "StaticOptsnotFoundFileStaticOpts",
+      "source": "StaticOptsnotFoundFile",
+      "target": "StaticOpts"
+    },
+    {
+      "id": "ServiceListWrappertotalItemsServiceListWrapper",
+      "source": "ServiceListWrappertotalItems",
+      "target": "ServiceListWrapper"
+    },
+    {
+      "id": "ServiceListWrapperpageNumberServiceListWrapper",
+      "source": "ServiceListWrapperpageNumber",
+      "target": "ServiceListWrapper"
+    },
+    {
+      "id": "ServiceListWrappertotalPagesServiceListWrapper",
+      "source": "ServiceListWrappertotalPages",
+      "target": "ServiceListWrapper"
+    },
+    {
+      "id": "ServiceListWrapperresultsPerPageServiceListWrapper",
+      "source": "ServiceListWrapperresultsPerPage",
+      "target": "ServiceListWrapper"
+    },
+    {
+      "id": "ServiceListWrappercontentServiceListWrapper",
+      "source": "ServiceListWrappercontent",
+      "target": "ServiceListWrapper"
+    },
+    {
+      "id": "Storeindex.d",
+      "source": "Store",
+      "target": "index.d"
+    },
+    {
+      "id": "ResponseErrorstatusCodeResponseError",
+      "source": "ResponseErrorstatusCode",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrormessageResponseError",
+      "source": "ResponseErrormessage",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrorboomResponseError",
+      "source": "ResponseErrorboom",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrorgetErrorResponseError",
+      "source": "ResponseErrorgetError",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrorsendResponseError",
+      "source": "ResponseErrorsend",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrorthrowResponseError",
+      "source": "ResponseErrorthrow",
+      "target": "ResponseError"
+    },
+    {
+      "id": "ResponseErrorsetupBoomResponseError",
+      "source": "ResponseErrorsetupBoom",
+      "target": "ResponseError"
+    },
+    {
+      "id": "boomResponseError",
+      "source": "boom",
+      "target": "ResponseError"
+    },
+    {
+      "id": "koaResponseError",
+      "source": "koa",
+      "target": "ResponseError"
+    },
+    {
+      "id": "RestClientcontextRestClient",
+      "source": "RestClientcontext",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientconfigRestClient",
+      "source": "RestClientconfig",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClienthandleErrorRestClient",
+      "source": "RestClienthandleError",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientgetActionRestClient",
+      "source": "RestClientgetAction",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientcreateActionRestClient",
+      "source": "RestClientcreateAction",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientupdateActionRestClient",
+      "source": "RestClientupdateAction",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientreplaceActionRestClient",
+      "source": "RestClientreplaceAction",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientdeleteActionRestClient",
+      "source": "RestClientdeleteAction",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientdoRequestRestClient",
+      "source": "RestClientdoRequest",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientaddHeadersToContextRestClient",
+      "source": "RestClientaddHeadersToContext",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientaddCookiesToContextRestClient",
+      "source": "RestClientaddCookiesToContext",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientsetConfigRestClient",
+      "source": "RestClientsetConfig",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientcreateRequestOptionsRestClient",
+      "source": "RestClientcreateRequestOptions",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientaddCookiesFromContextRestClient",
+      "source": "RestClientaddCookiesFromContext",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientaddHeadersFromContextRestClient",
+      "source": "RestClientaddHeadersFromContext",
+      "target": "RestClient"
+    },
+    {
+      "id": "RestClientcleanPathRestClient",
+      "source": "RestClientcleanPath",
+      "target": "RestClient"
+    },
+    {
+      "id": "ResponseHeadercookieResponseHeader",
+      "source": "ResponseHeadercookie",
+      "target": "ResponseHeader"
+    },
+    {
+      "id": "ResponseHeaderheaderResponseHeader",
+      "source": "ResponseHeaderheader",
+      "target": "ResponseHeader"
+    },
+    {
+      "id": "RestResponsestatusCodeRestResponse",
+      "source": "RestResponsestatusCode",
+      "target": "RestResponse"
+    },
+    {
+      "id": "RestResponsebodyRestResponse",
+      "source": "RestResponsebody",
+      "target": "RestResponse"
+    },
+    {
+      "id": "RestResponseheadersRestResponse",
+      "source": "RestResponseheaders",
+      "target": "RestResponse"
+    },
+    {
+      "id": "RestResponseoriginalResponseRestResponse",
+      "source": "RestResponseoriginalResponse",
+      "target": "RestResponse"
+    },
+    {
+      "id": "ExtendedErrorstatusCodeExtendedError",
+      "source": "ExtendedErrorstatusCode",
+      "target": "ExtendedError"
+    },
+    {
+      "id": "ExtendedErrorresultExtendedError",
+      "source": "ExtendedErrorresult",
+      "target": "ExtendedError"
+    },
+    {
+      "id": "requestRestClient",
+      "source": "request",
+      "target": "RestClient"
+    },
+    {
+      "id": "request-promiseRestClient",
+      "source": "request-promise",
+      "target": "RestClient"
+    },
+    {
+      "id": "ConfigRestClient",
+      "source": "Config",
+      "target": "RestClient"
+    },
+    {
+      "id": "ContextRestClient",
+      "source": "Context",
+      "target": "RestClient"
+    },
+    {
+      "id": "ProgramDatacontrollerDataProgramData",
+      "source": "ProgramDatacontrollerData",
+      "target": "ProgramData"
+    },
+    {
+      "id": "ProgramDatamodelDataProgramData",
+      "source": "ProgramDatamodelData",
+      "target": "ProgramData"
+    },
+    {
+      "id": "ControllerDataclassNameControllerData",
+      "source": "ControllerDataclassName",
+      "target": "ControllerData"
+    },
+    {
+      "id": "ControllerDatadecoratorDataControllerData",
+      "source": "ControllerDatadecoratorData",
+      "target": "ControllerData"
+    },
+    {
+      "id": "ControllerDatamethodDataControllerData",
+      "source": "ControllerDatamethodData",
+      "target": "ControllerData"
+    },
+    {
+      "id": "MethodDatamethodNameMethodData",
+      "source": "MethodDatamethodName",
+      "target": "MethodData"
+    },
+    {
+      "id": "MethodDatamethodTypeMethodData",
+      "source": "MethodDatamethodType",
+      "target": "MethodData"
+    },
+    {
+      "id": "MethodDatadecoratorDataMethodData",
+      "source": "MethodDatadecoratorData",
+      "target": "MethodData"
+    },
+    {
+      "id": "MethodDataparameterDataMethodData",
+      "source": "MethodDataparameterData",
+      "target": "MethodData"
+    },
+    {
+      "id": "ParameterDataparameterNameParameterData",
+      "source": "ParameterDataparameterName",
+      "target": "ParameterData"
+    },
+    {
+      "id": "ParameterDataparameterTypeParameterData",
+      "source": "ParameterDataparameterType",
+      "target": "ParameterData"
+    },
+    {
+      "id": "ParameterDatadecoratorDataParameterData",
+      "source": "ParameterDatadecoratorData",
+      "target": "ParameterData"
+    },
+    {
+      "id": "ModelDataclassNameModelData",
+      "source": "ModelDataclassName",
+      "target": "ModelData"
+    },
+    {
+      "id": "ModelDatadecoratorDataModelData",
+      "source": "ModelDatadecoratorData",
+      "target": "ModelData"
+    },
+    {
+      "id": "ModelDatapropertyDataModelData",
+      "source": "ModelDatapropertyData",
+      "target": "ModelData"
+    },
+    {
+      "id": "PropertyDatapropertyNamePropertyData",
+      "source": "PropertyDatapropertyName",
+      "target": "PropertyData"
+    },
+    {
+      "id": "PropertyDatapropertyTypePropertyData",
+      "source": "PropertyDatapropertyType",
+      "target": "PropertyData"
+    },
+    {
+      "id": "PropertyDatadecoratorDataPropertyData",
+      "source": "PropertyDatadecoratorData",
+      "target": "PropertyData"
+    },
+    {
+      "id": "TypeDatatypeNameTypeData",
+      "source": "TypeDatatypeName",
+      "target": "TypeData"
+    },
+    {
+      "id": "TypeDatatypeTypeTypeData",
+      "source": "TypeDatatypeType",
+      "target": "TypeData"
+    },
+    {
+      "id": "DecoratorDatadecoratorNameDecoratorData",
+      "source": "DecoratorDatadecoratorName",
+      "target": "DecoratorData"
+    },
+    {
+      "id": "DecoratorDatadecoratorArgumentsDecoratorData",
+      "source": "DecoratorDatadecoratorArguments",
+      "target": "DecoratorData"
+    },
+    {
+      "id": "ExtractDataignorePathsExtractData",
+      "source": "ExtractDataignorePaths",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDataprogramExtractData",
+      "source": "ExtractDataprogram",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDatasourceFilesExtractData",
+      "source": "ExtractDatasourceFiles",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDataprogramDataExtractData",
+      "source": "ExtractDataprogramData",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDataextractExtractData",
+      "source": "ExtractDataextract",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDatasetSourceFilesExtractData",
+      "source": "ExtractDatasetSourceFiles",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ExtractDatagetClassDecoratorNamesExtractData",
+      "source": "ExtractDatagetClassDecoratorNames",
+      "target": "ExtractData"
+    },
+    {
+      "id": "typescriptExtractData",
+      "source": "typescript",
+      "target": "ExtractData"
+    },
+    {
+      "id": "ProgramDataExtractData",
+      "source": "ProgramData",
+      "target": "ExtractData"
+    },
+    {
+      "id": "CallbackexpressionCallback",
+      "source": "Callbackexpression",
+      "target": "Callback"
+    },
+    {
+      "id": "ComponentsschemasComponents",
+      "source": "Componentsschemas",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentsresponsesComponents",
+      "source": "Componentsresponses",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentsparametersComponents",
+      "source": "Componentsparameters",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentsexamplesComponents",
+      "source": "Componentsexamples",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentsrequestBodiesComponents",
+      "source": "ComponentsrequestBodies",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentsheadersComponents",
+      "source": "Componentsheaders",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentssecuritySchemesComponents",
+      "source": "ComponentssecuritySchemes",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentslinksComponents",
+      "source": "Componentslinks",
+      "target": "Components"
+    },
+    {
+      "id": "ComponentscallbacksComponents",
+      "source": "Componentscallbacks",
+      "target": "Components"
+    },
+    {
+      "id": "ContactnameContact",
+      "source": "Contactname",
+      "target": "Contact"
+    },
+    {
+      "id": "ContacturlContact",
+      "source": "Contacturl",
+      "target": "Contact"
+    },
+    {
+      "id": "ContactemailContact",
+      "source": "Contactemail",
+      "target": "Contact"
+    },
+    {
+      "id": "DiscriminatorpropertyNameDiscriminator",
+      "source": "DiscriminatorpropertyName",
+      "target": "Discriminator"
+    },
+    {
+      "id": "DiscriminatormappingDiscriminator",
+      "source": "Discriminatormapping",
+      "target": "Discriminator"
+    },
+    {
+      "id": "EncodingcontentTypeEncoding",
+      "source": "EncodingcontentType",
+      "target": "Encoding"
+    },
+    {
+      "id": "EncodingheadersEncoding",
+      "source": "Encodingheaders",
+      "target": "Encoding"
+    },
+    {
+      "id": "EncodingstyleEncoding",
+      "source": "Encodingstyle",
+      "target": "Encoding"
+    },
+    {
+      "id": "EncodingexplodeEncoding",
+      "source": "Encodingexplode",
+      "target": "Encoding"
+    },
+    {
+      "id": "EncodingallowReservedEncoding",
+      "source": "EncodingallowReserved",
+      "target": "Encoding"
+    },
+    {
+      "id": "ExamplesummaryExample",
+      "source": "Examplesummary",
+      "target": "Example"
+    },
+    {
+      "id": "ExampledescriptionExample",
+      "source": "Exampledescription",
+      "target": "Example"
+    },
+    {
+      "id": "ExamplevalueExample",
+      "source": "Examplevalue",
+      "target": "Example"
+    },
+    {
+      "id": "ExampleexternalValueExample",
+      "source": "ExampleexternalValue",
+      "target": "Example"
+    },
+    {
+      "id": "ExternalDocumentationdescriptionExternalDocumentation",
+      "source": "ExternalDocumentationdescription",
+      "target": "ExternalDocumentation"
+    },
+    {
+      "id": "ExternalDocumentationurlExternalDocumentation",
+      "source": "ExternalDocumentationurl",
+      "target": "ExternalDocumentation"
+    },
+    {
+      "id": "HeaderdescriptionHeader",
+      "source": "Headerdescription",
+      "target": "Header"
+    },
+    {
+      "id": "HeaderschemaHeader",
+      "source": "Headerschema",
+      "target": "Header"
+    },
+    {
+      "id": "InfotitleInfo",
+      "source": "Infotitle",
+      "target": "Info"
+    },
+    {
+      "id": "InfodescriptionInfo",
+      "source": "Infodescription",
+      "target": "Info"
+    },
+    {
+      "id": "InfotermsOfServiceInfo",
+      "source": "InfotermsOfService",
+      "target": "Info"
+    },
+    {
+      "id": "InfocontactInfo",
+      "source": "Infocontact",
+      "target": "Info"
+    },
+    {
+      "id": "InfolicenseInfo",
+      "source": "Infolicense",
+      "target": "Info"
+    },
+    {
+      "id": "InfoversionInfo",
+      "source": "Infoversion",
+      "target": "Info"
+    },
+    {
+      "id": "LicensenameLicense",
+      "source": "Licensename",
+      "target": "License"
+    },
+    {
+      "id": "LicenseurlLicense",
+      "source": "Licenseurl",
+      "target": "License"
+    },
+    {
+      "id": "LinkoperationRefLink",
+      "source": "LinkoperationRef",
+      "target": "Link"
+    },
+    {
+      "id": "LinkoperationIdLink",
+      "source": "LinkoperationId",
+      "target": "Link"
+    },
+    {
+      "id": "LinkparametersLink",
+      "source": "Linkparameters",
+      "target": "Link"
+    },
+    {
+      "id": "LinkrequestBodyLink",
+      "source": "LinkrequestBody",
+      "target": "Link"
+    },
+    {
+      "id": "LinkdescriptionLink",
+      "source": "Linkdescription",
+      "target": "Link"
+    },
+    {
+      "id": "LinkserverLink",
+      "source": "Linkserver",
+      "target": "Link"
+    },
+    {
+      "id": "MediaTypeschemaMediaType",
+      "source": "MediaTypeschema",
+      "target": "MediaType"
+    },
+    {
+      "id": "MediaTypeexampleMediaType",
+      "source": "MediaTypeexample",
+      "target": "MediaType"
+    },
+    {
+      "id": "MediaTypeexamplesMediaType",
+      "source": "MediaTypeexamples",
+      "target": "MediaType"
+    },
+    {
+      "id": "MediaTypeencodingMediaType",
+      "source": "MediaTypeencoding",
+      "target": "MediaType"
+    },
+    {
+      "id": "OAuthFlowauthorizationUrlOAuthFlow",
+      "source": "OAuthFlowauthorizationUrl",
+      "target": "OAuthFlow"
+    },
+    {
+      "id": "OAuthFlowtokenUrlOAuthFlow",
+      "source": "OAuthFlowtokenUrl",
+      "target": "OAuthFlow"
+    },
+    {
+      "id": "OAuthFlowrefreshUrlOAuthFlow",
+      "source": "OAuthFlowrefreshUrl",
+      "target": "OAuthFlow"
+    },
+    {
+      "id": "OAuthFlowscopesOAuthFlow",
+      "source": "OAuthFlowscopes",
+      "target": "OAuthFlow"
+    },
+    {
+      "id": "OAuthFlowsimplicitOAuthFlows",
+      "source": "OAuthFlowsimplicit",
+      "target": "OAuthFlows"
+    },
+    {
+      "id": "OAuthFlowspasswordOAuthFlows",
+      "source": "OAuthFlowspassword",
+      "target": "OAuthFlows"
+    },
+    {
+      "id": "OAuthFlowsclientCredentialsOAuthFlows",
+      "source": "OAuthFlowsclientCredentials",
+      "target": "OAuthFlows"
+    },
+    {
+      "id": "OAuthFlowsauthorizationCodeOAuthFlows",
+      "source": "OAuthFlowsauthorizationCode",
+      "target": "OAuthFlows"
+    },
+    {
+      "id": "OpenapiopenapiOpenapi",
+      "source": "Openapiopenapi",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapiinfoOpenapi",
+      "source": "Openapiinfo",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapiserversOpenapi",
+      "source": "Openapiservers",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapipathsOpenapi",
+      "source": "Openapipaths",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapicomponentsOpenapi",
+      "source": "Openapicomponents",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapisecurityOpenapi",
+      "source": "Openapisecurity",
+      "target": "Openapi"
+    },
+    {
+      "id": "OpenapitagsOpenapi",
+      "source": "Openapitags",
+      "target": "Openapi"
+    },
+    {
+      "id": "OperationtagsOperation",
+      "source": "Operationtags",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationsummaryOperation",
+      "source": "Operationsummary",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationdescriptionOperation",
+      "source": "Operationdescription",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationexternalDocsOperation",
+      "source": "OperationexternalDocs",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationoperationIdOperation",
+      "source": "OperationoperationId",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationparametersOperation",
+      "source": "Operationparameters",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationrequestBodyOperation",
+      "source": "OperationrequestBody",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationresponsesOperation",
+      "source": "Operationresponses",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationcallbacksOperation",
+      "source": "Operationcallbacks",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationdeprecatedOperation",
+      "source": "Operationdeprecated",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationsecurityOperation",
+      "source": "Operationsecurity",
+      "target": "Operation"
+    },
+    {
+      "id": "OperationserversOperation",
+      "source": "Operationservers",
+      "target": "Operation"
+    },
+    {
+      "id": "ParameternameParameter",
+      "source": "Parametername",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterinParameter",
+      "source": "Parameterin",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterschemaParameter",
+      "source": "Parameterschema",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterexampleParameter",
+      "source": "Parameterexample",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterdescriptionParameter",
+      "source": "Parameterdescription",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterrequiredParameter",
+      "source": "Parameterrequired",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterdeprecatedParameter",
+      "source": "Parameterdeprecated",
+      "target": "Parameter"
+    },
+    {
+      "id": "ParameterallowEmptyValueParameter",
+      "source": "ParameterallowEmptyValue",
+      "target": "Parameter"
+    },
+    {
+      "id": "PathItemsummaryPathItem",
+      "source": "PathItemsummary",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemdescriptionPathItem",
+      "source": "PathItemdescription",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemgetPathItem",
+      "source": "PathItemget",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemputPathItem",
+      "source": "PathItemput",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItempostPathItem",
+      "source": "PathItempost",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemdeletePathItem",
+      "source": "PathItemdelete",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemoptionsPathItem",
+      "source": "PathItemoptions",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemheadPathItem",
+      "source": "PathItemhead",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItempatchPathItem",
+      "source": "PathItempatch",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemtracePathItem",
+      "source": "PathItemtrace",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemserversPathItem",
+      "source": "PathItemservers",
+      "target": "PathItem"
+    },
+    {
+      "id": "PathItemparametersPathItem",
+      "source": "PathItemparameters",
+      "target": "PathItem"
+    },
+    {
+      "id": "Reference$refReference",
+      "source": "Reference$ref",
+      "target": "Reference"
+    },
+    {
+      "id": "RequestBodydescriptionRequestBody",
+      "source": "RequestBodydescription",
+      "target": "RequestBody"
+    },
+    {
+      "id": "RequestBodycontentRequestBody",
+      "source": "RequestBodycontent",
+      "target": "RequestBody"
+    },
+    {
+      "id": "RequestBodyrequiredRequestBody",
+      "source": "RequestBodyrequired",
+      "target": "RequestBody"
+    },
+    {
+      "id": "ResponsedescriptionResponse",
+      "source": "Responsedescription",
+      "target": "Response"
+    },
+    {
+      "id": "ResponseheadersResponse",
+      "source": "Responseheaders",
+      "target": "Response"
+    },
+    {
+      "id": "ResponsecontentResponse",
+      "source": "Responsecontent",
+      "target": "Response"
+    },
+    {
+      "id": "ResponselinksResponse",
+      "source": "Responselinks",
+      "target": "Response"
+    },
+    {
+      "id": "SchematitleSchema",
+      "source": "Schematitle",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemamultipleOfSchema",
+      "source": "SchemamultipleOf",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemamaximumSchema",
+      "source": "Schemamaximum",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaexclusiveMaximumSchema",
+      "source": "SchemaexclusiveMaximum",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaminimumSchema",
+      "source": "Schemaminimum",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaexclusiveMinimumSchema",
+      "source": "SchemaexclusiveMinimum",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemamaxLengthSchema",
+      "source": "SchemamaxLength",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaminLengthSchema",
+      "source": "SchemaminLength",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemapatternSchema",
+      "source": "Schemapattern",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemamaxItemsSchema",
+      "source": "SchemamaxItems",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaminItemsSchema",
+      "source": "SchemaminItems",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemauniqueItemsSchema",
+      "source": "SchemauniqueItems",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemamaxPropertiesSchema",
+      "source": "SchemamaxProperties",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaminPropertiesSchema",
+      "source": "SchemaminProperties",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemarequiredSchema",
+      "source": "Schemarequired",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaenumSchema",
+      "source": "Schemaenum",
+      "target": "Schema"
+    },
+    {
+      "id": "SchematypeSchema",
+      "source": "Schematype",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaallOfSchema",
+      "source": "SchemaallOf",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaoneOfSchema",
+      "source": "SchemaoneOf",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaanyOfSchema",
+      "source": "SchemaanyOf",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemanotSchema",
+      "source": "Schemanot",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaitemsSchema",
+      "source": "Schemaitems",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemapropertiesSchema",
+      "source": "Schemaproperties",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaadditionalPropertiesSchema",
+      "source": "SchemaadditionalProperties",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemadescriptionSchema",
+      "source": "Schemadescription",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaformatSchema",
+      "source": "Schemaformat",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemadefaultSchema",
+      "source": "Schemadefault",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemanullableSchema",
+      "source": "Schemanullable",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemadiscriminatorSchema",
+      "source": "Schemadiscriminator",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemareadOnlySchema",
+      "source": "SchemareadOnly",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemawriteOnlySchema",
+      "source": "SchemawriteOnly",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaxmlSchema",
+      "source": "Schemaxml",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaexternalDocsSchema",
+      "source": "SchemaexternalDocs",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemaexampleSchema",
+      "source": "Schemaexample",
+      "target": "Schema"
+    },
+    {
+      "id": "SchemadeprecatedSchema",
+      "source": "Schemadeprecated",
+      "target": "Schema"
+    },
+    {
+      "id": "SecurityRequirementnameSecurityRequirement",
+      "source": "SecurityRequirementname",
+      "target": "SecurityRequirement"
+    },
+    {
+      "id": "SecuritySchemetypeSecurityScheme",
+      "source": "SecuritySchemetype",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemedescriptionSecurityScheme",
+      "source": "SecuritySchemedescription",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemenameSecurityScheme",
+      "source": "SecuritySchemename",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemeinSecurityScheme",
+      "source": "SecuritySchemein",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemeschemeSecurityScheme",
+      "source": "SecuritySchemescheme",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemebearerFormatSecurityScheme",
+      "source": "SecuritySchemebearerFormat",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemeflowsSecurityScheme",
+      "source": "SecuritySchemeflows",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "SecuritySchemeopenIdConnectUrlSecurityScheme",
+      "source": "SecuritySchemeopenIdConnectUrl",
+      "target": "SecurityScheme"
+    },
+    {
+      "id": "ServerurlServer",
+      "source": "Serverurl",
+      "target": "Server"
+    },
+    {
+      "id": "ServerdescriptionServer",
+      "source": "Serverdescription",
+      "target": "Server"
+    },
+    {
+      "id": "ServervariablesServer",
+      "source": "Servervariables",
+      "target": "Server"
+    },
+    {
+      "id": "TagnameTag",
+      "source": "Tagname",
+      "target": "Tag"
+    },
+    {
+      "id": "TagdescriptionTag",
+      "source": "Tagdescription",
+      "target": "Tag"
+    },
+    {
+      "id": "TagexternalDocsTag",
+      "source": "TagexternalDocs",
+      "target": "Tag"
+    },
+    {
+      "id": "XMLnameXML",
+      "source": "XMLname",
+      "target": "XML"
+    },
+    {
+      "id": "XMLnamespaceXML",
+      "source": "XMLnamespace",
+      "target": "XML"
+    },
+    {
+      "id": "XMLprefixXML",
+      "source": "XMLprefix",
+      "target": "XML"
+    },
+    {
+      "id": "XMLattributeXML",
+      "source": "XMLattribute",
+      "target": "XML"
+    },
+    {
+      "id": "XMLwrappedXML",
+      "source": "XMLwrapped",
+      "target": "XML"
+    },
+    {
+      "id": "GenerateOasopenapiGenerateOas",
+      "source": "GenerateOasopenapi",
+      "target": "GenerateOas"
+    },
+    {
+      "id": "GenerateOasprogramDataGenerateOas",
+      "source": "GenerateOasprogramData",
+      "target": "GenerateOas"
+    },
+    {
+      "id": "GenerateOasgenerateGenerateOas",
+      "source": "GenerateOasgenerate",
+      "target": "GenerateOas"
+    },
+    {
+      "id": "OpenapiGenerateOas",
+      "source": "Openapi",
+      "target": "GenerateOas"
+    },
+    {
+      "id": "ProgramDataGenerateOas",
+      "source": "ProgramData",
+      "target": "GenerateOas"
+    },
+    {
+      "id": "OpenapispecGenerationpackageJsonOpenapispecGeneration",
+      "source": "OpenapispecGenerationpackageJson",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationentryFileOpenapispecGeneration",
+      "source": "OpenapispecGenerationentryFile",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationcompilerOptionsOpenapispecGeneration",
+      "source": "OpenapispecGenerationcompilerOptions",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationignorePathsOpenapispecGeneration",
+      "source": "OpenapispecGenerationignorePaths",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationextractDataOpenapispecGeneration",
+      "source": "OpenapispecGenerationextractData",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationdataOpenapispecGeneration",
+      "source": "OpenapispecGenerationdata",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationopenapiOpenapispecGeneration",
+      "source": "OpenapispecGenerationopenapi",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationgenerateOasOpenapispecGeneration",
+      "source": "OpenapispecGenerationgenerateOas",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationextractAndGenerateOpenapispecGeneration",
+      "source": "OpenapispecGenerationextractAndGenerate",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationsetPackageJsonOpenapispecGeneration",
+      "source": "OpenapispecGenerationsetPackageJson",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationsetEntryFileOpenapispecGeneration",
+      "source": "OpenapispecGenerationsetEntryFile",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationsetCompilerOptionsOpenapispecGeneration",
+      "source": "OpenapispecGenerationsetCompilerOptions",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationsetIgnorePathsOpenapispecGeneration",
+      "source": "OpenapispecGenerationsetIgnorePaths",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationstartDataExtractionOpenapispecGeneration",
+      "source": "OpenapispecGenerationstartDataExtraction",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationstartOasGenerationOpenapispecGeneration",
+      "source": "OpenapispecGenerationstartOasGeneration",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "OpenapispecGenerationsaveOpenapiSpecOpenapispecGeneration",
+      "source": "OpenapispecGenerationsaveOpenapiSpec",
+      "target": "OpenapispecGeneration"
+    },
+    {
+      "id": "PackageJsonnamePackageJson",
+      "source": "PackageJsonname",
+      "target": "PackageJson"
+    },
+    {
+      "id": "PackageJsonversionPackageJson",
+      "source": "PackageJsonversion",
+      "target": "PackageJson"
+    },
+    {
+      "id": "PackageJsondescriptionPackageJson",
+      "source": "PackageJsondescription",
+      "target": "PackageJson"
+    },
+    {
+      "id": "PackageJsonauthorPackageJson",
+      "source": "PackageJsonauthor",
+      "target": "PackageJson"
+    },
+    {
+      "id": "PackageJsonlicensePackageJson",
+      "source": "PackageJsonlicense",
+      "target": "PackageJson"
+    },
+    {
+      "id": "PackageJsonmainPackageJson",
+      "source": "PackageJsonmain",
+      "target": "PackageJson"
+    },
+    {
+      "id": "api-utilsProductConfig",
+      "source": "api-utils",
+      "target": "ProductConfig"
+    },
+    {
+      "id": "GraphQLQueryFactoryratingsQueryTypeGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryratingsQueryType",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryproductQueryTypeGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryproductQueryType",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryschemaLocationGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryschemaLocation",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryschemaStringGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryschemaString",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryproductQueryGraphQLSchemaGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryproductQueryGraphQLSchema",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryratingsQueryGraphQLSchemaGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryratingsQueryGraphQLSchema",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "GraphQLQueryFactoryloadSchemaGraphQLQueryFactory",
+      "source": "GraphQLQueryFactoryloadSchema",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "fsGraphQLQueryFactory",
+      "source": "fs",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "graphqlGraphQLQueryFactory",
+      "source": "graphql",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "pathGraphQLQueryFactory",
+      "source": "path",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "api-decoratorGraphQLQueryFactory",
+      "source": "api-decorator",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "api-loggerGraphQLQueryFactory",
+      "source": "api-logger",
+      "target": "GraphQLQueryFactory"
+    },
+    {
+      "id": "ServicePriceInfoindexServicePriceInfo",
+      "source": "ServicePriceInfoindex",
+      "target": "ServicePriceInfo"
+    },
+    {
+      "id": "ServicePriceInfotextServicePriceInfo",
+      "source": "ServicePriceInfotext",
+      "target": "ServicePriceInfo"
+    },
+    {
+      "id": "ServicePriceamountServicePrice",
+      "source": "ServicePriceamount",
+      "target": "ServicePrice"
+    },
+    {
+      "id": "ServicePricenetServicePrice",
+      "source": "ServicePricenet",
+      "target": "ServicePrice"
+    },
+    {
+      "id": "ServicePricecurrencyServicePrice",
+      "source": "ServicePricecurrency",
+      "target": "ServicePrice"
+    },
+    {
+      "id": "ServicePriceinfoServicePrice",
+      "source": "ServicePriceinfo",
+      "target": "ServicePrice"
+    },
+    {
+      "id": "ServicePriceListlistPriceServicePriceList",
+      "source": "ServicePriceListlistPrice",
+      "target": "ServicePriceList"
+    },
+    {
+      "id": "ServicePriceListretailPriceServicePriceList",
+      "source": "ServicePriceListretailPrice",
+      "target": "ServicePriceList"
+    },
+    {
+      "id": "ServiceStockStatusstatusServiceStockStatus",
+      "source": "ServiceStockStatusstatus",
+      "target": "ServiceStockStatus"
+    },
+    {
+      "id": "ServiceStockStatusstatusColorServiceStockStatus",
+      "source": "ServiceStockStatusstatusColor",
+      "target": "ServiceStockStatus"
+    },
+    {
+      "id": "ServiceStockStatusstatusReasonServiceStockStatus",
+      "source": "ServiceStockStatusstatusReason",
+      "target": "ServiceStockStatus"
+    },
+    {
+      "id": "ServiceFlagsrefrigeratedServiceFlags",
+      "source": "ServiceFlagsrefrigerated",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagsprescriptionMedicineServiceFlags",
+      "source": "ServiceFlagsprescriptionMedicine",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagsveterinaryDrugServiceFlags",
+      "source": "ServiceFlagsveterinaryDrug",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagsvegetarianServiceFlags",
+      "source": "ServiceFlagsvegetarian",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagsveganServiceFlags",
+      "source": "ServiceFlagsvegan",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagshomoeopathischServiceFlags",
+      "source": "ServiceFlagshomoeopathisch",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagspflanzlichServiceFlags",
+      "source": "ServiceFlagspflanzlich",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServiceFlagsmedicamentServiceFlags",
+      "source": "ServiceFlagsmedicament",
+      "target": "ServiceFlags"
+    },
+    {
+      "id": "ServicePromotionProductcodeServicePromotionProduct",
+      "source": "ServicePromotionProductcode",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProductcodesServicePromotionProduct",
+      "source": "ServicePromotionProductcodes",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProductheadlineServicePromotionProduct",
+      "source": "ServicePromotionProductheadline",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProducttypeServicePromotionProduct",
+      "source": "ServicePromotionProducttype",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProductdescriptionServicePromotionProduct",
+      "source": "ServicePromotionProductdescription",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProductpackshotServicePromotionProduct",
+      "source": "ServicePromotionProductpackshot",
+      "target": "ServicePromotionProduct"
+    },
+    {
+      "id": "ServiceProductamountInCartServiceProduct",
+      "source": "ServiceProductamountInCart",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductapo_activeSubstancesServiceProduct",
+      "source": "ServiceProductapo_activeSubstances",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductapo_additiveSubstancesServiceProduct",
+      "source": "ServiceProductapo_additiveSubstances",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductapo_showFoodInformationServiceProduct",
+      "source": "ServiceProductapo_showFoodInformation",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductbrandIdServiceProduct",
+      "source": "ServiceProductbrandId",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductbrandNameServiceProduct",
+      "source": "ServiceProductbrandName",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductcanonicalURLServiceProduct",
+      "source": "ServiceProductcanonicalURL",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductcategoryServiceProduct",
+      "source": "ServiceProductcategory",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductdescriptionLongServiceProduct",
+      "source": "ServiceProductdescriptionLong",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductdescriptionShortServiceProduct",
+      "source": "ServiceProductdescriptionShort",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductdiscountServiceProduct",
+      "source": "ServiceProductdiscount",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductdisplayCodeServiceProduct",
+      "source": "ServiceProductdisplayCode",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductdocumentsServiceProduct",
+      "source": "ServiceProductdocuments",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductendDateRPServiceProduct",
+      "source": "ServiceProductendDateRP",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductflagsServiceProduct",
+      "source": "ServiceProductflags",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductidServiceProduct",
+      "source": "ServiceProductid",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductmanufacturerServiceProduct",
+      "source": "ServiceProductmanufacturer",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductmaxAmountInCartServiceProduct",
+      "source": "ServiceProductmaxAmountInCart",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductmediaServiceProduct",
+      "source": "ServiceProductmedia",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductmultiplierRPServiceProduct",
+      "source": "ServiceProductmultiplierRP",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductnameServiceProduct",
+      "source": "ServiceProductname",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductnumberOfRatingsServiceProduct",
+      "source": "ServiceProductnumberOfRatings",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductonNotepadServiceProduct",
+      "source": "ServiceProductonNotepad",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductpackageNormSizeServiceProduct",
+      "source": "ServiceProductpackageNormSize",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductpackageVariantsServiceProduct",
+      "source": "ServiceProductpackageVariants",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductpricesServiceProduct",
+      "source": "ServiceProductprices",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductpromotionServiceProduct",
+      "source": "ServiceProductpromotion",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductpromotionProductServiceProduct",
+      "source": "ServiceProductpromotionProduct",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductratingServiceProduct",
+      "source": "ServiceProductrating",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductredPointsServiceProduct",
+      "source": "ServiceProductredPoints",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductredPointsIsActiveServiceProduct",
+      "source": "ServiceProductredPointsIsActive",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductredPointsMultiplierIsValidServiceProduct",
+      "source": "ServiceProductredPointsMultiplierIsValid",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductstockStatusServiceProduct",
+      "source": "ServiceProductstockStatus",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductsubtitleServiceProduct",
+      "source": "ServiceProductsubtitle",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductthumbnailURLServiceProduct",
+      "source": "ServiceProductthumbnailURL",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProducttitleServiceProduct",
+      "source": "ServiceProducttitle",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProducttitleLongServiceProduct",
+      "source": "ServiceProducttitleLong",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProducttopsellerFamIdServiceProduct",
+      "source": "ServiceProducttopsellerFamId",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductunitServiceProduct",
+      "source": "ServiceProductunit",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductunitPricingServiceProduct",
+      "source": "ServiceProductunitPricing",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductunitQuantityStringServiceProduct",
+      "source": "ServiceProductunitQuantityString",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductvariantsServiceProduct",
+      "source": "ServiceProductvariants",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "ServiceProductvideosServiceProduct",
+      "source": "ServiceProductvideos",
+      "target": "ServiceProduct"
+    },
+    {
+      "id": "FlagsherbalFlags",
+      "source": "Flagsherbal",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagshomeopathicFlags",
+      "source": "Flagshomeopathic",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsmedicamentFlags",
+      "source": "Flagsmedicament",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsprescriptionMedicineFlags",
+      "source": "FlagsprescriptionMedicine",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsrefrigeratedFlags",
+      "source": "Flagsrefrigerated",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsveganFlags",
+      "source": "Flagsvegan",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsvegetarianFlags",
+      "source": "Flagsvegetarian",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsveterinaryDrugFlags",
+      "source": "FlagsveterinaryDrug",
+      "target": "Flags"
+    },
+    {
+      "id": "FlagsMAP_SERVICE_RESULTFlags",
+      "source": "FlagsMAP_SERVICE_RESULT",
+      "target": "Flags"
+    },
+    {
+      "id": "api-decoratorFlags",
+      "source": "api-decorator",
+      "target": "Flags"
+    },
+    {
+      "id": "ServiceFlagsFlags",
+      "source": "ServiceFlags",
+      "target": "Flags"
+    },
+    {
+      "id": "PriceInfoindexPriceInfo",
+      "source": "PriceInfoindex",
+      "target": "PriceInfo"
+    },
+    {
+      "id": "PriceInfotextPriceInfo",
+      "source": "PriceInfotext",
+      "target": "PriceInfo"
+    },
+    {
+      "id": "PriceInfoMAP_SERVICE_RESULTPriceInfo",
+      "source": "PriceInfoMAP_SERVICE_RESULT",
+      "target": "PriceInfo"
+    },
+    {
+      "id": "api-decoratorPriceInfo",
+      "source": "api-decorator",
+      "target": "PriceInfo"
+    },
+    {
+      "id": "ServicePriceInfoPriceInfo",
+      "source": "ServicePriceInfo",
+      "target": "PriceInfo"
+    },
+    {
+      "id": "PriceamountPrice",
+      "source": "Priceamount",
+      "target": "Price"
+    },
+    {
+      "id": "PricecurrencyPrice",
+      "source": "Pricecurrency",
+      "target": "Price"
+    },
+    {
+      "id": "PricenetPrice",
+      "source": "Pricenet",
+      "target": "Price"
+    },
+    {
+      "id": "PriceinfoPrice",
+      "source": "Priceinfo",
+      "target": "Price"
+    },
+    {
+      "id": "PriceMAP_SERVICE_RESULTPrice",
+      "source": "PriceMAP_SERVICE_RESULT",
+      "target": "Price"
+    },
+    {
+      "id": "api-decoratorPrice",
+      "source": "api-decorator",
+      "target": "Price"
+    },
+    {
+      "id": "PriceInfoPrice",
+      "source": "PriceInfo",
+      "target": "Price"
+    },
+    {
+      "id": "ServicePricePrice",
+      "source": "ServicePrice",
+      "target": "Price"
+    },
+    {
+      "id": "PriceListlistPricePriceList",
+      "source": "PriceListlistPrice",
+      "target": "PriceList"
+    },
+    {
+      "id": "PriceListretailPricePriceList",
+      "source": "PriceListretailPrice",
+      "target": "PriceList"
+    },
+    {
+      "id": "PriceListMAP_SERVICE_RESULTPriceList",
+      "source": "PriceListMAP_SERVICE_RESULT",
+      "target": "PriceList"
+    },
+    {
+      "id": "api-decoratorPriceList",
+      "source": "api-decorator",
+      "target": "PriceList"
+    },
+    {
+      "id": "PricePriceList",
+      "source": "Price",
+      "target": "PriceList"
+    },
+    {
+      "id": "ServicePriceListPriceList",
+      "source": "ServicePriceList",
+      "target": "PriceList"
+    },
+    {
+      "id": "PromotionProductcodePromotionProduct",
+      "source": "PromotionProductcode",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProductcodesPromotionProduct",
+      "source": "PromotionProductcodes",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProductheadlinePromotionProduct",
+      "source": "PromotionProductheadline",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProducttypePromotionProduct",
+      "source": "PromotionProducttype",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProductdescriptionPromotionProduct",
+      "source": "PromotionProductdescription",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProductpackshotPromotionProduct",
+      "source": "PromotionProductpackshot",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "PromotionProductMAP_SERVICE_RESULTPromotionProduct",
+      "source": "PromotionProductMAP_SERVICE_RESULT",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "api-decoratorPromotionProduct",
+      "source": "api-decorator",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "ServicePromotionProductPromotionProduct",
+      "source": "ServicePromotionProduct",
+      "target": "PromotionProduct"
+    },
+    {
+      "id": "StockStatusstatusStockStatus",
+      "source": "StockStatusstatus",
+      "target": "StockStatus"
+    },
+    {
+      "id": "StockStatusstatusColorStockStatus",
+      "source": "StockStatusstatusColor",
+      "target": "StockStatus"
+    },
+    {
+      "id": "StockStatusstatusReasonStockStatus",
+      "source": "StockStatusstatusReason",
+      "target": "StockStatus"
+    },
+    {
+      "id": "StockStatusMAP_SERVICE_RESULTStockStatus",
+      "source": "StockStatusMAP_SERVICE_RESULT",
+      "target": "StockStatus"
+    },
+    {
+      "id": "api-decoratorStockStatus",
+      "source": "api-decorator",
+      "target": "StockStatus"
+    },
+    {
+      "id": "ServiceStockStatusStockStatus",
+      "source": "ServiceStockStatus",
+      "target": "StockStatus"
+    },
+    {
+      "id": "ProductactiveSubstancesProduct",
+      "source": "ProductactiveSubstances",
+      "target": "Product"
+    },
+    {
+      "id": "ProductadditiveSubstancesProduct",
+      "source": "ProductadditiveSubstances",
+      "target": "Product"
+    },
+    {
+      "id": "ProductamountInCartProduct",
+      "source": "ProductamountInCart",
+      "target": "Product"
+    },
+    {
+      "id": "ProductbrandIdProduct",
+      "source": "ProductbrandId",
+      "target": "Product"
+    },
+    {
+      "id": "ProductbrandNameProduct",
+      "source": "ProductbrandName",
+      "target": "Product"
+    },
+    {
+      "id": "ProductcanonicalURLProduct",
+      "source": "ProductcanonicalURL",
+      "target": "Product"
+    },
+    {
+      "id": "ProductcategoryProduct",
+      "source": "Productcategory",
+      "target": "Product"
+    },
+    {
+      "id": "ProductdescriptionShortProduct",
+      "source": "ProductdescriptionShort",
+      "target": "Product"
+    },
+    {
+      "id": "ProductdescriptionLongProduct",
+      "source": "ProductdescriptionLong",
+      "target": "Product"
+    },
+    {
+      "id": "ProductdiscountProduct",
+      "source": "Productdiscount",
+      "target": "Product"
+    },
+    {
+      "id": "ProductdisplayCodeProduct",
+      "source": "ProductdisplayCode",
+      "target": "Product"
+    },
+    {
+      "id": "ProductdocumentsProduct",
+      "source": "Productdocuments",
+      "target": "Product"
+    },
+    {
+      "id": "ProductendDateRPProduct",
+      "source": "ProductendDateRP",
+      "target": "Product"
+    },
+    {
+      "id": "ProductflagsProduct",
+      "source": "Productflags",
+      "target": "Product"
+    },
+    {
+      "id": "ProductidProduct",
+      "source": "Productid",
+      "target": "Product"
+    },
+    {
+      "id": "ProductnameProduct",
+      "source": "Productname",
+      "target": "Product"
+    },
+    {
+      "id": "ProductnumberOfRatingsProduct",
+      "source": "ProductnumberOfRatings",
+      "target": "Product"
+    },
+    {
+      "id": "ProductmanufacturerProduct",
+      "source": "Productmanufacturer",
+      "target": "Product"
+    },
+    {
+      "id": "ProductmaxAmountInCartProduct",
+      "source": "ProductmaxAmountInCart",
+      "target": "Product"
+    },
+    {
+      "id": "ProductmultiplierRPProduct",
+      "source": "ProductmultiplierRP",
+      "target": "Product"
+    },
+    {
+      "id": "ProductmediaProduct",
+      "source": "Productmedia",
+      "target": "Product"
+    },
+    {
+      "id": "ProductonNotepadProduct",
+      "source": "ProductonNotepad",
+      "target": "Product"
+    },
+    {
+      "id": "ProductpackageNormSizeProduct",
+      "source": "ProductpackageNormSize",
+      "target": "Product"
+    },
+    {
+      "id": "ProductpackageVariantsProduct",
+      "source": "ProductpackageVariants",
+      "target": "Product"
+    },
+    {
+      "id": "ProductpriceProduct",
+      "source": "Productprice",
+      "target": "Product"
+    },
+    {
+      "id": "ProductpromotionProduct",
+      "source": "Productpromotion",
+      "target": "Product"
+    },
+    {
+      "id": "ProductpromotionProductProduct",
+      "source": "ProductpromotionProduct",
+      "target": "Product"
+    },
+    {
+      "id": "ProductratingProduct",
+      "source": "Productrating",
+      "target": "Product"
+    },
+    {
+      "id": "ProductredPointsProduct",
+      "source": "ProductredPoints",
+      "target": "Product"
+    },
+    {
+      "id": "ProductredPointsIsActiveProduct",
+      "source": "ProductredPointsIsActive",
+      "target": "Product"
+    },
+    {
+      "id": "ProductredPointsMultiplierIsValidProduct",
+      "source": "ProductredPointsMultiplierIsValid",
+      "target": "Product"
+    },
+    {
+      "id": "ProductshowFoodInformationProduct",
+      "source": "ProductshowFoodInformation",
+      "target": "Product"
+    },
+    {
+      "id": "ProductstockStatusProduct",
+      "source": "ProductstockStatus",
+      "target": "Product"
+    },
+    {
+      "id": "ProductsubtitleProduct",
+      "source": "Productsubtitle",
+      "target": "Product"
+    },
+    {
+      "id": "ProductthumbnailURLProduct",
+      "source": "ProductthumbnailURL",
+      "target": "Product"
+    },
+    {
+      "id": "ProducttitleProduct",
+      "source": "Producttitle",
+      "target": "Product"
+    },
+    {
+      "id": "ProducttopsellerFamIdProduct",
+      "source": "ProducttopsellerFamId",
+      "target": "Product"
+    },
+    {
+      "id": "ProductunitProduct",
+      "source": "Productunit",
+      "target": "Product"
+    },
+    {
+      "id": "ProductunitPricingProduct",
+      "source": "ProductunitPricing",
+      "target": "Product"
+    },
+    {
+      "id": "ProductunitQuantityStringProduct",
+      "source": "ProductunitQuantityString",
+      "target": "Product"
+    },
+    {
+      "id": "ProductvariantsProduct",
+      "source": "Productvariants",
+      "target": "Product"
+    },
+    {
+      "id": "ProductvideosProduct",
+      "source": "Productvideos",
+      "target": "Product"
+    },
+    {
+      "id": "ProductMAP_SERVICE_RESULTProduct",
+      "source": "ProductMAP_SERVICE_RESULT",
+      "target": "Product"
+    },
+    {
+      "id": "api-decoratorProduct",
+      "source": "api-decorator",
+      "target": "Product"
+    },
+    {
+      "id": "FlagsProduct",
+      "source": "Flags",
+      "target": "Product"
+    },
+    {
+      "id": "PriceListProduct",
+      "source": "PriceList",
+      "target": "Product"
+    },
+    {
+      "id": "PromotionProductProduct",
+      "source": "PromotionProduct",
+      "target": "Product"
+    },
+    {
+      "id": "ServiceProductProduct",
+      "source": "ServiceProduct",
+      "target": "Product"
+    },
+    {
+      "id": "StockStatusProduct",
+      "source": "StockStatus",
+      "target": "Product"
+    },
+    {
+      "id": "ServiceRatingidServiceRating",
+      "source": "ServiceRatingid",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingauthorServiceRating",
+      "source": "ServiceRatingauthor",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingdateServiceRating",
+      "source": "ServiceRatingdate",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingratingServiceRating",
+      "source": "ServiceRatingrating",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingtitleServiceRating",
+      "source": "ServiceRatingtitle",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingtextServiceRating",
+      "source": "ServiceRatingtext",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingproductIdServiceRating",
+      "source": "ServiceRatingproductId",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingproductTitleServiceRating",
+      "source": "ServiceRatingproductTitle",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingthumbnailURLServiceRating",
+      "source": "ServiceRatingthumbnailURL",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingfeedbackPositiveServiceRating",
+      "source": "ServiceRatingfeedbackPositive",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatingfeedbackNegativeServiceRating",
+      "source": "ServiceRatingfeedbackNegative",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "ServiceRatinginReviewServiceRating",
+      "source": "ServiceRatinginReview",
+      "target": "ServiceRating"
+    },
+    {
+      "id": "RatingauthorRating",
+      "source": "Ratingauthor",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingdateRating",
+      "source": "Ratingdate",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingfeedbackNegativeRating",
+      "source": "RatingfeedbackNegative",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingfeedbackPositiveRating",
+      "source": "RatingfeedbackPositive",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingidRating",
+      "source": "Ratingid",
+      "target": "Rating"
+    },
+    {
+      "id": "RatinginReviewRating",
+      "source": "RatinginReview",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingproductIdRating",
+      "source": "RatingproductId",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingproductTitleRating",
+      "source": "RatingproductTitle",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingratingRating",
+      "source": "Ratingrating",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingtextRating",
+      "source": "Ratingtext",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingthumbnailURLRating",
+      "source": "RatingthumbnailURL",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingtitleRating",
+      "source": "Ratingtitle",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingMAP_SERVICE_RESULTRating",
+      "source": "RatingMAP_SERVICE_RESULT",
+      "target": "Rating"
+    },
+    {
+      "id": "api-decoratorRating",
+      "source": "api-decorator",
+      "target": "Rating"
+    },
+    {
+      "id": "ServiceRatingRating",
+      "source": "ServiceRating",
+      "target": "Rating"
+    },
+    {
+      "id": "RatingsratingsRatings",
+      "source": "Ratingsratings",
+      "target": "Ratings"
+    },
+    {
+      "id": "RatingsMAP_SERVICE_RESULTRatings",
+      "source": "RatingsMAP_SERVICE_RESULT",
+      "target": "Ratings"
+    },
+    {
+      "id": "api-decoratorRatings",
+      "source": "api-decorator",
+      "target": "Ratings"
+    },
+    {
+      "id": "api-utilsRatings",
+      "source": "api-utils",
+      "target": "Ratings"
+    },
+    {
+      "id": "RatingRatings",
+      "source": "Rating",
+      "target": "Ratings"
+    },
+    {
+      "id": "ServiceRatingRatings",
+      "source": "ServiceRating",
+      "target": "Ratings"
+    },
+    {
+      "id": "ProductClientgraphQLQueryFactoryProductClient",
+      "source": "ProductClientgraphQLQueryFactory",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientgetProductByGraphQLQueryProductClient",
+      "source": "ProductClientgetProductByGraphQLQuery",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientgetRatingsByGraphQLQueryProductClient",
+      "source": "ProductClientgetRatingsByGraphQLQuery",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientgetProductByIdProductClient",
+      "source": "ProductClientgetProductById",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientgetRatingsByIdProductClient",
+      "source": "ProductClientgetRatingsById",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientfetchProductResolverProductClient",
+      "source": "ProductClientfetchProductResolver",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductClientfetchRatingsResolverProductClient",
+      "source": "ProductClientfetchRatingsResolver",
+      "target": "ProductClient"
+    },
+    {
+      "id": "graphqlProductClient",
+      "source": "graphql",
+      "target": "ProductClient"
+    },
+    {
+      "id": "api-decoratorProductClient",
+      "source": "api-decorator",
+      "target": "ProductClient"
+    },
+    {
+      "id": "api-utilsProductClient",
+      "source": "api-utils",
+      "target": "ProductClient"
+    },
+    {
+      "id": "configProductClient",
+      "source": "config",
+      "target": "ProductClient"
+    },
+    {
+      "id": "GraphQLQueryFactoryProductClient",
+      "source": "GraphQLQueryFactory",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductProductClient",
+      "source": "Product",
+      "target": "ProductClient"
+    },
+    {
+      "id": "RatingsProductClient",
+      "source": "Ratings",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ServiceProductProductClient",
+      "source": "ServiceProduct",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ServiceRatingProductClient",
+      "source": "ServiceRating",
+      "target": "ProductClient"
+    },
+    {
+      "id": "ProductControllergetProductGraphQLProductController",
+      "source": "ProductControllergetProductGraphQL",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductControllergetRatingsGraphQLProductController",
+      "source": "ProductControllergetRatingsGraphQL",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductControllergetProductProductController",
+      "source": "ProductControllergetProduct",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductControllergetRatingsProductController",
+      "source": "ProductControllergetRatings",
+      "target": "ProductController"
+    },
+    {
+      "id": "api-decoratorProductController",
+      "source": "api-decorator",
+      "target": "ProductController"
+    },
+    {
+      "id": "api-loggerProductController",
+      "source": "api-logger",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductClientProductController",
+      "source": "ProductClient",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductProductController",
+      "source": "Product",
+      "target": "ProductController"
+    },
+    {
+      "id": "RatingsProductController",
+      "source": "Ratings",
+      "target": "ProductController"
+    },
+    {
+      "id": "ProductControllerindex",
+      "source": "ProductController",
+      "target": "index"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import { readFileSync as ReadFileSync } from 'fs'
+import { resolve as Resolve } from 'path'
 import { CompilerOptions, Program, SourceFile } from 'typescript'
 
 import { CreateTypescriptProgram } from '../lib/ts.methods'
@@ -47,7 +48,12 @@ class TsMetaFactory {
    */
   private createMainProgram(tsMetaConfig: TsMetaConfig, baseTsPackage: TsPackage): TsProgram {
     const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(tsMetaConfig.compilerOptions, { encoding: 'utf8' }))
-    const program: Program = CreateTypescriptProgram([baseTsPackage.source], compilerOptions)
+    console.log(`Resolve(baseTsPackage.source) - ${Resolve(baseTsPackage.source)}`) // tslint:disable-line
+    const program: Program = CreateTypescriptProgram([Resolve(baseTsPackage.source)], compilerOptions)
+
+    program.getSourceFiles().forEach((sourcFile: SourceFile) => {
+      console.log(sourcFile.fileName) // tslint:disable-line
+    })
 
     return {
       files: program.getSourceFiles()
