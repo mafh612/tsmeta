@@ -233,9 +233,7 @@ class SigmaGenerator {
       sigmaNode.label += ` | ${size}`
     })
 
-    console.log(this.nodes.length) // tslint:disable-line
     this.nodes = this.nodes.filter((node: SigmaNode) => node.size > minSize)
-    console.log(this.nodes.length) // tslint:disable-line
   }
 }
 

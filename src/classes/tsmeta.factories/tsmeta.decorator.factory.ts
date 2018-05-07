@@ -31,7 +31,7 @@ class TsMetaDecoratorFactory {
     else name = IdentifierToString(<Identifier> expression)
 
     if (expression.arguments) tsarguments = expression.arguments
-      .map((expression: Expression) => this.tsMetaArgumentFactory.build(expression))
+      .map((xexpression: Expression) => this.tsMetaArgumentFactory.build(xexpression))
     else tsarguments = undefined
 
     return {

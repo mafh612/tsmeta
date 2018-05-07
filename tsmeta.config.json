@@ -1,21 +1,44 @@
 {
   "basePackage": "package.json",
-  "compilerOptions": "tsconfig.json",
   "metaConfig": {
-    "createMeta": true,
-    "outputPath": "schema"
+    "create": true,
+    "outputPath": "schema",
+    "outputFilename": "tsmeta.tsmeta.schema.json",
+    "compilerOptions": "tsconfig.json"
   },
   "sigmaConfig": {
-    "createSigma": true,
-    "outputPath": "schema"
+    "create": true,
+    "outputPath": "schema",
+    "outputFilename": "sigmaData.tsmeta.json",
+    "link": {
+      "packages": true,
+      "classes": true,
+      "interfaces": true,
+      "methods": false,
+      "properties": false
+    }
   },
   "oasConfig": {
-    "createOas": true,
-    "outputPath": "schema"
+    "create": false,
+    "outputPath": "schema",
+    "annotationsMap": {
+      "Controller": "Controller",
+      "Model": "Model",
+      "GetRequest": "GetRequest",
+      "PostRequest": "PostRequest",
+      "PutRequest": "PutRequest",
+      "PatchRequest": "PatchRequest",
+      "DeleteRequest": "DeleteRequest",
+      "HeadRequest": "HeadRequest",
+      "SuccessResponse": "SuccessResponse",
+      "PathVariable": "PathVariable",
+      "ReqParam": "ReqParam",
+      "ReqBody": "ReqBody"
+    }
 
   },
   "graphQLConfig": {
-    "creategraphQL": true,
+    "create": false,
     "outputPath": "schema"
   }
 }

@@ -47,18 +47,17 @@ class TsMetaFactory {
    * add main program to programs
    */
   private createMainProgram(tsMetaConfig: TsMetaConfig, baseTsPackage: TsPackage): TsProgram {
-    const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(tsMetaConfig.compilerOptions, { encoding: 'utf8' }))
-    console.log(`Resolve(baseTsPackage.source) - ${Resolve(baseTsPackage.source)}`) // tslint:disable-line
+    const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(tsMetaConfig.metaConfig.compilerOptions, { encoding: 'utf8' }))
     const program: Program = CreateTypescriptProgram([Resolve(baseTsPackage.source)], compilerOptions)
-
-    program.getSourceFiles().forEach((sourcFile: SourceFile) => {
-      console.log(sourcFile.fileName) // tslint:disable-line
-    })
 
     return {
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => !sourceFile.fileName.includes('/node_modules/'))
-        .map((sourceFile: SourceFile): TsFile => this.tsMetaFileFactory.build(sourceFile))
+        .map((sourceFile: SourceFile): TsFile => {
+          console.log(` - ${sourceFile.fileName.split('/').pop()}`) // tslint:disable-line no-console
+
+          return this.tsMetaFileFactory.build(sourceFile)
+        })
     }
   }
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Sigma-Viewer</title>
   <script src="axios.min.js"></script>
   <script src="sigma.min.js"></script>
   <script src="plugins/sigma.layout.forceAtlas2.min.js"></script>
@@ -17,7 +17,7 @@
     #container {
       width: 100vw;
       height: 100vh;
-      background: #cccccc;
+      background: #c0c0c0;
     }
   </style>
 </head>
@@ -36,7 +36,7 @@
     sigmaInstance.settings('labelSize', 'proportional')
     sigmaInstance.settings('labelSizeRatio', 1.4)
     sigmaInstance.settings('hoverFontStyle', 'font-size: 48px')
-    sigmaInstance.settings('edgeColor', 'default')
+    sigmaInstance.settings('edgeColor', 'source')
     sigmaInstance.settings('defaultEdgeColor', '#d6d6d6')
     sigmaInstance.settings('minArrowSize', 12)
     sigmaInstance.settings('drawLabels', true)
@@ -49,9 +49,10 @@
         sigmaInstance.startForceAtlas2({
           adjustSizes: false,
           edgeWeightInfluence: 0, // how much influence you give to the edges weight. 0 is "no influence" and 1 is "normal".
-          scalingRatio: 0.1, // how much repulsion you want. More makes a more sparse graph.
+          scalingRatio: 1, // how much repulsion you want. More makes a more sparse graph.
           strongGravityMode: false,
-          gravity: 1, // attracts nodes to the center. Prevents islands from drifting away.
+          gravity: 5, // attracts nodes to the center. Prevents islands from drifting away.
+          iterationsPerRender: 5
         })
         setTimeout(() => {
           sigmaInstance.stopForceAtlas2()

@@ -10,8 +10,8 @@ export interface ParameterParam {
  */
 export interface ResponseParam {
   statusCode?: number
-  response: any
-  version: string
+  response?: any
+  version?: string
 }
 /**
  * interface ModelParam
@@ -40,7 +40,7 @@ const putRequest: ((path: string) => any) = (path: string): Function => methodFu
 const patchRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const deleteRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const headRequest: ((path: string) => any) = (path: string): Function => methodFunction
-const successResponse: ((responseParam: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
+const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
 /**
  * parameter annotations
  */

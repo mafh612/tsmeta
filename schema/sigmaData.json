@@ -1,0 +1,3268 @@
+{
+  "nodes": [
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterParamname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 60,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ParameterParamrequired",
+      "label": "required | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 11,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseParamstatusCode",
+      "label": "statusCode | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 21,
+      "y": 32
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseParamresponse",
+      "label": "response | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 9
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ResponseParamversion",
+      "label": "version | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 59
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ModelParamversion",
+      "label": "version | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ModelParamexample",
+      "label": "example | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 9,
+      "y": 76
+    },
+    {
+      "color": "#ff9900",
+      "id": "ParameterParam",
+      "label": "ParameterParam | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 64,
+      "y": 99
+    },
+    {
+      "color": "#ff9900",
+      "id": "ResponseParam",
+      "label": "ResponseParam | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 83,
+      "y": 57
+    },
+    {
+      "color": "#ff9900",
+      "id": "ModelParam",
+      "label": "ModelParam | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 14,
+      "y": 14
+    },
+    {
+      "color": "#ff0000",
+      "id": "ElementType",
+      "label": "ElementType | 12",
+      "size": 22,
+      "etype": "class",
+      "x": 16,
+      "y": 20
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeFILE",
+      "label": "FILE | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 51,
+      "y": 4
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypePACKAGE",
+      "label": "PACKAGE | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 30,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeCLASS",
+      "label": "CLASS | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 34,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeINTERFACE",
+      "label": "INTERFACE | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 90,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeMETHOD",
+      "label": "METHOD | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 54,
+      "y": 62
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypePROPERTY",
+      "label": "PROPERTY | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeIMPORT",
+      "label": "IMPORT | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 23,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypeEXPORT",
+      "label": "EXPORT | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 80,
+      "y": 0
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypename",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 37
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "ElementTypecolor",
+      "label": "color | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 76
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaDatanodes",
+      "label": "nodes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaDataedges",
+      "label": "edges | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodeid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 63,
+      "y": 74
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodelabel",
+      "label": "label | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 65
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodecolor",
+      "label": "color | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 25,
+      "y": 57
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodesize",
+      "label": "size | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 47,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodeetype",
+      "label": "etype | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 40,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodex",
+      "label": "x | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 60
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaNodey",
+      "label": "y | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 44,
+      "y": 44
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaEdgeid",
+      "label": "id | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 95
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaEdgesource",
+      "label": "source | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 79,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaEdgetarget",
+      "label": "target | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 58,
+      "y": 23
+    },
+    {
+      "color": "#ff9900",
+      "id": "SigmaData",
+      "label": "SigmaData | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 5,
+      "y": 12
+    },
+    {
+      "color": "#ff9900",
+      "id": "SigmaNode",
+      "label": "SigmaNode | 9",
+      "size": 19,
+      "etype": "interface",
+      "x": 44,
+      "y": 72
+    },
+    {
+      "color": "#ff9900",
+      "id": "SigmaEdge",
+      "label": "SigmaEdge | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 34,
+      "y": 63
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "BaseConfigoutputPath",
+      "label": "outputPath | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 65
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "BaseConfigoutputFilename",
+      "label": "outputFilename | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 26
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MetaConfigcreateMeta",
+      "label": "createMeta | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "MetaConfigcompilerOptions",
+      "label": "compilerOptions | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 64,
+      "y": 0
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "CreateNodespackages",
+      "label": "packages | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 8,
+      "y": 57
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "CreateNodesclasses",
+      "label": "classes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 34,
+      "y": 33
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "CreateNodesinterfaces",
+      "label": "interfaces | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 69,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "CreateNodesmethods",
+      "label": "methods | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "CreateNodesproperties",
+      "label": "properties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 30
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaConfigcreateSigma",
+      "label": "createSigma | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaConfigcreateNodes",
+      "label": "createNodes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OasConfigcreateOas",
+      "label": "createOas | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 16
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "OasConfigannotationsMap",
+      "label": "annotationsMap | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 34,
+      "y": 3
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "GraphQLConfigcreateGraphQL",
+      "label": "createGraphQL | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 26,
+      "y": 73
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaConfigbasePackage",
+      "label": "basePackage | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 28
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaConfigmetaConfig",
+      "label": "metaConfig | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 57,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaConfigsigmaConfig",
+      "label": "sigmaConfig | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaConfigoasConfig",
+      "label": "oasConfig | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 33,
+      "y": 55
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaConfiggraphqlConfig",
+      "label": "graphqlConfig | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 34,
+      "y": 40
+    },
+    {
+      "color": "#ff9900",
+      "id": "BaseConfig",
+      "label": "BaseConfig | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 33,
+      "y": 18
+    },
+    {
+      "color": "#ff9900",
+      "id": "MetaConfig",
+      "label": "MetaConfig | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 70,
+      "y": 3
+    },
+    {
+      "color": "#ff9900",
+      "id": "CreateNodes",
+      "label": "CreateNodes | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 93,
+      "y": 25
+    },
+    {
+      "color": "#ff9900",
+      "id": "SigmaConfig",
+      "label": "SigmaConfig | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 67,
+      "y": 16
+    },
+    {
+      "color": "#ff9900",
+      "id": "OasConfig",
+      "label": "OasConfig | 2",
+      "size": 12,
+      "etype": "interface",
+      "x": 36,
+      "y": 60
+    },
+    {
+      "color": "#ff9900",
+      "id": "GraphQLConfig",
+      "label": "GraphQLConfig | 1",
+      "size": 11,
+      "etype": "interface",
+      "x": 36,
+      "y": 17
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsMetaConfig",
+      "label": "TsMetaConfig | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 42,
+      "y": 86
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetabaseTsPackage",
+      "label": "baseTsPackage | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 58
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaadditionalTsPackages",
+      "label": "additionalTsPackages | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaprograms",
+      "label": "programs | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 17
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackageauthor",
+      "label": "author | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 73,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagedescription",
+      "label": "description | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 50
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagelicense",
+      "label": "license | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 21
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagemain",
+      "label": "main | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 92
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagename",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 71,
+      "y": 87
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagesource",
+      "label": "source | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 19,
+      "y": 14
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagetypes",
+      "label": "types | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 31
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackageversion",
+      "label": "version | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 96,
+      "y": 61
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagedependencies",
+      "label": "dependencies | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 72,
+      "y": 39
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPackagedevDependencies",
+      "label": "devDependencies | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 29,
+      "y": 66
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsProgramfiles",
+      "label": "files | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 48,
+      "y": 64
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFilepath",
+      "label": "path | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 98
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFilefilename",
+      "label": "filename | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 6,
+      "y": 67
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFiletsClass",
+      "label": "tsClass | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 46,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFiletsMains",
+      "label": "tsMains | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFiletsImports",
+      "label": "tsImports | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 9,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsFiletsExports",
+      "label": "tsExports | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 17,
+      "y": 51
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMainname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 0,
+      "y": 94
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMainproperties",
+      "label": "properties | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 13,
+      "y": 12
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMainmethods",
+      "label": "methods | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 99
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsClassdecorators",
+      "label": "decorators | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 49
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsImportname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsImportalias",
+      "label": "alias | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 69,
+      "y": 89
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsImportsource",
+      "label": "source | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 91,
+      "y": 46
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsImportfullpath",
+      "label": "fullpath | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 85,
+      "y": 71
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsExportname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 70,
+      "y": 55
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsExportalias",
+      "label": "alias | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 34,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsDecoratorname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 92,
+      "y": 35
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsDecoratortsarguments",
+      "label": "tsarguments | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 3,
+      "y": 57
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPropertyname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsPropertytstype",
+      "label": "tstype | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 7,
+      "y": 14
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMethodname",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 28,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMethoddecorators",
+      "label": "decorators | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 20
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMethodparameters",
+      "label": "parameters | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 53,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMethodtstype",
+      "label": "tstype | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 77,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsParametername",
+      "label": "name | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 78,
+      "y": 27
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsParameterdecorators",
+      "label": "decorators | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsParametertstype",
+      "label": "tstype | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 10,
+      "y": 56
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsArgumentrepresentation",
+      "label": "representation | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 1
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsArgumenttstype",
+      "label": "tstype | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 8
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsTyperepresentation",
+      "label": "representation | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 12,
+      "y": 29
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsMeta",
+      "label": "TsMeta | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 18,
+      "y": 46
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsPackage",
+      "label": "TsPackage | 12",
+      "size": 22,
+      "etype": "interface",
+      "x": 92,
+      "y": 4
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsProgram",
+      "label": "TsProgram | 3",
+      "size": 13,
+      "etype": "interface",
+      "x": 9,
+      "y": 32
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsFile",
+      "label": "TsFile | 9",
+      "size": 19,
+      "etype": "interface",
+      "x": 68,
+      "y": 89
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsMain",
+      "label": "TsMain | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 45,
+      "y": 20
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsClass",
+      "label": "TsClass | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 18,
+      "y": 83
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsImport",
+      "label": "TsImport | 7",
+      "size": 17,
+      "etype": "interface",
+      "x": 38,
+      "y": 80
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsExport",
+      "label": "TsExport | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 67,
+      "y": 86
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsDecorator",
+      "label": "TsDecorator | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 61,
+      "y": 3
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsProperty",
+      "label": "TsProperty | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 70,
+      "y": 10
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsMethod",
+      "label": "TsMethod | 8",
+      "size": 18,
+      "etype": "interface",
+      "x": 70,
+      "y": 80
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsParameter",
+      "label": "TsParameter | 5",
+      "size": 15,
+      "etype": "interface",
+      "x": 64,
+      "y": 34
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsArgument",
+      "label": "TsArgument | 4",
+      "size": 14,
+      "etype": "interface",
+      "x": 49,
+      "y": 77
+    },
+    {
+      "color": "#ff9900",
+      "id": "TsType",
+      "label": "TsType | 6",
+      "size": 16,
+      "etype": "interface",
+      "x": 61,
+      "y": 28
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaArgumentFactory",
+      "label": "TsMetaArgumentFactory | 7",
+      "size": 17,
+      "etype": "class",
+      "x": 10,
+      "y": 9
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaArgumentFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 68,
+      "y": 1
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaDecoratorFactory",
+      "label": "TsMetaDecoratorFactory | 10",
+      "size": 20,
+      "etype": "class",
+      "x": 33,
+      "y": 69
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaDecoratorFactorytsMetaArgumentFactory",
+      "label": "tsMetaArgumentFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 65,
+      "y": 93
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaDecoratorFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 24,
+      "y": 92
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaParameterFactory",
+      "label": "TsMetaParameterFactory | 9",
+      "size": 19,
+      "etype": "class",
+      "x": 85,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaParameterFactorytsMetaDecoratorFactory",
+      "label": "tsMetaDecoratorFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 18,
+      "y": 53
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaParameterFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 33,
+      "y": 67
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaMethodFactory",
+      "label": "TsMetaMethodFactory | 13",
+      "size": 23,
+      "etype": "class",
+      "x": 91,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaMethodFactorytsMetaDecoratorFactory",
+      "label": "tsMetaDecoratorFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 55,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaMethodFactorytsMetaParameterFactory",
+      "label": "tsMetaParameterFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 1,
+      "y": 91
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaMethodFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 84,
+      "y": 49
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaTypeFactory",
+      "label": "TsMetaTypeFactory | 4",
+      "size": 14,
+      "etype": "class",
+      "x": 62,
+      "y": 96
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaTypeFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 42,
+      "y": 94
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaPropertyFactory",
+      "label": "TsMetaPropertyFactory | 9",
+      "size": 19,
+      "etype": "class",
+      "x": 27,
+      "y": 90
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaPropertyFactorytsMetaTypeFactory",
+      "label": "tsMetaTypeFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 12,
+      "y": 82
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaPropertyFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 38,
+      "y": 22
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaClassFactory",
+      "label": "TsMetaClassFactory | 14",
+      "size": 24,
+      "etype": "class",
+      "x": 51,
+      "y": 70
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaClassFactorytsMetaDecoratorFactory",
+      "label": "tsMetaDecoratorFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 17,
+      "y": 47
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaClassFactorytsMetaMethdoFactory",
+      "label": "tsMetaMethdoFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 47,
+      "y": 45
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaClassFactorytsMetaPropertyFactory",
+      "label": "tsMetaPropertyFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 59,
+      "y": 16
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaClassFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 89,
+      "y": 79
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaExportFactory",
+      "label": "TsMetaExportFactory | 6",
+      "size": 16,
+      "etype": "class",
+      "x": 39,
+      "y": 42
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaExportFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 96,
+      "y": 74
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaExportFactorycreateTsExport",
+      "label": "createTsExport | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 17,
+      "y": 81
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaImportFactory",
+      "label": "TsMetaImportFactory | 8",
+      "size": 18,
+      "etype": "class",
+      "x": 43,
+      "y": 56
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaImportFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 32,
+      "y": 11
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaImportFactorycreateTsImport",
+      "label": "createTsImport | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 82,
+      "y": 85
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaMainFactory",
+      "label": "TsMetaMainFactory | 11",
+      "size": 21,
+      "etype": "class",
+      "x": 82,
+      "y": 78
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaMainFactorytsMetaMethodFactory",
+      "label": "tsMetaMethodFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 27,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaMainFactorytsMetaPropertyFactory",
+      "label": "tsMetaPropertyFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 98,
+      "y": 43
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaMainFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 29,
+      "y": 75
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaFileFactory",
+      "label": "TsMetaFileFactory | 16",
+      "size": 26,
+      "etype": "class",
+      "x": 2,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFileFactorytsMetaClassFactory",
+      "label": "tsMetaClassFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 54,
+      "y": 94
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFileFactorytsMetaMainFactory",
+      "label": "tsMetaMainFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 97,
+      "y": 25
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFileFactorytsMetaExportFactory",
+      "label": "tsMetaExportFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 37,
+      "y": 7
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFileFactorytsMetaImportFactory",
+      "label": "tsMetaImportFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 12,
+      "y": 15
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaFileFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 18,
+      "y": 72
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaPackageFactory",
+      "label": "TsMetaPackageFactory | 5",
+      "size": 15,
+      "etype": "class",
+      "x": 23,
+      "y": 58
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaPackageFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 45,
+      "y": 44
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaPackageFactoryreadPackageJson",
+      "label": "readPackageJson | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 73,
+      "y": 25
+    },
+    {
+      "color": "#ff0000",
+      "id": "TsMetaFactory",
+      "label": "TsMetaFactory | 16",
+      "size": 26,
+      "etype": "class",
+      "x": 78,
+      "y": 59
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFactorytsMetaPackageFactory",
+      "label": "tsMetaPackageFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 29
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "TsMetaFactorytsMetaFileFactory",
+      "label": "tsMetaFileFactory | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 82,
+      "y": 82
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaFactorybuild",
+      "label": "build | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 18,
+      "y": 96
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaFactoryscanAdditionalPackages",
+      "label": "scanAdditionalPackages | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 12,
+      "y": 32
+    },
+    {
+      "color": "#9999ff",
+      "id": "TsMetaFactorycreateMainProgram",
+      "label": "createMainProgram | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 51,
+      "y": 93
+    },
+    {
+      "color": "#ff0000",
+      "id": "SigmaEdgeGenerator",
+      "label": "SigmaEdgeGenerator | 3",
+      "size": 13,
+      "etype": "class",
+      "x": 41,
+      "y": 20
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaEdgeGeneratorgenerate",
+      "label": "generate | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 82,
+      "y": 14
+    },
+    {
+      "color": "#ff0000",
+      "id": "SigmaNodeGenerator",
+      "label": "SigmaNodeGenerator | 4",
+      "size": 14,
+      "etype": "class",
+      "x": 99,
+      "y": 50
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaNodeGeneratorgenerate",
+      "label": "generate | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 79,
+      "y": 25
+    },
+    {
+      "color": "#ff0000",
+      "id": "SigmaGenerator",
+      "label": "SigmaGenerator | 30",
+      "size": 40,
+      "etype": "class",
+      "x": 6,
+      "y": 31
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaGeneratorsigmaNodeGenerator",
+      "label": "sigmaNodeGenerator | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 32,
+      "y": 38
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaGeneratorsigmaEdgeGenerator",
+      "label": "sigmaEdgeGenerator | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 94,
+      "y": 81
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaGeneratornodes",
+      "label": "nodes | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 87,
+      "y": 48
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SigmaGeneratoredges",
+      "label": "edges | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 75,
+      "y": 30
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratorgenerate",
+      "label": "generate | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 59,
+      "y": 67
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratorgenerateNodesAndEdgesFromFile",
+      "label": "generateNodesAndEdgesFromFile | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 97,
+      "y": 56
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratornodeFromClass",
+      "label": "nodeFromClass | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 60,
+      "y": 61
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratornodesFromMains",
+      "label": "nodesFromMains | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 59,
+      "y": 2
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratornodesFromProperties",
+      "label": "nodesFromProperties | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 95,
+      "y": 37
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratornodesFromMethods",
+      "label": "nodesFromMethods | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 54,
+      "y": 36
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratoredgesForImports",
+      "label": "edgesForImports | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 7,
+      "y": 98
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratoredgesForProperties",
+      "label": "edgesForProperties | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 68,
+      "y": 81
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratoredgesForMethods",
+      "label": "edgesForMethods | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 3,
+      "y": 15
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratorcleanNodes",
+      "label": "cleanNodes | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 74,
+      "y": 77
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratorrandomizePositions",
+      "label": "randomizePositions | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 50,
+      "y": 0
+    },
+    {
+      "color": "#9999ff",
+      "id": "SigmaGeneratorcalculateSizes",
+      "label": "calculateSizes | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 26,
+      "y": 0
+    },
+    {
+      "color": "#ff0000",
+      "id": "SimpleMock",
+      "label": "SimpleMock | 3",
+      "size": 13,
+      "etype": "class",
+      "x": 5,
+      "y": 98
+    },
+    {
+      "color": "#9999ff",
+      "id": "SimpleMockreadBaseDir",
+      "label": "readBaseDir | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 2,
+      "y": 34
+    },
+    {
+      "color": "#ff0000",
+      "id": "SomethingMock",
+      "label": "SomethingMock | 12",
+      "size": 22,
+      "etype": "class",
+      "x": 23,
+      "y": 79
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMocktruth",
+      "label": "truth | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 42
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockcount",
+      "label": "count | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 66,
+      "y": 23
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMocktext",
+      "label": "text | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 68,
+      "y": 68
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockmany",
+      "label": "many | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 81,
+      "y": 77
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockmanyOther",
+      "label": "manyOther | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 38,
+      "y": 57
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockthat",
+      "label": "that | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 5,
+      "y": 5
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockthatOther",
+      "label": "thatOther | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 99,
+      "y": 59
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockmops",
+      "label": "mops | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 56,
+      "y": 86
+    },
+    {
+      "color": "#b3ffb3",
+      "id": "SomethingMockmopsOther",
+      "label": "mopsOther | 1",
+      "size": 11,
+      "etype": "property",
+      "x": 20,
+      "y": 94
+    },
+    {
+      "color": "#ff0000",
+      "id": "ControllerMock",
+      "label": "ControllerMock | 6",
+      "size": 16,
+      "etype": "class",
+      "x": 17,
+      "y": 77
+    },
+    {
+      "color": "#9999ff",
+      "id": "ControllerMockgetSomething",
+      "label": "getSomething | 1",
+      "size": 11,
+      "etype": "method",
+      "x": 82,
+      "y": 86
+    },
+    {
+      "color": "#ffffff",
+      "id": "path",
+      "label": "path | 3",
+      "size": 13,
+      "etype": "package",
+      "x": 68,
+      "y": 10
+    },
+    {
+      "color": "#ffffff",
+      "id": "tsmeta.config",
+      "label": "tsmeta.config | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 34,
+      "y": 26
+    },
+    {
+      "color": "#ffffff",
+      "id": "typescript",
+      "label": "typescript | 13",
+      "size": 23,
+      "etype": "package",
+      "x": 79,
+      "y": 16
+    },
+    {
+      "color": "#ffffff",
+      "id": "ts.methods",
+      "label": "ts.methods | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 30,
+      "y": 37
+    },
+    {
+      "color": "#ffffff",
+      "id": "ExpressionToString",
+      "label": "ExpressionToString | 2",
+      "size": 12,
+      "etype": "package",
+      "x": 61,
+      "y": 19
+    },
+    {
+      "color": "#ffffff",
+      "id": "ObjectLiteralExpressionToString",
+      "label": "ObjectLiteralExpressionToString | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 59,
+      "y": 22
+    },
+    {
+      "color": "#ffffff",
+      "id": "IdentifierToString",
+      "label": "IdentifierToString | 5",
+      "size": 15,
+      "etype": "package",
+      "x": 48,
+      "y": 6
+    },
+    {
+      "color": "#ffffff",
+      "id": "PropertyNameToString",
+      "label": "PropertyNameToString | 2",
+      "size": 12,
+      "etype": "package",
+      "x": 2,
+      "y": 6
+    },
+    {
+      "color": "#ffffff",
+      "id": "TokenToString",
+      "label": "TokenToString | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 76,
+      "y": 90
+    },
+    {
+      "color": "#ffffff",
+      "id": "fs",
+      "label": "fs | 3",
+      "size": 13,
+      "etype": "package",
+      "x": 59,
+      "y": 24
+    },
+    {
+      "color": "#ffffff",
+      "id": "CreateTypescriptProgram",
+      "label": "CreateTypescriptProgram | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 18,
+      "y": 92
+    },
+    {
+      "color": "#ffffff",
+      "id": "Model",
+      "label": "Model | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 76,
+      "y": 84
+    },
+    {
+      "color": "#ffffff",
+      "id": "Controller",
+      "label": "Controller | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 85,
+      "y": 62
+    },
+    {
+      "color": "#ffffff",
+      "id": "GetRequest",
+      "label": "GetRequest | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 38,
+      "y": 61
+    },
+    {
+      "color": "#ffffff",
+      "id": "PathVariable",
+      "label": "PathVariable | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 1,
+      "y": 48
+    },
+    {
+      "color": "#ffffff",
+      "id": "SuccessResponse",
+      "label": "SuccessResponse | 1",
+      "size": 11,
+      "etype": "package",
+      "x": 68,
+      "y": 2
+    }
+  ],
+  "edges": [
+    {
+      "id": "ParameterParamnameParameterParam",
+      "source": "ParameterParamname",
+      "target": "ParameterParam"
+    },
+    {
+      "id": "ParameterParamrequiredParameterParam",
+      "source": "ParameterParamrequired",
+      "target": "ParameterParam"
+    },
+    {
+      "id": "ResponseParamstatusCodeResponseParam",
+      "source": "ResponseParamstatusCode",
+      "target": "ResponseParam"
+    },
+    {
+      "id": "ResponseParamresponseResponseParam",
+      "source": "ResponseParamresponse",
+      "target": "ResponseParam"
+    },
+    {
+      "id": "ResponseParamversionResponseParam",
+      "source": "ResponseParamversion",
+      "target": "ResponseParam"
+    },
+    {
+      "id": "ModelParamversionModelParam",
+      "source": "ModelParamversion",
+      "target": "ModelParam"
+    },
+    {
+      "id": "ModelParamexampleModelParam",
+      "source": "ModelParamexample",
+      "target": "ModelParam"
+    },
+    {
+      "id": "ElementTypeFILEElementType",
+      "source": "ElementTypeFILE",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypePACKAGEElementType",
+      "source": "ElementTypePACKAGE",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypeCLASSElementType",
+      "source": "ElementTypeCLASS",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypeINTERFACEElementType",
+      "source": "ElementTypeINTERFACE",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypeMETHODElementType",
+      "source": "ElementTypeMETHOD",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypePROPERTYElementType",
+      "source": "ElementTypePROPERTY",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypeIMPORTElementType",
+      "source": "ElementTypeIMPORT",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypeEXPORTElementType",
+      "source": "ElementTypeEXPORT",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypenameElementType",
+      "source": "ElementTypename",
+      "target": "ElementType"
+    },
+    {
+      "id": "ElementTypecolorElementType",
+      "source": "ElementTypecolor",
+      "target": "ElementType"
+    },
+    {
+      "id": "SigmaDatanodesSigmaData",
+      "source": "SigmaDatanodes",
+      "target": "SigmaData"
+    },
+    {
+      "id": "SigmaDataedgesSigmaData",
+      "source": "SigmaDataedges",
+      "target": "SigmaData"
+    },
+    {
+      "id": "SigmaNodeidSigmaNode",
+      "source": "SigmaNodeid",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodelabelSigmaNode",
+      "source": "SigmaNodelabel",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodecolorSigmaNode",
+      "source": "SigmaNodecolor",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodesizeSigmaNode",
+      "source": "SigmaNodesize",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodeetypeSigmaNode",
+      "source": "SigmaNodeetype",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodexSigmaNode",
+      "source": "SigmaNodex",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaNodeySigmaNode",
+      "source": "SigmaNodey",
+      "target": "SigmaNode"
+    },
+    {
+      "id": "SigmaEdgeidSigmaEdge",
+      "source": "SigmaEdgeid",
+      "target": "SigmaEdge"
+    },
+    {
+      "id": "SigmaEdgesourceSigmaEdge",
+      "source": "SigmaEdgesource",
+      "target": "SigmaEdge"
+    },
+    {
+      "id": "SigmaEdgetargetSigmaEdge",
+      "source": "SigmaEdgetarget",
+      "target": "SigmaEdge"
+    },
+    {
+      "id": "BaseConfigoutputPathBaseConfig",
+      "source": "BaseConfigoutputPath",
+      "target": "BaseConfig"
+    },
+    {
+      "id": "BaseConfigoutputFilenameBaseConfig",
+      "source": "BaseConfigoutputFilename",
+      "target": "BaseConfig"
+    },
+    {
+      "id": "MetaConfigcreateMetaMetaConfig",
+      "source": "MetaConfigcreateMeta",
+      "target": "MetaConfig"
+    },
+    {
+      "id": "MetaConfigcompilerOptionsMetaConfig",
+      "source": "MetaConfigcompilerOptions",
+      "target": "MetaConfig"
+    },
+    {
+      "id": "CreateNodespackagesCreateNodes",
+      "source": "CreateNodespackages",
+      "target": "CreateNodes"
+    },
+    {
+      "id": "CreateNodesclassesCreateNodes",
+      "source": "CreateNodesclasses",
+      "target": "CreateNodes"
+    },
+    {
+      "id": "CreateNodesinterfacesCreateNodes",
+      "source": "CreateNodesinterfaces",
+      "target": "CreateNodes"
+    },
+    {
+      "id": "CreateNodesmethodsCreateNodes",
+      "source": "CreateNodesmethods",
+      "target": "CreateNodes"
+    },
+    {
+      "id": "CreateNodespropertiesCreateNodes",
+      "source": "CreateNodesproperties",
+      "target": "CreateNodes"
+    },
+    {
+      "id": "SigmaConfigcreateSigmaSigmaConfig",
+      "source": "SigmaConfigcreateSigma",
+      "target": "SigmaConfig"
+    },
+    {
+      "id": "SigmaConfigcreateNodesSigmaConfig",
+      "source": "SigmaConfigcreateNodes",
+      "target": "SigmaConfig"
+    },
+    {
+      "id": "OasConfigcreateOasOasConfig",
+      "source": "OasConfigcreateOas",
+      "target": "OasConfig"
+    },
+    {
+      "id": "OasConfigannotationsMapOasConfig",
+      "source": "OasConfigannotationsMap",
+      "target": "OasConfig"
+    },
+    {
+      "id": "GraphQLConfigcreateGraphQLGraphQLConfig",
+      "source": "GraphQLConfigcreateGraphQL",
+      "target": "GraphQLConfig"
+    },
+    {
+      "id": "TsMetaConfigbasePackageTsMetaConfig",
+      "source": "TsMetaConfigbasePackage",
+      "target": "TsMetaConfig"
+    },
+    {
+      "id": "TsMetaConfigmetaConfigTsMetaConfig",
+      "source": "TsMetaConfigmetaConfig",
+      "target": "TsMetaConfig"
+    },
+    {
+      "id": "TsMetaConfigsigmaConfigTsMetaConfig",
+      "source": "TsMetaConfigsigmaConfig",
+      "target": "TsMetaConfig"
+    },
+    {
+      "id": "TsMetaConfigoasConfigTsMetaConfig",
+      "source": "TsMetaConfigoasConfig",
+      "target": "TsMetaConfig"
+    },
+    {
+      "id": "TsMetaConfiggraphqlConfigTsMetaConfig",
+      "source": "TsMetaConfiggraphqlConfig",
+      "target": "TsMetaConfig"
+    },
+    {
+      "id": "pathtsmeta.config",
+      "source": "path",
+      "target": "tsmeta.config"
+    },
+    {
+      "id": "TsMetabaseTsPackageTsMeta",
+      "source": "TsMetabaseTsPackage",
+      "target": "TsMeta"
+    },
+    {
+      "id": "TsMetaadditionalTsPackagesTsMeta",
+      "source": "TsMetaadditionalTsPackages",
+      "target": "TsMeta"
+    },
+    {
+      "id": "TsMetaprogramsTsMeta",
+      "source": "TsMetaprograms",
+      "target": "TsMeta"
+    },
+    {
+      "id": "TsPackageauthorTsPackage",
+      "source": "TsPackageauthor",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagedescriptionTsPackage",
+      "source": "TsPackagedescription",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagelicenseTsPackage",
+      "source": "TsPackagelicense",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagemainTsPackage",
+      "source": "TsPackagemain",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagenameTsPackage",
+      "source": "TsPackagename",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagesourceTsPackage",
+      "source": "TsPackagesource",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagetypesTsPackage",
+      "source": "TsPackagetypes",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackageversionTsPackage",
+      "source": "TsPackageversion",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagedependenciesTsPackage",
+      "source": "TsPackagedependencies",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsPackagedevDependenciesTsPackage",
+      "source": "TsPackagedevDependencies",
+      "target": "TsPackage"
+    },
+    {
+      "id": "TsProgramfilesTsProgram",
+      "source": "TsProgramfiles",
+      "target": "TsProgram"
+    },
+    {
+      "id": "TsFilepathTsFile",
+      "source": "TsFilepath",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsFilefilenameTsFile",
+      "source": "TsFilefilename",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsFiletsClassTsFile",
+      "source": "TsFiletsClass",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsFiletsMainsTsFile",
+      "source": "TsFiletsMains",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsFiletsImportsTsFile",
+      "source": "TsFiletsImports",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsFiletsExportsTsFile",
+      "source": "TsFiletsExports",
+      "target": "TsFile"
+    },
+    {
+      "id": "TsMainnameTsMain",
+      "source": "TsMainname",
+      "target": "TsMain"
+    },
+    {
+      "id": "TsMainpropertiesTsMain",
+      "source": "TsMainproperties",
+      "target": "TsMain"
+    },
+    {
+      "id": "TsMainmethodsTsMain",
+      "source": "TsMainmethods",
+      "target": "TsMain"
+    },
+    {
+      "id": "TsClassdecoratorsTsClass",
+      "source": "TsClassdecorators",
+      "target": "TsClass"
+    },
+    {
+      "id": "TsImportnameTsImport",
+      "source": "TsImportname",
+      "target": "TsImport"
+    },
+    {
+      "id": "TsImportaliasTsImport",
+      "source": "TsImportalias",
+      "target": "TsImport"
+    },
+    {
+      "id": "TsImportsourceTsImport",
+      "source": "TsImportsource",
+      "target": "TsImport"
+    },
+    {
+      "id": "TsImportfullpathTsImport",
+      "source": "TsImportfullpath",
+      "target": "TsImport"
+    },
+    {
+      "id": "TsExportnameTsExport",
+      "source": "TsExportname",
+      "target": "TsExport"
+    },
+    {
+      "id": "TsExportaliasTsExport",
+      "source": "TsExportalias",
+      "target": "TsExport"
+    },
+    {
+      "id": "TsDecoratornameTsDecorator",
+      "source": "TsDecoratorname",
+      "target": "TsDecorator"
+    },
+    {
+      "id": "TsDecoratortsargumentsTsDecorator",
+      "source": "TsDecoratortsarguments",
+      "target": "TsDecorator"
+    },
+    {
+      "id": "TsPropertynameTsProperty",
+      "source": "TsPropertyname",
+      "target": "TsProperty"
+    },
+    {
+      "id": "TsPropertytstypeTsProperty",
+      "source": "TsPropertytstype",
+      "target": "TsProperty"
+    },
+    {
+      "id": "TsMethodnameTsMethod",
+      "source": "TsMethodname",
+      "target": "TsMethod"
+    },
+    {
+      "id": "TsMethoddecoratorsTsMethod",
+      "source": "TsMethoddecorators",
+      "target": "TsMethod"
+    },
+    {
+      "id": "TsMethodparametersTsMethod",
+      "source": "TsMethodparameters",
+      "target": "TsMethod"
+    },
+    {
+      "id": "TsMethodtstypeTsMethod",
+      "source": "TsMethodtstype",
+      "target": "TsMethod"
+    },
+    {
+      "id": "TsParameternameTsParameter",
+      "source": "TsParametername",
+      "target": "TsParameter"
+    },
+    {
+      "id": "TsParameterdecoratorsTsParameter",
+      "source": "TsParameterdecorators",
+      "target": "TsParameter"
+    },
+    {
+      "id": "TsParametertstypeTsParameter",
+      "source": "TsParametertstype",
+      "target": "TsParameter"
+    },
+    {
+      "id": "TsArgumentrepresentationTsArgument",
+      "source": "TsArgumentrepresentation",
+      "target": "TsArgument"
+    },
+    {
+      "id": "TsArgumenttstypeTsArgument",
+      "source": "TsArgumenttstype",
+      "target": "TsArgument"
+    },
+    {
+      "id": "TsTyperepresentationTsType",
+      "source": "TsTyperepresentation",
+      "target": "TsType"
+    },
+    {
+      "id": "typescriptts.methods",
+      "source": "typescript",
+      "target": "ts.methods"
+    },
+    {
+      "id": "TsMetaArgumentFactorybuildTsMetaArgumentFactory",
+      "source": "TsMetaArgumentFactorybuild",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "typescriptTsMetaArgumentFactory",
+      "source": "typescript",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "ExpressionToStringTsMetaArgumentFactory",
+      "source": "ExpressionToString",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "ObjectLiteralExpressionToStringTsMetaArgumentFactory",
+      "source": "ObjectLiteralExpressionToString",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "TsArgumentTsMetaArgumentFactory",
+      "source": "TsArgument",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "TsTypeTsMetaArgumentFactory",
+      "source": "TsType",
+      "target": "TsMetaArgumentFactory"
+    },
+    {
+      "id": "TsMetaDecoratorFactorytsMetaArgumentFactoryTsMetaDecoratorFactory",
+      "source": "TsMetaDecoratorFactorytsMetaArgumentFactory",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "TsMetaDecoratorFactorybuildTsMetaDecoratorFactory",
+      "source": "TsMetaDecoratorFactorybuild",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "typescriptTsMetaDecoratorFactory",
+      "source": "typescript",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "IdentifierToStringTsMetaDecoratorFactory",
+      "source": "IdentifierToString",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "TsArgumentTsMetaDecoratorFactory",
+      "source": "TsArgument",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "TsDecoratorTsMetaDecoratorFactory",
+      "source": "TsDecorator",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "TsMetaArgumentFactoryTsMetaDecoratorFactory",
+      "source": "TsMetaArgumentFactory",
+      "target": "TsMetaDecoratorFactory"
+    },
+    {
+      "id": "TsMetaParameterFactorytsMetaDecoratorFactoryTsMetaParameterFactory",
+      "source": "TsMetaParameterFactorytsMetaDecoratorFactory",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsMetaParameterFactorybuildTsMetaParameterFactory",
+      "source": "TsMetaParameterFactorybuild",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "typescriptTsMetaParameterFactory",
+      "source": "typescript",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "IdentifierToStringTsMetaParameterFactory",
+      "source": "IdentifierToString",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsDecoratorTsMetaParameterFactory",
+      "source": "TsDecorator",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsParameterTsMetaParameterFactory",
+      "source": "TsParameter",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsTypeTsMetaParameterFactory",
+      "source": "TsType",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsMetaDecoratorFactoryTsMetaParameterFactory",
+      "source": "TsMetaDecoratorFactory",
+      "target": "TsMetaParameterFactory"
+    },
+    {
+      "id": "TsMetaMethodFactorytsMetaDecoratorFactoryTsMetaMethodFactory",
+      "source": "TsMetaMethodFactorytsMetaDecoratorFactory",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMetaMethodFactorytsMetaParameterFactoryTsMetaMethodFactory",
+      "source": "TsMetaMethodFactorytsMetaParameterFactory",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMetaMethodFactorybuildTsMetaMethodFactory",
+      "source": "TsMetaMethodFactorybuild",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "typescriptTsMetaMethodFactory",
+      "source": "typescript",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "PropertyNameToStringTsMetaMethodFactory",
+      "source": "PropertyNameToString",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsDecoratorTsMetaMethodFactory",
+      "source": "TsDecorator",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMethodTsMetaMethodFactory",
+      "source": "TsMethod",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsParameterTsMetaMethodFactory",
+      "source": "TsParameter",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsTypeTsMetaMethodFactory",
+      "source": "TsType",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMetaDecoratorFactoryTsMetaMethodFactory",
+      "source": "TsMetaDecoratorFactory",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMetaParameterFactoryTsMetaMethodFactory",
+      "source": "TsMetaParameterFactory",
+      "target": "TsMetaMethodFactory"
+    },
+    {
+      "id": "TsMetaTypeFactorybuildTsMetaTypeFactory",
+      "source": "TsMetaTypeFactorybuild",
+      "target": "TsMetaTypeFactory"
+    },
+    {
+      "id": "typescriptTsMetaTypeFactory",
+      "source": "typescript",
+      "target": "TsMetaTypeFactory"
+    },
+    {
+      "id": "TsTypeTsMetaTypeFactory",
+      "source": "TsType",
+      "target": "TsMetaTypeFactory"
+    },
+    {
+      "id": "TsMetaPropertyFactorytsMetaTypeFactoryTsMetaPropertyFactory",
+      "source": "TsMetaPropertyFactorytsMetaTypeFactory",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "TsMetaPropertyFactorybuildTsMetaPropertyFactory",
+      "source": "TsMetaPropertyFactorybuild",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "typescriptTsMetaPropertyFactory",
+      "source": "typescript",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "PropertyNameToStringTsMetaPropertyFactory",
+      "source": "PropertyNameToString",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "TsPropertyTsMetaPropertyFactory",
+      "source": "TsProperty",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "TsTypeTsMetaPropertyFactory",
+      "source": "TsType",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "TsMetaTypeFactoryTsMetaPropertyFactory",
+      "source": "TsMetaTypeFactory",
+      "target": "TsMetaPropertyFactory"
+    },
+    {
+      "id": "TsMetaClassFactorytsMetaDecoratorFactoryTsMetaClassFactory",
+      "source": "TsMetaClassFactorytsMetaDecoratorFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaClassFactorytsMetaMethdoFactoryTsMetaClassFactory",
+      "source": "TsMetaClassFactorytsMetaMethdoFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaClassFactorytsMetaPropertyFactoryTsMetaClassFactory",
+      "source": "TsMetaClassFactorytsMetaPropertyFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaClassFactorybuildTsMetaClassFactory",
+      "source": "TsMetaClassFactorybuild",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "typescriptTsMetaClassFactory",
+      "source": "typescript",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "IdentifierToStringTsMetaClassFactory",
+      "source": "IdentifierToString",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsClassTsMetaClassFactory",
+      "source": "TsClass",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsDecoratorTsMetaClassFactory",
+      "source": "TsDecorator",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMethodTsMetaClassFactory",
+      "source": "TsMethod",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsPropertyTsMetaClassFactory",
+      "source": "TsProperty",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaDecoratorFactoryTsMetaClassFactory",
+      "source": "TsMetaDecoratorFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaMethodFactoryTsMetaClassFactory",
+      "source": "TsMetaMethodFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaPropertyFactoryTsMetaClassFactory",
+      "source": "TsMetaPropertyFactory",
+      "target": "TsMetaClassFactory"
+    },
+    {
+      "id": "TsMetaExportFactorybuildTsMetaExportFactory",
+      "source": "TsMetaExportFactorybuild",
+      "target": "TsMetaExportFactory"
+    },
+    {
+      "id": "TsMetaExportFactorycreateTsExportTsMetaExportFactory",
+      "source": "TsMetaExportFactorycreateTsExport",
+      "target": "TsMetaExportFactory"
+    },
+    {
+      "id": "typescriptTsMetaExportFactory",
+      "source": "typescript",
+      "target": "TsMetaExportFactory"
+    },
+    {
+      "id": "TokenToStringTsMetaExportFactory",
+      "source": "TokenToString",
+      "target": "TsMetaExportFactory"
+    },
+    {
+      "id": "TsExportTsMetaExportFactory",
+      "source": "TsExport",
+      "target": "TsMetaExportFactory"
+    },
+    {
+      "id": "TsMetaImportFactorybuildTsMetaImportFactory",
+      "source": "TsMetaImportFactorybuild",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "TsMetaImportFactorycreateTsImportTsMetaImportFactory",
+      "source": "TsMetaImportFactorycreateTsImport",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "pathTsMetaImportFactory",
+      "source": "path",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "typescriptTsMetaImportFactory",
+      "source": "typescript",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "ExpressionToStringTsMetaImportFactory",
+      "source": "ExpressionToString",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "IdentifierToStringTsMetaImportFactory",
+      "source": "IdentifierToString",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "TsImportTsMetaImportFactory",
+      "source": "TsImport",
+      "target": "TsMetaImportFactory"
+    },
+    {
+      "id": "TsMetaMainFactorytsMetaMethodFactoryTsMetaMainFactory",
+      "source": "TsMetaMainFactorytsMetaMethodFactory",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMetaMainFactorytsMetaPropertyFactoryTsMetaMainFactory",
+      "source": "TsMetaMainFactorytsMetaPropertyFactory",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMetaMainFactorybuildTsMetaMainFactory",
+      "source": "TsMetaMainFactorybuild",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "typescriptTsMetaMainFactory",
+      "source": "typescript",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "IdentifierToStringTsMetaMainFactory",
+      "source": "IdentifierToString",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMainTsMetaMainFactory",
+      "source": "TsMain",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMethodTsMetaMainFactory",
+      "source": "TsMethod",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsPropertyTsMetaMainFactory",
+      "source": "TsProperty",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMetaMethodFactoryTsMetaMainFactory",
+      "source": "TsMetaMethodFactory",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMetaPropertyFactoryTsMetaMainFactory",
+      "source": "TsMetaPropertyFactory",
+      "target": "TsMetaMainFactory"
+    },
+    {
+      "id": "TsMetaFileFactorytsMetaClassFactoryTsMetaFileFactory",
+      "source": "TsMetaFileFactorytsMetaClassFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaFileFactorytsMetaMainFactoryTsMetaFileFactory",
+      "source": "TsMetaFileFactorytsMetaMainFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaFileFactorytsMetaExportFactoryTsMetaFileFactory",
+      "source": "TsMetaFileFactorytsMetaExportFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaFileFactorytsMetaImportFactoryTsMetaFileFactory",
+      "source": "TsMetaFileFactorytsMetaImportFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaFileFactorybuildTsMetaFileFactory",
+      "source": "TsMetaFileFactorybuild",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "typescriptTsMetaFileFactory",
+      "source": "typescript",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsClassTsMetaFileFactory",
+      "source": "TsClass",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsExportTsMetaFileFactory",
+      "source": "TsExport",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsFileTsMetaFileFactory",
+      "source": "TsFile",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsImportTsMetaFileFactory",
+      "source": "TsImport",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMainTsMetaFileFactory",
+      "source": "TsMain",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaClassFactoryTsMetaFileFactory",
+      "source": "TsMetaClassFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaExportFactoryTsMetaFileFactory",
+      "source": "TsMetaExportFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaImportFactoryTsMetaFileFactory",
+      "source": "TsMetaImportFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaMainFactoryTsMetaFileFactory",
+      "source": "TsMetaMainFactory",
+      "target": "TsMetaFileFactory"
+    },
+    {
+      "id": "TsMetaPackageFactorybuildTsMetaPackageFactory",
+      "source": "TsMetaPackageFactorybuild",
+      "target": "TsMetaPackageFactory"
+    },
+    {
+      "id": "TsMetaPackageFactoryreadPackageJsonTsMetaPackageFactory",
+      "source": "TsMetaPackageFactoryreadPackageJson",
+      "target": "TsMetaPackageFactory"
+    },
+    {
+      "id": "fsTsMetaPackageFactory",
+      "source": "fs",
+      "target": "TsMetaPackageFactory"
+    },
+    {
+      "id": "TsPackageTsMetaPackageFactory",
+      "source": "TsPackage",
+      "target": "TsMetaPackageFactory"
+    },
+    {
+      "id": "TsMetaFactorytsMetaPackageFactoryTsMetaFactory",
+      "source": "TsMetaFactorytsMetaPackageFactory",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaFactorytsMetaFileFactoryTsMetaFactory",
+      "source": "TsMetaFactorytsMetaFileFactory",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaFactorybuildTsMetaFactory",
+      "source": "TsMetaFactorybuild",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaFactoryscanAdditionalPackagesTsMetaFactory",
+      "source": "TsMetaFactoryscanAdditionalPackages",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaFactorycreateMainProgramTsMetaFactory",
+      "source": "TsMetaFactorycreateMainProgram",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "fsTsMetaFactory",
+      "source": "fs",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "pathTsMetaFactory",
+      "source": "path",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "typescriptTsMetaFactory",
+      "source": "typescript",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "CreateTypescriptProgramTsMetaFactory",
+      "source": "CreateTypescriptProgram",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaConfigTsMetaFactory",
+      "source": "TsMetaConfig",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsFileTsMetaFactory",
+      "source": "TsFile",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaTsMetaFactory",
+      "source": "TsMeta",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsPackageTsMetaFactory",
+      "source": "TsPackage",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsProgramTsMetaFactory",
+      "source": "TsProgram",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaFileFactoryTsMetaFactory",
+      "source": "TsMetaFileFactory",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "TsMetaPackageFactoryTsMetaFactory",
+      "source": "TsMetaPackageFactory",
+      "target": "TsMetaFactory"
+    },
+    {
+      "id": "SigmaEdgeGeneratorgenerateSigmaEdgeGenerator",
+      "source": "SigmaEdgeGeneratorgenerate",
+      "target": "SigmaEdgeGenerator"
+    },
+    {
+      "id": "SigmaEdgeSigmaEdgeGenerator",
+      "source": "SigmaEdge",
+      "target": "SigmaEdgeGenerator"
+    },
+    {
+      "id": "SigmaNodeGeneratorgenerateSigmaNodeGenerator",
+      "source": "SigmaNodeGeneratorgenerate",
+      "target": "SigmaNodeGenerator"
+    },
+    {
+      "id": "ElementTypeSigmaNodeGenerator",
+      "source": "ElementType",
+      "target": "SigmaNodeGenerator"
+    },
+    {
+      "id": "SigmaNodeSigmaNodeGenerator",
+      "source": "SigmaNode",
+      "target": "SigmaNodeGenerator"
+    },
+    {
+      "id": "SigmaGeneratorsigmaNodeGeneratorSigmaGenerator",
+      "source": "SigmaGeneratorsigmaNodeGenerator",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorsigmaEdgeGeneratorSigmaGenerator",
+      "source": "SigmaGeneratorsigmaEdgeGenerator",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratornodesSigmaGenerator",
+      "source": "SigmaGeneratornodes",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratoredgesSigmaGenerator",
+      "source": "SigmaGeneratoredges",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorgenerateSigmaGenerator",
+      "source": "SigmaGeneratorgenerate",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorgenerateNodesAndEdgesFromFileSigmaGenerator",
+      "source": "SigmaGeneratorgenerateNodesAndEdgesFromFile",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratornodeFromClassSigmaGenerator",
+      "source": "SigmaGeneratornodeFromClass",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratornodesFromMainsSigmaGenerator",
+      "source": "SigmaGeneratornodesFromMains",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratornodesFromPropertiesSigmaGenerator",
+      "source": "SigmaGeneratornodesFromProperties",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratornodesFromMethodsSigmaGenerator",
+      "source": "SigmaGeneratornodesFromMethods",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratoredgesForImportsSigmaGenerator",
+      "source": "SigmaGeneratoredgesForImports",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratoredgesForPropertiesSigmaGenerator",
+      "source": "SigmaGeneratoredgesForProperties",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratoredgesForMethodsSigmaGenerator",
+      "source": "SigmaGeneratoredgesForMethods",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorcleanNodesSigmaGenerator",
+      "source": "SigmaGeneratorcleanNodes",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorrandomizePositionsSigmaGenerator",
+      "source": "SigmaGeneratorrandomizePositions",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaGeneratorcalculateSizesSigmaGenerator",
+      "source": "SigmaGeneratorcalculateSizes",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "ElementTypeSigmaGenerator",
+      "source": "ElementType",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaDataSigmaGenerator",
+      "source": "SigmaData",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaEdgeSigmaGenerator",
+      "source": "SigmaEdge",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaNodeSigmaGenerator",
+      "source": "SigmaNode",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsClassSigmaGenerator",
+      "source": "TsClass",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsFileSigmaGenerator",
+      "source": "TsFile",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsImportSigmaGenerator",
+      "source": "TsImport",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsMainSigmaGenerator",
+      "source": "TsMain",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsMetaSigmaGenerator",
+      "source": "TsMeta",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsMethodSigmaGenerator",
+      "source": "TsMethod",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsProgramSigmaGenerator",
+      "source": "TsProgram",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "TsPropertySigmaGenerator",
+      "source": "TsProperty",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaEdgeGeneratorSigmaGenerator",
+      "source": "SigmaEdgeGenerator",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SigmaNodeGeneratorSigmaGenerator",
+      "source": "SigmaNodeGenerator",
+      "target": "SigmaGenerator"
+    },
+    {
+      "id": "SimpleMockreadBaseDirSimpleMock",
+      "source": "SimpleMockreadBaseDir",
+      "target": "SimpleMock"
+    },
+    {
+      "id": "fsSimpleMock",
+      "source": "fs",
+      "target": "SimpleMock"
+    },
+    {
+      "id": "SomethingMocktruthSomethingMock",
+      "source": "SomethingMocktruth",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockcountSomethingMock",
+      "source": "SomethingMockcount",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMocktextSomethingMock",
+      "source": "SomethingMocktext",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockmanySomethingMock",
+      "source": "SomethingMockmany",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockmanyOtherSomethingMock",
+      "source": "SomethingMockmanyOther",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockthatSomethingMock",
+      "source": "SomethingMockthat",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockthatOtherSomethingMock",
+      "source": "SomethingMockthatOther",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockmopsSomethingMock",
+      "source": "SomethingMockmops",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SomethingMockmopsOtherSomethingMock",
+      "source": "SomethingMockmopsOther",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "ModelSomethingMock",
+      "source": "Model",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "SimpleMockSomethingMock",
+      "source": "SimpleMock",
+      "target": "SomethingMock"
+    },
+    {
+      "id": "ControllerMockgetSomethingControllerMock",
+      "source": "ControllerMockgetSomething",
+      "target": "ControllerMock"
+    },
+    {
+      "id": "ControllerControllerMock",
+      "source": "Controller",
+      "target": "ControllerMock"
+    },
+    {
+      "id": "GetRequestControllerMock",
+      "source": "GetRequest",
+      "target": "ControllerMock"
+    },
+    {
+      "id": "PathVariableControllerMock",
+      "source": "PathVariable",
+      "target": "ControllerMock"
+    },
+    {
+      "id": "SuccessResponseControllerMock",
+      "source": "SuccessResponse",
+      "target": "ControllerMock"
+    },
+    {
+      "id": "SomethingMockControllerMock",
+      "source": "SomethingMock",
+      "target": "ControllerMock"
+    }
+  ]
+}

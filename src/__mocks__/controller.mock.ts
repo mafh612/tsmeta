@@ -12,7 +12,7 @@ class ControllerMock {
    * @param text
    */
   @GetRequest('/something')
-  @SuccessResponse({ response: SomethingMock, statusCode: 200, version: 'v1'})
+  @SuccessResponse()
   public async getSomething(@PathVariable({ name: 'text', required: true }) text: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(text))
   }

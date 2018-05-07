@@ -12,6 +12,7 @@
     "build": "tsc --project tsconfig.json",
     "dev": "npm run build && node dist/bin.js",
     "start": "node dist/bin.js",
+    "view": "node view/server.js",
     "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
   },
   "author": "mafh",

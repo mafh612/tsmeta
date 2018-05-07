@@ -1,0 +1,2367 @@
+{
+  "additionalTsPackages": [],
+  "baseTsPackage": {
+    "name": "tsmeta",
+    "main": "dist/index.js",
+    "bin": "dist/bin.js",
+    "source": "src/index.ts",
+    "types": "dist/index.d.ts",
+    "version": "0.0.1",
+    "description": "typescript project meta analysis",
+    "scripts": {
+      "test": "jest --config jest.config.json",
+      "prebuild": "tslint --project tslint.json -e '__tests__/**'",
+      "build": "tsc --project tsconfig.json",
+      "dev": "npm run build && node dist/bin.js",
+      "start": "node dist/bin.js",
+      "view": "node view/server.js",
+      "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
+    },
+    "author": "mafh",
+    "license": "MIT",
+    "dependencies": {
+      "reflect-metadata": "^0.1.12",
+      "typescript": "^2.8.3"
+    },
+    "devDependencies": {
+      "@types/node": "^10.0.0",
+      "@types/reflect-metadata": "^0.1.0",
+      "@types/jest": "^22.2.3",
+      "jest": "^22.4.3",
+      "ts-jest": "^22.4.4",
+      "tslint": "^5.9.1",
+      "tslint-microsoft-contrib": "^5.0.3"
+    }
+  },
+  "programs": [
+    {
+      "files": [
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/resources",
+          "filename": "annotations",
+          "tsExports": [
+            {
+              "name": "Controller"
+            },
+            {
+              "name": "Model"
+            },
+            {
+              "name": "GetRequest"
+            },
+            {
+              "name": "PostRequest"
+            },
+            {
+              "name": "PutRequest"
+            },
+            {
+              "name": "PatchRequest"
+            },
+            {
+              "name": "DeleteRequest"
+            },
+            {
+              "name": "HeadRequest"
+            },
+            {
+              "name": "SuccessResponse"
+            },
+            {
+              "name": "PathVariable"
+            },
+            {
+              "name": "ReqParam"
+            },
+            {
+              "name": "ReqBody"
+            }
+          ],
+          "tsImports": [],
+          "tsMains": [
+            {
+              "methods": [],
+              "name": "ParameterParam",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "required",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "ResponseParam",
+              "properties": [
+                {
+                  "name": "statusCode",
+                  "tstype": {
+                    "representation": "number"
+                  }
+                },
+                {
+                  "name": "response",
+                  "tstype": {}
+                },
+                {
+                  "name": "version",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "ModelParam",
+              "properties": [
+                {
+                  "name": "version",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "example",
+                  "tstype": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/resources",
+          "filename": "element.type",
+          "tsExports": [
+            {
+              "name": "ElementType"
+            }
+          ],
+          "tsImports": [],
+          "tsClass": {
+            "methods": [],
+            "name": "ElementType",
+            "properties": [
+              {
+                "name": "FILE",
+                "tstype": {}
+              },
+              {
+                "name": "PACKAGE",
+                "tstype": {}
+              },
+              {
+                "name": "CLASS",
+                "tstype": {}
+              },
+              {
+                "name": "INTERFACE",
+                "tstype": {}
+              },
+              {
+                "name": "METHOD",
+                "tstype": {}
+              },
+              {
+                "name": "PROPERTY",
+                "tstype": {}
+              },
+              {
+                "name": "IMPORT",
+                "tstype": {}
+              },
+              {
+                "name": "EXPORT",
+                "tstype": {}
+              },
+              {
+                "name": "name",
+                "tstype": {
+                  "representation": "string"
+                }
+              },
+              {
+                "name": "color",
+                "tstype": {
+                  "representation": "string"
+                }
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/resources",
+          "filename": "sigma",
+          "tsExports": [],
+          "tsImports": [],
+          "tsMains": [
+            {
+              "methods": [],
+              "name": "SigmaData",
+              "properties": [
+                {
+                  "name": "nodes",
+                  "tstype": {}
+                },
+                {
+                  "name": "edges",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "SigmaNode",
+              "properties": [
+                {
+                  "name": "id",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "label",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "color",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "size",
+                  "tstype": {
+                    "representation": "number"
+                  }
+                },
+                {
+                  "name": "etype",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "x",
+                  "tstype": {
+                    "representation": "number"
+                  }
+                },
+                {
+                  "name": "y",
+                  "tstype": {
+                    "representation": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "SigmaEdge",
+              "properties": [
+                {
+                  "name": "id",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "source",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "target",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/resources",
+          "filename": "tsmeta.config",
+          "tsExports": [
+            {
+              "name": "RunPath"
+            },
+            {
+              "name": "RunFilename"
+            }
+          ],
+          "tsImports": [
+            {
+              "alias": "ResolvePath",
+              "name": "resolve",
+              "source": "path"
+            }
+          ],
+          "tsMains": [
+            {
+              "methods": [],
+              "name": "BaseConfig",
+              "properties": [
+                {
+                  "name": "outputPath",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "outputFilename",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "MetaConfig",
+              "properties": [
+                {
+                  "name": "createMeta",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "compilerOptions",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "CreateNodes",
+              "properties": [
+                {
+                  "name": "packages",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "classes",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "interfaces",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "methods",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "properties",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "SigmaConfig",
+              "properties": [
+                {
+                  "name": "createSigma",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "createNodes",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "OasConfig",
+              "properties": [
+                {
+                  "name": "createOas",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                },
+                {
+                  "name": "annotationsMap",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "GraphQLConfig",
+              "properties": [
+                {
+                  "name": "createGraphQL",
+                  "tstype": {
+                    "representation": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsMetaConfig",
+              "properties": [
+                {
+                  "name": "basePackage",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "metaConfig",
+                  "tstype": {}
+                },
+                {
+                  "name": "sigmaConfig",
+                  "tstype": {}
+                },
+                {
+                  "name": "oasConfig",
+                  "tstype": {}
+                },
+                {
+                  "name": "graphqlConfig",
+                  "tstype": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/resources",
+          "filename": "tsmeta.schema",
+          "tsExports": [],
+          "tsImports": [],
+          "tsMains": [
+            {
+              "methods": [],
+              "name": "TsMeta",
+              "properties": [
+                {
+                  "name": "baseTsPackage",
+                  "tstype": {}
+                },
+                {
+                  "name": "additionalTsPackages",
+                  "tstype": {}
+                },
+                {
+                  "name": "programs",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsPackage",
+              "properties": [
+                {
+                  "name": "author",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "description",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "license",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "main",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "source",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "types",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "version",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "dependencies",
+                  "tstype": {}
+                },
+                {
+                  "name": "devDependencies",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsProgram",
+              "properties": [
+                {
+                  "name": "files",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsFile",
+              "properties": [
+                {
+                  "name": "path",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "filename",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "tsClass",
+                  "tstype": {}
+                },
+                {
+                  "name": "tsMains",
+                  "tstype": {}
+                },
+                {
+                  "name": "tsImports",
+                  "tstype": {}
+                },
+                {
+                  "name": "tsExports",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsMain",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "properties",
+                  "tstype": {}
+                },
+                {
+                  "name": "methods",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsClass",
+              "properties": [
+                {
+                  "name": "decorators",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsImport",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "alias",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "source",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "fullpath",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsExport",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "alias",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsDecorator",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "tsarguments",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsProperty",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "tstype",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsMethod",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "decorators",
+                  "tstype": {}
+                },
+                {
+                  "name": "parameters",
+                  "tstype": {}
+                },
+                {
+                  "name": "tstype",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsParameter",
+              "properties": [
+                {
+                  "name": "name",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "decorators",
+                  "tstype": {}
+                },
+                {
+                  "name": "tstype",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsArgument",
+              "properties": [
+                {
+                  "name": "representation",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                },
+                {
+                  "name": "tstype",
+                  "tstype": {}
+                }
+              ]
+            },
+            {
+              "methods": [],
+              "name": "TsType",
+              "properties": [
+                {
+                  "name": "representation",
+                  "tstype": {
+                    "representation": "string"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/lib",
+          "filename": "ts.methods",
+          "tsExports": [
+            {
+              "name": "CreateTypescriptProgram"
+            },
+            {
+              "name": "ExpressionToString"
+            },
+            {
+              "name": "IdentifierToString"
+            },
+            {
+              "name": "InitializerToString"
+            },
+            {
+              "name": "ObjectLiteralExpressionToString"
+            },
+            {
+              "name": "PropertyNameToString"
+            },
+            {
+              "name": "TokenToString"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "CompilerOptions",
+              "source": "typescript"
+            },
+            {
+              "alias": "CreateProgram",
+              "name": "createProgram",
+              "source": "typescript"
+            },
+            {
+              "name": "Expression",
+              "source": "typescript"
+            },
+            {
+              "name": "Identifier",
+              "source": "typescript"
+            },
+            {
+              "name": "ObjectLiteralExpression",
+              "source": "typescript"
+            },
+            {
+              "name": "Program",
+              "source": "typescript"
+            },
+            {
+              "name": "PropertyAssignment",
+              "source": "typescript"
+            },
+            {
+              "name": "PropertyName",
+              "source": "typescript"
+            },
+            {
+              "name": "SyntaxKind",
+              "source": "typescript"
+            }
+          ],
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.argument.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaArgumentFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "Expression",
+              "source": "typescript"
+            },
+            {
+              "name": "ObjectLiteralExpression",
+              "source": "typescript"
+            },
+            {
+              "name": "SyntaxKind",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "ExpressionToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "ObjectLiteralExpressionToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsArgument",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsType",
+              "source": "tsmeta.schema"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "expression"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaArgumentFactory",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.decorator.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaDecoratorFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "CallExpression",
+              "source": "typescript"
+            },
+            {
+              "name": "Decorator",
+              "source": "typescript"
+            },
+            {
+              "name": "Expression",
+              "source": "typescript"
+            },
+            {
+              "name": "Identifier",
+              "source": "typescript"
+            },
+            {
+              "name": "isCallExpression",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "IdentifierToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsArgument",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsDecorator",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.argument.factory",
+              "name": "TsMetaArgumentFactory",
+              "source": "tsmeta.argument.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "decorator"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaDecoratorFactory",
+            "properties": [
+              {
+                "name": "tsMetaArgumentFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.parameter.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaParameterFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "Decorator",
+              "source": "typescript"
+            },
+            {
+              "name": "Identifier",
+              "source": "typescript"
+            },
+            {
+              "name": "ParameterDeclaration",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "IdentifierToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsDecorator",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsParameter",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsType",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.decorator.factory",
+              "name": "TsMetaDecoratorFactory",
+              "source": "tsmeta.decorator.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "parameterDeclaration"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaParameterFactory",
+            "properties": [
+              {
+                "name": "tsMetaDecoratorFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.method.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaMethodFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "Decorator",
+              "source": "typescript"
+            },
+            {
+              "name": "MethodDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "MethodSignature",
+              "source": "typescript"
+            },
+            {
+              "name": "ParameterDeclaration",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "PropertyNameToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsDecorator",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsMethod",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsParameter",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsType",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.decorator.factory",
+              "name": "TsMetaDecoratorFactory",
+              "source": "tsmeta.decorator.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.parameter.factory",
+              "name": "TsMetaParameterFactory",
+              "source": "tsmeta.parameter.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "method"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaMethodFactory",
+            "properties": [
+              {
+                "name": "tsMetaDecoratorFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaParameterFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.type.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaTypeFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "SyntaxKind",
+              "source": "typescript"
+            },
+            {
+              "name": "TypeNode",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsType",
+              "source": "tsmeta.schema"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "typeNode"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaTypeFactory",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.property.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaPropertyFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "PropertyDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "PropertySignature",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "PropertyNameToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsProperty",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsType",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.type.factory",
+              "name": "TsMetaTypeFactory",
+              "source": "tsmeta.type.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "property"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaPropertyFactory",
+            "properties": [
+              {
+                "name": "tsMetaTypeFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.class.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaClassFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "ClassDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "ClassElement",
+              "source": "typescript"
+            },
+            {
+              "name": "Decorator",
+              "source": "typescript"
+            },
+            {
+              "name": "isMethodDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "isPropertyDeclaration",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "IdentifierToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsClass",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsDecorator",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsMethod",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsProperty",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.decorator.factory",
+              "name": "TsMetaDecoratorFactory",
+              "source": "tsmeta.decorator.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.method.factory",
+              "name": "TsMetaMethodFactory",
+              "source": "tsmeta.method.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.property.factory",
+              "name": "TsMetaPropertyFactory",
+              "source": "tsmeta.property.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "classDeclaration"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaClassFactory",
+            "properties": [
+              {
+                "name": "tsMetaDecoratorFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaMethdoFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaPropertyFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.export.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaExportFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "ExportDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "ExportSpecifier",
+              "source": "typescript"
+            },
+            {
+              "name": "Identifier",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "TokenToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsExport",
+              "source": "tsmeta.schema"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "exportDeclaration"
+                  }
+                ]
+              },
+              {
+                "name": "createTsExport",
+                "parameters": [
+                  {
+                    "name": "nameObj"
+                  },
+                  {
+                    "name": "aliasObj"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaExportFactory",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.import.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaImportFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "alias": "ResolvePath",
+              "name": "resolve",
+              "source": "path"
+            },
+            {
+              "name": "Expression",
+              "source": "typescript"
+            },
+            {
+              "name": "ImportClause",
+              "source": "typescript"
+            },
+            {
+              "name": "ImportDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "ImportSpecifier",
+              "source": "typescript"
+            },
+            {
+              "name": "isIdentifier",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "ExpressionToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "IdentifierToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsImport",
+              "source": "tsmeta.schema"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "importDeclaration"
+                  }
+                ]
+              },
+              {
+                "name": "createTsImport",
+                "parameters": [
+                  {
+                    "name": "importSpecifier"
+                  },
+                  {
+                    "name": "moduleSpecifier"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaImportFactory",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.main.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaMainFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "InterfaceDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "isMethodSignature",
+              "source": "typescript"
+            },
+            {
+              "name": "isPropertySignature",
+              "source": "typescript"
+            },
+            {
+              "name": "TypeElement",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/lib/ts.methods",
+              "name": "IdentifierToString",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsMain",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsMethod",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsProperty",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.method.factory",
+              "name": "TsMetaMethodFactory",
+              "source": "tsmeta.method.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.property.factory",
+              "name": "TsMetaPropertyFactory",
+              "source": "tsmeta.property.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "declaration"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaMainFactory",
+            "properties": [
+              {
+                "name": "tsMetaMethodFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaPropertyFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.file.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaFileFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "ClassDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "ExportDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "ImportDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "InterfaceDeclaration",
+              "source": "typescript"
+            },
+            {
+              "name": "Node",
+              "source": "typescript"
+            },
+            {
+              "name": "SourceFile",
+              "source": "typescript"
+            },
+            {
+              "name": "SyntaxKind",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsClass",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsExport",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsFile",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsImport",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsMain",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.class.factory",
+              "name": "TsMetaClassFactory",
+              "source": "tsmeta.class.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.export.factory",
+              "name": "TsMetaExportFactory",
+              "source": "tsmeta.export.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.import.factory",
+              "name": "TsMetaImportFactory",
+              "source": "tsmeta.import.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.main.factory",
+              "name": "TsMetaMainFactory",
+              "source": "tsmeta.main.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "sourceFile"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaFileFactory",
+            "properties": [
+              {
+                "name": "tsMetaClassFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaMainFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaExportFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaImportFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/tsmeta.factories",
+          "filename": "tsmeta.package.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaPackageFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "alias": "ReadFileSync",
+              "name": "readFileSync",
+              "source": "fs"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/tsmeta.schema",
+              "name": "TsPackage",
+              "source": "tsmeta.schema"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "filename"
+                  }
+                ]
+              },
+              {
+                "name": "readPackageJson",
+                "parameters": [
+                  {
+                    "name": "filename"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaPackageFactory",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes",
+          "filename": "tsmeta.factory",
+          "tsExports": [
+            {
+              "name": "TsMetaFactory"
+            }
+          ],
+          "tsImports": [
+            {
+              "alias": "ReadFileSync",
+              "name": "readFileSync",
+              "source": "fs"
+            },
+            {
+              "alias": "Resolve",
+              "name": "resolve",
+              "source": "path"
+            },
+            {
+              "name": "CompilerOptions",
+              "source": "typescript"
+            },
+            {
+              "name": "Program",
+              "source": "typescript"
+            },
+            {
+              "name": "SourceFile",
+              "source": "typescript"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/lib/ts.methods",
+              "name": "CreateTypescriptProgram",
+              "source": "ts.methods"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.config",
+              "name": "TsMetaConfig",
+              "source": "tsmeta.config"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsFile",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsMeta",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsPackage",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsProgram",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.factories/tsmeta.file.factory",
+              "name": "TsMetaFileFactory",
+              "source": "tsmeta.file.factory"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/tsmeta.factories/tsmeta.package.factory",
+              "name": "TsMetaPackageFactory",
+              "source": "tsmeta.package.factory"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "build",
+                "parameters": [
+                  {
+                    "name": "tsMetaConfig"
+                  }
+                ]
+              },
+              {
+                "name": "scanAdditionalPackages",
+                "parameters": [
+                  {
+                    "name": "baseTsPackage"
+                  }
+                ]
+              },
+              {
+                "name": "createMainProgram",
+                "parameters": [
+                  {
+                    "name": "tsMetaConfig"
+                  },
+                  {
+                    "name": "baseTsPackage"
+                  }
+                ]
+              }
+            ],
+            "name": "TsMetaFactory",
+            "properties": [
+              {
+                "name": "tsMetaPackageFactory",
+                "tstype": {}
+              },
+              {
+                "name": "tsMetaFileFactory",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/sigma.generators",
+          "filename": "sigma.edge.generator",
+          "tsExports": [
+            {
+              "name": "SigmaEdgeGenerator"
+            }
+          ],
+          "tsImports": [
+            {
+              "fullpath": "/home/rbergmann/resources/sigma",
+              "name": "SigmaEdge",
+              "source": "sigma"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "generate",
+                "parameters": [
+                  {
+                    "name": "source"
+                  },
+                  {
+                    "name": "target"
+                  }
+                ]
+              }
+            ],
+            "name": "SigmaEdgeGenerator",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes/sigma.generators",
+          "filename": "sigma.node.generator",
+          "tsExports": [
+            {
+              "name": "SigmaNodeGenerator"
+            }
+          ],
+          "tsImports": [
+            {
+              "fullpath": "/home/rbergmann/resources/element.type",
+              "name": "ElementType",
+              "source": "element.type"
+            },
+            {
+              "fullpath": "/home/rbergmann/resources/sigma",
+              "name": "SigmaNode",
+              "source": "sigma"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "generate",
+                "parameters": [
+                  {
+                    "name": "id"
+                  },
+                  {
+                    "name": "label"
+                  },
+                  {
+                    "name": "elementType"
+                  },
+                  {
+                    "name": "size"
+                  }
+                ]
+              }
+            ],
+            "name": "SigmaNodeGenerator",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/classes",
+          "filename": "sigma.generator",
+          "tsExports": [
+            {
+              "name": "SigmaGenerator"
+            }
+          ],
+          "tsImports": [
+            {
+              "fullpath": "/home/rbergmann/projects/resources/element.type",
+              "name": "ElementType",
+              "source": "element.type"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/sigma",
+              "name": "SigmaData",
+              "source": "sigma"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/sigma",
+              "name": "SigmaEdge",
+              "source": "sigma"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/sigma",
+              "name": "SigmaNode",
+              "source": "sigma"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsClass",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsFile",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsImport",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsMain",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsMeta",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsMethod",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsProgram",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/tsmeta.schema",
+              "name": "TsProperty",
+              "source": "tsmeta.schema"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/sigma.generators/sigma.edge.generator",
+              "name": "SigmaEdgeGenerator",
+              "source": "sigma.edge.generator"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/sigma.generators/sigma.node.generator",
+              "name": "SigmaNodeGenerator",
+              "source": "sigma.node.generator"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "generate",
+                "parameters": [
+                  {
+                    "name": "tsMeta"
+                  }
+                ]
+              },
+              {
+                "name": "generateNodesAndEdgesFromFile",
+                "parameters": [
+                  {
+                    "name": "tsFile"
+                  }
+                ]
+              },
+              {
+                "name": "nodeFromClass",
+                "parameters": [
+                  {
+                    "name": "tsClass"
+                  }
+                ]
+              },
+              {
+                "name": "nodesFromMains",
+                "parameters": [
+                  {
+                    "name": "tsMains"
+                  }
+                ]
+              },
+              {
+                "name": "nodesFromProperties",
+                "parameters": [
+                  {
+                    "name": "tsMain"
+                  }
+                ]
+              },
+              {
+                "name": "nodesFromMethods",
+                "parameters": [
+                  {
+                    "name": "tsMain"
+                  }
+                ]
+              },
+              {
+                "name": "edgesForImports",
+                "parameters": [
+                  {
+                    "name": "tsFile"
+                  }
+                ]
+              },
+              {
+                "name": "edgesForProperties",
+                "parameters": [
+                  {
+                    "name": "tsMain"
+                  }
+                ]
+              },
+              {
+                "name": "edgesForMethods",
+                "parameters": [
+                  {
+                    "name": "tsMain"
+                  }
+                ]
+              },
+              {
+                "name": "cleanNodes",
+                "parameters": []
+              },
+              {
+                "name": "randomizePositions",
+                "parameters": []
+              },
+              {
+                "name": "calculateSizes",
+                "parameters": []
+              }
+            ],
+            "name": "SigmaGenerator",
+            "properties": [
+              {
+                "name": "sigmaNodeGenerator",
+                "tstype": {}
+              },
+              {
+                "name": "sigmaEdgeGenerator",
+                "tstype": {}
+              },
+              {
+                "name": "nodes",
+                "tstype": {}
+              },
+              {
+                "name": "edges",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/__mocks__",
+          "filename": "simple.mock",
+          "tsExports": [
+            {
+              "name": "SimpleMock"
+            }
+          ],
+          "tsImports": [
+            {
+              "name": "fs",
+              "source": "fs"
+            }
+          ],
+          "tsClass": {
+            "methods": [
+              {
+                "name": "readBaseDir",
+                "parameters": []
+              }
+            ],
+            "name": "SimpleMock",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/__mocks__",
+          "filename": "something.mock",
+          "tsExports": [
+            {
+              "name": "SomethingMock"
+            }
+          ],
+          "tsImports": [
+            {
+              "fullpath": "/home/rbergmann/projects/resources/annotations",
+              "name": "Model",
+              "source": "annotations"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/simple.mock",
+              "name": "SimpleMock",
+              "source": "simple.mock"
+            }
+          ],
+          "tsClass": {
+            "decorators": [
+              {
+                "name": "Model",
+                "tsarguments": [
+                  {
+                    "representation": {
+                      "version": "v1",
+                      "example": {
+                        "greeting": "hello world"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "methods": [],
+            "name": "SomethingMock",
+            "properties": [
+              {
+                "name": "truth",
+                "tstype": {
+                  "representation": "boolean"
+                }
+              },
+              {
+                "name": "count",
+                "tstype": {
+                  "representation": "number"
+                }
+              },
+              {
+                "name": "text",
+                "tstype": {
+                  "representation": "string"
+                }
+              },
+              {
+                "name": "many",
+                "tstype": {}
+              },
+              {
+                "name": "manyOther",
+                "tstype": {}
+              },
+              {
+                "name": "that",
+                "tstype": {}
+              },
+              {
+                "name": "thatOther",
+                "tstype": {}
+              },
+              {
+                "name": "mops",
+                "tstype": {}
+              },
+              {
+                "name": "mopsOther",
+                "tstype": {}
+              }
+            ]
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src/__mocks__",
+          "filename": "controller.mock",
+          "tsExports": [
+            {
+              "name": "ControllerMock"
+            }
+          ],
+          "tsImports": [
+            {
+              "fullpath": "/home/rbergmann/projects/resources/annotations",
+              "name": "Controller",
+              "source": "annotations"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/annotations",
+              "name": "GetRequest",
+              "source": "annotations"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/annotations",
+              "name": "PathVariable",
+              "source": "annotations"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/resources/annotations",
+              "name": "SuccessResponse",
+              "source": "annotations"
+            },
+            {
+              "fullpath": "/home/rbergmann/projects/tsmeta/something.mock",
+              "name": "SomethingMock",
+              "source": "something.mock"
+            }
+          ],
+          "tsClass": {
+            "decorators": [
+              {
+                "name": "Controller",
+                "tsarguments": [
+                  {
+                    "representation": "controller/mock"
+                  }
+                ]
+              }
+            ],
+            "methods": [
+              {
+                "name": "getSomething",
+                "decorators": [
+                  {
+                    "name": "GetRequest",
+                    "tsarguments": [
+                      {
+                        "representation": "/something"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "SuccessResponse",
+                    "tsarguments": []
+                  }
+                ],
+                "parameters": [
+                  {
+                    "decorators": [
+                      {
+                        "name": "PathVariable",
+                        "tsarguments": [
+                          {
+                            "representation": {
+                              "name": "text",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "name": "text"
+                  }
+                ]
+              }
+            ],
+            "name": "ControllerMock",
+            "properties": []
+          },
+          "tsMains": []
+        },
+        {
+          "path": "/home/rbergmann/projects/tsmeta/src",
+          "filename": "index",
+          "tsExports": [
+            {
+              "name": "./resources/annotations"
+            },
+            {
+              "name": "./resources/element.type"
+            },
+            {
+              "name": "./resources/sigma"
+            },
+            {
+              "name": "./resources/tsmeta.config"
+            },
+            {
+              "name": "./resources/tsmeta.schema"
+            },
+            {
+              "name": "./lib/ts.methods"
+            },
+            {
+              "name": "./classes/tsmeta.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.argument.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.class.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.decorator.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.export.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.file.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.import.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.main.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.method.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.package.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.parameter.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.property.factory"
+            },
+            {
+              "name": "./classes/tsmeta.factories/tsmeta.type.factory"
+            },
+            {
+              "name": "./classes/sigma.generator"
+            },
+            {
+              "name": "./classes/sigma.generators/sigma.edge.generator"
+            },
+            {
+              "name": "./classes/sigma.generators/sigma.node.generator"
+            },
+            {
+              "name": "./__mocks__/controller.mock"
+            },
+            {
+              "name": "./__mocks__/simple.mock"
+            },
+            {
+              "name": "./__mocks__/something.mock"
+            }
+          ],
+          "tsImports": [],
+          "tsMains": []
+        }
+      ]
+    }
+  ]
+}
