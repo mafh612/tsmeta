@@ -1,4 +1,4 @@
-import { ElementType } from '../../resources/element.type'
+import { ElementTypes } from '../../resources/element.types.enum'
 import { SigmaNode } from '../../resources/sigma'
 
 /**
@@ -13,7 +13,7 @@ class SigmaNodeGenerator {
    * @param elementType
    * @param size
    */
-  public generate(id: string, label: string, elementType: ElementType, size: number): SigmaNode {
+  public generate(id: string, label: string, elementType: ElementTypes, size: number): SigmaNode {
     const color: string = elementType.color
     const etype: string = elementType.name
     const x: number = 0

@@ -1,3 +1,5 @@
+import { TypescriptTypes } from './typescript.types.enum'
+
 // tslint:disable no-reserved-keywords
 /**
  * ts-meta model
@@ -127,5 +129,9 @@ export interface TsArgument {
  * TsType
  */
 export interface TsType {
-  representation: string
+  representation?: string
+  basicType: string|string[]
+  keyType?: string
+  valueType?: string
+  typescriptType: TypescriptTypes
 }

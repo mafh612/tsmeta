@@ -1,5 +1,7 @@
-import { SyntaxKind, TypeNode } from 'typescript'
+import { TypeNode } from 'typescript'
+import { TypeNodeToTsType } from '../../lib/ts.methods'
 import { TsType } from '../../resources/tsmeta.schema'
+import { TypescriptTypes } from '../../resources/typescript.types.enum'
 
 /**
  * class TsMetaTypeFactory
@@ -10,45 +12,14 @@ class TsMetaTypeFactory {
    * build TsType element
    */
   public build(typeNode: TypeNode): TsType {
-    let representation: string
-
     if (!typeNode) {
       return {
-        representation: 'not typed'
+        basicType: 'not typed',
+        typescriptType: TypescriptTypes.UNTYPED
       }
     }
 
-    switch (typeNode.kind) {
-      case SyntaxKind.BooleanKeyword:
-        representation = 'boolean'
-        break
-      case SyntaxKind.NumberKeyword:
-        representation = 'number'
-        break
-      case SyntaxKind.StringKeyword:
-        representation = 'string'
-        break
-      case SyntaxKind.ArrayType:
-        // console.log('ArrayType') // tslint:disable-line
-        // console.log(typeNode) // tslint:disable-line
-        break
-      case SyntaxKind.TypeLiteral:
-        // console.log('TypeLiteral') // tslint:disable-line
-        // console.log(typeNode) // tslint:disable-line
-        break
-      case SyntaxKind.TypeReference:
-        // console.log('TypeReference') // tslint:disable-line
-        // console.log(typeNode) // tslint:disable-line
-        break
-      default:
-        // console.log('-----------') // tslint:disable-line
-        // console.log(typeNode.kind) // tslint:disable-line
-        // console.log('-----------') // tslint:disable-line
-    }
-
-    return {
-      representation
-    }
+    return <TsType> TypeNodeToTsType(typeNode)
   }
 }
 

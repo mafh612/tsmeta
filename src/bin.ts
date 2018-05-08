@@ -28,13 +28,7 @@ class TsMetaExecution {
 
     this.tsMeta = this.createTsMetaSchema()
 
-    // console.log(`TsMeta\n${this.tsMeta}`) // tslint:disable-line
-    // console.log(`TsMeta\n${JSON.stringify(this.tsMeta, undefined, 2)}`) // tslint:disable-line
-
     this.sigmaData = this.createSigma()
-
-    // console.log(`SigmaData\n${this.sigmaData}`) // tslint:disable-line
-    // console.log(`SigmaData\n${JSON.stringify(this.sigmaData, undefined, 2)}`) // tslint:disable-line
 
     this.writeAllToFile()
   }
@@ -101,6 +95,9 @@ class TsMetaExecution {
   /* private createGraphQL(): string {
   } */
 
+  /**
+   * write all data to files
+   */
   private writeAllToFile(): void {
     if (this.tsMetaConfig.metaConfig && this.tsMetaConfig.metaConfig.create) {
       this.writeToFile(this.tsMetaConfig.metaConfig.outputPath, this.tsMetaConfig.metaConfig.outputFilename, this.tsMeta)
@@ -119,6 +116,9 @@ class TsMetaExecution {
     } */
   }
 
+  /**
+   * write file
+   */
   private writeToFile(path: string, filename: string, data: any): void {
     const indent: number = 2
 
@@ -128,7 +128,7 @@ class TsMetaExecution {
 
     WriteFile(`${resolvedPath}/${filename}`, JSON.stringify(data, undefined, indent), { encoding: 'utf8' }, (err: Error) => {
       if (err) console.log(err)
-      else console.log(`saved ${filename}`)
+      else console.log(`\nsaved ${filename}`)
     })
   }
 }

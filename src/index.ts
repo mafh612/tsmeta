@@ -1,10 +1,10 @@
 /**
  * export all ts-meta
  */
-export * from './resources/annotations'
-export * from './resources/element.type'
+/* export * from './resources/annotations'
+export * from './resources/element.type' */
 // export * from './resources/openapispec'
-export * from './resources/sigma'
+/* export * from './resources/sigma'
 export * from './resources/tsmeta.config'
 export * from './resources/tsmeta.schema'
 
@@ -26,7 +26,7 @@ export * from './classes/tsmeta.factories/tsmeta.type.factory'
 
 export * from './classes/sigma.generator'
 export * from './classes/sigma.generators/sigma.edge.generator'
-export * from './classes/sigma.generators/sigma.node.generator'
+export * from './classes/sigma.generators/sigma.node.generator' */
 
 export * from './__mocks__/controller.mock'
 export * from './__mocks__/simple.mock'

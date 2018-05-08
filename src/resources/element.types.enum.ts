@@ -2,7 +2,7 @@
 /**
  * ElementType enum
  */
-class ElementType {
+class ElementTypes {
   public static FILE: { name: string; color: string } = { name: 'file', color: '#999999' }
   public static PACKAGE: { name: string; color: string } = { name:  'package', color: '#ffffff' }
   public static CLASS: { name: string; color: string } = { name:  'class', color: '#ff0000' }
@@ -15,4 +15,4 @@ class ElementType {
   public color: string
 }
 
-export { ElementType }
+export { ElementTypes }

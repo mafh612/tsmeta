@@ -1,4 +1,4 @@
-import { ElementType } from '../resources/element.type'
+import { ElementTypes } from '../resources/element.types.enum'
 import { SigmaData, SigmaEdge, SigmaNode } from '../resources/sigma'
 import { TsClass, TsFile, TsImport, TsMain, TsMeta, TsMethod, TsProgram, TsProperty } from '../resources/tsmeta.schema'
 import { SigmaEdgeGenerator } from './sigma.generators/sigma.edge.generator'
@@ -56,7 +56,7 @@ class SigmaGenerator {
     const id: string = tsClass.name
     const label: string = tsClass.name
 
-    this.nodes.push(this.sigmaNodeGenerator.generate(id, label, ElementType.CLASS, 1))
+    this.nodes.push(this.sigmaNodeGenerator.generate(id, label, ElementTypes.CLASS, 1))
 
     if (tsClass.properties) {
       this.nodes = this.nodes.concat(this.nodesFromProperties(tsClass))
@@ -89,7 +89,7 @@ class SigmaGenerator {
       const id: string = tsMain.name
       const label: string = tsMain.name
 
-      this.nodes.push(this.sigmaNodeGenerator.generate(id, label, ElementType.INTERFACE, 1))
+      this.nodes.push(this.sigmaNodeGenerator.generate(id, label, ElementTypes.INTERFACE, 1))
     })
   }
 
@@ -101,7 +101,7 @@ class SigmaGenerator {
       const id: string = tsMain.name + tsProperty.name
       const label: string = tsProperty.name
 
-      return this.sigmaNodeGenerator.generate(id, label, ElementType.PROPERTY, 1)
+      return this.sigmaNodeGenerator.generate(id, label, ElementTypes.PROPERTY, 1)
     })
   }
 
@@ -113,7 +113,7 @@ class SigmaGenerator {
       const id: string = tsMain.name + tsMethod.name
       const label: string = tsMethod.name
 
-      return this.sigmaNodeGenerator.generate(id, label, ElementType.METHOD, 1)
+      return this.sigmaNodeGenerator.generate(id, label, ElementTypes.METHOD, 1)
     })
   }
 
@@ -163,11 +163,11 @@ class SigmaGenerator {
       const packageSize: number = 1
 
       if (this.nodes.findIndex((node: SigmaNode) => node.id === edge.source) === -1) {
-        this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementType.PACKAGE, packageSize))
+        this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementTypes.PACKAGE, packageSize))
       }
 
       if (this.nodes.findIndex((node: SigmaNode) => node.id === edge.target) === -1) {
-        this.nodes.push(this.sigmaNodeGenerator.generate(edge.target, edge.target, ElementType.PACKAGE, packageSize))
+        this.nodes.push(this.sigmaNodeGenerator.generate(edge.target, edge.target, ElementTypes.PACKAGE, packageSize))
       }
     })
 

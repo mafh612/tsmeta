@@ -1,15 +1,25 @@
 // tslint:disable no-use-before-declare
 import {
+  ArrayTypeNode,
   CompilerOptions,
   createProgram as CreateProgram,
   Expression,
   Identifier,
+  IndexSignatureDeclaration,
   ObjectLiteralExpression,
   Program,
   PropertyAssignment,
   PropertyName,
-  SyntaxKind
+  SyntaxKind,
+  TypeElement,
+  TypeLiteralNode,
+  TypeNode,
+  TypeReferenceNode,
+  UnionTypeNode
 } from 'typescript'
+import { TsType } from '../resources/tsmeta.schema'
+import { TypescriptTypes } from '../resources/typescript.types.enum'
+import { TsTypeClass } from './ts.type.class'
 
 /**
  * create typescript program file from rootNames
@@ -72,6 +82,64 @@ const objectLiteralExpressionToString: ((expression: ObjectLiteralExpression) =>
  */
 const expressionToString: ((expression: Expression) => string) = (expression: Expression): string => (<Identifier> expression).text
 
+/**
+ * extract TsType from IndexSignature
+ */
+const indexSignaturToTsType: ((indexSignature: IndexSignatureDeclaration) => TsType) = (indexSignature: IndexSignatureDeclaration): TsType => {
+    const tsType: TsType = new TsTypeClass({ basicType: 'key', typescriptType: TypescriptTypes.MAP})
+    tsType.keyType = <string> typeNodeToTsType(indexSignature.parameters[0].type).basicType
+    tsType.valueType = <string> typeNodeToTsType(indexSignature.type).basicType
+
+    return tsType
+}
+
+/**
+ * extract TsType from TypeNode
+ */
+const typeNodeToTsType: (
+  (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode) => TsType)
+  = (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode): TsType => {
+  let tsType: TsType
+
+  switch (typeNode.kind) {
+    case SyntaxKind.AnyKeyword:
+      tsType = new TsTypeClass({basicType: 'any', typescriptType: TypescriptTypes.BASIC })
+      break
+    case SyntaxKind.BooleanKeyword:
+      tsType = new TsTypeClass({ basicType: 'boolean', typescriptType: TypescriptTypes.BASIC })
+      break
+    case SyntaxKind.NumberKeyword:
+      tsType = new TsTypeClass({ basicType: 'number', typescriptType: TypescriptTypes.BASIC })
+      break
+    case SyntaxKind.StringKeyword:
+      tsType = new TsTypeClass({ basicType: 'string', typescriptType: TypescriptTypes.BASIC })
+      break
+    case SyntaxKind.IndexSignature:
+      tsType = indexSignaturToTsType(<IndexSignatureDeclaration> typeNode)
+      break
+    case SyntaxKind.ArrayType:
+      const arrayType: TsType = new TsTypeClass(typeNodeToTsType((<ArrayTypeNode> typeNode).elementType))
+      arrayType.typescriptType = TypescriptTypes.ARRAY
+      tsType = arrayType
+      break
+    case SyntaxKind.UnionType:
+      const unionTypes: TsType[] = (<UnionTypeNode> typeNode).types.map(typeNodeToTsType)
+      tsType = new TsTypeClass({ basicType: unionTypes.map((ut: TsType): string => <string> ut.basicType), typescriptType: TypescriptTypes.MULTIPLE })
+      break
+    case SyntaxKind.TypeLiteral:
+      return (<TypeLiteralNode> typeNode).members.map((typeElement: TypeElement) => <TsType> typeNodeToTsType(typeElement)).pop()
+    case SyntaxKind.TypeReference:
+      const basicType: string = identifierToString(<Identifier> (<TypeReferenceNode> typeNode).typeName)
+      tsType = new TsTypeClass({ basicType, typescriptType: TypescriptTypes.REFERENCE })
+      break
+    default:
+  }
+
+  if ('createRepresentation' in tsType) (<TsTypeClass> tsType).createRepresentation()
+
+  return tsType
+}
+
 export {
   createTypescriptProgram as CreateTypescriptProgram,
   expressionToString as ExpressionToString,
@@ -79,5 +147,6 @@ export {
   initializerToString as InitializerToString,
   objectLiteralExpressionToString as ObjectLiteralExpressionToString,
   propertyNameToString as PropertyNameToString,
-  tokenToString as TokenToString
+  tokenToString as TokenToString,
+  typeNodeToTsType as TypeNodeToTsType
 }
