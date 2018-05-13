@@ -4,7 +4,7 @@
     "create": true,
     "outputPath": "schema",
     "outputFilename": "tsmeta.tsmeta.schema.json",
-    "compilerOptions": "tsconfig.json"
+    "compilerOptions": "tsconfig.build.json"
   },
   "sigmaConfig": {
     "create": true,

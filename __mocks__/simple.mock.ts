@@ -5,6 +5,8 @@ import * as fs from 'fs'
  */
 class SimpleMock {
 
+  public baseDirContent: string[]
+
   constructor() {
     this.readBaseDir()
   }

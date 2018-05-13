@@ -131,7 +131,7 @@ export interface TsArgument {
 export interface TsType {
   representation?: string
   basicType: string|string[]
-  keyType?: string
-  valueType?: string
+  keyType?: string|string[]
+  valueType?: string|string[]
   typescriptType: TypescriptTypes
 }

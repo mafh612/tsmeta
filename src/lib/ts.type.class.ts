@@ -8,8 +8,8 @@ class TsTypeClass implements TsType {
 
   public representation?: string
   public basicType: string|string[]
-  public keyType?: string
-  public valueType?: string
+  public keyType?: string|string[]
+  public valueType?: string|string[]
   public typescriptType: TypescriptTypes
 
   constructor(tsType: TsType) {
@@ -35,10 +35,18 @@ class TsTypeClass implements TsType {
         this.representation = <string> `${this.basicType}[]`
         break
       case TypescriptTypes.MAP:
-        this.representation = <string> `Map<${this.keyType}, ${this.valueType}>`
+        if (Array.isArray(this.valueType))  this.representation = <string> `Map<${this.keyType}, ${this.valueType.join('|')}>`
+        else this.representation = <string> `Map<${this.keyType}, ${this.valueType}>`
         break
       case TypescriptTypes.REFERENCE:
         this.representation = <string> this.basicType
+        break
+      case TypescriptTypes.PROMISE:
+        this.representation = `Promise<${this.valueType}>`
+        break
+      case TypescriptTypes.PROP:
+        const propTypes: string = (<string[]> this.keyType).map((keyType: string, i: number) => `${keyType}: ${this.valueType[i]}`).join('; ')
+        this.representation = `{ ${propTypes} }`
         break
       case TypescriptTypes.UNTYPED:
         this.representation = <string> this.basicType

@@ -10,6 +10,7 @@ import {
   Program,
   PropertyAssignment,
   PropertyName,
+  PropertySignature,
   SyntaxKind,
   TypeElement,
   TypeLiteralNode,
@@ -94,12 +95,25 @@ const indexSignaturToTsType: ((indexSignature: IndexSignatureDeclaration) => TsT
 }
 
 /**
+ * extract TsType from PropertySignature
+ */
+const propertySignaturToTsType: ((propertySignature: PropertySignature) => TsType) = (propertySignature: PropertySignature): TsType => {
+    const tsType: TsType = new TsTypeClass({ basicType: 'key', typescriptType: TypescriptTypes.MAP})
+    tsType.keyType = identifierToString(<Identifier> propertySignature.name)
+    tsType.valueType = <string> typeNodeToTsType(propertySignature.type).basicType
+
+    return tsType
+}
+
+/**
  * extract TsType from TypeNode
  */
 const typeNodeToTsType: (
   (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode) => TsType)
   = (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode): TsType => {
   let tsType: TsType
+
+  console.log(typeNode.kind) // tslint:disable-line
 
   switch (typeNode.kind) {
     case SyntaxKind.AnyKeyword:
@@ -114,8 +128,14 @@ const typeNodeToTsType: (
     case SyntaxKind.StringKeyword:
       tsType = new TsTypeClass({ basicType: 'string', typescriptType: TypescriptTypes.BASIC })
       break
+    case SyntaxKind.ObjectKeyword:
+      tsType = new TsTypeClass({ basicType: 'object', typescriptType: TypescriptTypes.BASIC })
+      break
     case SyntaxKind.IndexSignature:
       tsType = indexSignaturToTsType(<IndexSignatureDeclaration> typeNode)
+      break
+    case SyntaxKind.PropertySignature:
+      tsType = propertySignaturToTsType(<PropertySignature> typeNode)
       break
     case SyntaxKind.ArrayType:
       const arrayType: TsType = new TsTypeClass(typeNodeToTsType((<ArrayTypeNode> typeNode).elementType))
@@ -127,12 +147,51 @@ const typeNodeToTsType: (
       tsType = new TsTypeClass({ basicType: unionTypes.map((ut: TsType): string => <string> ut.basicType), typescriptType: TypescriptTypes.MULTIPLE })
       break
     case SyntaxKind.TypeLiteral:
-      return (<TypeLiteralNode> typeNode).members.map((typeElement: TypeElement) => <TsType> typeNodeToTsType(typeElement)).pop()
+      const tsTypes: TsType[] = (<TypeLiteralNode> typeNode).members.map((typeElement: TypeElement) => <TsType> typeNodeToTsType(typeElement))
+
+      if (tsTypes.length > 1) {
+        tsType = tsTypes.reduce((prev: TsType, curr: TsType) => {
+          if (Array.isArray(prev.keyType)) prev.keyType.push(<string> curr.keyType)
+          else prev.keyType = [prev.keyType, <string> curr.keyType]
+
+          if (Array.isArray(prev.valueType)) prev.valueType.push(<string> curr.valueType)
+          else prev.valueType = [prev.valueType, <string> curr.valueType]
+
+          return prev
+        })
+
+        tsType.typescriptType = TypescriptTypes.PROP
+      } else tsType = tsTypes.pop()
+
+      break
     case SyntaxKind.TypeReference:
-      const basicType: string = identifierToString(<Identifier> (<TypeReferenceNode> typeNode).typeName)
-      tsType = new TsTypeClass({ basicType, typescriptType: TypescriptTypes.REFERENCE })
+      let basicType: string = identifierToString(<Identifier> (<TypeReferenceNode> typeNode).typeName)
+      let keyType: string
+      let valueType: string
+      let typescriptType: TypescriptTypes = TypescriptTypes.REFERENCE
+
+      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Array') {
+        basicType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
+        typescriptType = TypescriptTypes.ARRAY
+      }
+
+      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Map') {
+        keyType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
+        valueType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[1]).basicType
+        typescriptType = TypescriptTypes.MAP
+      }
+
+      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Promise') {
+        valueType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
+        typescriptType = TypescriptTypes.PROMISE
+      }
+
+      tsType = new TsTypeClass({ basicType, keyType, valueType, typescriptType })
+
       break
     default:
+      console.log(typeNode.kind) // tslint:disable-line
+      tsType = new TsTypeClass({ basicType: 'undefined', typescriptType: TypescriptTypes.UNTYPED })
   }
 
   if ('createRepresentation' in tsType) (<TsTypeClass> tsType).createRepresentation()

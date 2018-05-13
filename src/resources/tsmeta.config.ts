@@ -52,9 +52,9 @@ export interface GraphQLConfig extends BaseConfig {
 export interface TsMetaConfig {
   basePackage: string
   metaConfig: MetaConfig
-  sigmaConfig: SigmaConfig
-  oasConfig: OasConfig
-  graphqlConfig: GraphQLConfig
+  sigmaConfig?: SigmaConfig
+  oasConfig?: OasConfig
+  graphqlConfig?: GraphQLConfig
 }
 
 /**

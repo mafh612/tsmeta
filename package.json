@@ -7,9 +7,9 @@
   "version": "0.0.1",
   "description": "typescript project meta analysis",
   "scripts": {
-    "test": "jest --config jest.config.json",
+    "test": "jest --config jest.config.js",
     "prebuild": "tslint --project tslint.json -e '__tests__/**'",
-    "build": "tsc --project tsconfig.json",
+    "build": "tsc --project tsconfig.build.json",
     "dev": "npm run build && node dist/bin.js",
     "start": "node dist/bin.js",
     "view": "node view/server.js",
@@ -18,6 +18,8 @@
   "author": "mafh",
   "license": "MIT",
   "dependencies": {
+    "@types/deep-assign": "^0.1.1",
+    "deep-assign": "^2.0.0",
     "reflect-metadata": "^0.1.12",
     "typescript": "^2.8.3"
   },

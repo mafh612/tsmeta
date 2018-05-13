@@ -1,30 +1,11 @@
-/**
- * interface ParameterParam
- */
-export interface ParameterParam {
-  name: string
-  required: boolean
-}
-/**
- * interface SuccessResponseParam
- */
-export interface ResponseParam {
-  statusCode?: number
-  response?: any
-  version?: string
-}
-/**
- * interface ModelParam
- */
-export interface ModelParam {
-  version: string
-  example?: any
-}
+import { ModelParam, ParameterParam, PropertyParam, ResponseParam } from './annotation.schema'
+
 /**
  * decorator functions
  */
 const classFunction: ((target: any) => any) = (target: any): any => target
 const methodFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[<string> key]
+const propertyFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[<string> key]
 const parameterFunction: ((target: any, key: string|Symbol, index: number) => any) = (target: any, key: string|Symbol, index: number): any => target[<string> key][index] // tslint:disable-line
 /**
  * class annotations
@@ -41,6 +22,11 @@ const patchRequest: ((path: string) => any) = (path: string): Function => method
 const deleteRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const headRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
+const errorResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
+/**
+ * property annotations
+ */
+const property: ((propertyParam: PropertyParam) => any) = (propertyParam: PropertyParam): Function => propertyFunction
 /**
  * parameter annotations
  */
@@ -58,6 +44,8 @@ export {
   deleteRequest as DeleteRequest,
   headRequest as HeadRequest,
   successResponse as SuccessResponse,
+  errorResponse as ErrorResponse,
+  property as Property,
   pathVariable as PathVariable,
   reqParam as ReqParam,
   reqBody as ReqBody

@@ -23,12 +23,15 @@ class TsMetaExecution {
 
   private sigmaGenerator: SigmaGenerator = new SigmaGenerator()
 
-  constructor() {
+  /**
+   * execute tsmeta
+   */
+  public execute(): void {
     this.tsMetaConfig = this.loadConfigFile()
 
     this.tsMeta = this.createTsMetaSchema()
 
-    this.sigmaData = this.createSigma()
+    if (this.tsMetaConfig.sigmaConfig && this.tsMetaConfig.sigmaConfig.create) this.sigmaData = this.createSigma()
 
     this.writeAllToFile()
   }
@@ -133,4 +136,9 @@ class TsMetaExecution {
   }
 }
 
-!new TsMetaExecution() // tslint:disable-line no-unused-expression
+export { TsMetaExecution }
+
+if (process.env.NODE_ENV !== 'test') {
+  const tsMetaExecution: TsMetaExecution = new TsMetaExecution()
+  tsMetaExecution.execute()
+}

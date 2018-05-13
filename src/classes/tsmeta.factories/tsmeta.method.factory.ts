@@ -3,6 +3,7 @@ import { PropertyNameToString } from '../../lib/ts.methods'
 import { TsDecorator, TsMethod, TsParameter, TsType } from '../../resources/tsmeta.schema'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaParameterFactory } from './tsmeta.parameter.factory'
+import { TsMetaTypeFactory } from './tsmeta.type.factory'
 
 /**
  * class TsMetaMethodFactory
@@ -11,6 +12,7 @@ class TsMetaMethodFactory {
 
   private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
   private tsMetaParameterFactory: TsMetaParameterFactory = new TsMetaParameterFactory()
+  private tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
 
   /**
    * build TsMethod element
@@ -27,7 +29,7 @@ class TsMetaMethodFactory {
         .map((parameterDeclaration: ParameterDeclaration) => this.tsMetaParameterFactory.build(parameterDeclaration))
       : undefined
 
-    const tstype: TsType = undefined
+    const tstype: TsType = this.tsMetaTypeFactory.build(method.type)
 
     return {
       name,

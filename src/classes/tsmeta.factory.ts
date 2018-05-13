@@ -20,7 +20,7 @@ class TsMetaFactory {
    * build TsMeta element
    */
   public build(tsMetaConfig: TsMetaConfig): TsMeta {
-    const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build('package.json')
+    const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build(tsMetaConfig.basePackage)
     const additionalTsPackages: TsPackage[] = this.scanAdditionalPackages(baseTsPackage)
     const programs: TsProgram[] = [this.createMainProgram(tsMetaConfig, baseTsPackage)]
 
