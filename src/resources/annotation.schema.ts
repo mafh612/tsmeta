@@ -12,6 +12,10 @@ export interface PropertyParam {
 export interface ParameterParam {
   name: string
   required: boolean
+  ref?: any
+  version?: string
+  res?: any
+  example?: any
 }
 /**
  * interface SuccessResponseParam

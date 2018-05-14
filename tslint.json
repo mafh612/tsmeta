@@ -23,6 +23,7 @@
     }],
     "completed-docs": [true, "classes", "functions", "interfaces", "methods"],
     "curly": false,
+    "cyclomatic-complexity": [true, 50],
     "deprecation": true,
     "indent": [true, "spaces", 2],
     "interface-name": [true, "never-prefix"],

@@ -25,6 +25,7 @@ class OasOperationGenerator {
 
     const parameters: Parameter[] = tsMethod.parameters
       .map((tsParameter: TsParameter) => this.oasParameterGenerator.generate(tsParameter))
+      .filter((parameter: Parameter) => !!parameter)
 
     let responses: { [key: number]: Response } = {}
 

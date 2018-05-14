@@ -99,6 +99,7 @@ export interface TsDecorator {
  */
 export interface TsProperty {
   name: string
+  decorators: TsDecorator[]
   tstype: TsType
 }
 /**
@@ -122,7 +123,7 @@ export interface TsParameter {
  * TsArgument interface
  */
 export interface TsArgument {
-  representation: string
+  representation: any
   tstype: TsType
 }
 /**

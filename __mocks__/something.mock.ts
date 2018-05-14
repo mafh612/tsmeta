@@ -1,4 +1,4 @@
-import { Model } from '../src'
+import { Model, Property } from '../src'
 import { SimpleMock } from './simple.mock'
 
 /**
@@ -32,6 +32,7 @@ class SomethingMock {
   public count: number
   public text: string
   public much: string[]
+  @Property({ format: 'base64', version: 'v2' })
   public muchOther: SimpleMock[]
   public many: Array<string> //tslint:disable-line
   public manyOther: Array<SimpleMock> //tslint:disable-line

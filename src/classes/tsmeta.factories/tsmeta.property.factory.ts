@@ -1,6 +1,7 @@
-import { PropertyDeclaration, PropertySignature } from 'typescript'
+import { Decorator, PropertyDeclaration, PropertySignature } from 'typescript'
 import { PropertyNameToString } from '../../lib/ts.methods'
-import { TsProperty, TsType } from '../../resources/tsmeta.schema'
+import { TsDecorator, TsProperty, TsType } from '../../resources/tsmeta.schema'
+import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaTypeFactory } from './tsmeta.type.factory'
 
 /**
@@ -9,17 +10,24 @@ import { TsMetaTypeFactory } from './tsmeta.type.factory'
 class TsMetaPropertyFactory {
 
   private tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
+  private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
 
   /**
    * build TsProperty element
    * @param propertyDeclaration
    */
   public build(property: PropertyDeclaration|PropertySignature): TsProperty {
+    let decorators: TsDecorator[]
+
+    if (property.decorators) {
+      decorators = property.decorators.map((decorator: Decorator) => this.tsMetaDecoratorFactory.build(decorator))
+    }
 
     const name: string = PropertyNameToString(property.name)
     const tstype: TsType = this.tsMetaTypeFactory.build(property.type)
 
     return {
+      decorators,
       name,
       tstype
     }

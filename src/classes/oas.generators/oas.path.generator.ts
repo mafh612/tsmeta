@@ -1,5 +1,5 @@
 import { MappingAnnotations } from '../../resources/mapping.annotation.enum'
-import { Operation, PathItem } from '../../resources/openapispec'
+import { PathItem } from '../../resources/openapispec'
 import { OasConfig } from '../../resources/tsmeta.config'
 import { TsDecorator, TsMethod } from '../../resources/tsmeta.schema'
 import { OasOperationGenerator } from './oas.operation.generator'
@@ -16,10 +16,9 @@ class OasPathGenerator {
   /**
    * generated PathItem
    */
-  public generate(controllerPath: string, tsMethod: TsMethod, oasConfig: OasConfig): { [key: string]: PathItem } {
+  public generate(controllerPath: string, tsMethod: TsMethod): { [key: string]: PathItem } {
     const pathItem: { [key: string]: PathItem } = {}
 
-    this.oasConfig = oasConfig
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
 
     const mappingDecorator: TsDecorator = tsMethod.decorators.reduce((curr: TsDecorator, prev: TsDecorator): TsDecorator => {

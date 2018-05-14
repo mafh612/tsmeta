@@ -113,8 +113,6 @@ const typeNodeToTsType: (
   = (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode): TsType => {
   let tsType: TsType
 
-  console.log(typeNode.kind) // tslint:disable-line
-
   switch (typeNode.kind) {
     case SyntaxKind.AnyKeyword:
       tsType = new TsTypeClass({basicType: 'any', typescriptType: TypescriptTypes.BASIC })
@@ -189,12 +187,14 @@ const typeNodeToTsType: (
       tsType = new TsTypeClass({ basicType, keyType, valueType, typescriptType })
 
       break
+    case SyntaxKind.VoidKeyword:
+      tsType = undefined
+      break
     default:
-      console.log(typeNode.kind) // tslint:disable-line
       tsType = new TsTypeClass({ basicType: 'undefined', typescriptType: TypescriptTypes.UNTYPED })
   }
 
-  if ('createRepresentation' in tsType) (<TsTypeClass> tsType).createRepresentation()
+  if (tsType && 'createRepresentation' in tsType) (<TsTypeClass> tsType).createRepresentation()
 
   return tsType
 }

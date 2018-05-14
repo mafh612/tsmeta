@@ -1,11 +1,20 @@
-import { Parameter, Schema } from '../../resources/openapispec'
+import { ParameterParam } from '../../resources/annotation.schema'
+import { Parameter } from '../../resources/openapispec'
 import { OasConfig } from '../../resources/tsmeta.config'
-import { TsParameter } from '../../resources/tsmeta.schema'
+import { TsDecorator, TsParameter } from '../../resources/tsmeta.schema'
 
 /**
  * class OasParameterGenerator
  */
 class OasParameterGenerator {
+
+  private parameterAnnotations: string[] = ['PathVariable', 'RequestParam', 'RequestHeader', 'CookieValue']
+  private parameterAnnotationMap: { [key: string]: string } = {
+    PathVariable: 'path',
+    RequestParam: 'query',
+    RequestHeader: 'header',
+    CookieValue: 'cookie'
+  }
 
   constructor(private oasConfig: OasConfig) {}
 
@@ -13,15 +22,22 @@ class OasParameterGenerator {
    * generate Parameter
    */
   public generate(tsParameter: TsParameter): Parameter {
-    const $ref: string = undefined
-    const allowEmptyValue: boolean = undefined
-    const deprecated: boolean = undefined
-    const description: string = undefined
-    const example: string = undefined
-    const _in: string = undefined
-    const name: string = undefined
-    const required: boolean = undefined
-    const schema: Schema = undefined
+    const parameterDecorator: TsDecorator = tsParameter.decorators
+      .find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(this.mapAnnotations(tsDecorator.name)))
+
+    if (!parameterDecorator) return undefined
+
+    const parameterArgument: ParameterParam = parameterDecorator.tsarguments.pop().representation
+
+    const $ref: string = parameterArgument.ref
+    const allowEmptyValue: boolean = !parameterArgument.required
+    const deprecated: boolean = false
+    const description: string = `${parameterDecorator.name} ${tsParameter.name}`
+    const example: any = parameterArgument.example
+    const _in: string = this.parameterAnnotationMap[parameterDecorator.name]
+    const name: string = parameterArgument.name
+    const required: boolean = parameterArgument.required
+    const schema: any = parameterArgument.res
 
     return {
       $ref,
@@ -34,6 +50,13 @@ class OasParameterGenerator {
       required,
       schema
     }
+  }
+
+  /**
+   * fetch standard mapping annotation by used annotation
+   */
+  private mapAnnotations(used: string): string {
+    return this.oasConfig.annotationsMap[used] || used
   }
 }
 
