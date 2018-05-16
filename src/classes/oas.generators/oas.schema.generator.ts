@@ -34,57 +34,57 @@ class OasSchemaGenerator {
    */
   private createSubSchema(tsProperty: TsProperty, propertyParam: PropertyParam): Schema {
     let schema: Schema = {}
+    const version: string = propertyParam && propertyParam.version || 'v1'
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.ARRAY:
-        schema = {
-          type: 'array',
-          items: <string> tsProperty.tstype.basicType
-        }
+        const typeName: string = <string> tsProperty.tstype.basicType
+
+        if (['any', 'boolean', 'number', 'string'].includes(typeName)) schema = { type: 'array', items: { type: typeName } }
+        else schema = { type: 'array', items: { $ref: `#/components/schemas/${typeName}_${version}` } }
         break
       case TypescriptTypes.BASIC:
-        schema = {
-          type: <string> tsProperty.tstype.basicType
-        }
+        schema = { type: <string> tsProperty.tstype.basicType }
         break
       case TypescriptTypes.MAP:
-        schema = {
-          type: <string> tsProperty.tstype.keyType,
-          additionalProperties: {
-            type: <string> tsProperty.tstype.valueType
-          }
-        }
+        const propertiesType: string = <string> tsProperty.tstype.valueType
+        let _type: string
+        let $ref: string
+
+        if (['any', 'boolean', 'number', 'string'].includes(propertiesType))  _type = propertiesType
+        else $ref = `#/components/schemas/${propertiesType}_${version}`
+
+        schema = { type: 'object', additionalProperties: { type: _type, $ref } }
         break
       case TypescriptTypes.MULTIPLE:
-        schema = {
-          type: (<string[]> tsProperty.tstype.basicType).join('|')
-        }
+        schema = { type: (<string[]> tsProperty.tstype.basicType).join('|') }
         break
       case TypescriptTypes.PROMISE:
-        schema = {
-          type: <string> tsProperty.tstype.valueType
-        }
+        schema = { type: <string> tsProperty.tstype.valueType }
         break
       case TypescriptTypes.PROP:
-        schema = {
-          type: tsProperty.tstype.representation
-        }
+        const properties: { [key: string]: Schema } = {}
+        const keyTypes: string[] = <string[]> tsProperty.tstype.keyType
+
+        keyTypes.forEach((key: string, index: number) => {
+          const value: string = tsProperty.tstype.valueType[index]
+
+          if (['any', 'boolean', 'number', 'string'].includes(value))  properties[key] = { type: value }
+          else properties[key] = { $ref: `#/components/schemas/${value}_${version}` }
+        })
+
+        schema = { type: 'object', properties }
         break
       case TypescriptTypes.REFERENCE:
-        schema = {
-          type: 'object',
-          $ref: `#/components/schemas/${tsProperty.tstype.basicType}_${propertyParam.version}`
-        }
+        schema = { type: 'object', $ref: `#/components/schemas/${tsProperty.tstype.basicType}_${version}` }
         break
       case TypescriptTypes.UNTYPED:
-        schema = {
-          type: 'any'
-        }
+        schema = { type: 'any' }
         break
       default:
     }
 
-    if (propertyParam) schema.format = <string> propertyParam.format
+    if (propertyParam && propertyParam.format) schema.format = <string> propertyParam.format
 
     return schema
   }

@@ -37,7 +37,7 @@ class OasParameterGenerator {
     const _in: string = this.parameterAnnotationMap[parameterDecorator.name]
     const name: string = parameterArgument.name
     const required: boolean = parameterArgument.required
-    const schema: any = parameterArgument.res
+    const schema: any = parameterArgument.res || { type: 'string|number' }
 
     return {
       $ref,

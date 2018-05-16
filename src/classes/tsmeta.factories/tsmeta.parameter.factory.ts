@@ -2,12 +2,14 @@ import { Decorator, Identifier, ParameterDeclaration } from 'typescript'
 import { IdentifierToString } from '../../lib/ts.methods'
 import { TsDecorator, TsParameter, TsType } from '../../resources/tsmeta.schema'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
+import { TsMetaTypeFactory } from './tsmeta.type.factory'
 
 /**
  * class TsMetaParameterFactory
  */
 class TsMetaParameterFactory {
 
+  private tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
   private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
 
   /**
@@ -18,7 +20,7 @@ class TsMetaParameterFactory {
     const decorators: TsDecorator[] = parameterDeclaration.decorators
       ? parameterDeclaration.decorators.map((decorator: Decorator) => this.tsMetaDecoratorFactory.build(decorator))
       : undefined
-    const tstype: TsType = undefined
+    const tstype: TsType = this.tsMetaTypeFactory.build(parameterDeclaration.type)
 
     return {
       decorators,

@@ -1,8 +1,15 @@
 import * as fs from 'fs'
+import { Model } from '../src'
 
 /**
  * class SimpleMock
  */
+@Model({
+  example: {
+    baseDirContent: ['hello']
+  },
+  version: 'v1'
+})
 class SimpleMock {
 
   public baseDirContent: string[]

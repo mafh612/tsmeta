@@ -3,8 +3,8 @@ import { OasFormat } from './oas.format.enum'
  * interface PropertyParam
  */
 export interface PropertyParam {
-  version: string
-  format: OasFormat
+  version?: string
+  format?: OasFormat
 }
 /**
  * interface ParameterParam

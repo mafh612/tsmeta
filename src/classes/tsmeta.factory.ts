@@ -54,7 +54,7 @@ class TsMetaFactory {
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => !sourceFile.fileName.includes('/node_modules/'))
         .map((sourceFile: SourceFile): TsFile => {
-          console.log(` - ${sourceFile.fileName.split('/').pop()}`) // tslint:disable-line no-console
+          if (process.env.NODE_ENV !== 'test') console.log(` - ${sourceFile.fileName.split('/').pop()}`) // tslint:disable-line no-console
 
           return this.tsMetaFileFactory.build(sourceFile)
         })

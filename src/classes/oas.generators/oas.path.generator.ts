@@ -16,7 +16,7 @@ class OasPathGenerator {
   /**
    * generated PathItem
    */
-  public generate(controllerPath: string, tsMethod: TsMethod): { [key: string]: PathItem } {
+  public generate(controllerName: string, controllerPath: string, tsMethod: TsMethod): { [key: string]: PathItem } {
     const pathItem: { [key: string]: PathItem } = {}
 
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
@@ -35,22 +35,22 @@ class OasPathGenerator {
 
     switch (this.mapAnnotations(mappingDecorator.name)) {
       case MappingAnnotations.GET.name:
-        pathItem[fullPath] = { get: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { get: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       case MappingAnnotations.POST.name:
-        pathItem[fullPath] = { post: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { post: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       case MappingAnnotations.PUT.name:
-        pathItem[fullPath] = { put: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { put: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       case MappingAnnotations.PATCH.name:
-        pathItem[fullPath] = { patch: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { patch: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       case MappingAnnotations.DELETE.name:
-        pathItem[fullPath] = { delete: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { delete: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       case MappingAnnotations.HEAD.name:
-        pathItem[fullPath] = { head: this.oasOperationGeneration.generate(tsMethod) }
+        pathItem[fullPath] = { head: this.oasOperationGeneration.generate(controllerName, tsMethod) }
         break
       // istanbul ignore next
       default:
@@ -89,11 +89,12 @@ class OasPathGenerator {
     const controllerPathArray: string[] = controllerPath .split('/').filter((part: string) => part !== '')
     const methodPathArray: string[] = methodPath .split('/').filter((part: string) => part !== '')
 
-    const fullPathArray: string[] = controllerPathArray.concat(methodPathArray)
-    fullPathArray.forEach((pathString: string) => {
-      if (pathString.startsWith(':')) {
-        return `{${pathString.replace(':', '')}}`
-      }
+    let fullPathArray: string[] = controllerPathArray.concat(methodPathArray)
+
+    fullPathArray = fullPathArray.map((pathString: string) => {
+      if (pathString.startsWith(':')) return `{${pathString.replace(':', '')}}` // tslint:disable-line
+
+      return pathString
     })
 
     return fullPathArray.join('/')

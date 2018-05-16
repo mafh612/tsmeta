@@ -32,15 +32,19 @@ class SomethingMock {
   public count: number
   public text: string
   public much: string[]
-  @Property({ format: 'base64', version: 'v2' })
+  @Property({ version: 'v1' })
   public muchOther: SimpleMock[]
   public many: Array<string> //tslint:disable-line
+  @Property({ version: 'v1' })
   public manyOther: Array<SimpleMock> //tslint:disable-line
   public that: { [key: string]: string }
+  @Property({ version: 'v1' })
   public thatOther: { [key: string]: SimpleMock }
   public mapped: Map<string, string>
+  @Property({ version: 'v1' })
   public mappedOther: Map<string, SimpleMock>
   public prop: { name: string; tel: number }
+  @Property({ version: 'v1' })
   public propOther: { name: string; tel: number; simple: SimpleMock }
 
   constructor(text: string) {

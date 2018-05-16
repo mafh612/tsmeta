@@ -34,7 +34,7 @@ class OasGenerator {
     const paths: { [key: string]: PathItem } = this.constructPaths(controllerFiles)
     components.schemas = this.constructSchemas(modelFiles)
 
-    const openapi: string = undefined
+    const openapi: string = '3.0.0'
     const security: SecurityRequirement[] = undefined
     const servers: Server[] = undefined
     const tags: Tag[] = undefined
@@ -103,7 +103,7 @@ class OasGenerator {
       const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
-        paths = deepAssign(paths, this.oasPathGenerator.generate(controllerArgument.representation, tsMethod))
+        paths = deepAssign(paths, this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod))
       })
     })
 
@@ -116,15 +116,28 @@ class OasGenerator {
   private constructSchemas(files: TsFile[]): { [key: string]: Schema } {
     this.oasSchemaGenerator = new OasSchemaGenerator(this.oasConfig)
 
-    let schemas: { [key: string]: Schema } = {}
+    const schemas: { [key: string]: Schema } = {}
 
     files.forEach((tsFile: TsFile) => {
       const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.modelAnnotation)
       const modelParam: ModelParam = modelDecorator.tsarguments.pop().representation
 
+      const schemaName: string = `${tsFile.tsClass.name}_${modelParam.version}`
+      let properties: { [key: string]: Schema } = {}
+
+      schemas[schemaName] = {}
+
       tsFile.tsClass.properties.forEach((tsProperty: TsProperty) => {
-        schemas = deepAssign(schemas, this.oasSchemaGenerator.generate(modelParam, tsProperty))
+        properties = { ...properties, ...this.oasSchemaGenerator.generate(modelParam, tsProperty) }
       })
+
+      const example: any = modelParam.example
+
+      schemas[schemaName] = {
+        type: 'object',
+        properties,
+        example
+      }
     })
 
     return schemas
