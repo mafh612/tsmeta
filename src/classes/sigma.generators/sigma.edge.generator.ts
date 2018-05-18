@@ -1,4 +1,4 @@
-import { SigmaEdge } from '../../resources/sigma'
+import { SigmaEdge } from '../../lib/sigma'
 
 /**
  * class SigmaNodeGenerator

@@ -38,13 +38,14 @@ export interface SigmaConfig extends BaseConfig {
  * interface OasConfig
  */
 export interface OasConfig extends BaseConfig {
+  openapistring: string
   annotationsMap: { [key: string]: string }
 }
 /**
  * interface GraphQLConfig
  */
 export interface GraphQLConfig extends BaseConfig {
-  annotationsMap: { [key: string]: string }
+  annotation: string
 }
 /**
  * interface TsMetaConfigJson
@@ -54,7 +55,7 @@ export interface TsMetaConfig {
   metaConfig: MetaConfig
   sigmaConfig?: SigmaConfig
   oasConfig?: OasConfig
-  graphqlConfig?: GraphQLConfig
+  graphQLConfig?: GraphQLConfig
 }
 
 /**

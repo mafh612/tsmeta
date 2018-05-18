@@ -1,7 +1,7 @@
-import { ResponseParam } from '../../resources/annotation.schema'
-import { MediaType, Response, Schema } from '../../resources/openapispec'
-import { OasConfig } from '../../resources/tsmeta.config'
-import { TsArgument, TsDecorator, TsMethod } from '../../resources/tsmeta.schema'
+import { ResponseParam } from '../../lib/annotation.schema'
+import { MediaType, Response, Schema } from '../../lib/openapispec'
+import { OasConfig } from '../../lib/tsmeta.config'
+import { TsArgument, TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
 
 /**
  * class OasResponseGenerator

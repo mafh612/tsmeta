@@ -1,7 +1,7 @@
 import { resolve as ResolvePath } from 'path'
 import { Expression, ImportClause, ImportDeclaration, ImportSpecifier, isIdentifier } from 'typescript'
 import { ExpressionToString, IdentifierToString } from '../../lib/ts.methods'
-import { TsImport } from '../../resources/tsmeta.schema'
+import { TsImport } from '../../lib/tsmeta.schema'
 
 /**
  * class TsMetaImportFactory

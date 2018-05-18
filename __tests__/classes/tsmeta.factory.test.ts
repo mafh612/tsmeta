@@ -9,7 +9,7 @@ const tsMetaConfigFake: TsMetaConfig = {
   metaConfig: {
     compilerOptions: 'tsconfig.json',
     create: true,
-    outputFilename: 'test.tsmeta.schema.json',
+    outputFilename: 'tsmeta.mock.json',
     outputPath: '__mocks__'
   }
 }

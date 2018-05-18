@@ -1,13 +1,16 @@
-import { ModelParam, PropertyParam } from '../../resources/annotation.schema'
-import { Schema } from '../../resources/openapispec'
-import { OasConfig } from '../../resources/tsmeta.config'
-import { TsDecorator, TsProperty } from '../../resources/tsmeta.schema'
-import { TypescriptTypes } from '../../resources/typescript.types.enum'
+import { ModelParam, PropertyParam } from '../../lib/annotation.schema'
+import { Schema } from '../../lib/openapispec'
+import { OasConfig } from '../../lib/tsmeta.config'
+import { TsDecorator, TsProperty } from '../../lib/tsmeta.schema'
+import { TypescriptTypes } from '../../lib/typescript.types.enum'
+import { OasPropertyGenerator } from './oas.property.generator'
 
 /**
  * class OasSchemaGenerator
  */
 class OasSchemaGenerator {
+
+  private oasPropertyGenerator: OasPropertyGenerator
 
   constructor(private oasConfig: OasConfig) {}
 
@@ -24,7 +27,10 @@ class OasSchemaGenerator {
       propertyParam = propertyDecorator.tsarguments.pop().representation
     }
 
-    schemaObj[tsProperty.name] = this.createSubSchema(tsProperty, propertyParam)
+    this.oasPropertyGenerator = new OasPropertyGenerator()
+
+    schemaObj[tsProperty.name] = this.oasPropertyGenerator.generate(tsProperty, propertyParam)
+    this.createSubSchema(tsProperty, propertyParam)
 
     return schemaObj
   }

@@ -1,6 +1,6 @@
-import { ElementTypes } from '../resources/element.types.enum'
-import { SigmaData, SigmaEdge, SigmaNode } from '../resources/sigma'
-import { TsClass, TsFile, TsImport, TsMain, TsMeta, TsMethod, TsProgram, TsProperty } from '../resources/tsmeta.schema'
+import { ElementTypes } from '../lib/element.types.enum'
+import { SigmaData, SigmaEdge, SigmaNode } from '../lib/sigma'
+import { TsClass, TsFile, TsImport, TsMain, TsMeta, TsMethod, TsProgram, TsProperty } from '../lib/tsmeta.schema'
 import { SigmaEdgeGenerator } from './sigma.generators/sigma.edge.generator'
 import { SigmaNodeGenerator } from './sigma.generators/sigma.node.generator'
 

@@ -5,7 +5,7 @@ import {
   TypeElement
 } from 'typescript'
 import { IdentifierToString } from '../../lib/ts.methods'
-import { TsMain, TsMethod, TsProperty } from '../../resources/tsmeta.schema'
+import { TsMain, TsMethod, TsProperty } from '../../lib/tsmeta.schema'
 import { TsMetaMethodFactory } from './tsmeta.method.factory'
 import { TsMetaPropertyFactory } from './tsmeta.property.factory'
 

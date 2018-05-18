@@ -12,12 +12,12 @@ const tsMetaConfigFake: TsMetaConfig = {
   metaConfig: {
     compilerOptions: 'tsconfig.json',
     create: true,
-    outputFilename: 'test.tsmeta.schema.json',
+    outputFilename: 'tsmeta.mock.json',
     outputPath: '__mocks__'
   },
   oasConfig: {
     create: true,
-    outputFilename: 'openapi_spec.json',
+    outputFilename: 'openapi.mock.json',
     outputPath: '__mocks__',
     annotationsMap: {}
   }
@@ -40,7 +40,7 @@ describe('OasGenerator test', () => {
   test('OasGenerator.generate()', async () => {
     const result: Openapi = oasGenerator.generate(tsMeta, tsMetaConfigFake.oasConfig)
 
-    fs.writeFile('__mocks__/schema/openapi_spec.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
+    fs.writeFile('__mocks__/schema/openapi.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
       if (err) console.log(err)// tslint:disable-line
     })
 

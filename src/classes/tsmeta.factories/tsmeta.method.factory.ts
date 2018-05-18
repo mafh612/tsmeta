@@ -1,6 +1,6 @@
 import { Decorator, MethodDeclaration, MethodSignature, ParameterDeclaration } from 'typescript'
 import { PropertyNameToString } from '../../lib/ts.methods'
-import { TsDecorator, TsMethod, TsParameter, TsType } from '../../resources/tsmeta.schema'
+import { TsDecorator, TsMethod, TsParameter, TsType } from '../../lib/tsmeta.schema'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaParameterFactory } from './tsmeta.parameter.factory'
 import { TsMetaTypeFactory } from './tsmeta.type.factory'

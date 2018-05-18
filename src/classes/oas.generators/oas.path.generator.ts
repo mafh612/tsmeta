@@ -1,7 +1,7 @@
-import { MappingAnnotations } from '../../resources/mapping.annotation.enum'
-import { PathItem } from '../../resources/openapispec'
-import { OasConfig } from '../../resources/tsmeta.config'
-import { TsDecorator, TsMethod } from '../../resources/tsmeta.schema'
+import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
+import { PathItem } from '../../lib/openapispec'
+import { OasConfig } from '../../lib/tsmeta.config'
+import { TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
 import { OasOperationGenerator } from './oas.operation.generator'
 
 /**

@@ -1,8 +1,8 @@
 import * as deepAssign from 'deep-assign'
 
-import { Operation, Parameter, RequestBody, Response } from '../../resources/openapispec'
-import { OasConfig } from '../../resources/tsmeta.config'
-import { TsDecorator, TsMethod, TsParameter } from '../../resources/tsmeta.schema'
+import { Operation, Parameter, RequestBody, Response } from '../../lib/openapispec'
+import { OasConfig } from '../../lib/tsmeta.config'
+import { TsDecorator, TsMethod, TsParameter } from '../../lib/tsmeta.schema'
 import { OasParameterGenerator } from './oas.parameter.generator'
 import { OasRequestbodyGenerator } from './oas.requestbody.generator'
 import { OasResponseGenerator } from './oas.response.generator'
@@ -24,7 +24,7 @@ class OasOperationGenerator {
   public generate(controllerName: string, tsMethod: TsMethod): Operation {
     this.oasParameterGenerator = new OasParameterGenerator(this.oasConfig)
     this.oasResponseGenerator = new OasResponseGenerator(this.oasConfig)
-    this.oasRequestbodyGenerator = new OasRequestbodyGenerator(this.oasConfig)
+    this.oasRequestbodyGenerator = new OasRequestbodyGenerator()
 
     let parameters: Parameter[]
     let requestBody: RequestBody

@@ -1,7 +1,7 @@
-import { ParameterParam } from '../../resources/annotation.schema'
-import { Parameter } from '../../resources/openapispec'
-import { OasConfig } from '../../resources/tsmeta.config'
-import { TsDecorator, TsParameter } from '../../resources/tsmeta.schema'
+import { ParameterParam } from '../../lib/annotation.schema'
+import { Parameter } from '../../lib/openapispec'
+import { OasConfig } from '../../lib/tsmeta.config'
+import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
 
 /**
  * class OasParameterGenerator

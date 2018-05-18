@@ -1,15 +1,15 @@
 /**
  * export all ts-meta
  */
-export * from './resources/annotation.schema'
-export * from './resources/annotations'
-export * from './resources/element.types.enum'
-export * from './resources/oas.format.enum'
-export * from './resources/openapispec'
-export * from './resources/sigma'
-export * from './resources/tsmeta.config'
-export * from './resources/tsmeta.schema'
-export * from './resources/typescript.types.enum'
+export * from './lib/annotation.schema'
+export * from './lib/annotations'
+export * from './lib/element.types.enum'
+export * from './lib/oas.format.enum'
+export * from './lib/openapispec'
+export * from './lib/sigma'
+export * from './lib/tsmeta.config'
+export * from './lib/tsmeta.schema'
+export * from './lib/typescript.types.enum'
 
 export * from './lib/ts.methods'
 

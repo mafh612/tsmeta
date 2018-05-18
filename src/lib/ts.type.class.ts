@@ -1,5 +1,5 @@
-import { TsType } from '../resources/tsmeta.schema'
-import { TypescriptTypes } from '../resources/typescript.types.enum'
+import { TsType } from './tsmeta.schema'
+import { TypescriptTypes } from './typescript.types.enum'
 
 /**
  * class TsTypeFactory

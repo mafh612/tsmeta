@@ -1,5 +1,5 @@
 import { readFileSync as ReadFileSync } from 'fs'
-import { TsPackage } from '../../resources/tsmeta.schema'
+import { TsPackage } from '../../lib/tsmeta.schema'
 
 /**
  * class TsMetaPackageFactory

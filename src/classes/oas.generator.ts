@@ -1,8 +1,8 @@
 import * as deepAssign from 'deep-assign'
-import { ModelParam } from '..'
-import { Components, Info, Openapi, PathItem, Schema, SecurityRequirement, Server, Tag } from '../resources/openapispec'
-import { OasConfig } from '../resources/tsmeta.config'
-import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsProgram, TsProperty } from '../resources/tsmeta.schema'
+import { ModelParam } from '../lib/annotation.schema'
+import { Components, Info, Openapi, PathItem, Schema, SecurityRequirement, Server, Tag } from '../lib/openapispec'
+import { OasConfig } from '../lib/tsmeta.config'
+import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsProgram, TsProperty } from '../lib/tsmeta.schema'
 import { OasPathGenerator } from './oas.generators/oas.path.generator'
 import { OasSchemaGenerator } from './oas.generators/oas.schema.generator'
 
@@ -34,7 +34,7 @@ class OasGenerator {
     const paths: { [key: string]: PathItem } = this.constructPaths(controllerFiles)
     components.schemas = this.constructSchemas(modelFiles)
 
-    const openapi: string = '3.0.0'
+    const openapi: string = oasConfig.openapistring || '3.0.0'
     const security: SecurityRequirement[] = undefined
     const servers: Server[] = undefined
     const tags: Tag[] = undefined

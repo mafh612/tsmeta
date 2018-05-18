@@ -2,13 +2,15 @@
 import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
 import { resolve as ResolvePath } from 'path'
 
+import { GraphQLSchema } from 'graphql'
+import { Openapi } from '.'
+import { GraphQLGenerator } from './classes/graphql.generator'
+import { OasGenerator } from './classes/oas.generator'
 import { SigmaGenerator } from './classes/sigma.generator'
 import { TsMetaFactory } from './classes/tsmeta.factory'
-import { SigmaData } from './resources/sigma'
-// import { Openapi } from './resources/openapispec'
-// import { SigmaData } from './resources/sigma'
-import { RunFilename, RunPath, TsMetaConfig } from './resources/tsmeta.config'
-import { TsMeta } from './resources/tsmeta.schema'
+import { SigmaData } from './lib/sigma'
+import { TsMetaConfig } from './lib/tsmeta.config'
+import { TsMeta } from './lib/tsmeta.schema'
 
 /**
  * class TsMeta
@@ -20,8 +22,13 @@ class TsMetaExecution {
   private tsMetaFactory: TsMetaFactory
 
   private sigmaData: SigmaData
-
   private sigmaGenerator: SigmaGenerator = new SigmaGenerator()
+
+  private openapi: Openapi
+  private oasGenerator: OasGenerator = new OasGenerator()
+
+  private graphQLSchemas: { [key: string]: GraphQLSchema }
+  private graphQLGenerator: GraphQLGenerator = new GraphQLGenerator()
 
   /**
    * execute tsmeta
@@ -33,6 +40,10 @@ class TsMetaExecution {
 
     if (this.tsMetaConfig.sigmaConfig && this.tsMetaConfig.sigmaConfig.create) this.sigmaData = this.createSigma()
 
+    if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) this.openapi = this.createOpenapispec()
+
+    if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) this.graphQLSchemas = this.createGraphQL()
+
     this.writeAllToFile()
   }
 
@@ -41,29 +52,7 @@ class TsMetaExecution {
    */
   private loadConfigFile(): TsMetaConfig {
     try {
-      const configFile: TsMetaConfig = JSON.parse(ReadFileSync(ResolvePath('tsmeta.config.json'), { encoding: 'utf8' }))
-
-      if (configFile.metaConfig && configFile.metaConfig.create) {
-        configFile.metaConfig.outputPath = RunPath(configFile.metaConfig.outputPath)
-        configFile.sigmaConfig.outputFilename = RunFilename(configFile.sigmaConfig.outputFilename)
-      }
-
-      if (configFile.sigmaConfig && configFile.sigmaConfig.create) {
-        configFile.sigmaConfig.outputPath = RunPath(configFile.sigmaConfig.outputPath)
-        configFile.sigmaConfig.outputFilename = RunFilename(configFile.sigmaConfig.outputFilename)
-      }
-
-      if (configFile.oasConfig && configFile.oasConfig.create) {
-        configFile.oasConfig.outputPath = RunPath(configFile.oasConfig.outputPath)
-        configFile.oasConfig.outputFilename = RunFilename(configFile.oasConfig.outputFilename)
-      }
-
-      if (configFile.graphqlConfig && configFile.graphqlConfig.create) {
-        configFile.graphqlConfig.outputPath = RunPath(configFile.graphqlConfig.outputPath)
-        configFile.graphqlConfig.outputFilename = RunFilename(configFile.graphqlConfig.outputFilename)
-      }
-
-      return configFile
+      return JSON.parse(ReadFileSync(ResolvePath('tsmeta.config.json'), { encoding: 'utf8' }))
     } catch (err) {
       if (err) console.error(err)
       else console.error('failed to load config file')
@@ -89,14 +78,16 @@ class TsMetaExecution {
   /**
    * use tsMetaSchema to create Sigma container
    */
-  /* private createOpenapispec(): Openapi {
-  } */
+  private createOpenapispec(): Openapi {
+    return this.oasGenerator.generate(this.tsMeta, this.tsMetaConfig.oasConfig)
+  }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
-  /* private createGraphQL(): string {
-  } */
+  private createGraphQL(): { [key: string]: GraphQLSchema } {
+    return this.graphQLGenerator.generate(this.tsMeta, this.tsMetaConfig.graphQLConfig)
+  }
 
   /**
    * write all data to files
@@ -110,13 +101,15 @@ class TsMetaExecution {
       this.writeToFile(this.tsMetaConfig.sigmaConfig.outputPath, this.tsMetaConfig.sigmaConfig.outputFilename, this.sigmaData)
     }
 
-    /* if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) {
+    if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) {
       this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, this.tsMetaConfig.oasConfig.outputFilename, this.openapi)
-    } */
+    }
 
-    /* if (this.tsMetaConfig.graphqlConfig && this.tsMetaConfig.graphqlConfig.create) {
-      this.writeToFile(this.tsMetaConfig.graphqlConfig.outputPath, this.tsMetaConfig.graphqlConfig.outputFilename, this.graphql)
-    } */
+    if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
+      Object.keys(this.graphQLSchemas).forEach((key: string) => {
+        this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, key, this.graphQLSchemas[key])
+      })
+    }
   }
 
   /**
