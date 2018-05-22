@@ -21,8 +21,10 @@ class TsMetaFactory {
    */
   public build(tsMetaConfig: TsMetaConfig): TsMeta {
     const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build(tsMetaConfig.basePackage)
-    const additionalTsPackages: TsPackage[] = this.scanAdditionalPackages(baseTsPackage)
+    let additionalTsPackages: TsPackage[]
     const programs: TsProgram[] = [this.createMainProgram(tsMetaConfig, baseTsPackage)]
+
+    if (tsMetaConfig.scanAdditionalPackages) additionalTsPackages = this.scanAdditionalPackages(baseTsPackage)
 
     return {
       additionalTsPackages,
@@ -47,12 +49,16 @@ class TsMetaFactory {
    * add main program to programs
    */
   private createMainProgram(tsMetaConfig: TsMetaConfig, baseTsPackage: TsPackage): TsProgram {
+    const baseSourcePathArry: string[] = Resolve(baseTsPackage.source).split('/')
+    baseSourcePathArry.pop()
+    const baseSourcePath: string = baseSourcePathArry.join('/')
+
     const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(tsMetaConfig.metaConfig.compilerOptions, { encoding: 'utf8' }))
     const program: Program = CreateTypescriptProgram([Resolve(baseTsPackage.source)], compilerOptions)
 
     return {
       files: program.getSourceFiles()
-        .filter((sourceFile: SourceFile) => !sourceFile.fileName.includes('/node_modules/'))
+        .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {
           if (process.env.NODE_ENV !== 'test') console.log(` - ${sourceFile.fileName.split('/').pop()}`) // tslint:disable-line no-console
 

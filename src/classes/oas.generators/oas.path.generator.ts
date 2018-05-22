@@ -21,14 +21,10 @@ class OasPathGenerator {
 
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
 
-    const mappingDecorator: TsDecorator = tsMethod.decorators.reduce((curr: TsDecorator, prev: TsDecorator): TsDecorator => {
-      if (usedMappingAnnotation.includes(curr.name)) return curr
+    const mappingDecorator: TsDecorator = tsMethod.decorators
+      .reduce((prev: TsDecorator, curr: TsDecorator): TsDecorator => (usedMappingAnnotation.includes(curr.name)) ? curr : prev)
 
-      // istanbul ignore next
-      return prev
-    })
-
-    const methodPath: string = mappingDecorator.tsarguments.pop().representation
+    const methodPath: string = mappingDecorator.tsarguments[mappingDecorator.tsarguments.length - 1].representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
 
     this.oasOperationGeneration = new OasOperationGenerator(this.oasConfig)

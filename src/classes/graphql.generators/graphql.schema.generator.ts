@@ -1,4 +1,4 @@
-import { buildSchema, GraphQLSchema } from 'graphql'
+import { GraphQLConfig } from '../../lib/tsmeta.config'
 import { TsClass, TsProperty } from '../../lib/tsmeta.schema'
 import { GraphQLPropertyGenerator } from './graphql.property.generator'
 
@@ -9,21 +9,19 @@ class GraphQLSchemaGenerator {
 
   private graphQLPropertyGenerator: GraphQLPropertyGenerator
 
+  constructor(private graphQLConfig: GraphQLConfig) {}
+
   /**
    * generate GraphQL schema
    */
-  public generate(tsClass: TsClass): GraphQLSchema {
-    this.graphQLPropertyGenerator = new GraphQLPropertyGenerator()
+  public generate(tsClass: TsClass): string {
+    this.graphQLPropertyGenerator = new GraphQLPropertyGenerator(this.graphQLConfig)
 
     const properties: string[] = tsClass.properties
       .map((tsProperty: TsProperty) => this.graphQLPropertyGenerator.generate(tsProperty))
       .filter((line: string) => !!line)
 
-    const schemaString: string = `type ${tsClass.name} {\n\t${properties.join('\n\t')}\n}`
-
-    console.log(schemaString) // tslint:disable-line
-
-    return buildSchema(schemaString)
+    return `type ${tsClass.name} {\n\t${properties.join('\n\t')}\n}`
   }
 }
 

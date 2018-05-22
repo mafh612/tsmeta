@@ -31,8 +31,8 @@ const property: ((propertyParam: PropertyParam) => any) = (propertyParam: Proper
  * parameter annotations
  */
 const pathVariable: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => parameterFunction
-const reqParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => parameterFunction
-const reqBody: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => parameterFunction
+const requestParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => parameterFunction
+const requestBody: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => parameterFunction
 
 export {
   controller as Controller,
@@ -47,6 +47,6 @@ export {
   errorResponse as ErrorResponse,
   property as Property,
   pathVariable as PathVariable,
-  reqParam as ReqParam,
-  reqBody as ReqBody
+  requestParam as RequestParam,
+  requestBody as RequestBody
 }

@@ -22,6 +22,7 @@
     "create": true,
     "outputPath": "schema",
     "outputFilename": "oas_schema.json",
+    "openapistring": "3.0.0",
     "annotationsMap": {
       "Controller": null,
       "Model": null,

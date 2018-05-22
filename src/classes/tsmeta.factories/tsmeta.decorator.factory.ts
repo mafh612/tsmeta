@@ -16,7 +16,6 @@ class TsMetaDecoratorFactory {
    * @param decorator
    */
   public build(decorator: Decorator): TsDecorator {
-    // console.log(JSON.stringify(decorator, undefined, 4)) // tslint:disable-line
     let expression: any
     if (isCallExpression(decorator.expression)) {
       expression = <CallExpression> decorator.expression

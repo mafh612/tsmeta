@@ -1,8 +1,8 @@
 import * as fs from 'fs'
 import { OasGenerator } from '../../src/classes/oas.generator'
-import { Openapi } from '../../src/resources/openapispec'
-import { TsMetaConfig } from '../../src/resources/tsmeta.config'
-import { TsMeta } from '../../src/resources/tsmeta.schema'
+import { Openapi } from '../../src/lib/openapispec'
+import { TsMetaConfig } from '../../src/lib/tsmeta.config'
+import { TsMeta } from '../../src/lib/tsmeta.schema'
 
 let oasGenerator: OasGenerator
 let tsMeta: TsMeta

@@ -1,5 +1,6 @@
 import { ElementTypes } from '../lib/element.types.enum'
 import { SigmaData, SigmaEdge, SigmaNode } from '../lib/sigma'
+import { SigmaConfig } from '../lib/tsmeta.config'
 import { TsClass, TsFile, TsImport, TsMain, TsMeta, TsMethod, TsProgram, TsProperty } from '../lib/tsmeta.schema'
 import { SigmaEdgeGenerator } from './sigma.generators/sigma.edge.generator'
 import { SigmaNodeGenerator } from './sigma.generators/sigma.node.generator'
@@ -15,12 +16,13 @@ class SigmaGenerator {
   private nodes: SigmaNode[] = []
   private edges: SigmaEdge[] = []
 
+  constructor(private sigmaConfig: SigmaConfig) {}
+
   /**
    * generate SigmaData container
    * @param tsMeta
    */
   public generate(tsMeta: TsMeta): SigmaData {
-
     tsMeta.programs.forEach((tsProgram: TsProgram) => {
       tsProgram.files.forEach((tsFile: TsFile) => {
         this.generateNodesAndEdgesFromFile(tsFile)
@@ -58,12 +60,12 @@ class SigmaGenerator {
 
     this.nodes.push(this.sigmaNodeGenerator.generate(id, label, ElementTypes.CLASS, 1))
 
-    if (tsClass.properties) {
+    if (this.sigmaConfig.createNodes.properties && tsClass.properties) {
       this.nodes = this.nodes.concat(this.nodesFromProperties(tsClass))
       this.edges = this.edges.concat(this.edgesForProperties(tsClass))
     }
 
-    if (tsClass.methods) {
+    if (this.sigmaConfig.createNodes.methods && tsClass.methods) {
       this.nodes = this.nodes.concat(this.nodesFromMethods(tsClass))
       this.edges = this.edges.concat(this.edgesForMethods(tsClass))
     }

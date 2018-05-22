@@ -10,7 +10,7 @@ import { resolve as ResolvePath } from 'path'
 export interface BaseConfig {
   create: boolean
   outputPath: string
-  outputFilename: string
+  outputFilename?: string
 }
 /**
  * interface MetaConfig
@@ -45,13 +45,15 @@ export interface OasConfig extends BaseConfig {
  * interface GraphQLConfig
  */
 export interface GraphQLConfig extends BaseConfig {
-  annotation: string
+  model_annotation: string
+  property_annotation: string
 }
 /**
  * interface TsMetaConfigJson
  */
 export interface TsMetaConfig {
   basePackage: string
+  scanAdditionalPackages: { [key: string]: string }
   metaConfig: MetaConfig
   sigmaConfig?: SigmaConfig
   oasConfig?: OasConfig

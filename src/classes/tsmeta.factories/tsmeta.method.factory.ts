@@ -25,8 +25,7 @@ class TsMetaMethodFactory {
       : undefined
 
     const parameters: TsParameter[] = method.parameters
-      ? method.parameters
-        .map((parameterDeclaration: ParameterDeclaration) => this.tsMetaParameterFactory.build(parameterDeclaration))
+      ? method.parameters.map((parameterDeclaration: ParameterDeclaration) => this.tsMetaParameterFactory.build(parameterDeclaration))
       : undefined
 
     const tstype: TsType = this.tsMetaTypeFactory.build(method.type)

@@ -2,12 +2,11 @@
 import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
 import { resolve as ResolvePath } from 'path'
 
-import { GraphQLSchema } from 'graphql'
-import { Openapi } from '.'
 import { GraphQLGenerator } from './classes/graphql.generator'
 import { OasGenerator } from './classes/oas.generator'
 import { SigmaGenerator } from './classes/sigma.generator'
 import { TsMetaFactory } from './classes/tsmeta.factory'
+import { Openapi } from './lib/openapispec'
 import { SigmaData } from './lib/sigma'
 import { TsMetaConfig } from './lib/tsmeta.config'
 import { TsMeta } from './lib/tsmeta.schema'
@@ -22,13 +21,13 @@ class TsMetaExecution {
   private tsMetaFactory: TsMetaFactory
 
   private sigmaData: SigmaData
-  private sigmaGenerator: SigmaGenerator = new SigmaGenerator()
+  private sigmaGenerator: SigmaGenerator
 
   private openapi: Openapi
-  private oasGenerator: OasGenerator = new OasGenerator()
+  private oasGenerator: OasGenerator
 
-  private graphQLSchemas: { [key: string]: GraphQLSchema }
-  private graphQLGenerator: GraphQLGenerator = new GraphQLGenerator()
+  private graphQLSchemas: { [key: string]: string }
+  private graphQLGenerator: GraphQLGenerator
 
   /**
    * execute tsmeta
@@ -38,11 +37,20 @@ class TsMetaExecution {
 
     this.tsMeta = this.createTsMetaSchema()
 
-    if (this.tsMetaConfig.sigmaConfig && this.tsMetaConfig.sigmaConfig.create) this.sigmaData = this.createSigma()
+    if (this.tsMetaConfig.sigmaConfig && this.tsMetaConfig.sigmaConfig.create) {
+      this.sigmaGenerator = new SigmaGenerator(this.tsMetaConfig.sigmaConfig)
+      this.sigmaData = this.createSigma()
+    }
 
-    if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) this.openapi = this.createOpenapispec()
+    if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) {
+      this.oasGenerator = new OasGenerator(this.tsMetaConfig.oasConfig)
+      this.openapi = this.createOpenapispec()
+    }
 
-    if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) this.graphQLSchemas = this.createGraphQL()
+    if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
+      this.graphQLGenerator = new GraphQLGenerator(this.tsMetaConfig.graphQLConfig)
+      this.graphQLSchemas = this.createGraphQL()
+    }
 
     this.writeAllToFile()
   }
@@ -79,14 +87,14 @@ class TsMetaExecution {
    * use tsMetaSchema to create Sigma container
    */
   private createOpenapispec(): Openapi {
-    return this.oasGenerator.generate(this.tsMeta, this.tsMetaConfig.oasConfig)
+    return this.oasGenerator.generate(this.tsMeta)
   }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
-  private createGraphQL(): { [key: string]: GraphQLSchema } {
-    return this.graphQLGenerator.generate(this.tsMeta, this.tsMetaConfig.graphQLConfig)
+  private createGraphQL(): { [key: string]: string } {
+    return this.graphQLGenerator.generate(this.tsMeta)
   }
 
   /**
@@ -107,7 +115,7 @@ class TsMetaExecution {
 
     if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
       Object.keys(this.graphQLSchemas).forEach((key: string) => {
-        this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, key, this.graphQLSchemas[key])
+        this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, `${key}.graphql`, this.graphQLSchemas[key])
       })
     }
   }
@@ -122,7 +130,9 @@ class TsMetaExecution {
 
     if (!ExistsSync(resolvedPath)) MkdirSync(resolvedPath)
 
-    WriteFile(`${resolvedPath}/${filename}`, JSON.stringify(data, undefined, indent), { encoding: 'utf8' }, (err: Error) => {
+    const dataString: string = typeof data === 'string' ? data : JSON.stringify(data, undefined, indent)
+
+    WriteFile(`${resolvedPath}/${filename}`, dataString, { encoding: 'utf8' }, (err: Error) => {
       if (err) console.log(err)
       else console.log(`\nsaved ${filename}`)
     })

@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import { SigmaData, SigmaGenerator } from '../../src'
-import { TsMetaConfig } from '../../src/resources/tsmeta.config'
-import { TsMeta } from '../../src/resources/tsmeta.schema'
+import { TsMetaConfig } from '../../src/lib/tsmeta.config'
+import { TsMeta } from '../../src/lib/tsmeta.schema'
 
 let sigmaGenerator: SigmaGenerator
 let tsMeta: TsMeta
@@ -16,6 +16,7 @@ const tsMetaConfigFake: TsMetaConfig = {
   },
   oasConfig: {
     create: true,
+    openapistring: '3.0.0',
     outputFilename: 'openapi.mock.json',
     outputPath: '__mocks__',
     annotationsMap: {}

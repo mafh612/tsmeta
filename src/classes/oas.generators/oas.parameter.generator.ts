@@ -22,12 +22,15 @@ class OasParameterGenerator {
    * generate Parameter
    */
   public generate(tsParameter: TsParameter): Parameter {
-    const parameterDecorator: TsDecorator = tsParameter.decorators
-      .find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(this.mapAnnotations(tsDecorator.name)))
+    let parameterDecorator: TsDecorator
+
+    if (tsParameter.decorators) {
+      parameterDecorator = tsParameter.decorators.find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(this.mapAnnotations(tsDecorator.name)))
+    }
 
     if (!parameterDecorator) return undefined
 
-    const parameterArgument: ParameterParam = parameterDecorator.tsarguments.pop().representation
+    const parameterArgument: ParameterParam = parameterDecorator.tsarguments[parameterDecorator.tsarguments.length - 1].representation
 
     const $ref: string = parameterArgument.ref
     const allowEmptyValue: boolean = !parameterArgument.required

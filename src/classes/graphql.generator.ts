@@ -1,33 +1,30 @@
-import { buildSchema, GraphQLSchema } from 'graphql'
 import { GraphQLConfig } from '../lib/tsmeta.config'
 import { TsDecorator, TsFile, TsMeta, TsProgram } from '../lib/tsmeta.schema'
-// import { GraphQLSchemaGenerator } from './graphql.generators/graphql.schema.generator'
+import { GraphQLSchemaGenerator } from './graphql.generators/graphql.schema.generator'
 
 /**
  * class GraphQLGenerator
  */
 class GraphQLGenerator {
 
-  private graphQLConfig: GraphQLConfig
-  // private graphQLSchemaGenerator: GraphQLSchemaGenerator = new GraphQLSchemaGenerator()
+  private graphQLSchemaGenerator: GraphQLSchemaGenerator = new GraphQLSchemaGenerator(this.graphQLConfig)
+
+  constructor(private graphQLConfig: GraphQLConfig) {}
 
   /**
    * generate GraphQLSchema files
    * @param tsMeta
    */
-  public generate(tsMeta: TsMeta, graphQLConfig: GraphQLConfig): { [key: string]: GraphQLSchema } {
-    this.graphQLConfig = graphQLConfig
-    const graphQLSchema: { [key: string]: GraphQLSchema } = {}
+  public generate(tsMeta: TsMeta): { [key: string]: string } {
+    const graphQLSchema: { [key: string]: string } = {}
 
     const models: TsFile[] = this.filterModel(tsMeta)
 
-    console.log(models) // tslint:disable-line
+    graphQLSchema.Any = 'union Any = Boolean | Int | Float | String'
 
-    graphQLSchema.Any = buildSchema('union Any: Boolean | Int | Float | String')
-
-    /* models.forEach((model: TsFile) => {
+    models.forEach((model: TsFile) => {
       graphQLSchema[model.tsClass.name] = this.graphQLSchemaGenerator.generate(model.tsClass)
-    }) */
+    })
 
     return graphQLSchema
   }
@@ -35,7 +32,7 @@ class GraphQLGenerator {
    * filter TsMeta schema for Model annotated classes
    */
   private filterModel(tsMeta: TsMeta): TsFile[] {
-    const modelAnnotation: string = this.graphQLConfig.annotation || 'Model'
+    const modelAnnotation: string = this.graphQLConfig.model_annotation || 'Model'
 
     const tsFiles: TsFile[] = []
 

@@ -39,12 +39,13 @@ class OasResponseGenerator {
    */
   private createContent(responseParam: ResponseParam): { [key: string]: MediaType } {
     let content: { [key: string]: MediaType }
+    const version: string = (responseParam && responseParam.version) ? `_${responseParam.version}` : ''
 
     if (responseParam.ref) {
       content = {
         'application/json': {
           schema: {
-            $ref: `#/components/schemas/${responseParam.ref}_${responseParam.version}`
+            $ref: `#/components/schemas/${responseParam.ref}${version}`
           }
         }
       }

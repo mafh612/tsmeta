@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import { TsMetaFactory } from '../../src/classes/tsmeta.factory'
-import { TsMetaConfig } from '../../src/resources/tsmeta.config'
-import { TsMeta } from '../../src/resources/tsmeta.schema'
+import { TsMetaConfig } from '../../src/lib/tsmeta.config'
+import { TsMeta } from '../../src/lib/tsmeta.schema'
 
 let tsMetaFactory: TsMetaFactory
 const tsMetaConfigFake: TsMetaConfig = {

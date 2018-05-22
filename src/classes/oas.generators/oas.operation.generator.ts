@@ -35,7 +35,8 @@ class OasOperationGenerator {
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
       .find((tsParameter: TsParameter) => tsParameter.decorators
-        .some((tsDecorator: TsDecorator) => this.mapAnnotations(tsDecorator.name) === 'ReqBody'))
+        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => this.mapAnnotations(tsDecorator.name) === 'ReqBody')
+        : false)
 
     if (reqBodyParameter) {
       requestBody = this.oasRequestbodyGenerator.generate(reqBodyParameter)

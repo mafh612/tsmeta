@@ -1,25 +1,33 @@
-import { OasFormat, PropertyParam, TypescriptTypes } from '../..'
+import { PropertyParam } from '../../lib/annotation.schema'
+import { OasFormat } from '../../lib/oas.format.enum'
+import { GraphQLConfig } from '../../lib/tsmeta.config'
 import { TsArgument, TsDecorator, TsProperty, TsType } from '../../lib/tsmeta.schema'
+import { TypescriptTypes } from '../../lib/typescript.types.enum'
 
 /**
  * class GraphQLPropertyGenerator
  */
 class GraphQLPropertyGenerator {
 
+  constructor(private graphQLConfig: GraphQLConfig) {}
+
   /**
    * generate single schema property
    */
   public generate(tsProperty: TsProperty): string {
     const tsType: TsType = tsProperty.tstype
-    const propertyDecorator: TsDecorator = tsProperty.decorators && tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === 'Property')
-    const propertyArgument: TsArgument = propertyDecorator && propertyDecorator.tsarguments.pop()
-    const propertyParam: PropertyParam = propertyArgument && propertyArgument.representation
 
-    /* if (tsProperty.decorators) {
-      propertyDecorator = tsProperty.decorators && tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === 'Property')
-      propertyArgument = propertyDecorator && propertyDecorator.tsarguments.pop()
-      propertyParam = propertyArgument && propertyArgument.representation
-    } */
+    const propertyDecorator: TsDecorator = (tsProperty && tsProperty.decorators)
+      ? tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.graphQLConfig.property_annotation)
+      : undefined
+
+    const propertyArgument: TsArgument = (propertyDecorator && propertyDecorator.tsarguments)
+      ? propertyDecorator.tsarguments[propertyDecorator.tsarguments.length - 1]
+      : undefined
+
+    const propertyParam: PropertyParam = (propertyArgument && propertyArgument.representation)
+      ? <PropertyParam> propertyArgument.representation
+      : undefined
 
     switch (tsType.typescriptType) {
       case TypescriptTypes.ARRAY:
@@ -54,6 +62,7 @@ class GraphQLPropertyGenerator {
    * map typescript types to graphql types
    */
   private mapTypeToGraphQLType(format: string|OasFormat): string {
+    if ((<string> format).includes('format')) console.log(format) // tslint:disable-line
     switch (format) {
       case 'any': return 'Any'
       case 'string': return 'String'

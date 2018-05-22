@@ -12,6 +12,7 @@ class TsMetaArgumentFactory {
    */
   public build(expression: Expression): TsArgument {
     let representation: string
+
     switch (expression.kind) {
       case SyntaxKind.NumericLiteral:
         representation = ExpressionToString(expression)
@@ -24,6 +25,7 @@ class TsMetaArgumentFactory {
         break
       default:
     }
+
     const tstype: TsType = undefined
 
     return {
