@@ -60,7 +60,7 @@ class TsMetaFactory {
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {
-          if (process.env.NODE_ENV !== 'test') console.log(` - ${sourceFile.fileName.split('/').pop()}`) // tslint:disable-line no-console
+          if (process.env.NODE_ENV !== 'test') process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
 
           return this.tsMetaFileFactory.build(sourceFile)
         })

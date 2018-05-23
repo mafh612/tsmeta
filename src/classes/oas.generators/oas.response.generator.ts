@@ -22,16 +22,26 @@ class OasResponseGenerator {
     this.mapAnnotations('any') // tslint:disable-line
 
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
-        responseDecorator.tsarguments.forEach((tsArgument: TsArgument) => {
-        const responseParam: ResponseParam = <ResponseParam> tsArgument.representation
+      const responseArgument: TsArgument = responseDecorator.tsarguments.pop()
+      const responseParam: ResponseParam = responseArgument
+        ? <ResponseParam> responseArgument.representation
+        : undefined
+      const statusCode: number = responseParam && responseParam.statusCode || this.httpStatusOK
 
-        response[responseParam.statusCode || this.httpStatusOK] = {
-          content: this.createContent(responseParam)
-        }
-      })
+      response[statusCode] = {
+        content: this.createContent(responseParam),
+        description: this.createDescription(responseDecorator, responseParam)
+      }
     })
 
     return response
+  }
+
+  /**
+   * create description string
+   */
+  private createDescription(tsDecorator: TsDecorator, responseParam: ResponseParam): string {
+    return !!responseParam ? tsDecorator.name : 'no content'
   }
 
   /**
@@ -41,7 +51,11 @@ class OasResponseGenerator {
     let content: { [key: string]: MediaType }
     const version: string = (responseParam && responseParam.version) ? `_${responseParam.version}` : ''
 
-    if (responseParam.ref) {
+    if (!responseParam) {
+      content = undefined
+    }
+
+    if (responseParam && responseParam.ref) {
       content = {
         'application/json': {
           schema: {
@@ -51,18 +65,19 @@ class OasResponseGenerator {
       }
     }
 
-    if (responseParam.res) {
-      const schema: Schema = {}
-      const example: any = responseParam.example || undefined
+    if (responseParam && responseParam.res) {
+      const schema: Schema = {
+        properties: {},
+        example: responseParam.example || undefined
+      }
 
       Object.keys(responseParam.res).forEach((key: string) => {
-        schema[key] = { type: responseParam.res[key] }
+        schema.properties[key] = { type: responseParam.res[key] }
       })
 
       content = {
         'application/json': {
-          schema,
-          example
+          schema
         }
       }
     }

@@ -31,7 +31,13 @@ class TsMetaFileFactory {
 
     sourceFile.forEachChild((node: Node) => {
       switch (node.kind) {
+        case SyntaxKind.Unknown:
+          break
         case SyntaxKind.EndOfFileToken:
+          break
+        case SyntaxKind.SingleLineCommentTrivia:
+          break
+        case SyntaxKind.VariableStatement:
           break
         case SyntaxKind.ClassDeclaration:
           tsClass = this.tsMetaClassFactory.build(<ClassDeclaration> node)
@@ -46,7 +52,7 @@ class TsMetaFileFactory {
           tsImports = tsImports.concat(this.tsMetaImportFactory.build(<ImportDeclaration> node))
           break
         default:
-          // console.log(node.kind) // tslint:disable-line
+          process.stderr.write(node.kind.toString()) // tslint:disable-line
       }
     })
 

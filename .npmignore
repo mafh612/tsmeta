@@ -1,0 +1,21 @@
+# visual studio code
+.vscode
+tsmeta.code-workspace
+
+# packages && sources
+node_modules
+coverage
+src
+
+# tests and resources
+schema
+syntax.kind.txt
+__mocks__
+__tests__
+
+# config files
+.gitignore
+jest.config.js
+tsconfig.json
+tsconfig.build.json
+tslint.json

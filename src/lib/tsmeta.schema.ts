@@ -8,11 +8,19 @@ import { TypescriptTypes } from './typescript.types.enum'
 /**
  * TsFile interface
  */
-export interface TsMeta {
-  baseTsPackage: TsPackage
-  additionalTsPackages: TsPackage[]
-  programs: TsProgram[]
+class TsMeta {
+  public baseTsPackage: TsPackage
+  public additionalTsPackages: TsPackage[]
+  public programs: TsProgram[]
+
+  constructor(tsMeta?: TsMeta) {
+    this.additionalTsPackages = tsMeta && tsMeta.additionalTsPackages || undefined
+    this.baseTsPackage = tsMeta && tsMeta.baseTsPackage || undefined
+    this.programs = tsMeta && tsMeta.programs || undefined
+  }
 }
+
+export { TsMeta }
 /**
  * TsPackage interface
  */

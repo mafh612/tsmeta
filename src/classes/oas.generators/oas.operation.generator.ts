@@ -1,5 +1,3 @@
-import * as deepAssign from 'deep-assign'
-
 import { Operation, Parameter, RequestBody, Response } from '../../lib/openapispec'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsMethod, TsParameter } from '../../lib/tsmeta.schema'
@@ -35,18 +33,14 @@ class OasOperationGenerator {
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
       .find((tsParameter: TsParameter) => tsParameter.decorators
-        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => this.mapAnnotations(tsDecorator.name) === 'ReqBody')
+        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => this.mapAnnotations(tsDecorator.name) === 'RequestBody')
         : false)
 
     if (reqBodyParameter) {
       requestBody = this.oasRequestbodyGenerator.generate(reqBodyParameter)
     }
 
-    let responses: { [key: number]: Response } = {}
-
-    tsMethod.decorators.forEach((tsDecorator: TsDecorator) => {
-      responses = deepAssign(responses, this.oasResponseGenerator.generate(tsMethod))
-    })
+    const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
     return {
       tags: [controllerName],

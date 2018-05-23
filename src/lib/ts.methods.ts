@@ -141,8 +141,13 @@ const typeNodeToTsType: (
       tsType = arrayType
       break
     case SyntaxKind.UnionType:
-      const unionTypes: TsType[] = (<UnionTypeNode> typeNode).types.map(typeNodeToTsType)
-      tsType = new TsTypeClass({ basicType: unionTypes.map((ut: TsType): string => <string> ut.basicType), typescriptType: TypescriptTypes.MULTIPLE })
+      const unionTypes: TsType[] = (<UnionTypeNode> typeNode).types.map(typeNodeToTsType).filter((_tsType: TsType) => !!_tsType)
+      let mappedUnionTypes: string|string[] = ''
+
+      if (unionTypes) mappedUnionTypes = unionTypes.map((ut: TsType): string => <string> ut.basicType)
+
+      tsType = new TsTypeClass({ basicType: mappedUnionTypes, typescriptType: TypescriptTypes.MULTIPLE })
+
       break
     case SyntaxKind.TypeLiteral:
       const tsTypes: TsType[] = (<TypeLiteralNode> typeNode).members.map((typeElement: TypeElement) => <TsType> typeNodeToTsType(typeElement))

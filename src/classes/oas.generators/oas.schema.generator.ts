@@ -24,7 +24,7 @@ class OasSchemaGenerator {
 
     if (tsProperty.decorators) {
       propertyDecorator = tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations(tsDecorator.name))
-      propertyParam = propertyDecorator.tsarguments[propertyDecorator.tsarguments.length - 1].representation
+      propertyParam = propertyDecorator.tsarguments.pop().representation
     }
 
     this.oasPropertyGenerator = new OasPropertyGenerator()

@@ -1,4 +1,4 @@
-import { PropertyParam } from '../../lib/annotation.schema'
+import { ParameterParam, PropertyParam } from '../../lib/annotation.schema'
 import { Schema } from '../../lib/openapispec'
 import { TsProperty } from '../../lib/tsmeta.schema'
 import { TypescriptTypes } from '../../lib/typescript.types.enum'
@@ -13,7 +13,7 @@ class OasPropertyGenerator {
    * @param tsProperty
    * @param propertyParam
    */
-  public generate(tsProperty: TsProperty, propertyParam: PropertyParam): Schema {
+  public generate(tsProperty: TsProperty, propertyParam: PropertyParam, parameterParam?: ParameterParam): Schema {
     let schema: Schema = {}
     const version: string = (propertyParam && propertyParam.version) ? `_${propertyParam.version}` : ''
 
@@ -37,7 +37,13 @@ class OasPropertyGenerator {
         schema = this.createPropSchema(tsProperty, version)
         break
       case TypescriptTypes.REFERENCE:
-        schema = { type: 'object', $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
+        if (parameterParam) {
+          schema.properties = parameterParam.res
+          schema.example = parameterParam.example
+        } else {
+          schema = { type: 'object', $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
+        }
+
         break
       case TypescriptTypes.UNTYPED:
         schema = { type: 'any' }

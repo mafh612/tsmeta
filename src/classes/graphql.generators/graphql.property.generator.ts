@@ -22,7 +22,7 @@ class GraphQLPropertyGenerator {
       : undefined
 
     const propertyArgument: TsArgument = (propertyDecorator && propertyDecorator.tsarguments)
-      ? propertyDecorator.tsarguments[propertyDecorator.tsarguments.length - 1]
+      ? propertyDecorator.tsarguments.pop()
       : undefined
 
     const propertyParam: PropertyParam = (propertyArgument && propertyArgument.representation)
@@ -62,7 +62,6 @@ class GraphQLPropertyGenerator {
    * map typescript types to graphql types
    */
   private mapTypeToGraphQLType(format: string|OasFormat): string {
-    if ((<string> format).includes('format')) console.log(format) // tslint:disable-line
     switch (format) {
       case 'any': return 'Any'
       case 'string': return 'String'

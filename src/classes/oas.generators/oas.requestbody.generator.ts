@@ -17,14 +17,14 @@ class OasRequestbodyGenerator {
   public generate(reqBodyParameter: TsParameter): RequestBody {
     this.oasPropertyGenerator = new OasPropertyGenerator()
 
-    const decorator: TsDecorator = reqBodyParameter.decorators[reqBodyParameter.decorators.length]
-    const parameterParam: ParameterParam = (decorator && decorator.tsarguments)
-      ? decorator.tsarguments[decorator.tsarguments.length - 1].representation
+    const decorator: TsDecorator = reqBodyParameter.decorators.pop()
+    const parameterParam: ParameterParam = (decorator && decorator.tsarguments.length)
+      ? decorator.tsarguments.pop().representation
       : undefined
 
     const description: string = undefined
     const required: boolean = undefined
-    const schema: Schema = this.oasPropertyGenerator.generate(reqBodyParameter, parameterParam)
+    const schema: Schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam)
 
     return {
       description,

@@ -93,7 +93,7 @@ class OasGenerator {
 
     files.forEach((tsFile: TsFile) => {
       const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))
-      const controllerArgument: TsArgument = controllerDecorator.tsarguments[controllerDecorator.tsarguments.length - 1]
+      const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
         paths = deepAssign(paths, this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod))
@@ -113,7 +113,7 @@ class OasGenerator {
 
     files.forEach((tsFile: TsFile) => {
       const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Model'))
-      const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments[modelDecorator.tsarguments.length - 1].representation : {}
+      const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments.pop().representation : {}
       const version: string = (modelParam && modelParam.version) ? `_${modelParam.version}` : ''
 
       const schemaName: string = `${tsFile.tsClass.name}${version}`

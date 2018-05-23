@@ -1,4 +1,3 @@
-// tslint:disable no-console
 import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
 import { resolve as ResolvePath } from 'path'
 
@@ -62,8 +61,8 @@ class TsMetaExecution {
     try {
       return JSON.parse(ReadFileSync(ResolvePath('tsmeta.config.json'), { encoding: 'utf8' }))
     } catch (err) {
-      if (err) console.error(err)
-      else console.error('failed to load config file')
+      if (err) process.stderr.write(err.toString())
+      else process.stderr.write('failed to load config file')
     }
   }
 
@@ -80,21 +79,27 @@ class TsMetaExecution {
    * use tsMetaSchema to create Sigma container
    */
   private createSigma(): SigmaData {
-    return this.sigmaGenerator.generate(this.tsMeta)
+    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
+
+    return this.sigmaGenerator.generate(tsMetaInstance)
   }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
   private createOpenapispec(): Openapi {
-    return this.oasGenerator.generate(this.tsMeta)
+    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
+
+    return this.oasGenerator.generate(tsMetaInstance)
   }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
   private createGraphQL(): { [key: string]: string } {
-    return this.graphQLGenerator.generate(this.tsMeta)
+    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
+
+    return this.graphQLGenerator.generate(tsMetaInstance)
   }
 
   /**
@@ -133,8 +138,8 @@ class TsMetaExecution {
     const dataString: string = typeof data === 'string' ? data : JSON.stringify(data, undefined, indent)
 
     WriteFile(`${resolvedPath}/${filename}`, dataString, { encoding: 'utf8' }, (err: Error) => {
-      if (err) console.log(err)
-      else console.log(`\nsaved ${filename}`)
+      if (err) process.stderr.write(err.toString())
+      else process.stdout.write(`\nsaved ${filename}\n`)
     })
   }
 }

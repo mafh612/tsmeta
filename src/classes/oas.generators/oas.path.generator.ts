@@ -24,7 +24,7 @@ class OasPathGenerator {
     const mappingDecorator: TsDecorator = tsMethod.decorators
       .reduce((prev: TsDecorator, curr: TsDecorator): TsDecorator => (usedMappingAnnotation.includes(curr.name)) ? curr : prev)
 
-    const methodPath: string = mappingDecorator.tsarguments[mappingDecorator.tsarguments.length - 1].representation
+    const methodPath: string = mappingDecorator.tsarguments.pop().representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
 
     this.oasOperationGeneration = new OasOperationGenerator(this.oasConfig)
