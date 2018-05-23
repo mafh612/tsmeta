@@ -6,11 +6,11 @@ export * from './lib/annotations'
 export * from './lib/element.types.enum'
 export * from './lib/oas.format.enum'
 export * from './lib/sigma'
+export * from './lib/source.file.container'
+export * from './lib/ts.methods'
 export * from './lib/tsmeta.config'
 export * from './lib/tsmeta.schema'
 export * from './lib/typescript.types.enum'
-
-export * from './lib/ts.methods'
 
 export * from './classes/tsmeta.factory'
 export * from './classes/tsmeta.factories/tsmeta.argument.factory'

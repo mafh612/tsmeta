@@ -2,6 +2,7 @@ import { readFileSync as ReadFileSync } from 'fs'
 import { resolve as Resolve } from 'path'
 import { CompilerOptions, Program, SourceFile } from 'typescript'
 
+import { setSourceFile } from '../lib/source.file.container'
 import { CreateTypescriptProgram } from '../lib/ts.methods'
 import { TsMetaConfig } from '../lib/tsmeta.config'
 import { TsFile, TsMeta, TsPackage, TsProgram } from '../lib/tsmeta.schema'
@@ -60,6 +61,7 @@ class TsMetaFactory {
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {
+          setSourceFile(sourceFile)
           if (process.env.NODE_ENV !== 'test') process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
 
           return this.tsMetaFileFactory.build(sourceFile)

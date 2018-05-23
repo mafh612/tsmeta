@@ -18,6 +18,7 @@ import {
   TypeReferenceNode,
   UnionTypeNode
 } from 'typescript'
+import { getSourceFile } from './source.file.container'
 import { TsTypeClass } from './ts.type.class'
 import { TsType } from './tsmeta.schema'
 import { TypescriptTypes } from './typescript.types.enum'
@@ -28,6 +29,20 @@ import { TypescriptTypes } from './typescript.types.enum'
  * @param compilerOptions
  */
 const createTypescriptProgram: ((rootNames: ReadonlyArray<string>, compilerOptions: CompilerOptions) => Program) = CreateProgram
+
+/**
+ * string eval
+ */
+const evaluate: ((forEvaluation: string) => any) = (forEvaluation: string): any => {
+  let evaluated: any
+  try {
+    evaluated = eval(`() => { return ${forEvaluation}}`)() // tslint:disable-line
+  } catch (err) {
+    process.stderr.write(err.toString())
+  }
+
+  return evaluated
+}
 
 /**
  * extract text from token
@@ -67,15 +82,20 @@ const propertyNameToString: ((propertyName: PropertyName) => string)
  * extract text from ObjectLiteralExpression
  * @param expression<ObjectLiteralExpression>
  */
-const objectLiteralExpressionToString: ((expression: ObjectLiteralExpression) => any)
-  = (expression: ObjectLiteralExpression): any => {
-    const obj: {} = {}
+const objectLiteralExpressionToString: ((expression: ObjectLiteralExpression) => any) = (expression: ObjectLiteralExpression): any => {
+  const expressionString: string = expression.getFullText(getSourceFile())
+  let obj: {} = {}
+
+  try {
+    obj = evaluate(expressionString)
+  } catch {
     expression.properties.forEach((propertyAssignment: PropertyAssignment): any => {
       obj[identifierToString(<Identifier> propertyAssignment.name)] = initializerToString(propertyAssignment.initializer)
     })
-
-    return obj
   }
+
+  return obj
+}
 
 /**
  * extract text from token

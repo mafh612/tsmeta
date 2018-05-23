@@ -26,11 +26,9 @@ class TsMetaArgumentFactory {
       default:
     }
 
-    const tstype: TsType = undefined
-
     return {
       representation,
-      tstype
+      tstype: undefined
     }
   }
 }
