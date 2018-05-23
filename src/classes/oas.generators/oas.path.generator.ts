@@ -93,7 +93,7 @@ class OasPathGenerator {
       return pathString
     })
 
-    return fullPathArray.join('/')
+    return `/${fullPathArray.join('/')}`
   }
 }
 
