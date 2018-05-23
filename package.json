@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "typescript project meta analysis",
   "scripts": {
     "test": "jest --config jest.config.js",
