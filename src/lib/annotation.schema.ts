@@ -4,6 +4,7 @@ import { OasFormat } from './oas.format.enum'
  */
 export interface PropertyParam {
   version?: string
+  required?: boolean
   format?: OasFormat
 }
 /**

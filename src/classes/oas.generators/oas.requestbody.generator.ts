@@ -24,7 +24,15 @@ class OasRequestbodyGenerator {
 
     const description: string = undefined
     const required: boolean = undefined
-    const schema: Schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam)
+    let schema: Schema
+
+    if (parameterParam.ref) {
+      const version: string = parameterParam.version ? `_${parameterParam.version}` : ''
+
+      schema = { $ref: `#components/schemas/${parameterParam.ref}${version}` }
+    } else {
+      schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam)
+    }
 
     return {
       description,
