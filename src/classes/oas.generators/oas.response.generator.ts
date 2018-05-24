@@ -1,5 +1,5 @@
+import { MediaType, Response, Schema } from 'oasmodel'
 import { ResponseParam } from '../../lib/annotation.schema'
-import { MediaType, Response, Schema } from '../../lib/openapispec'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsArgument, TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
 

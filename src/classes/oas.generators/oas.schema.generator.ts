@@ -1,5 +1,5 @@
+import { Schema } from 'oasmodel'
 import { ModelParam, PropertyParam } from '../../lib/annotation.schema'
-import { Schema } from '../../lib/openapispec'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsProperty } from '../../lib/tsmeta.schema'
 import { TypescriptTypes } from '../../lib/typescript.types.enum'

@@ -14,17 +14,22 @@ const tsMetaConfigFake: TsMetaConfig = {
     outputFilename: 'tsmeta.mock.json',
     outputPath: '__mocks__'
   },
-  oasConfig: {
+  sigmaConfig: {
     create: true,
-    openapistring: '3.0.0',
-    outputFilename: 'openapi.mock.json',
-    outputPath: '__mocks__',
-    annotationsMap: {}
+    outputPath: 'schema',
+    outputFilename: 'sigma_data.json',
+    createNodes: {
+      packages: true,
+      classes: true,
+      interfaces: true,
+      methods: false,
+      properties: false
+    }
   }
 }
 
 beforeAll(() => {
-  sigmaGenerator = new SigmaGenerator()
+  sigmaGenerator = new SigmaGenerator(tsMetaConfigFake.sigmaConfig)
   const tsMetaString: string = fs.readFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' })
   tsMeta = JSON.parse(tsMetaString)
 })

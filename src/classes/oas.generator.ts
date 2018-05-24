@@ -1,6 +1,6 @@
 import * as deepAssign from 'deep-assign'
+import { Components, Info, Openapi, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
 import { ModelParam } from '../lib/annotation.schema'
-import { Components, Info, Openapi, PathItem, Schema, SecurityRequirement, Server, Tag } from '../lib/openapispec'
 import { OasConfig } from '../lib/tsmeta.config'
 import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsProgram, TsProperty } from '../lib/tsmeta.schema'
 import { OasPathGenerator } from './oas.generators/oas.path.generator'

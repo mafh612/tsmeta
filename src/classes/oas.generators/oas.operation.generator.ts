@@ -1,4 +1,4 @@
-import { Operation, Parameter, RequestBody, Response } from '../../lib/openapispec'
+import { Operation, Parameter, RequestBody, Response } from 'oasmodel'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsMethod, TsParameter } from '../../lib/tsmeta.schema'
 import { OasParameterGenerator } from './oas.parameter.generator'

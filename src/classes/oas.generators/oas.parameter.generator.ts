@@ -1,5 +1,5 @@
+import { Parameter } from 'oasmodel'
 import { ParameterParam } from '../../lib/annotation.schema'
-import { Parameter } from '../../lib/openapispec'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
 

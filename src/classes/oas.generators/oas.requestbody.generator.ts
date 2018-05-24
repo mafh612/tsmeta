@@ -1,5 +1,5 @@
+import { RequestBody, Schema } from 'oasmodel'
 import { ParameterParam } from '../../lib/annotation.schema'
-import { RequestBody, Schema } from '../../lib/openapispec'
 import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
 // import { TypescriptTypes } from '../../lib/typescript.types.enum'
 import { OasPropertyGenerator } from './oas.property.generator'

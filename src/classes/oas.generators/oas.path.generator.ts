@@ -1,5 +1,5 @@
+import { PathItem } from 'oasmodel'
 import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
-import { PathItem } from '../../lib/openapispec'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
 import { OasOperationGenerator } from './oas.operation.generator'

@@ -1,11 +1,11 @@
 import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
+import { Openapi } from 'oasmodel'
 import { resolve as ResolvePath } from 'path'
 
 import { GraphQLGenerator } from './classes/graphql.generator'
 import { OasGenerator } from './classes/oas.generator'
 import { SigmaGenerator } from './classes/sigma.generator'
 import { TsMetaFactory } from './classes/tsmeta.factory'
-import { Openapi } from './lib/openapispec'
 import { SigmaData } from './lib/sigma'
 import { TsMetaConfig } from './lib/tsmeta.config'
 import { TsMeta } from './lib/tsmeta.schema'
