@@ -29,7 +29,7 @@ describe('TsMetaFactory test', () => {
   test('TsMetaFactory.build()', async () => {
     const result: TsMeta = tsMetaFactory.build(tsMetaConfigFake)
 
-    fs.writeFile('__mocks__/schema/tsmeta.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
+    fs.writeFile('__mocks__/schema/tsmeta.mock.json', JSON.stringify(result, undefined, 2), (err) => { // tslint:disable-line
       if (err) console.log(err)// tslint:disable-line
     })
 

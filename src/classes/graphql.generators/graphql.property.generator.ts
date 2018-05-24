@@ -33,7 +33,9 @@ class GraphQLPropertyGenerator {
       case TypescriptTypes.ARRAY:
         const arrayType: string = propertyParam && propertyParam.format
           ? this.mapTypeToGraphQLType(propertyParam.format)
-          : this.mapTypeToGraphQLType(tsProperty.tstype.basicType)
+          : this.mapTypeToGraphQLType(tsProperty.tstype.basicType, <string> tsProperty.tstype.valueType)
+
+        if (tsProperty.tstype.basicType === 'array') return `${tsProperty.name}: [[${arrayType}]]`
 
         return `${tsProperty.name}: [${arrayType}]`
       case TypescriptTypes.BASIC:
@@ -61,7 +63,9 @@ class GraphQLPropertyGenerator {
   /**
    * map typescript types to graphql types
    */
-  private mapTypeToGraphQLType(format: string|OasFormat): string {
+  private mapTypeToGraphQLType(format: string|OasFormat, additional?: string): string {
+    if (!!additional) format = additional
+
     switch (format) {
       case 'any': return 'Any'
       case 'string': return 'String'

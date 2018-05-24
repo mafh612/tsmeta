@@ -43,6 +43,7 @@
     "no-namespace": [true, "allow-declarations"],
     "no-null-keyword": true,
     "no-parameter-properties": false,
+    "no-parameter-reassignment": false,
     "no-relative-imports": false,
     "no-switch-case-fall-through": true,
     "no-unbound-method": [true, "ignore-static"],

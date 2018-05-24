@@ -10,7 +10,7 @@
     "create": true,
     "outputPath": "schema",
     "outputFilename": "sigma_data.json",
-    "link": {
+    "createNodes": {
       "packages": true,
       "classes": true,
       "interfaces": true,

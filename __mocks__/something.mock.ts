@@ -21,7 +21,14 @@ import { SimpleMock } from './simple.mock'
     mapped: 'Map<string, string>',
     mappedOther: 'Map<string, SimpleMock>',
     prop: '{ name: string; tel: number }',
-    propOther: '{ name: string; tel: number; simple: SimpleMock }'
+    propOther: '{ name: string; tel: number; simple: SimpleMock }',
+    dump: [
+      [
+        'eins',
+        'zwü',
+        'drü'
+      ]
+    ]
   }
 })
 class SomethingMock {
@@ -46,6 +53,7 @@ class SomethingMock {
   public prop: { name: string; tel: number }
   @Property({ version: 'v1' })
   public propOther: { name: string; tel: number; simple: SimpleMock }
+  public dump: string[][]
 
   constructor(text: string) {
     this.text = `hello ${text}`

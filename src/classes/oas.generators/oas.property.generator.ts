@@ -64,6 +64,16 @@ class OasPropertyGenerator {
   private createArraySchema(tsProperty: TsProperty, version: string): Schema {
     const typeName: string = <string> tsProperty.tstype.basicType
 
+    if (typeName === 'array') {
+      const subProperty: TsProperty = tsProperty
+      subProperty.tstype.basicType = tsProperty.tstype.valueType
+
+      return {
+        type: 'array',
+        items: this.createArraySchema(subProperty, version)
+      }
+    }
+
     if (['any', 'boolean', 'number', 'string'].includes(typeName)) return { type: 'array', items: { type: typeName } }
     else return { type: 'array', items: { $ref: `#/components/schemas/${typeName}${version}` } }
   }

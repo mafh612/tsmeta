@@ -157,6 +157,12 @@ const typeNodeToTsType: (
       break
     case SyntaxKind.ArrayType:
       const arrayType: TsType = new TsTypeClass(typeNodeToTsType((<ArrayTypeNode> typeNode).elementType))
+
+      if ((<ArrayTypeNode> typeNode).elementType.kind === SyntaxKind.ArrayType) {
+        arrayType.valueType = arrayType.basicType
+        arrayType.basicType = 'array'
+      }
+
       arrayType.typescriptType = TypescriptTypes.ARRAY
       tsType = arrayType
       break
