@@ -35,7 +35,9 @@ class GraphQLPropertyGenerator {
           ? this.mapTypeToGraphQLType(propertyParam.format)
           : this.mapTypeToGraphQLType(tsProperty.tstype.basicType, <string> tsProperty.tstype.valueType)
 
-        if (tsProperty.tstype.basicType === 'array') return `${tsProperty.name}: [[${arrayType}]]`
+        if (tsProperty.tstype.basicType === 'array') {
+          return `${tsProperty.name}: [[${arrayType}]]`
+        }
 
         return `${tsProperty.name}: [${arrayType}]`
       case TypescriptTypes.BASIC:

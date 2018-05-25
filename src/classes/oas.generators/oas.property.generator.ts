@@ -65,8 +65,17 @@ class OasPropertyGenerator {
     const typeName: string = <string> tsProperty.tstype.basicType
 
     if (typeName === 'array') {
-      const subProperty: TsProperty = tsProperty
-      subProperty.tstype.basicType = tsProperty.tstype.valueType
+      const subProperty: TsProperty = {
+        decorators: tsProperty.decorators,
+        name: tsProperty.name,
+        tstype: {
+          basicType: tsProperty.tstype.valueType,
+          keyType: tsProperty.tstype.keyType,
+          representation: tsProperty.tstype.representation,
+          typescriptType: tsProperty.tstype.typescriptType,
+          valueType: tsProperty.tstype.valueType
+        }
+      }
 
       return {
         type: 'array',
