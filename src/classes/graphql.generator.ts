@@ -20,7 +20,7 @@ class GraphQLGenerator {
 
     const models: TsFile[] = this.filterModel(tsMeta)
 
-    graphQLSchema.Any = 'union Any = Boolean | Int | Float | String'
+    graphQLSchema.Any = 'scalar Any {\n\tstring: String\n\tboolean: Boolean\n\tint: Int\n\tfloat: Float\n}'
 
     models.forEach((model: TsFile) => {
       graphQLSchema[model.tsClass.name] = this.graphQLSchemaGenerator.generate(model.tsClass)
