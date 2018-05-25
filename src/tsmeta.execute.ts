@@ -1,4 +1,5 @@
 import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
+import { cloneDeep } from 'lodash'
 import { Openapi } from 'oasmodel'
 import { resolve as ResolvePath } from 'path'
 
@@ -79,27 +80,21 @@ class TsMetaExecution {
    * use tsMetaSchema to create Sigma container
    */
   private createSigma(): SigmaData {
-    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
-
-    return this.sigmaGenerator.generate(tsMetaInstance)
+    return this.sigmaGenerator.generate(cloneDeep<TsMeta>(this.tsMeta))
   }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
   private createOpenapispec(): Openapi {
-    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
-
-    return this.oasGenerator.generate(tsMetaInstance)
+    return this.oasGenerator.generate(cloneDeep<TsMeta>(this.tsMeta))
   }
 
   /**
    * use tsMetaSchema to create Sigma container
    */
   private createGraphQL(): { [key: string]: string } {
-    const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
-
-    return this.graphQLGenerator.generate(tsMetaInstance)
+    return this.graphQLGenerator.generate(cloneDeep<TsMeta>(this.tsMeta))
   }
 
   /**

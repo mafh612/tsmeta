@@ -10,7 +10,7 @@ class TsMetaArgumentFactory {
   /**
    * build TsArgument element
    */
-  public build(expression: Expression): TsArgument {
+  public build(expression: Expression, show?: boolean): TsArgument {
     let representation: string
 
     switch (expression.kind) {
@@ -27,8 +27,7 @@ class TsMetaArgumentFactory {
     }
 
     return {
-      representation,
-      tstype: undefined
+      representation
     }
   }
 }

@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "typescript project meta analysis",
   "scripts": {
     "test": "jest --config jest.config.js",
@@ -21,6 +21,7 @@
     "@types/deep-assign": "^0.1.1",
     "deep-assign": "^2.0.0",
     "graphql": "^0.13.2",
+    "lodash": "^4.17.10",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
     "typescript": "^2.8.3"
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@types/graphql": "^0.13.1",
     "@types/jest": "^22.2.3",
+    "@types/lodash": "^4.14.109",
     "@types/node": "^10.0.0",
     "@types/reflect-metadata": "^0.1.0",
     "jest": "^22.4.3",

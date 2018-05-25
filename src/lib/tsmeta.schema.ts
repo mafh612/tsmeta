@@ -12,12 +12,6 @@ class TsMeta {
   public baseTsPackage: TsPackage
   public additionalTsPackages: TsPackage[]
   public programs: TsProgram[]
-
-  constructor(tsMeta?: TsMeta) {
-    this.additionalTsPackages = tsMeta && tsMeta.additionalTsPackages || undefined
-    this.baseTsPackage = tsMeta && tsMeta.baseTsPackage || undefined
-    this.programs = tsMeta && tsMeta.programs || undefined
-  }
 }
 
 export { TsMeta }
@@ -132,7 +126,6 @@ export interface TsParameter {
  */
 export interface TsArgument {
   representation: any
-  tstype: TsType
 }
 /**
  * TsType
