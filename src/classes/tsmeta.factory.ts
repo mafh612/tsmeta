@@ -17,15 +17,17 @@ class TsMetaFactory {
   private tsMetaPackageFactory: TsMetaPackageFactory = new TsMetaPackageFactory()
   private tsMetaFileFactory: TsMetaFileFactory = new TsMetaFileFactory()
 
+  constructor(private tsMetaConfig: TsMetaConfig) {}
+
   /**
    * build TsMeta element
    */
-  public build(tsMetaConfig: TsMetaConfig): TsMeta {
-    const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build(tsMetaConfig.basePackage)
+  public build(): TsMeta {
+    const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build(this.tsMetaConfig.basePackage)
     let additionalTsPackages: TsPackage[]
-    const programs: TsProgram[] = [this.createMainProgram(tsMetaConfig, baseTsPackage)]
+    const programs: TsProgram[] = [this.createMainProgram(this.tsMetaConfig, baseTsPackage)]
 
-    if (tsMetaConfig.scanAdditionalPackages) additionalTsPackages = this.scanAdditionalPackages(baseTsPackage)
+    if (this.tsMetaConfig.scanAdditionalPackages) additionalTsPackages = this.scanAdditionalPackages(baseTsPackage)
 
     return {
       additionalTsPackages,
@@ -62,7 +64,7 @@ class TsMetaFactory {
         .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {
           setSourceFile(sourceFile)
-          if (process.env.NODE_ENV !== 'test') process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
+          if (process.env.NODE_ENV !== 'test' && this.tsMetaConfig.showScannedFiles) process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
 
           return this.tsMetaFileFactory.build(sourceFile)
         })

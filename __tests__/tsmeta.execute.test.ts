@@ -1,5 +1,5 @@
 import 'jest'
-import { TsMetaExecution } from '../src/bin'
+import { TsMetaExecution } from '../src/tsmeta.execute'
 
 let tsMetaExecution: TsMetaExecution
 

@@ -7,7 +7,8 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
     '!**/__mock__/**',
-    '!**/vendor/**'
+    '!**/vendor/**',
+    '!**/bin.ts'
   ],
   coverageThreshold: {
     global: {

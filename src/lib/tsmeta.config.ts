@@ -54,6 +54,8 @@ export interface GraphQLConfig extends BaseConfig {
 export interface TsMetaConfig {
   basePackage: string
   scanAdditionalPackages: { [key: string]: string }
+  showScannedFiles: boolean
+  showWrittenFiles: boolean
   metaConfig: MetaConfig
   sigmaConfig?: SigmaConfig
   oasConfig?: OasConfig

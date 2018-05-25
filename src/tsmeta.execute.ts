@@ -70,9 +70,9 @@ class TsMetaExecution {
    * use factories to create tsMetaSchema
    */
   private createTsMetaSchema(): TsMeta {
-    this.tsMetaFactory = new TsMetaFactory()
+    this.tsMetaFactory = new TsMetaFactory(this.tsMetaConfig)
 
-    return this.tsMetaFactory.build(this.tsMetaConfig)
+    return this.tsMetaFactory.build()
   }
 
   /**
@@ -89,14 +89,6 @@ class TsMetaExecution {
    */
   private createOpenapispec(): Openapi {
     const tsMetaInstance: TsMeta = new TsMeta(this.tsMeta)
-
-    console.log('this.tsMeta.baseTsPackage.name' + this.tsMeta.baseTsPackage.name) // tslint:disable-line
-    console.log('tsMetaInstance.baseTsPackage.name' + tsMetaInstance.baseTsPackage.name) // tslint:disable-line
-
-    tsMetaInstance.baseTsPackage = undefined
-
-    console.log('this.tsMeta.baseTsPackage.name' + this.tsMeta.baseTsPackage.name) // tslint:disable-line
-    console.log('tsMetaInstance.baseTsPackage.name' + ((tsMetaInstance.baseTsPackage)  ? tsMetaInstance.baseTsPackage.name : '')) // tslint:disable-line
 
     return this.oasGenerator.generate(tsMetaInstance)
   }
@@ -147,7 +139,9 @@ class TsMetaExecution {
 
     WriteFile(`${resolvedPath}/${filename}`, dataString, { encoding: 'utf8' }, (err: Error) => {
       if (err) process.stderr.write(err.toString())
-      else process.stdout.write(`\nsaved ${filename}\n`)
+      else {
+        if (this.tsMetaConfig.showWrittenFiles) process.stdout.write(`\nsaved ${filename}\n`)
+      }
     })
   }
 }
