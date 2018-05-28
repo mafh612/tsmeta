@@ -11,6 +11,7 @@ const parameterFunction: ((target: any, key: string|Symbol, index: number) => an
  * class annotations
  */
 const controller: ((name: string) => any) = (name: string): Function => classFunction
+const controllerParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => classFunction
 const model: ((modelParam: ModelParam) => any) = (modelParam: ModelParam): Function => classFunction
 /**
  * method annotations
@@ -36,6 +37,7 @@ const requestBody: ((parameterParam: ParameterParam) => any) = (parameterParam: 
 
 export {
   controller as Controller,
+  controllerParam as ControllerParam,
   model as Model,
   getRequest as GetRequest,
   postRequest as PostRequest,

@@ -1,9 +1,11 @@
 import * as deepAssign from 'deep-assign'
-import { Components, Info, Openapi, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
+import { Components, Info, Openapi, Parameter, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
 
+import { TypescriptTypes } from '..'
 import { ModelParam } from '../lib/annotation.schema'
 import { OasConfig } from '../lib/tsmeta.config'
-import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsProgram, TsProperty } from '../lib/tsmeta.schema'
+import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsParameter, TsProgram, TsProperty } from '../lib/tsmeta.schema'
+import { OasParameterGenerator } from './oas.generators/oas.parameter.generator'
 import { OasPathGenerator } from './oas.generators/oas.path.generator'
 import { OasSchemaGenerator } from './oas.generators/oas.schema.generator'
 
@@ -13,6 +15,7 @@ import { OasSchemaGenerator } from './oas.generators/oas.schema.generator'
 class OasGenerator {
 
   private oasPathGenerator: OasPathGenerator
+  private oasParameterGenerator: OasParameterGenerator
   private oasSchemaGenerator: OasSchemaGenerator
 
   constructor(private oasConfig: OasConfig) {}
@@ -94,14 +97,49 @@ class OasGenerator {
 
     files.forEach((tsFile: TsFile) => {
       const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))
+      const controllerParamDecorators: TsDecorator[] = tsFile.tsClass.decorators.filter((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('ControllerParams'))
       const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
-        paths = deepAssign(paths, this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod))
+        const path: { [key: string]: PathItem } = this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod)
+
+        paths = deepAssign(paths, path)
       })
+
+      if (!!controllerParamDecorators) {
+        Object.keys(paths).forEach((key: string) => {
+          if (!paths[key].parameters) paths[key].parameters = []
+
+          paths[key].parameters = paths[key].parameters.concat(this.createControllerParams(controllerParamDecorators))
+        })
+      }
     })
 
     return paths
+  }
+
+  /**
+   * create controller params
+   */
+  private createControllerParams(controllerParamDecorators: TsDecorator[]): Parameter[] {
+    const parameters: Parameter[] = []
+
+    Object.keys(controllerParamDecorators).forEach((key: string) => {
+      const controllerParamDecorator: TsDecorator = controllerParamDecorators[key]
+
+      const tsParameter: TsParameter = {
+        decorators: [controllerParamDecorator],
+        name: controllerParamDecorator.tsarguments[0].representation.name,
+        tstype: {
+          basicType: 'string',
+          typescriptType: TypescriptTypes.BASIC
+        }
+      }
+
+      parameters.push(this.oasParameterGenerator.generate(tsParameter))
+    })
+
+    return parameters
   }
 
   /**

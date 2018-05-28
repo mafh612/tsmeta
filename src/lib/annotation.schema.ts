@@ -15,7 +15,7 @@ export interface ParameterParam {
   required: boolean
   ref?: any
   version?: string
-  res?: any
+  schema?: any
   example?: any
 }
 /**
@@ -25,7 +25,7 @@ export interface ResponseParam {
   statusCode?: number
   ref?: any
   version?: string
-  res?: any
+  schema?: any
   example?: any
 }
 /**
