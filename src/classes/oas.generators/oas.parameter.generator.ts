@@ -37,7 +37,7 @@ class OasParameterGenerator {
     const deprecated: boolean = false
     const description: string = `${parameterDecorator.name} ${tsParameter.name}`
     const example: any = parameterArgument.example
-    const _in: string = this.parameterAnnotationMap[parameterDecorator.name]
+    const _in: string = this.parameterAnnotationMap[this.mapAnnotations(parameterDecorator.name)]
     const name: string = parameterArgument.name
     const required: boolean = parameterArgument.required
     const schema: any = parameterArgument.res || { type: 'string' }
