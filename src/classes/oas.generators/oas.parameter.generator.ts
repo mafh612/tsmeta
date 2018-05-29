@@ -42,7 +42,7 @@ class OasParameterGenerator {
     const required: boolean = parameterArgument.required
     const schema: any = parameterArgument.schema || { type: 'string' }
 
-    const value: Parameter = {
+    return {
       $ref,
       allowEmptyValue,
       deprecated,
@@ -53,10 +53,6 @@ class OasParameterGenerator {
       required,
       schema
     }
-
-    if (tsParameter.name === 'ControllerParam') console.log(value) // tslint:disable-line
-
-    return value
   }
 
   /**

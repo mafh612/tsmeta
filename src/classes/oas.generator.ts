@@ -96,7 +96,6 @@ class OasGenerator {
     let paths: { [key: string]: PathItem } = {}
 
     files.forEach((tsFile: TsFile) => {
-      console.log(tsFile) // tslint:disable-line
       const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))
       const controllerParams: Parameter[] = tsFile.tsClass.decorators
         .filter((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('ControllerParam'))
