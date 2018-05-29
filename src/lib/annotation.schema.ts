@@ -13,6 +13,7 @@ export interface PropertyParam {
 export interface ParameterParam {
   name: string
   required: boolean
+  in?: string // tslint:disable-line no-reserved-keywords
   ref?: any
   version?: string
   schema?: any

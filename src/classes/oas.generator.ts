@@ -96,23 +96,18 @@ class OasGenerator {
     let paths: { [key: string]: PathItem } = {}
 
     files.forEach((tsFile: TsFile) => {
+      console.log(tsFile) // tslint:disable-line
       const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))
-      const controllerParamDecorators: TsDecorator[] = tsFile.tsClass.decorators.filter((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('ControllerParams'))
+      const controllerParams: Parameter[] = tsFile.tsClass.decorators
+        .filter((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('ControllerParam'))
+        .map((tsDecorator: TsDecorator) => this.createControllerParams(tsDecorator))
       const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
-        const path: { [key: string]: PathItem } = this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod)
+        const path: { [key: string]: PathItem } = this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod, controllerParams)
 
         paths = deepAssign(paths, path)
       })
-
-      if (!!controllerParamDecorators) {
-        Object.keys(paths).forEach((key: string) => {
-          if (!paths[key].parameters) paths[key].parameters = []
-
-          paths[key].parameters = paths[key].parameters.concat(this.createControllerParams(controllerParamDecorators))
-        })
-      }
     })
 
     return paths
@@ -121,25 +116,19 @@ class OasGenerator {
   /**
    * create controller params
    */
-  private createControllerParams(controllerParamDecorators: TsDecorator[]): Parameter[] {
-    const parameters: Parameter[] = []
+  private createControllerParams(controllerParamDecorator: TsDecorator): Parameter {
+    this.oasParameterGenerator = new OasParameterGenerator(this.oasConfig)
 
-    Object.keys(controllerParamDecorators).forEach((key: string) => {
-      const controllerParamDecorator: TsDecorator = controllerParamDecorators[key]
-
-      const tsParameter: TsParameter = {
-        decorators: [controllerParamDecorator],
-        name: controllerParamDecorator.tsarguments[0].representation.name,
-        tstype: {
-          basicType: 'string',
-          typescriptType: TypescriptTypes.BASIC
-        }
+    const tsParameter: TsParameter = {
+      decorators: [controllerParamDecorator],
+      name: controllerParamDecorator.tsarguments[0].representation.name,
+      tstype: {
+        basicType: 'string',
+        typescriptType: TypescriptTypes.BASIC
       }
+    }
 
-      parameters.push(this.oasParameterGenerator.generate(tsParameter))
-    })
-
-    return parameters
+    return this.oasParameterGenerator.generate(tsParameter)
   }
 
   /**

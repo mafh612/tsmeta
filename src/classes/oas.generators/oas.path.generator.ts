@@ -1,4 +1,4 @@
-import { PathItem } from 'oasmodel'
+import { Parameter, PathItem } from 'oasmodel'
 import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
@@ -16,7 +16,7 @@ class OasPathGenerator {
   /**
    * generated PathItem
    */
-  public generate(controllerName: string, controllerPath: string, tsMethod: TsMethod): { [key: string]: PathItem } {
+  public generate(controllerName: string, controllerPath: string, tsMethod: TsMethod, controllerParameters: Parameter[]): { [key: string]: PathItem } {
     const pathItem: { [key: string]: PathItem } = {}
 
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
@@ -31,22 +31,22 @@ class OasPathGenerator {
 
     switch (this.mapAnnotations(mappingDecorator.name)) {
       case MappingAnnotations.GET.name:
-        pathItem[fullPath] = { get: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { get: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       case MappingAnnotations.POST.name:
-        pathItem[fullPath] = { post: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { post: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       case MappingAnnotations.PUT.name:
-        pathItem[fullPath] = { put: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { put: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       case MappingAnnotations.PATCH.name:
-        pathItem[fullPath] = { patch: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { patch: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       case MappingAnnotations.DELETE.name:
-        pathItem[fullPath] = { delete: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { delete: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       case MappingAnnotations.HEAD.name:
-        pathItem[fullPath] = { head: this.oasOperationGeneration.generate(controllerName, tsMethod) }
+        pathItem[fullPath] = { head: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
       // istanbul ignore next
       default:

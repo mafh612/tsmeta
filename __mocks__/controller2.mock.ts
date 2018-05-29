@@ -1,6 +1,5 @@
 import {
   Controller,
-  ControllerParam,
   DeleteRequest,
   ErrorResponse,
   GetRequest,
@@ -9,7 +8,7 @@ import {
   PathVariable,
   PostRequest,
   PutRequest,
-  ReqBody,
+  RequestBody,
   SuccessResponse
 } from '../src'
 import { Incoming } from './incoming.mock'
@@ -18,8 +17,7 @@ import { SomethingMock } from './something.mock'
 /**
  * class ControllerMock
  */
-@Controller('controller/mock/:tenant')
-@ControllerParam({ name: 'tenant', required: true, in: 'path', schema: { type: 'string' } })
+@Controller('controller/mock')
 class ControllerMock {
 
   /**
@@ -38,7 +36,7 @@ class ControllerMock {
    */
   @PostRequest('/something')
   @SuccessResponse({ statusCode: 200, ref: SomethingMock, version: 'v1'})
-  public async postSomething(@ReqBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
+  public async postSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock('any'))
   }
 
@@ -51,7 +49,7 @@ class ControllerMock {
   @ErrorResponse({ statusCode: 404, schema: { statusCode: 'number', statusMessage: 'string' }, example: { statusCode: 404, statusMessage: 'NOT_FOUND' } })
   public async putSomething(
     @PathVariable({ name: 'id', required: true }) id: string,
-    @ReqBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
+    @RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
 
@@ -61,7 +59,7 @@ class ControllerMock {
    */
   @PatchRequest('/something')
   @SuccessResponse({ statusCode: 201, schema: { successful: 'boolean' }, example: { successful: true } })
-  public async patchSomething(@ReqBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
+  public async patchSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock('any'))
   }
 

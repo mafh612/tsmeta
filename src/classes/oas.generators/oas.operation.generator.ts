@@ -19,7 +19,7 @@ class OasOperationGenerator {
   /**
    * generate Operation
    */
-  public generate(controllerName: string, tsMethod: TsMethod): Operation {
+  public generate(controllerName: string, tsMethod: TsMethod, controllerParameters: Parameter[]): Operation {
     this.oasParameterGenerator = new OasParameterGenerator(this.oasConfig)
     this.oasResponseGenerator = new OasResponseGenerator(this.oasConfig)
     this.oasRequestbodyGenerator = new OasRequestbodyGenerator()
@@ -30,6 +30,8 @@ class OasOperationGenerator {
     parameters = tsMethod.parameters
       .map((tsParameter: TsParameter) => this.oasParameterGenerator.generate(tsParameter))
       .filter((parameter: Parameter) => !!parameter)
+
+    if (controllerParameters) parameters = parameters.concat(controllerParameters)
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
       .find((tsParameter: TsParameter) => tsParameter.decorators

@@ -8,7 +8,7 @@ import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
  */
 class OasParameterGenerator {
 
-  private parameterAnnotations: string[] = ['PathVariable', 'RequestParam', 'RequestHeader', 'CookieValue']
+  private parameterAnnotations: string[] = ['PathVariable', 'RequestParam', 'RequestHeader', 'CookieValue', 'ControllerParam']
   private parameterAnnotationMap: { [key: string]: string } = {
     PathVariable: 'path',
     RequestParam: 'query',
@@ -37,12 +37,12 @@ class OasParameterGenerator {
     const deprecated: boolean = false
     const description: string = `${parameterDecorator.name} ${tsParameter.name}`
     const example: any = parameterArgument.example
-    const _in: string = this.parameterAnnotationMap[this.mapAnnotations(parameterDecorator.name)]
+    const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[this.mapAnnotations(parameterDecorator.name)]
     const name: string = parameterArgument.name
     const required: boolean = parameterArgument.required
-    const schema: any = parameterArgument.res || { type: 'string' }
+    const schema: any = parameterArgument.schema || { type: 'string' }
 
-    return {
+    const value: Parameter = {
       $ref,
       allowEmptyValue,
       deprecated,
@@ -53,6 +53,10 @@ class OasParameterGenerator {
       required,
       schema
     }
+
+    if (tsParameter.name === 'ControllerParam') console.log(value) // tslint:disable-line
+
+    return value
   }
 
   /**

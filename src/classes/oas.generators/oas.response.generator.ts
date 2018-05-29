@@ -65,14 +65,14 @@ class OasResponseGenerator {
       }
     }
 
-    if (responseParam && responseParam.res) {
+    if (responseParam && responseParam.schema) {
       const schema: Schema = {
         properties: {},
         example: responseParam.example || undefined
       }
 
-      Object.keys(responseParam.res).forEach((key: string) => {
-        schema.properties[key] = { type: responseParam.res[key] }
+      Object.keys(responseParam.schema).forEach((key: string) => {
+        schema.properties[key] = { type: responseParam.schema[key] }
       })
 
       content = {

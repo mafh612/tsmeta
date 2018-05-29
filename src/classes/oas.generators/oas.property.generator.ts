@@ -38,7 +38,7 @@ class OasPropertyGenerator {
         break
       case TypescriptTypes.REFERENCE:
         if (parameterParam) {
-          schema.properties = parameterParam.res
+          schema.properties = parameterParam.schema
           schema.example = parameterParam.example
         } else {
           schema = { type: 'object', $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
