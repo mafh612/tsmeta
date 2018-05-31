@@ -14,9 +14,9 @@
   - [sigmaConfig](#user-content-sigmaconfig)
   - [oasConfig](#user-content-graphqlconfig)
   - [graphQLConfig](#user-content-graphqlconfig)
-- [GraphQL examples](/mafh612/tsmeta/blob/master/README_graphql.md)
-- [OpenAPI examples](/mafh612/tsmeta/blob/master/README_oas.md)
-- [sigmajs exmaples](/mafh612/tsmeta/blob/master/README_sigma.md)
+- [GraphQL examples](/README_graphql.md)
+- [OpenAPI examples](/README_oas.md)
+- [sigmajs exmaples](/README_sigma.md)
 
 ## install
 ```
