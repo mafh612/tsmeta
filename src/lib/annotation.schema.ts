@@ -33,6 +33,6 @@ export interface ResponseParam {
  * interface ModelParam
  */
 export interface ModelParam {
-  version: string
+  version?: string
   example?: any
 }

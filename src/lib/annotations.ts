@@ -12,7 +12,7 @@ const parameterFunction: ((target: any, key: string|Symbol, index: number) => an
  */
 const controller: ((name: string) => any) = (name: string): Function => classFunction
 const controllerParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): Function => classFunction
-const model: ((modelParam: ModelParam) => any) = (modelParam: ModelParam): Function => classFunction
+const model: ((modelParam: ModelParam|any) => any) = (modelParam: ModelParam|any): Function => classFunction
 /**
  * method annotations
  */

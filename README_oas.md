@@ -1,3 +1,6 @@
+# OpenAPI Specification Examples
+## Controller
+```typescript
 import {
   Controller,
   ControllerParam,
@@ -21,7 +24,9 @@ import { SomethingMock } from './something.mock'
 @Controller('controller/mock/:tenant')
 @ControllerParam({ name: 'tenant', required: true, in: 'path', schema: { type: 'string' } })
 class ControllerMock {
-
+}
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -31,7 +36,8 @@ class ControllerMock {
   public async getSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
-
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -41,7 +47,8 @@ class ControllerMock {
   public async postSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock('any'))
   }
-
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -54,7 +61,8 @@ class ControllerMock {
     @RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
-
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -64,7 +72,8 @@ class ControllerMock {
   public async patchSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock('any'))
   }
-
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -74,7 +83,8 @@ class ControllerMock {
   public async deleteSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
-
+```
+```typescript
   /**
    * get something method
    * @param id
@@ -85,5 +95,4 @@ class ControllerMock {
     return Promise.resolve(new SomethingMock(id))
   }
 }
-
-export { ControllerMock }
+```
