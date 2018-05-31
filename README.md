@@ -7,18 +7,16 @@
 </p>
 
 ## Contents
-- [version](#version)
-- [install](#install)
-- [intend](#intend)
+- [install](#user-content-install)
+- [intend](#user-content-intend)
 - [tsmeta.config.json](#tsmeta.config.json)
-  - [metaConfig](#metaConfig)
-  - [sigmaConfig](#sigmaConfig)
-  - [oasConfig](#oasConfig)
-  - [graphQLConfig](#graphQLConfig)
-- [openapi annotations](#openapi_annotations)
-  - [class annotations](#class_annotations)
-  - [method annotations](#method_annotations)
-  - [property annotations](#property_annotations)
+  - [metaConfig](#user-content-metaconfig)
+  - [sigmaConfig](#user-content-sigmaconfig)
+  - [oasConfig](#user-content-graphqlconfig)
+  - [graphQLConfig](#user-content-graphqlconfig)
+- [GraphQL examples](/mafh612/tsmeta/blob/master/README_graphql.md)
+- [OpenAPI examples](/mafh612/tsmeta/blob/master/README_oas.md)
+- [sigmajs exmaples](/mafh612/tsmeta/blob/master/README_sigma.md)
 
 ## install
 ```
