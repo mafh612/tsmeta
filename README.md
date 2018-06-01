@@ -64,20 +64,6 @@ the basic `tsmeta.config.json` has to include the base-package reference (`packa
   "compilerOptions": "tsconfig.json"
 }
 ```
-### oasConfig
-```json
-{
-  "create": true,
-  "outputPath": "schema",
-  "outputFilename": "oas.output.json",
-  "openapistring": "3.0.1",
-  "annotationsMap": {
-    "Body": "RequestBody",
-    "QueryParam": "RequestParam",
-    "Get": "RequestGet"
-  }
-}
-```
 ### graphQLConfig
 ```json
 {

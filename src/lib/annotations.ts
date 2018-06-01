@@ -22,6 +22,7 @@ const putRequest: ((path: string) => any) = (path: string): Function => methodFu
 const patchRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const deleteRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const headRequest: ((path: string) => any) = (path: string): Function => methodFunction
+const optionsRequest: ((path: string) => any) = (path: string): Function => methodFunction
 const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
 const errorResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): Function => methodFunction
 /**
@@ -44,6 +45,7 @@ export {
   putRequest as PutRequest,
   patchRequest as PatchRequest,
   deleteRequest as DeleteRequest,
+  optionsRequest as OptionsRequest,
   headRequest as HeadRequest,
   successResponse as SuccessResponse,
   errorResponse as ErrorResponse,
