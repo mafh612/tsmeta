@@ -1,8 +1,10 @@
 # OpenAPI Specification Examples
 - [oasConfig](#user-content-oasconfig)
+
 - [controller annotations](#user-content-controller-annotations)
   - [@Controller](#user-content-@controller)
   - [@ControllerParam](#user-content-controllerparam)
+
 - [method annotations](#user-content-method-annotations)
   - [@GetRequst](#user-content-getrequest)
   - [@PostRequst](#user-content-postrequest)
@@ -65,12 +67,14 @@ class ControllerMock {
 ```json
 {
   "paths": {
-    "controller/mock/##MethodMapping##": { // ##MethodMapping## - mapping of methods see below
+    "controller/mock/##MethodMapping##": {
 
     }
   }
 }
 ```
+- ##MethodMapping## - mapping of methods see below
+
 [to top](/README_oas.md)
 ### @ControllerParam
 If you use a variable like `version` in the controller path you have to `@ControllerParam` annotate this variable to be set to the `parameters` array of all `operations` for this `path`.
@@ -96,7 +100,7 @@ class ControllerMock {
 ```json
 {
   "paths": {
-    "/{version}/controller/mock/##MethodMapping##": { // ##MethodMapping## - mapping of methods see below
+    "/{version}/controller/mock/##MethodMapping##": {
       "get": {
         "parameters": [
           {
@@ -116,13 +120,15 @@ class ControllerMock {
   }
 }
 ```
+- ##MethodMapping## - mapping of methods see below
+
 [to top](/README_oas.md)
 ---
 ## method annotations
 
 Method annotations include `@GetRequest`, `@PostRequest`, `@PutRequest`, `@PatchRequest`, `@DeleteRequest`, `@HeadRequest` and `@OptionsRequest` to map your class methods to the respective HttpMethod.
 As well as `@SuccessResponse` and `@ErrorResponse` to create a response object for the operation.
-### @GetRequest
+### @GetRequest, @HeadRequest, @DeleteRequest, @OptionsRequest
 Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Get`) to the `@GetRequest` annotation.
 However `@GetRequest`/`@Get` expects the first decorator argument to be a string defining the path.
 
@@ -135,21 +141,46 @@ class ControllerMock {
   /**
    * get something method
    */
-  @GetRequest('/something')
-  public async getSomething(): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock())
+  @GetRequest('/something/:id')
+  public async getSomething(
+    @PathVariable({
+      name: 'id',
+      required: true,
+      schema: {
+        type: 'string'
+      }
+    }) id: string): Promise<SomethingMock> {
+    return Promise.resolve(new SomethingMock(id))
   }
 }
 ```
+- @PathVariable in detail see parameter annotations below
+
 ...will result in a OpenAPI schema as this:
 ```json
 {
   "paths": {
     "/{version}/controller/mock/something": {
       "get": {
+        "parameters": [
+          {
+            controllerparam
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathVariable id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+                "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description":  "no content" // see @SuccessResponse & @ErrorResponse below
+            "description":  "no content"
           }
         }
       }
@@ -157,8 +188,10 @@ class ControllerMock {
   }
 }
 ```
+- see @SuccessResponse & @ErrorResponse below
+
 [to top](/README_oas.md)
-### @PostRequest
+### @PostRequest, @PutRequest, @PatchRequest
 Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Post`) to the `@PostRequest` annotation.
 However `@PostRequest`/`@Post` expects the first decorator argument to be a string defining the path.
 
@@ -173,7 +206,7 @@ class ControllerMock {
    */
   @PostRequest('/something')
   public async postSomething(
-    @RequestBody({ // @RequestBody in detail see parameter annotations below
+    @RequestBody({
       name: 'incoming',
       required: true,
       ref: 'Incoming'
@@ -182,6 +215,9 @@ class ControllerMock {
   }
 }
 ```
+- @RequestBody in detail see parameter annotations below
+
+...will result in a OpenAPI schema as this:
 ```json
 {
   "paths": {
@@ -198,7 +234,7 @@ class ControllerMock {
         },
         "responses": {
           "200": {
-            "description":  "no content" // see @SuccessResponse & @ErrorResponse below
+            "description":  "no content"
           }
         }
       }
@@ -206,129 +242,157 @@ class ControllerMock {
   }
 }
 ```
-[to top](/README_oas.md)
-### @PutRequest
-Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Put`) to the `@PutRequest` annotation.
-However `@PutRequest`/`@Put` expects the first decorator argument to be a string defining the path.
+- see @SuccessResponse & @ErrorResponse below
 
-annotation of your controller class and method like this ...
-```typescript
-  /**
-   * get something method
-   * @param id
-   */
-  @PutRequest('/something/:id')
-  @SuccessResponse({ statusCode: 201, ref: SomethingMock, version: 'v1' })
-  @ErrorResponse({ statusCode: 404, schema: { statusCode: 'number', statusMessage: 'string' }, example: { statusCode: 404, statusMessage: 'NOT_FOUND' } })
-  public async putSomething(
-    @PathVariable({ name: 'id', required: true }) id: string,
-    @RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock(id))
-  }
-```
-
-```json
-{
-  "paths": {
-    "/{version}/controller/mock/something": {
-      "post": {
-        "requestObject": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Incoming"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description":  "no content" // see @SuccessResponse & @ErrorResponse below
-          }
-        }
-      }
-    }
-  }
-}
-```
-[to top](/README_oas.md)
-### @PatchRequest
-Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Patch`) to the `@PatchRequest` annotation.
-However `@PatchRequest`/`@Patch` expects the first decorator argument to be a string defining the path.
-
-annotation of your controller class and method like this ...
-```typescript
-  /**
-   * get something method
-   * @param id
-   */
-  @PatchRequest('/something')
-  @SuccessResponse({ statusCode: 201, schema: { successful: 'boolean' }, example: { successful: true } })
-  public async patchSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock('any'))
-  }
-```
-[to top](/README_oas.md)
-### @DeleteRequest
-Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Post`) to the `@PostRequest` annotation.
-However `@PostRequest`/`@Post` expects the first decorator argument to be a string defining the path.
-
-annotation of your controller class and method like this ...
-```typescript
-  /**
-   * get something method
-   * @param id
-   */
-  @DeleteRequest('/something/:id')
-  @SuccessResponse({ statusCode: 201 })
-  public async deleteSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock(id))
-  }
-```
-[to top](/README_oas.md)
-### @HeadRequest
-Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Post`) to the `@PostRequest` annotation.
-However `@PostRequest`/`@Post` expects the first decorator argument to be a string defining the path.
-
-annotation of your controller class and method like this ...
-```typescript
-  /**
-   * get something method
-   * @param id
-   */
-  @HeadRequest('/something')
-  @SuccessResponse()
-  public async headSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock(id))
-  }
-}
-```
-[to top](/README_oas.md)
-### @OptionsRequest
-Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Post`) to the `@PostRequest` annotation.
-However `@PostRequest`/`@Post` expects the first decorator argument to be a string defining the path.
-```typescript
-  /**
-   * get something method
-   * @param id
-   */
-  @HeadRequest('/something')
-  @SuccessResponse()
-  public async optionsSomething(): Promise<SomethingMock> {
-    return Promise.resolve(new SomethingMock())
-  }
-}
-```
 ### @SuccessResponse & @ErrorResponse
-
-`@SuccessResponse` and `@ErrorResponse` expect the first decorator argument to an object like this:
+Using the `annotationsMap` object of the `oasConfig` object you can map your functional annotation (e.g. `@Success`) to the `@SuccessResponse` annotation.
+However `@SuccessResponse`/`@Success` expects the first decorator argument to be an object like this:
 ```typescript
   statusCode?: number // if omitted status code will be 200
   ref?: any
   version?: string
   schema?: any
   example?: any
-  // if no ref or schema is given the response object will
+  // if neither "ref" nor "schema" is given, the response object will have only the description field "no content"
+```
+annotation of your controller class and method like this ...
+```typescript
+@Controller(':version/controller/mock')
+@ControllerParam({ name: 'version', required: true, in: 'path', schema: { type: 'string' } })
+class ControllerMock {
+  /**
+   * get something method
+   * @param id
+   */
+  @PostRequest('/something')
+  @SuccessResponse({ statusCode: 200, ref: 'SomethingMock', version: 'v1' })
+  public async postSomething(
+    @RequestBody({
+      name: 'incoming',
+      required: true,
+      ref: 'Incoming'
+    }) incoming: Incoming): Promise<SomethingMock> {
+    return Promise.resolve(new SomethingMock('any'))
+  }
+}
+```
+- @RequestBody in detail see parameter annotations below
+
+...will result in a OpenAPI schema as this:
+```json
+{
+  "paths": {
+    "/{version}/controller/mock/something": {
+      "post": {
+        "requestObject": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Incoming"
+              }
+            }
+          }
+        },
+        "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SomethingMock_v1"
+                  }
+                }
+              },
+              "description": "SuccessResponse"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+annotation of your controller class and method like this ...
+```typescript
+@Controller(':version/controller/mock')
+@ControllerParam({ name: 'version', required: true, in: 'path', schema: { type: 'string' } })
+class ControllerMock {
+  /**
+   * get something method
+   * @param id
+   */
+  @PostRequest('/something')
+  @SuccessResponse({
+    statusCode: 200,
+    schema: {
+      properties: {
+        email: {
+          type: 'string'
+        },
+        password: {
+          type: 'string'
+        }
+      }
+    },
+    example: {
+      email: 'somebody@something.net',
+      password: '12345678'
+    }
+  })
+  public async postSomething(
+    @RequestBody({
+      name: 'incoming',
+      required: true,
+      ref: 'Incoming'
+    }) incoming: Incoming): Promise<SomethingMock> {
+    return Promise.resolve(new SomethingMock(incoming.email))
+  }
+}
+```
+- @RequestBody in detail see parameter annotations below
+
+...will result in a OpenAPI schema as this:
+```json
+{
+  "paths": {
+    "/{version}/controller/mock/something": {
+      "post": {
+        "requestObject": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Incoming"
+              }
+            }
+          }
+        },
+        "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      }
+                    },
+                    "example": {
+                      "email": "somebody@something.net",
+                      "password": "12345678"
+                    }
+                  }
+                }
+              },
+              "description": "SuccessResponse"
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
 [to top](/README_oas.md)
 ---

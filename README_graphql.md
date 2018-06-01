@@ -1,12 +1,16 @@
-# GraphQL Examples
+# GraphQL examples
+
+## graphQLConfig
+```json
+{
+  "create": true,
+  "outputPath": "schema",
+  "model_annotation": "Model",
+  "property_annotation": "Property"
+}
+```
 ## Model
 ```typescript
-import { Model, Property } from 'tsmeta'
-import { SimpleMock } from './simple.mock'
-
-/**
- * class SomethingMock
- */
 @Model
 class SomethingMock {
 

@@ -25,8 +25,8 @@ npm i tsmeta
 ```
 
 ## intend
-
-- _tsmeta_: only for typescript projects
+_tsmeta_ can create schemas for either documentation of your RestAPI as well as the needed schemas for your GraphqlAPI for your typescript node application. Using simply typescript classes and a few annotations.
+- _tsmeta_: can only be used for typescript projects
 - _tsmeta_: create schema and data files for these applications:
   - __[OpenAPI Specification 3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)__
   - __[GraphQL](https://graphql.org/)__
@@ -47,30 +47,20 @@ the basic `tsmeta.config.json` has to include the base-package reference (`packa
   "graphQLConfig": {}
 }
 ```
+your `package.json` has to include the `source` property like:
+```json
+{
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+}
+```
 ### metaConfig
+the `tsmetaConfig` object is required in your `tsmeta.config.json`, however creation of the `tsmeta.output.json` file is not required to generate the other schemas
 ```json
 {
   "create": true,
   "outputPath": "schema",
   "outputFilename": "tsmeta.output.json",
   "compilerOptions": "tsconfig.json"
-}
-```
-### sigmaConfig
-```json
-{
-  "create": true,
-  "outputPath": "schema",
-  "outputFilename": "tsmeta.output.json",
-  "compilerOptions": "tsconfig.json"
-}
-```
-### graphQLConfig
-```json
-{
-  "create": true,
-  "outputPath": "schema",
-  "model_annotation": "Model",
-  "property_annotation": "Property"
 }
 ```

@@ -28,7 +28,7 @@ class ControllerMock {
    * @param id
    */
   @Get('/something/:id')
-  @SuccessResponse({ statusCode: 200, ref: SomethingMock, version: 'v1'})
+  @SuccessResponse({ statusCode: 200, ref: 'SomethingMock', version: 'v1'})
   public async getSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
@@ -38,7 +38,7 @@ class ControllerMock {
    * @param id
    */
   @PostRequest('/something')
-  @SuccessResponse({ statusCode: 200, ref: SomethingMock, version: 'v1'})
+  @SuccessResponse({ statusCode: 200, ref: 'SomethingMock', version: 'v1'})
   public async postSomething(@RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock('any'))
   }
@@ -48,7 +48,7 @@ class ControllerMock {
    * @param id
    */
   @PutRequest('/something/:id')
-  @SuccessResponse({ statusCode: 201, ref: SomethingMock, version: 'v1' })
+  @SuccessResponse({ statusCode: 201, ref: 'SomethingMock', version: 'v1' })
   @ErrorResponse({ statusCode: 404, schema: { statusCode: 'number', statusMessage: 'string' }, example: { statusCode: 404, statusMessage: 'NOT_FOUND' } })
   public async putSomething(
     @PathVariable({ name: 'id', required: true }) id: string,
