@@ -18,7 +18,7 @@
 - [model annotation](#user-content-model-annotation)
 - [property annotation](#user-content-property-annotation)
 ---
-[to top](/)
+[to top](/README_oas.md)
 ## oasConfig
 ```json
 {
