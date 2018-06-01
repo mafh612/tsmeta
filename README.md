@@ -25,7 +25,7 @@ npm i tsmeta
 ```
 
 ## intend
-_tsmeta_ can create schemas for either documentation of your RestAPI as well as the needed schemas for your GraphqlAPI for your typescript node application. Using simply typescript classes and a few annotations.
+_tsmeta_ can create schemas for either documentation of your RestAPI as well as the needed schemas for your GraphqlAPI of your typescript node application. Using simply typescript classes and a few annotations.
 - _tsmeta_: can only be used for typescript projects
 - _tsmeta_: create schema and data files for these applications:
   - __[OpenAPI Specification 3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)__
