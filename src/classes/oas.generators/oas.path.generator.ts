@@ -1,4 +1,5 @@
 import { Parameter, PathItem } from 'oasmodel'
+import { GetMappedAnnotation, SetAnnoationsMapping } from '../../lib/annotations.mapping'
 import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
 import { OasConfig } from '../../lib/tsmeta.config'
 import { TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
@@ -17,6 +18,7 @@ class OasPathGenerator {
    * generated PathItem
    */
   public generate(controllerName: string, controllerPath: string, tsMethod: TsMethod, controllerParameters: Parameter[]): { [key: string]: PathItem } {
+    SetAnnoationsMapping(this.oasConfig.annotationsMap)
     const pathItem: { [key: string]: PathItem } = {}
 
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
@@ -27,9 +29,9 @@ class OasPathGenerator {
     const methodPath: string = mappingDecorator.tsarguments.pop().representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
 
-    this.oasOperationGeneration = new OasOperationGenerator(this.oasConfig)
+    this.oasOperationGeneration = new OasOperationGenerator()
 
-    switch (this.mapAnnotations(mappingDecorator.name)) {
+    switch (GetMappedAnnotation(mappingDecorator.name)) {
       case MappingAnnotations.GET.name:
         pathItem[fullPath] = { get: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
@@ -69,13 +71,6 @@ class OasPathGenerator {
     usedMappingAnnotation.push(this.oasConfig.annotationsMap.HeadRequest || 'HeadRequest')
 
     return usedMappingAnnotation
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 
   /**

@@ -1,6 +1,6 @@
 import { MediaType, Response, Schema } from 'oasmodel'
 import { ResponseParam } from '../../lib/annotation.schema'
-import { OasConfig } from '../../lib/tsmeta.config'
+import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { TsArgument, TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
 
 /**
@@ -10,8 +10,6 @@ class OasResponseGenerator {
 
   private httpStatusOK: number = 200
 
-  constructor(private oasConfig: OasConfig) {}
-
   /**
    * generate Response
    */
@@ -19,7 +17,7 @@ class OasResponseGenerator {
     const responseDecorators: TsDecorator[] = tsMethod.decorators.filter((tsDecorator: TsDecorator) => tsDecorator.name.includes('Response'))
     const response: { [key: string]: Response } = {}
 
-    this.mapAnnotations('any') // tslint:disable-line
+    GetMappedAnnotation('any') // tslint:disable-line
 
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
       const responseArgument: TsArgument = responseDecorator.tsarguments.pop()
@@ -83,13 +81,6 @@ class OasResponseGenerator {
     }
 
     return content
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 }
 

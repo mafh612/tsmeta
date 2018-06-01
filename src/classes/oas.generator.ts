@@ -1,10 +1,11 @@
 import * as deepAssign from 'deep-assign'
 import { Components, Info, Openapi, Parameter, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
 
-import { TypescriptTypes } from '..'
 import { ModelParam } from '../lib/annotation.schema'
+import { GetMappedAnnotation } from '../lib/annotations.mapping'
 import { OasConfig } from '../lib/tsmeta.config'
 import { TsArgument, TsDecorator, TsFile, TsMeta, TsMethod, TsParameter, TsProgram, TsProperty } from '../lib/tsmeta.schema'
+import { TypescriptTypes } from '../lib/typescript.types.enum'
 import { OasParameterGenerator } from './oas.generators/oas.parameter.generator'
 import { OasPathGenerator } from './oas.generators/oas.path.generator'
 import { OasSchemaGenerator } from './oas.generators/oas.schema.generator'
@@ -59,7 +60,7 @@ class OasGenerator {
       tsProgram.files.forEach((tsFile: TsFile) => {
         if (tsFile.tsClass
           && tsFile.tsClass.decorators
-          && tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))) {
+          && tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'))) {
           tsFiles.push(tsFile)
         }
       })
@@ -78,7 +79,7 @@ class OasGenerator {
       tsProgram.files.forEach((tsFile: TsFile) => {
         if (tsFile.tsClass
           && tsFile.tsClass.decorators
-          && tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Model'))) {
+          && tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'))) {
           tsFiles.push(tsFile)
         }
       })
@@ -96,9 +97,9 @@ class OasGenerator {
     let paths: { [key: string]: PathItem } = {}
 
     files.forEach((tsFile: TsFile) => {
-      const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Controller'))
+      const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'))
       const controllerParams: Parameter[] = tsFile.tsClass.decorators
-        .filter((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('ControllerParam'))
+        .filter((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('ControllerParam'))
         .map((tsDecorator: TsDecorator) => this.createControllerParams(tsDecorator))
       const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
@@ -116,7 +117,7 @@ class OasGenerator {
    * create controller params
    */
   private createControllerParams(controllerParamDecorator: TsDecorator): Parameter {
-    this.oasParameterGenerator = new OasParameterGenerator(this.oasConfig)
+    this.oasParameterGenerator = new OasParameterGenerator()
 
     const tsParameter: TsParameter = {
       decorators: [controllerParamDecorator],
@@ -134,12 +135,12 @@ class OasGenerator {
    * construct schemas
    */
   private constructSchemas(files: TsFile[]): { [key: string]: Schema } {
-    this.oasSchemaGenerator = new OasSchemaGenerator(this.oasConfig)
+    this.oasSchemaGenerator = new OasSchemaGenerator()
 
     const schemas: { [key: string]: Schema } = {}
 
     files.forEach((tsFile: TsFile) => {
-      const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations('Model'))
+      const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'))
       const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments.pop().representation : {}
       const version: string = (modelParam && modelParam.version) ? `_${modelParam.version}` : ''
 
@@ -162,13 +163,6 @@ class OasGenerator {
     })
 
     return schemas
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 }
 

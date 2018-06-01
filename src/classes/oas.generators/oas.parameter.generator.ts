@@ -1,6 +1,6 @@
 import { Parameter } from 'oasmodel'
 import { ParameterParam } from '../../lib/annotation.schema'
-import { OasConfig } from '../../lib/tsmeta.config'
+import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
 
 /**
@@ -16,8 +16,6 @@ class OasParameterGenerator {
     CookieValue: 'cookie'
   }
 
-  constructor(private oasConfig: OasConfig) {}
-
   /**
    * generate Parameter
    */
@@ -25,7 +23,7 @@ class OasParameterGenerator {
     let parameterDecorator: TsDecorator
 
     if (tsParameter.decorators) {
-      parameterDecorator = tsParameter.decorators.find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(this.mapAnnotations(tsDecorator.name)))
+      parameterDecorator = tsParameter.decorators.find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name)))
     }
 
     if (!parameterDecorator) return undefined
@@ -37,7 +35,7 @@ class OasParameterGenerator {
     const deprecated: boolean = false
     const description: string = `${parameterDecorator.name} ${tsParameter.name}`
     const example: any = parameterArgument.example
-    const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[this.mapAnnotations(parameterDecorator.name)]
+    const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[GetMappedAnnotation(parameterDecorator.name)]
     const name: string = parameterArgument.name
     const required: boolean = parameterArgument.required
     const schema: any = parameterArgument.schema || { type: 'string' }
@@ -53,13 +51,6 @@ class OasParameterGenerator {
       required,
       schema
     }
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 }
 

@@ -1,5 +1,5 @@
 import { Operation, Parameter, RequestBody, Response } from 'oasmodel'
-import { OasConfig } from '../../lib/tsmeta.config'
+import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { TsDecorator, TsMethod, TsParameter } from '../../lib/tsmeta.schema'
 import { OasParameterGenerator } from './oas.parameter.generator'
 import { OasRequestbodyGenerator } from './oas.requestbody.generator'
@@ -14,14 +14,12 @@ class OasOperationGenerator {
   private oasResponseGenerator: OasResponseGenerator
   private oasRequestbodyGenerator: OasRequestbodyGenerator
 
-  constructor(private oasConfig: OasConfig) {}
-
   /**
    * generate Operation
    */
   public generate(controllerName: string, tsMethod: TsMethod, controllerParameters: Parameter[]): Operation {
-    this.oasParameterGenerator = new OasParameterGenerator(this.oasConfig)
-    this.oasResponseGenerator = new OasResponseGenerator(this.oasConfig)
+    this.oasParameterGenerator = new OasParameterGenerator()
+    this.oasResponseGenerator = new OasResponseGenerator()
     this.oasRequestbodyGenerator = new OasRequestbodyGenerator()
 
     let parameters: Parameter[]
@@ -35,7 +33,7 @@ class OasOperationGenerator {
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
       .find((tsParameter: TsParameter) => tsParameter.decorators
-        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => this.mapAnnotations(tsDecorator.name) === 'RequestBody')
+        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => GetMappedAnnotation(tsDecorator.name) === 'RequestBody')
         : false)
 
     if (reqBodyParameter) {
@@ -50,13 +48,6 @@ class OasOperationGenerator {
       parameters,
       responses
     }
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 }
 

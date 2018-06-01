@@ -1,10 +1,11 @@
-# tsmeta
-
 <p align="center">
   <a href="https://npmcharts.com/compare/tsmeta?minimal=true"><img src="https://img.shields.io/npm/dm/tsmeta.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/tsmeta"><img src="https://img.shields.io/npm/v/tsmeta.svg" alt="Version"></a>
   <a href="https://www.npmjs.com/package/tsmeta"><img src="https://img.shields.io/npm/l/tsmeta.svg" alt="License"></a>
 </p>
+
+# tsmeta
+<img width="100" height="100" src="https://github.com/mafh612/tsmeta/blob/master/logo/logo.png" title="tsmeta" />
 
 ## Contents
 - [install](#user-content-install)

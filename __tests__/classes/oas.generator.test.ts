@@ -21,7 +21,9 @@ const tsMetaConfigFake: TsMetaConfig = {
     outputFilename: 'openapi.mock.json',
     outputPath: '__mocks__',
     openapistring: '3.0.0',
-    annotationsMap: {}
+    annotationsMap: {
+      GetRequest: 'Get'
+    }
   }
 }
 

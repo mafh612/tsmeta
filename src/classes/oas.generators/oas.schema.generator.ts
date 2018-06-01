@@ -1,6 +1,6 @@
 import { Schema } from 'oasmodel'
 import { ModelParam, PropertyParam } from '../../lib/annotation.schema'
-import { OasConfig } from '../../lib/tsmeta.config'
+import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { TsDecorator, TsProperty } from '../../lib/tsmeta.schema'
 import { TypescriptTypes } from '../../lib/typescript.types.enum'
 import { OasPropertyGenerator } from './oas.property.generator'
@@ -12,8 +12,6 @@ class OasSchemaGenerator {
 
   private oasPropertyGenerator: OasPropertyGenerator
 
-  constructor(private oasConfig: OasConfig) {}
-
   /**
    * generate schema
    */
@@ -23,7 +21,7 @@ class OasSchemaGenerator {
     let propertyParam: PropertyParam
 
     if (tsProperty.decorators) {
-      propertyDecorator = tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.mapAnnotations(tsDecorator.name))
+      propertyDecorator = tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation(tsDecorator.name))
       propertyParam = propertyDecorator.tsarguments.pop().representation
     }
 
@@ -93,13 +91,6 @@ class OasSchemaGenerator {
     if (propertyParam && propertyParam.format) schema.format = <string> propertyParam.format
 
     return schema
-  }
-
-  /**
-   * fetch standard mapping annotation by used annotation
-   */
-  private mapAnnotations(used: string): string {
-    return this.oasConfig.annotationsMap[used] || used
   }
 }
 

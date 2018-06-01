@@ -12,6 +12,7 @@ import {
   RequestBody,
   SuccessResponse
 } from '../src'
+import { Get } from './get.mock'
 import { Incoming } from './incoming.mock'
 import { SomethingMock } from './something.mock'
 
@@ -26,7 +27,7 @@ class ControllerMock {
    * get something method
    * @param id
    */
-  @GetRequest('/something/:id')
+  @Get('/something/:id')
   @SuccessResponse({ statusCode: 200, ref: SomethingMock, version: 'v1'})
   public async getSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))

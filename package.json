@@ -6,6 +6,15 @@
   "types": "dist/index.d.ts",
   "version": "0.5.0",
   "description": "typescript project meta analysis",
+  "keywords": [
+    "typescript",
+    "schema",
+    "openapi",
+    "graphql",
+    "sigmajs",
+    "annotation",
+    "decorator"
+  ],
   "repository": {
     "type": "github",
     "url": "https://github.com/mafh612/tsmeta"
