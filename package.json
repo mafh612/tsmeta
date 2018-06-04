@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "typescript project meta analysis",
   "keywords": [
     "typescript",
@@ -36,6 +36,7 @@
     "lodash": "^4.17.10",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
+    "semantic-release": "^15.5.0",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
@@ -49,5 +50,14 @@
     "ts-jest": "^22.4.4",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^5.0.3"
+  },
+  "release": {
+    "analyzeCommits": ["@semantic-release/commit-analyzer"],
+    "branch": "master",
+    "generateNotes": ["@semantic-release/release-notes-generator"],
+    "githubUrl": "https://github.com/mafh612/tsmeta",
+    "noCi": true,
+    "publish": ["@semantic-release/npm", "@semantic-release/github"],
+    "verifyRelease": ["@semantic-release/npm", "@semantic-release/github" ]
   }
 }
