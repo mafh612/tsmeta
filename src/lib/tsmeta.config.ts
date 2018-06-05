@@ -23,8 +23,10 @@ export interface MetaConfig extends BaseConfig {
  */
 export interface CreateNodes {
   packages: boolean
+  files: boolean
   classes: boolean
   interfaces: boolean
+  functions: boolean
   methods: boolean
   properties: boolean
 }
@@ -53,7 +55,7 @@ export interface GraphQLConfig extends BaseConfig {
  */
 export interface TsMetaConfig {
   basePackage: string
-  scanAdditionalPackages: { [key: string]: string }
+  scanAdditionalPackages: string[]
   showScannedFiles: boolean
   showWrittenFiles: boolean
   metaConfig: MetaConfig

@@ -3,7 +3,6 @@ import {
   ControllerParam,
   DeleteRequest,
   ErrorResponse,
-  GetRequest,
   HeadRequest,
   PatchRequest,
   PathVariable,

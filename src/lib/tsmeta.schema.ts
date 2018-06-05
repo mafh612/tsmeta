@@ -34,6 +34,7 @@ export interface TsPackage {
  * TsProgram interface
  */
 export interface TsProgram {
+  name: string
   files: TsFile[]
 }
 /**

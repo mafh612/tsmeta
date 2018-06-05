@@ -13,7 +13,7 @@
 - [tsmeta.config.json](#tsmeta.config.json)
 - [GraphQL examples](/README_graphql.md)
 - [OpenAPI examples](/README_oas.md)
-- [sigmajs exmaples](/README_sigma.md)
+- [sigmajs examples](/README_sigma.md)
 
 ## install
 ```
@@ -26,7 +26,7 @@ _tsmeta_ can create schemas for either documentation of your RestAPI as well as 
 - _tsmeta_: create schema and data files for these applications:
   - __[OpenAPI Specification 3](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md)__
   - __[GraphQL](https://graphql.org/)__
-  - __[sigmajs](http://sigmajs.org/)__ _(data creation to use in sigmajs is still under development)_
+  - __[sigmajs](http://sigmajs.org/)__
 
 ## tsmeta.config.json
 to run _tsmeta_ a `tsmeta.config.json` file is required in the root of your project.

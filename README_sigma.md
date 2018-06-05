@@ -5,7 +5,9 @@
 {
   "create": true,
   "outputPath": "schema",
-  "outputFilename": "tsmeta.output.json",
-  "compilerOptions": "tsconfig.json"
+  "outputFilename": "sigma.data.json",
+  "createNodes": {
+    "methods": true
+  }
 }
 ```

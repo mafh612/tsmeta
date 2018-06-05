@@ -54,7 +54,7 @@ const tokenToString: ((token: Identifier) => string) = (token: Identifier): stri
  * extract text from identifier
  * @param identifier<Identifier>
  */
-const identifierToString: ((identifier: Identifier) => string) = (identifier: Identifier): string => identifier.escapedText.toString()
+const identifierToString: ((identifier: Identifier) => string) = (identifier: Identifier): string => identifier.escapedText ? identifier.escapedText.toString() : ''
 
 /**
  * extract text from initializer

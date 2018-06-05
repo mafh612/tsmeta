@@ -25,9 +25,15 @@ class TsMetaFactory {
   public build(): TsMeta {
     const baseTsPackage: TsPackage = this.tsMetaPackageFactory.build(this.tsMetaConfig.basePackage)
     let additionalTsPackages: TsPackage[]
-    const programs: TsProgram[] = [this.createMainProgram(this.tsMetaConfig, baseTsPackage)]
+    const programs: TsProgram[] = [this.createProgram(baseTsPackage)]
 
     if (this.tsMetaConfig.scanAdditionalPackages) additionalTsPackages = this.scanAdditionalPackages(baseTsPackage)
+
+    if (additionalTsPackages) {
+      additionalTsPackages.forEach((tsPackage: TsPackage) => {
+        programs.push(this.createProgram(tsPackage))
+      })
+    }
 
     return {
       additionalTsPackages,
@@ -44,22 +50,29 @@ class TsMetaFactory {
     const packagePaths: string[] = Object.keys(baseTsPackage.dependencies).concat(Object.keys(baseTsPackage.devDependencies))
 
     return packagePaths
-      .map((dependency: string): TsPackage => this.tsMetaPackageFactory.build(`node_modules/${dependency}/package.json`))
+      .filter((packagePath: string) => this.tsMetaConfig.scanAdditionalPackages.some((tag: string) => packagePath.includes(tag)))
+      .map((dependency: string): TsPackage => {
+        const tsPackage: TsPackage = this.tsMetaPackageFactory.build(`node_modules/${dependency}/package.json`)
+        tsPackage.source = `node_modules/${dependency}/${tsPackage.source}`
+
+        return tsPackage
+      })
       .filter((pckg: TsPackage) => pckg && pckg.source)
   }
 
   /**
    * add main program to programs
    */
-  private createMainProgram(tsMetaConfig: TsMetaConfig, baseTsPackage: TsPackage): TsProgram {
-    const baseSourcePathArry: string[] = Resolve(baseTsPackage.source).split('/')
+  private createProgram(pckg: TsPackage): TsProgram {
+    const baseSourcePathArry: string[] = Resolve(pckg.source).split('/')
     baseSourcePathArry.pop()
     const baseSourcePath: string = baseSourcePathArry.join('/')
 
-    const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(tsMetaConfig.metaConfig.compilerOptions, { encoding: 'utf8' }))
-    const program: Program = CreateTypescriptProgram([Resolve(baseTsPackage.source)], compilerOptions)
+    const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(this.tsMetaConfig.metaConfig.compilerOptions, { encoding: 'utf8' }))
+    const program: Program = CreateTypescriptProgram([Resolve(pckg.source)], compilerOptions)
 
     return {
+      name: pckg.name,
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {

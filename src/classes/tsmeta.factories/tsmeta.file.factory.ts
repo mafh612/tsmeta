@@ -51,8 +51,10 @@ class TsMetaFileFactory {
         case SyntaxKind.ImportDeclaration:
           tsImports = tsImports.concat(this.tsMetaImportFactory.build(<ImportDeclaration> node))
           break
+        case SyntaxKind.ExpressionStatement:
+          break
         default:
-          process.stderr.write(node.kind.toString()) // tslint:disable-line
+          process.stderr.write(`node type ${node.kind.toString()} was not processed\n`)
       }
     })
 
