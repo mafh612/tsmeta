@@ -19,8 +19,8 @@ import {
   UnionTypeNode
 } from 'typescript'
 import { getSourceFile } from './source.file.container'
-import { TsTypeClass } from './ts.type.class'
 import { TsType } from './tsmeta.schema'
+import { TsTypeClass } from './tstype.class'
 import { TypescriptTypes } from './typescript.types.enum'
 
 /**

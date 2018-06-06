@@ -1,10 +1,5 @@
-import { resolve as ResolvePath } from 'path'
-
 /**
  * configuration json interfaces
- */
-
-/**
  * interface BaseConfigJson
  */
 export interface BaseConfig {
@@ -62,39 +57,4 @@ export interface TsMetaConfig {
   sigmaConfig?: SigmaConfig
   oasConfig?: OasConfig
   graphQLConfig?: GraphQLConfig
-}
-
-/**
- * check config function
- */
-const runPath: ((path: string) => string) = (path: string): string => {
-  try {
-    ResolvePath(path)
-
-    return path
-  } catch {
-    throw new Error(`path: ${path} could not be resolved`)
-  }
-}
-
-const runFilename: ((filename: string) => string) = (filename: string): string => {
-  try {
-    let newfilename: string = filename
-
-    if (!filename.endsWith('.json')) {
-      const filenameArray: string[] = filename.split('.')
-      filenameArray.pop()
-
-      newfilename = `${filenameArray.join('.')}.json`
-    }
-
-    return newfilename
-  } catch {
-    throw new Error(`filename: ${filename} invalid`)
-  }
-}
-
-export {
-  runPath as RunPath,
-  runFilename as RunFilename
 }

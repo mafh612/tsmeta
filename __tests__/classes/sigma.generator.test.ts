@@ -1,5 +1,6 @@
 import * as fs from 'fs'
-import { SigmaData, SigmaGenerator } from '../../src'
+import { SigmaGenerator } from '../../src/classes/sigma.generator'
+import { SigmaData } from '../../src/lib/sigma'
 import { TsMetaConfig } from '../../src/lib/tsmeta.config'
 import { TsMeta } from '../../src/lib/tsmeta.schema'
 
@@ -8,6 +9,9 @@ let tsMeta: TsMeta
 
 const tsMetaConfigFake: TsMetaConfig = {
   basePackage: '__mocks__/schema/package.mock.json',
+  scanAdditionalPackages: [],
+  showScannedFiles: true,
+  showWrittenFiles: true,
   metaConfig: {
     compilerOptions: 'tsconfig.json',
     create: true,
@@ -19,11 +23,13 @@ const tsMetaConfigFake: TsMetaConfig = {
     outputPath: 'schema',
     outputFilename: 'sigma_data.json',
     createNodes: {
+      files: true,
       packages: true,
       classes: true,
       interfaces: true,
       methods: false,
-      properties: false
+      properties: false,
+      functions: false
     }
   }
 }
