@@ -71,6 +71,9 @@ class SigmaGenerator {
     }
   }
 
+  /**
+   * collect TsFiles from tsMeta schema
+   */
   private filesFromMeta(tsMeta: TsMeta): TsFile[] {
     const tsFiles: TsFile[] = []
 
@@ -83,6 +86,9 @@ class SigmaGenerator {
     return tsFiles
   }
 
+  /**
+   * collect TsClasses from tsMeta schema
+   */
   private classesFromMeta(tsMeta: TsMeta): TsClass[] {
     const tsClasses: TsClass[] = []
 
@@ -95,6 +101,9 @@ class SigmaGenerator {
     return tsClasses
   }
 
+  /**
+   * collect TsMains from tsMeta schema
+   */
   private mainsFromMeta(tsMeta: TsMeta): TsMain[] {
     const tsMains: TsMain[] = []
 
