@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "typescript project meta analysis",
   "keywords": [
     "typescript",

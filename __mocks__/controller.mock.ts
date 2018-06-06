@@ -9,6 +9,7 @@ import {
   PostRequest,
   PutRequest,
   RequestBody,
+  RequestParam,
   SuccessResponse
 } from '../src'
 import { Get } from './get.mock'
@@ -28,7 +29,7 @@ class ControllerMock {
    */
   @Get('/something/:id')
   @SuccessResponse({ statusCode: 200, ref: 'SomethingMock', version: 'v1'})
-  public async getSomething(@PathVariable({ name: 'id', required: true }) id: string): Promise<SomethingMock> {
+  public async getSomething(@PathVariable({ name: 'id', required: true, description: 'hallo' }) id: string): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }
 
@@ -51,6 +52,7 @@ class ControllerMock {
   @ErrorResponse({ statusCode: 404, schema: { statusCode: 'number', statusMessage: 'string' }, example: { statusCode: 404, statusMessage: 'NOT_FOUND' } })
   public async putSomething(
     @PathVariable({ name: 'id', required: true }) id: string,
+    @RequestParam({ name: 'name', required: true, description: 'hallo' }) name: string,
     @RequestBody({ name: 'incoming', required: true}) incoming: Incoming): Promise<SomethingMock> {
     return Promise.resolve(new SomethingMock(id))
   }

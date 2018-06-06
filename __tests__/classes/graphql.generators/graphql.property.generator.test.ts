@@ -40,28 +40,28 @@ describe('GraphQLGenerator test', () => {
     expect(graphQLPropertyGenerator).toBeInstanceOf(GraphQLPropertyGenerator)
   })
 
-  test('GraphQLGenerator.generate()', async () => {
-    const tsProperties: TsProperty[] = []
-    tsMeta.programs.forEach((tsProgram: TsProgram) => {
-      tsProgram.files.forEach((tsFile: TsFile) => {
-        if (tsFile.tsClass) tsFile.tsClass.properties.forEach((tsProperty: TsProperty) => {
-          tsProperties.push(tsProperty)
-        })
-      })
-    })
+  // test('GraphQLGenerator.generate()', async () => {
+  //   const tsProperties: TsProperty[] = []
+  //   tsMeta.programs.forEach((tsProgram: TsProgram) => {
+  //     tsProgram.files.forEach((tsFile: TsFile) => {
+  //       if (tsFile.tsClass) tsFile.tsClass.properties.forEach((tsProperty: TsProperty) => {
+  //         tsProperties.push(tsProperty)
+  //       })
+  //     })
+  //   })
 
-    let result: { [key: string]: string } = {}
+  //   let result: { [key: string]: string } = {}
 
-    tsProperties.forEach((tsProperty: TsProperty) => {
-      result = deepAssign(result, graphQLPropertyGenerator.generate(tsProperty))
-    })
+  //   tsProperties.forEach((tsProperty: TsProperty) => {
+  //     result = deepAssign(result, graphQLPropertyGenerator.generate(tsProperty))
+  //   })
 
-    for (const key of Object.keys(result)) {
-      fs.writeFile(`__mocks__/schema/${key}.mock.graphql`, result[key], (err) => { // tslint:disable-line
-        if (err) console.log(err)// tslint:disable-line
-      })
-    }
+  //   for (const key of Object.keys(result)) {
+  //     fs.writeFile(`__mocks__/schema/${key}.mock.graphql`, result[key], (err) => { // tslint:disable-line
+  //       if (err) console.log(err)// tslint:disable-line
+  //     })
+  //   }
 
-    expect(result).not.toBeUndefined()
-  })
+  //   expect(result).not.toBeUndefined()
+  // })
 })
