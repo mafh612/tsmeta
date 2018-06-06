@@ -33,7 +33,7 @@ class OasParameterGenerator {
     const $ref: string = parameterArgument.ref
     const allowEmptyValue: boolean = !parameterArgument.required
     const deprecated: boolean = false
-    const description: string = `${parameterDecorator.name} ${tsParameter.name}`
+    const description: string = parameterArgument.description ? parameterArgument.description : `${parameterDecorator.name} ${tsParameter.name}`
     const example: any = parameterArgument.example
     const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[GetMappedAnnotation(parameterDecorator.name)]
     const name: string = parameterArgument.name
