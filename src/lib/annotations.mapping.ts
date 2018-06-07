@@ -14,7 +14,6 @@ const getMappedAnnotation: ((map: string) => string) = (map: string): string => 
  * set annoation mapping
  */
 const setAnnoationsMapping: ((mapping: { [key: string]: string }) => void) = (mapping: { [key: string]: string }): void => {
-  console.log(mapping) // tslint:disable-line
   annoationsMapping = mapping
 }
 
