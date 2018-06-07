@@ -5,7 +5,7 @@ import { TsMeta } from '../../src/lib/tsmeta.schema'
 
 let tsMetaFactory: TsMetaFactory
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/schema/package.mock.json',
+  basePackage: '__mocks__/package.mock.json',
   scanAdditionalPackages: [],
   showScannedFiles: true,
   showWrittenFiles: true,

@@ -47,7 +47,10 @@ class TsMetaFactory {
    * @param baseTsPackage
    */
   private scanAdditionalPackages(baseTsPackage: TsPackage): TsPackage[] {
-    const packagePaths: string[] = Object.keys(baseTsPackage.dependencies).concat(Object.keys(baseTsPackage.devDependencies))
+    let packagePaths: string[] = []
+
+    if (baseTsPackage.dependencies) packagePaths = packagePaths.concat(Object.keys(baseTsPackage.dependencies))
+    if (baseTsPackage.devDependencies) packagePaths = packagePaths.concat(Object.keys(baseTsPackage.devDependencies))
 
     return packagePaths
       .filter((packagePath: string) => this.tsMetaConfig.scanAdditionalPackages.some((tag: string) => packagePath.includes(tag)))

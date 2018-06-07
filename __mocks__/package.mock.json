@@ -1,0 +1,4 @@
+{
+  "name": "mock",
+  "source": "__mocks__/src/index.ts"
+}
