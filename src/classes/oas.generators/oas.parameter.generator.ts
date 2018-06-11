@@ -62,7 +62,6 @@ class OasParameterGenerator {
    */
   private requiredFields(parameterParam: ParameterParam): any[] {
     if (!parameterParam || !parameterParam.required) return [false]
-
     if (!Array.isArray(parameterParam.required)) return [<boolean> parameterParam.required]
 
     return <(boolean|string)[]> parameterParam.required

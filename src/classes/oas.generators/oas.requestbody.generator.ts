@@ -55,7 +55,6 @@ class OasRequestbodyGenerator {
    */
   private requiredFields(parameterParam: ParameterParam): (boolean|string)[] {
     if (!parameterParam || !parameterParam.required) return [false]
-
     if (!Array.isArray(parameterParam.required)) return [<boolean> parameterParam.required]
 
     return <(boolean|string)[]> parameterParam.required
