@@ -37,8 +37,12 @@ class OasParameterGenerator {
     const example: any = parameterArgument.example
     const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[GetMappedAnnotation(parameterDecorator.name)]
     const name: string = parameterArgument.name
-    const required: boolean = parameterArgument.required
+
+    const requiredFields: any[] = this.requiredFields(parameterArgument)
+    const required: boolean = <boolean> requiredFields.shift()
+
     const schema: any = parameterArgument.schema || { type: 'string' }
+    schema.required = requiredFields
 
     return {
       $ref,
@@ -51,6 +55,17 @@ class OasParameterGenerator {
       required,
       schema
     }
+  }
+
+  /**
+   * collect from required field
+   */
+  private requiredFields(parameterParam: ParameterParam): any[] {
+    if (!parameterParam || !parameterParam.required) return [false]
+
+    if (!Array.isArray(parameterParam.required)) return [<boolean> parameterParam.required]
+
+    return <(boolean|string)[]> parameterParam.required
   }
 }
 

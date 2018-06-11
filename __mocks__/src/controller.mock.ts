@@ -11,7 +11,7 @@ import {
   RequestBody,
   RequestParam,
   SuccessResponse
-} from '../src'
+} from '../../src'
 import { Get } from './get.mock'
 import { Incoming } from './incoming.mock'
 import { SomethingMock } from './something.mock'
