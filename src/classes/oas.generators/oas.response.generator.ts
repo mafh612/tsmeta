@@ -28,7 +28,7 @@ class OasResponseGenerator {
 
       response[statusCode] = {
         content: this.createContent(responseParam),
-        description: responseParam.description ? responseParam.description : this.createDescription(responseDecorator, responseParam)
+        description: (responseParam && responseParam.description) ? responseParam.description : this.createDescription(responseDecorator, responseParam)
       }
     })
 
