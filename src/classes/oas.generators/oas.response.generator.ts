@@ -28,7 +28,7 @@ class OasResponseGenerator {
 
       response[statusCode] = {
         content: this.createContent(responseParam),
-        description: this.createDescription(responseDecorator, responseParam)
+        description: responseParam.description ? responseParam.description : this.createDescription(responseDecorator, responseParam)
       }
     })
 
@@ -57,7 +57,7 @@ class OasResponseGenerator {
       content = {
         'application/json': {
           schema: {
-            $ref: `#/components/schemas/${responseParam.ref}${version}`
+            $ref: `#/components/responses/${responseParam.ref}${version}`
           }
         }
       }

@@ -24,11 +24,12 @@ export interface ParameterParam {
  * interface SuccessResponseParam
  */
 export interface ResponseParam {
-  statusCode?: number
-  ref?: any
-  version?: string
-  schema?: any
+  description?: string
   example?: any
+  ref?: any
+  schema?: any
+  statusCode?: number
+  version?: string
 }
 /**
  * interface ModelParam
