@@ -1,7 +1,6 @@
 import { readFileSync as ReadFileSync } from 'fs'
 import { resolve as Resolve } from 'path'
 import { CompilerOptions, Program, SourceFile } from 'typescript'
-
 import { setSourceFile } from '../lib/source.file.container'
 import { CreateTypescriptProgram } from '../lib/ts.methods'
 import { TsMetaConfig } from '../lib/tsmeta.config'

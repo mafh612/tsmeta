@@ -1,4 +1,4 @@
-import { Model } from '../src/resources/annotations'
+import { Model } from '../../src/lib/annotations'
 
 /**
  * class Incoming

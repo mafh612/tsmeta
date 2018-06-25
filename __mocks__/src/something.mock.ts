@@ -1,4 +1,4 @@
-import { Model, Property } from '../src'
+import { Model, Property } from '../../src/lib/annotations'
 import { SimpleMock } from './simple.mock'
 
 /**
@@ -54,6 +54,7 @@ class SomethingMock {
   @Property({ version: 'v1' })
   public propOther: { name: string; tel: number; simple: SimpleMock }
   public dump: string[][]
+  public dumper: SimpleMock[][]
 
   constructor(text: string) {
     this.text = `hello ${text}`

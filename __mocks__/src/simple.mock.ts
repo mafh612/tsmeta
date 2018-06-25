@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import { Model } from '../src'
+import { Model } from '../../src/lib/annotations'
 
 /**
  * class SimpleMock

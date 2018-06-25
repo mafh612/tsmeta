@@ -10,7 +10,7 @@ import {
   PutRequest,
   RequestBody,
   SuccessResponse
-} from '../src'
+} from '../../src/lib/annotations'
 import { Incoming } from './incoming.mock'
 import { SomethingMock } from './something.mock'
 

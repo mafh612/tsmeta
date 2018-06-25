@@ -1,6 +1,5 @@
 import * as deepAssign from 'deep-assign'
 import { Components, Info, Openapi, Parameter, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
-
 import { ModelParam } from '../lib/annotation.schema'
 import { GetMappedAnnotation } from '../lib/annotations.mapping'
 import { OasConfig } from '../lib/tsmeta.config'
