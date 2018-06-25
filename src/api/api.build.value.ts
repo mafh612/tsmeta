@@ -13,7 +13,7 @@ const buildValue: (propertyType: string, decorator: TsDecorator) => boolean|numb
   switch (propertyType) {
     case 'boolean': return _boolean
     case 'number':
-      if (arg.representation && arg.representation.format === 'float') return _float
+      if (arg && arg.representation && arg.representation.format === 'float') return _float
       else return _int
     case 'string': return _string
     default: return undefined
