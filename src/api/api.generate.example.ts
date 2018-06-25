@@ -1,4 +1,4 @@
-import { TsMain, TsMeta, TsProperty } from '../lib/tsmeta.schema'
+import { TsDecorator, TsMain, TsMeta, TsProperty } from '../lib/tsmeta.schema'
 import { TypescriptTypes } from '../lib/typescript.types.enum'
 import { BuildValue } from './api.build.value'
 import { ExtractMains } from './api.extract.mains'
@@ -12,34 +12,41 @@ interface KeySignature {
 
 const literals: string[] = ['boolean', 'number', 'string']
 
+let tsMains: TsMain[]
+
 /**
  * generateExample from class or interface
  */
-const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
-  = (exampleName: string, tsMetaJson: TsMeta): any => {
-  const tsMains: TsMain[] = ExtractMains(tsMetaJson)
+const generateExample: ((exampleName: string, tsMetaJson: TsMeta, repeated?: boolean) => any)
+  = (exampleName: string, tsMetaJson: TsMeta, repeated: boolean = false): any => {
+  if (!tsMains) tsMains = ExtractMains(tsMetaJson)
   const tsMain: TsMain = tsMains.find((item: TsMain) => item.name === exampleName)
   const example: KeySignature = {}
 
   if (!tsMain) return undefined
 
   tsMain.properties.forEach((tsProperty: TsProperty) => {
+    const tsDecorator: TsDecorator = tsProperty.decorators ? tsProperty.decorators.find((it: TsDecorator) => it.name === 'Property') : undefined
+
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.BASIC:
-        example[tsProperty.name] = BuildValue(<string> tsProperty.tstype.basicType)
+        example[tsProperty.name] = BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)
         break
       case TypescriptTypes.ARRAY:
-        if (tsProperty.tstype.basicType === 'array' && literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[BuildValue(<string> tsProperty.tstype.valueType)]]
-        else if (tsProperty.tstype.basicType === 'array' && !literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[generateExample(<string> tsProperty.tstype.valueType, tsMetaJson)]]
-        else if (literals.includes(<string> tsProperty.tstype.basicType)) example[tsProperty.name] = [BuildValue(<string> tsProperty.tstype.basicType)]
-        else example[tsProperty.name] = [generateExample(<string> tsProperty.tstype.basicType, tsMetaJson)]
+        if (repeated) example[tsProperty.name] = []
+        else if (tsProperty.tstype.basicType === 'array' && literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[BuildValue(<string> tsProperty.tstype.valueType, tsDecorator)]]
+        else if (tsProperty.tstype.basicType === 'array' && !literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, true)]]
+        else if (literals.includes(<string> tsProperty.tstype.basicType)) example[tsProperty.name] = [BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)]
+        else example[tsProperty.name] = [generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, true)]
         break
       case TypescriptTypes.MAP:
-        if (literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = { key: BuildValue(<string> tsProperty.tstype.valueType) }
-        else example[tsProperty.name] = { key: generateExample(<string> tsProperty.tstype.valueType, tsMetaJson) }
+        if (literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = { key: BuildValue(<string> tsProperty.tstype.valueType, tsDecorator) }
+        else if (repeated) example[tsProperty.name] = {}
+        else example[tsProperty.name] = { key: generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, true) }
         break
       case TypescriptTypes.REFERENCE:
-        example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson)
+        if (repeated) example[tsProperty.name] = {}
+        else example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, true)
         break
       default:
 
@@ -50,10 +57,3 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
 }
 
 export { generateExample as GenerateExample }
-/*
-import * as fs from 'fs'
-
-const myTsMeta: TsMeta = JSON.parse(fs.readFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
-const example: any = generateExample('SomethingMock', myTsMeta)
-
-console.log(`example - ${JSON.stringify(example, undefined, 2)}`) */

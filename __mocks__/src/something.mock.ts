@@ -37,6 +37,8 @@ class SomethingMock {
   public indifferent: boolean|number|string|SimpleMock
   public truth: boolean
   public count: number
+  @Property({ format: 'float' })
+  public percent: number
   public text: string
   public much: string[]
   @Property({ version: 'v1' })
