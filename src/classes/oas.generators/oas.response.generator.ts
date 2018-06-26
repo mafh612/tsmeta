@@ -26,10 +26,8 @@ class OasResponseGenerator {
         : undefined
       const statusCode: number = responseParam && responseParam.statusCode || this.httpStatusOK
 
-      response[statusCode] = {
-        content: this.createContent(responseParam),
-        description: (responseParam && responseParam.description) ? responseParam.description : this.createDescription(responseDecorator, responseParam)
-      }
+      response[statusCode] = { ...this.createContent(responseParam) }
+      response[statusCode].description = (responseParam && responseParam.description) ? responseParam.description : this.createDescription(responseDecorator, responseParam)
     })
 
     return response
@@ -45,7 +43,7 @@ class OasResponseGenerator {
   /**
    * create response content
    */
-  private createContent(responseParam: ResponseParam): { [key: string]: MediaType } {
+  private createContent(responseParam: ResponseParam): Response {
     let content: { [key: string]: MediaType }
     const version: string = (responseParam && responseParam.version) ? `_${responseParam.version}` : ''
 
@@ -53,11 +51,15 @@ class OasResponseGenerator {
       content = undefined
     }
 
+    if (responseParam && responseParam.response_ref) {
+      return { $ref: `#/components/responses/${responseParam.response_ref}${version}` }
+    }
+
     if (responseParam && responseParam.ref) {
       content = {
-        'application/json': {
+        'applciation/json': {
           schema: {
-            $ref: `#/components/responses/${responseParam.ref}${version}`
+            $ref: `#/components/schemas/${responseParam.ref}${version}`
           }
         }
       }
@@ -80,7 +82,7 @@ class OasResponseGenerator {
       }
     }
 
-    return content
+    return { content }
   }
 }
 

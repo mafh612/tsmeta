@@ -27,6 +27,7 @@ export interface ResponseParam {
   description?: string
   example?: any
   ref?: any
+  response_ref?: any
   schema?: any
   statusCode?: number
   version?: string

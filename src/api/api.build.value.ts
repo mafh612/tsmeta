@@ -20,4 +20,16 @@ const buildValue: (propertyType: string, decorator: TsDecorator) => boolean|numb
   }
 }
 
-export { buildValue as BuildValue }
+const buildMalformedValue: (propertyType: string, decorator: TsDecorator) => boolean|number|string = (propertyType: string, decorator: TsDecorator): boolean|number|string => {
+  const arg: TsArgument = decorator && decorator.tsarguments ? decorator.tsarguments.pop() : undefined
+  switch (propertyType) {
+    case 'boolean': return _int
+    case 'number':
+      if (arg && arg.representation && arg.representation.format === 'float') return _string
+      else return _string
+    case 'string': return _boolean
+    default: return undefined
+  }
+}
+
+export { buildValue as BuildValue, buildMalformedValue as BuildMalformedValue }
