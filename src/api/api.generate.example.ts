@@ -13,7 +13,7 @@ interface KeySignature {
 const literals: string[] = ['boolean', 'number', 'string']
 
 let tsMains: TsMain[]
-let lastExampleName: string
+const usedExampleNames: string[] = []
 
 /**
  * generateExample from class or interface
@@ -21,10 +21,12 @@ let lastExampleName: string
 const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
   = (exampleName: string, tsMetaJson: TsMeta): any => {
   if (!tsMains) tsMains = ExtractMains(tsMetaJson)
+
   const tsMain: TsMain = tsMains.find((item: TsMain) => item.name === exampleName)
   const example: KeySignature = {}
-  const repeated: boolean = exampleName === lastExampleName
-  lastExampleName = exampleName
+  const repeated: boolean = usedExampleNames.indexOf(exampleName) !== usedExampleNames.lastIndexOf(exampleName)
+
+  usedExampleNames.push(exampleName)
 
   if (!tsMain) return undefined
 
