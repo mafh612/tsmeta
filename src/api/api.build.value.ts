@@ -28,7 +28,7 @@ const buildMalformedValue: (propertyType: string, decorator: TsDecorator) => boo
       if (arg && arg.representation && arg.representation.format === 'float') return _string
       else return _string
     case 'string': return _boolean
-    default: return undefined
+    default: return _boolean
   }
 }
 

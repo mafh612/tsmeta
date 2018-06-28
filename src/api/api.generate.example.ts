@@ -35,6 +35,9 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
       case TypescriptTypes.BASIC:
         example[tsProperty.name] = BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)
         break
+      case TypescriptTypes.MULTIPLE:
+        example[tsProperty.name] = BuildValue((<string[]> tsProperty.tstype.basicType)[0], tsDecorator)
+        break
       case TypescriptTypes.ARRAY:
         if (repeated) example[tsProperty.name] = []
         else if (tsProperty.tstype.basicType === 'array' && literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[BuildValue(<string> tsProperty.tstype.valueType, tsDecorator)]]
@@ -52,6 +55,7 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
         else example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson)
         break
       default:
+        process.stdout.write(`could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`)
 
     }
   })

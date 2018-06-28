@@ -5,18 +5,18 @@ import { GenerateMalformedExample } from '../../src/api/api.generate.malformed.e
 const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
 const expectedExample: any = {
   count: 'text',
-  dump: [[true]],
-  dumper: [[{baseDirContent: []}]],
-  many: [true],
-  manyOther: [{baseDirContent: []}],
-  mapped: {key: true},
-  mappedOther: {key: {baseDirContent: []}},
-  much: [true],
-  muchOther: [{baseDirContent: [true]}],
+  dump: true,
+  dumper: true,
+  many: true,
+  manyOther: true,
+  mapped: true,
+  mappedOther: true,
+  much: true,
+  muchOther: true,
   percent: 'text',
   text: true,
-  that: {key: true},
-  thatOther: {key: {baseDirContent: []}},
+  that: true,
+  thatOther: true,
   truth: 1,
   whatever: undefined
 }
