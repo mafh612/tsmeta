@@ -13,20 +13,19 @@ interface KeySignature {
 const literals: string[] = ['boolean', 'number', 'string']
 
 let tsMains: TsMain[]
-const usedExampleNames: string[] = []
 
 /**
  * generateExample from class or interface
  */
-const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
-  = (exampleName: string, tsMetaJson: TsMeta): any => {
+const generateExample: ((exampleName: string, tsMetaJson: TsMeta, buildPath?: string) => any)
+  = (exampleName: string, tsMetaJson: TsMeta, buildPath: string = ''): any => {
+  buildPath += `^${exampleName}$`
+
   if (!tsMains) tsMains = ExtractMains(tsMetaJson)
 
   const tsMain: TsMain = tsMains.find((item: TsMain) => item.name === exampleName)
   const example: KeySignature = {}
-  const repeated: boolean = usedExampleNames.indexOf(exampleName) !== usedExampleNames.lastIndexOf(exampleName)
-
-  usedExampleNames.push(exampleName)
+  const repeated: boolean = buildPath.indexOf(`^${exampleName}$`) !== buildPath.lastIndexOf(`^${exampleName}$`)
 
   if (!tsMain) return undefined
 
@@ -43,18 +42,18 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
       case TypescriptTypes.ARRAY:
         if (repeated) example[tsProperty.name] = []
         else if (tsProperty.tstype.basicType === 'array' && literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[BuildValue(<string> tsProperty.tstype.valueType, tsDecorator)]]
-        else if (tsProperty.tstype.basicType === 'array' && !literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[generateExample(<string> tsProperty.tstype.valueType, tsMetaJson)]]
+        else if (tsProperty.tstype.basicType === 'array' && !literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, buildPath)]]
         else if (literals.includes(<string> tsProperty.tstype.basicType)) example[tsProperty.name] = [BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)]
-        else example[tsProperty.name] = [generateExample(<string> tsProperty.tstype.basicType, tsMetaJson)]
+        else example[tsProperty.name] = [generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, buildPath)]
         break
       case TypescriptTypes.MAP:
         if (literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = { key: BuildValue(<string> tsProperty.tstype.valueType, tsDecorator) }
         else if (repeated) example[tsProperty.name] = {}
-        else example[tsProperty.name] = { key: generateExample(<string> tsProperty.tstype.valueType, tsMetaJson) }
+        else example[tsProperty.name] = { key: generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, buildPath) }
         break
       case TypescriptTypes.REFERENCE:
         if (repeated) example[tsProperty.name] = {}
-        else example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson)
+        else example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, buildPath)
         break
       default:
         process.stdout.write(`could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`)
