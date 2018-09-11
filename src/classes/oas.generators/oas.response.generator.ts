@@ -57,7 +57,7 @@ class OasResponseGenerator {
 
     if (responseParam && responseParam.ref) {
       content = {
-        'applciation/json': {
+        'application/json': {
           schema: {
             $ref: `#/components/schemas/${responseParam.ref}${version}`
           }
