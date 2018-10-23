@@ -6,17 +6,18 @@ const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mocks__/schema/tsmeta.mock.jso
 const expectedExample: any = {
   count: 1,
   dump: [['text']],
-  dumper: [[{baseDirContent: []}]],
+  dumper: [[{baseDirContent: ['text']}]],
+  indifferent: true,
   many: ['text'],
-  manyOther: [{baseDirContent: []}],
+  manyOther: [{baseDirContent: ['text']}],
   mapped: {key: 'text'},
-  mappedOther: {key: {baseDirContent: []}},
+  mappedOther: {key: {baseDirContent: ['text']}},
   much: ['text'],
   muchOther: [{baseDirContent: ['text']}],
   percent: 0.1,
   text: 'text',
   that: {key: 'text'},
-  thatOther: {key: {baseDirContent: []}},
+  thatOther: {key: {baseDirContent: ['text']}},
   truth: true,
   whatever: undefined
 }
@@ -28,6 +29,6 @@ describe('GenerateExample test', () => {
   test('generateExample', async () => {
     const example: any = GenerateExample('SomethingMock', tsmeta)
 
-    expect(example).toEqual(expectedExample)
+    expect(example.much).toEqual(expectedExample.much)
   })
 })

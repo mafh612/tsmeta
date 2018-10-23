@@ -8,18 +8,21 @@ let oasGenerator: OasGenerator
 let tsMeta: TsMeta
 
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/schema/package.mock.json',
-  scanAdditionalPackages: {},
+  basePackage: '__mocks__/package.mock.json',
+  scanAdditionalPackages: [],
+  showScannedFiles: false,
+  showWrittenFiles: false,
   metaConfig: {
     compilerOptions: 'tsconfig.json',
     create: true,
-    outputFilename: 'tsmeta.mock.json',
+    outputFilename: 'schema/tsmeta.mock.json',
     outputPath: '__mocks__'
   },
   oasConfig: {
     create: true,
     outputFilename: 'openapi.mock.json',
     outputPath: '__mocks__',
+    outputFormat: 'json',
     openapistring: '3.0.0',
     annotationsMap: {
       GetRequest: 'Get'

@@ -36,6 +36,7 @@ export interface SigmaConfig extends BaseConfig {
  */
 export interface OasConfig extends BaseConfig {
   openapistring: string
+  outputFormat: 'json'|'yaml'|'both'
   annotationsMap: { [key: string]: string }
 }
 /**

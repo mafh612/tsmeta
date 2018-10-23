@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.7.7",
+  "version": "0.7.8",
   "description": "typescript project meta analysis",
   "keywords": [
     "typescript",
@@ -22,11 +22,11 @@
   "scripts": {
     "test": "jest --config jest.config.js",
     "prebuild": "tslint --project tslint.json -e '__tests__/**'",
-    "build": "tsc --project tsconfig.build.json",
+    "build": "tsc --project tsconfig.json",
     "dev": "npm run build && node dist/bin.js",
     "start": "node dist/bin.js",
     "view": "node view/server.js",
-    "watch": "npm run prebuild && tsc --project tsconfig.build.json --watch"
+    "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
   },
   "author": "mafh",
   "license": "MIT",
@@ -37,7 +37,8 @@
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
     "semantic-release": "^15.5.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/deep-assign": "^0.1.1",
@@ -46,6 +47,7 @@
     "@types/lodash": "^4.14.109",
     "@types/node": "^10.0.0",
     "@types/reflect-metadata": "^0.1.0",
+    "@types/yamljs": "^0.2.30",
     "jest": "^22.4.3",
     "ts-jest": "^22.4.4",
     "tslint": "^5.9.1",

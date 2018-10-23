@@ -3,8 +3,9 @@
   "metaConfig": {
     "create": true,
     "outputPath": "schema",
+    "outputFormat": "yaml",
     "outputFilename": "tsmeta_schema.json",
-    "compilerOptions": "tsconfig.build.json"
+    "compilerOptions": "tsconfig.json"
   },
   "sigmaConfig": {
     "create": true,
@@ -21,7 +22,7 @@
   "oasConfig": {
     "create": true,
     "outputPath": "schema",
-    "outputFilename": "oas_schema.json",
+    "outputFilename": "oas_schema",
     "openapistring": "3.0.0",
     "annotationsMap": {
       "Controller": null,

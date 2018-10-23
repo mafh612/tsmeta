@@ -2,6 +2,7 @@ import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadF
 import { cloneDeep } from 'lodash'
 import { Openapi } from 'oasmodel'
 import { resolve as ResolvePath } from 'path'
+import * as YAML from 'yamljs'
 
 import { GraphQLGenerator } from './classes/graphql.generator'
 import { OasGenerator } from './classes/oas.generator'
@@ -110,7 +111,17 @@ class TsMetaExecution {
     }
 
     if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) {
-      this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, this.tsMetaConfig.oasConfig.outputFilename, this.openapi)
+      switch (this.tsMetaConfig.oasConfig.outputFormat) {
+        case 'json':
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
+          break
+        case 'yaml':
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi)
+          break
+        default:
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi)
+      }
     }
 
     if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
@@ -123,21 +134,31 @@ class TsMetaExecution {
   /**
    * write file
    */
-  private writeToFile(path: string, filename: string, data: any): void {
-    const indent: number = 2
-
+  private writeToFile(path: string, filename: string, data: any, yaml: boolean = false): void {
     const resolvedPath: string = ResolvePath(path)
 
     if (!ExistsSync(resolvedPath)) MkdirSync(resolvedPath)
+    const indent: number = 2
 
-    const dataString: string = typeof data === 'string' ? data : JSON.stringify(data, undefined, indent)
+    if (yaml) {
+      const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, indent)
 
-    WriteFile(`${resolvedPath}/${filename}`, dataString, { encoding: 'utf8' }, (err: Error) => {
-      if (err) process.stderr.write(err.toString())
-      else {
-        if (this.tsMetaConfig.showWrittenFiles) process.stdout.write(`\nsaved ${filename}\n`)
-      }
-    })
+      WriteFile(`${resolvedPath}/${filename}`, yamlDataString, { encoding: 'utf8' }, (err: Error) => {
+        if (err) process.stderr.write(err.toString())
+        else {
+          if (this.tsMetaConfig.showWrittenFiles) process.stdout.write(`\nsaved ${filename}\n`)
+        }
+      })
+    } else {
+      const jsonDataString: string = typeof data === 'string' ? data : JSON.stringify(data, undefined, indent)
+
+      WriteFile(`${resolvedPath}/${filename}`, jsonDataString, { encoding: 'utf8' }, (err: Error) => {
+        if (err) process.stderr.write(err.toString())
+        else {
+          if (this.tsMetaConfig.showWrittenFiles) process.stdout.write(`\nsaved ${filename}\n`)
+        }
+      })
+    }
   }
 }
 

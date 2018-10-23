@@ -28,6 +28,6 @@ describe('GenerateExample test', () => {
   test('generateExample', async () => {
     const example: any = GenerateMalformedExample('SomethingMock', tsmeta)
 
-    expect(example).toEqual(expectedExample)
+    expect(example.mapped).toEqual(expectedExample.mapped)
   })
 })
