@@ -141,7 +141,9 @@ class TsMetaExecution {
     const indent: number = 2
 
     if (yaml) {
-      const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, indent)
+      const inline: number = 8
+
+      const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, inline, indent)
 
       WriteFile(`${resolvedPath}/${filename}`, yamlDataString, { encoding: 'utf8' }, (err: Error) => {
         if (err) process.stderr.write(err.toString())
