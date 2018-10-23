@@ -141,7 +141,7 @@ class TsMetaExecution {
     const indent: number = 2
 
     if (yaml) {
-      const inline: number = 8
+      const inline: number = 10
 
       const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, inline, indent)
 
