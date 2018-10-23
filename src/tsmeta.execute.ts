@@ -116,11 +116,11 @@ class TsMetaExecution {
           this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
           break
         case 'yaml':
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi)
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi, true)
           break
         default:
           this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi)
+          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi, true)
       }
     }
 
@@ -141,6 +141,8 @@ class TsMetaExecution {
     const indent: number = 2
 
     if (yaml) {
+      console.log(typeof data === 'string') // tslint:disable-line
+
       const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, indent)
 
       WriteFile(`${resolvedPath}/${filename}`, yamlDataString, { encoding: 'utf8' }, (err: Error) => {
