@@ -141,8 +141,6 @@ class TsMetaExecution {
     const indent: number = 2
 
     if (yaml) {
-      console.log(typeof data === 'string') // tslint:disable-line
-
       const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, indent)
 
       WriteFile(`${resolvedPath}/${filename}`, yamlDataString, { encoding: 'utf8' }, (err: Error) => {
