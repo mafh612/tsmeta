@@ -4,11 +4,11 @@ import { Model } from '../../src/lib/annotations'
  * class Incoming
  */
 @Model({
-  version: 'v1',
   example: {
-    name: 'name',
-    identifier: 'identifier'
-  }
+    identifier: 'identifier',
+    name: 'name'
+  },
+  version: 'v1'
 })
 class Incoming {
 

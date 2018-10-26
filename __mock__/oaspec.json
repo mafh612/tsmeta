@@ -1,0 +1,5615 @@
+{
+  "components": {
+    "schemas": {
+      "LoginRequest_v1": {
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customerNumber": "foo@bar.de",
+          "password": "foobar"
+        }
+      },
+      "RegisterRequest_v1": {
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customerNumber": "foo@bar.de",
+          "password": "foobar"
+        }
+      },
+      "RequestResetTokenRequest_v1": {
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customerNumber": "foo@bar.de"
+        }
+      },
+      "ResetRequest_v1": {
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "resetToken": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customerNumber": "foo@bar.de",
+          "password": "123456",
+          "resetToken": "i1u2g3iu1hb23lijh12io3jh12ioj3n1k2jn31k2j"
+        }
+      },
+      "UpdateRequest_v1": {
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "customerNumber": "foo@bar.de",
+          "newPassword": "newbar",
+          "password": "foobar"
+        }
+      },
+      "LoginResponse_v1": {
+        "type": "object",
+        "properties": {
+          "tokenType": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "token": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqdW5pdEByZWR0ZWNsYWIuY29tIiwiY3VzdG9tZXJSb2xlIjoicmVnaXN0ZXJlZCIsInRlb",
+          "tokenType": "baerer"
+        }
+      },
+      "ResetRequestResponse_v1": {
+        "type": "object",
+        "properties": {
+          "resetToken": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "resetToken": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqdW5pdEByZWR0ZWNsYWIuY29tIiwiY3VzdG9tZXJSb2xlIjoicmVnaXN0ZXJlZCIsInRlb"
+        }
+      },
+      "ProductBattery_v1": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "modus": {
+            "type": "string"
+          },
+          "pzn": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "size": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "category": "Topseller",
+          "headline": "Topseller von aronia+",
+          "modus": "topsub",
+          "pzn": [
+            ""
+          ],
+          "size": 4
+        }
+      },
+      "ContentBlockMap_v1": {
+        "type": "object",
+        "properties": {
+          "productsBattery1": {
+            "type": "object",
+            "$ref": "#/components/schemas/ProductBattery_v1"
+          },
+          "productsBattery2": {
+            "type": "object",
+            "$ref": "#/components/schemas/ProductBattery_v1"
+          },
+          "content1": {
+            "type": "string"
+          },
+          "content2": {
+            "type": "string"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "example": {
+          "content2": "<img src=\"/markenshops/aronia-immun-300x250.jpg\" width=\"300\" height=\"250\" alt=\"aronia + IMMUN\">",
+          "links": [
+            [
+              "",
+              "https://www.aroniaplus.de",
+              "blank",
+              "www.aroniaplus.de"
+            ]
+          ],
+          "productsBattery1": {
+            "headline": "Topseller von aronia+",
+            "modus": "topsub",
+            "pzn": "",
+            "size": "4"
+          },
+          "productsBattery2": {
+            "category": "",
+            "headline": "Produktempfehlungen",
+            "pzn": [
+              "4760570",
+              "9088545",
+              "9928896"
+            ],
+            "size": "4"
+          }
+        }
+      },
+      "Brandshop_v1": {
+        "type": "object",
+        "properties": {
+          "contentBlockMap": {
+            "type": "object",
+            "$ref": "#/components/schemas/ContentBlockMap_v1"
+          },
+          "contentBlocks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "keyVisual": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "partnerId": {
+            "type": "string"
+          },
+          "seoName": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "showInBreadcrumb": {
+            "type": "boolean"
+          },
+          "sliderPix": {
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "number"
+          },
+          "tilePix": {
+            "type": "string"
+          },
+          "useContentBlocks": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "contentBlockMap": {
+            "content2": "<img src=\"/markenshops/aronia-immun-300x250.jpg\" width=\"300\" height=\"250\" alt=\"aronia + IMMUN\">",
+            "links": [
+              [
+                "",
+                "https://www.aroniaplus.de",
+                "blank",
+                "www.aroniaplus.de"
+              ]
+            ],
+            "productsBattery1": {
+              "headline": "Topseller von aronia+",
+              "modus": "topsub",
+              "pzn": "",
+              "size": "4"
+            },
+            "productsBattery2": {
+              "category": "",
+              "headline": "Produktempfehlungen",
+              "pzn": [
+                "4760570",
+                "9088545",
+                "9928896"
+              ],
+              "size": "4"
+            }
+          },
+          "contentBlocks": [
+            "productsBattery1",
+            "productsBattery2",
+            "content2",
+            "links"
+          ],
+          "id": "csd1810",
+          "keyVisual": "/media/markenshops/aronia-keyvisual-230x.jpg",
+          "name": "aronia+",
+          "partnerId": "ursapharm-aronia",
+          "seoName": "aronia",
+          "shortName": "aronia+",
+          "showInBreadcrumb": true,
+          "sliderPix": "/media/markenshops/aronia-slider-980x220.jpg",
+          "sortOrder": 34,
+          "tilePix": "/media/markenshops/aronia-tile-232x158.jpg",
+          "useContentBlocks": true
+        }
+      },
+      "BrandshopsItem_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "keyVisual": {
+            "type": "string"
+          },
+          "seoName": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "showInBreadcrumb": {
+            "type": "boolean"
+          },
+          "sortOrder": {
+            "type": "number"
+          },
+          "tilePix": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "csd1810",
+          "keyVisual": "/media/markenshops/aronia-keyvisual-230x.jpg",
+          "name": "aronia+",
+          "seoName": "aronia",
+          "shortName": "aronia+",
+          "showInBreadcrumb": true,
+          "sortOrder": 34,
+          "tilePix": "/media/markenshops/aronia-tile-232x158.jpg"
+        }
+      },
+      "Brandshops_v1": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "number"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BrandshopsItem_v1"
+            }
+          },
+          "totalPages": {
+            "type": "number"
+          },
+          "totalResults": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "currentPage": 1,
+          "items": [
+            {
+              "id": "csd1810",
+              "keyVisual": "/media/markenshops/aronia-keyvisual-230x.jpg",
+              "name": "aronia+",
+              "seoName": "aronia",
+              "shortName": "aronia+",
+              "showInBreadcrumb": true,
+              "sortOrder": 34,
+              "tilePix": "/media/markenshops/aronia-tile-232x158.jpg"
+            }
+          ],
+          "totalPages": 1,
+          "totalResults": 1
+        }
+      },
+      "Salutation_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "mr",
+          "name": "Herr"
+        }
+      },
+      "Address_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "salutation": {
+            "type": "object",
+            "$ref": "#/components/schemas/Salutation_v1"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "company": {
+            "type": "string"
+          },
+          "street": {
+            "type": "string"
+          },
+          "streetNo": {
+            "type": "string"
+          },
+          "doorCode": {
+            "type": "string"
+          },
+          "street2": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "fon": {
+            "type": "string"
+          },
+          "standardShipping": {
+            "type": "boolean"
+          },
+          "standardBilling": {
+            "type": "boolean"
+          },
+          "pickUpPacketShopName": {
+            "type": "string"
+          },
+          "pickUpPacketShopType": {
+            "type": "string"
+          },
+          "pickUpPacketShopId": {
+            "type": "string"
+          },
+          "isPickUpPacketShop": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "city": "Düsseldorf",
+          "company": "RedTecLab GmbH",
+          "country": "Deutschland",
+          "countryCode": "DE",
+          "firstName": "Mustermann",
+          "fon": "+49 211 1234567890",
+          "id": "asdfghj23",
+          "lastName": "Max",
+          "salutation": {
+            "code": "mr",
+            "name": "Herr"
+          },
+          "standardBilling": false,
+          "standardShipping": true,
+          "street": "Schießstr 68",
+          "street2": "",
+          "zipcode": "40189"
+        }
+      },
+      "CartPriceInfo_v1": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "index": 1,
+          "text": "AVP / UVP"
+        }
+      },
+      "CartPrice_v1": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "diff": {
+            "type": "number"
+          },
+          "info": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPriceInfo_v1"
+          },
+          "net": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "amount": 2.7,
+          "currency": "EUR",
+          "diff": 0,
+          "info": {
+            "index": 1,
+            "text": "AVP / UVP"
+          },
+          "net": 2.27
+        }
+      },
+      "CartPrices_v1": {
+        "type": "object",
+        "properties": {
+          "totalAmount": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "retailPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "listPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          }
+        },
+        "example": {
+          "listPrice": {
+            "amount": 2.7,
+            "currency": "EUR",
+            "info": {
+              "index": 1,
+              "text": "AVP / UVP"
+            },
+            "net": 2.27
+          },
+          "retailPrice": {
+            "amount": 1.49,
+            "currency": "EUR",
+            "net": 1.25
+          },
+          "totalAmount": {
+            "amount": 1.49,
+            "currency": "EUR",
+            "net": 1.25
+          }
+        }
+      },
+      "ProductMessagesEntry_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "header": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": 100,
+          "header": "foo",
+          "message": "bar"
+        }
+      },
+      "ProductMessages_v1": {
+        "type": "object",
+        "properties": {
+          "infos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductMessagesEntry_v1"
+            }
+          },
+          "confirmations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductMessagesEntry_v1"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductMessagesEntry_v1"
+            }
+          }
+        },
+        "example": {
+          "confirmations": [],
+          "errors": [],
+          "infos": [
+            {
+              "code": 100,
+              "header": "foo",
+              "message": "bar"
+            }
+          ]
+        }
+      },
+      "StockStatus_v1": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusColor": {
+            "type": "string"
+          },
+          "statusReason": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "status": "",
+          "statusColor": "green",
+          "statusReason": "sofort lieferbar"
+        }
+      },
+      "CartProduct_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "displayCode": {
+            "type": "string"
+          },
+          "unitPricing": {
+            "type": "string"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "stockStatus": {
+            "type": "object",
+            "$ref": "#/components/schemas/StockStatus_v1"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          },
+          "prices": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrices_v1"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "redPoints": {
+            "type": "number"
+          },
+          "redPointsMultiplierIsValid": {
+            "type": "boolean"
+          },
+          "multiplierRP": {
+            "type": "number"
+          },
+          "fromPersistentCart": {
+            "type": "boolean"
+          },
+          "messages": {
+            "type": "object",
+            "$ref": "#/components/schemas/ProductMessages_v1"
+          }
+        },
+        "example": {
+          "displayCode": "01126111",
+          "fromPersistentCart": true,
+          "id": "52t6ofrko1kie77y",
+          "manufacturer": "ratiopharm GmbH",
+          "messages": {
+            "confirmations": [],
+            "errors": [],
+            "infos": []
+          },
+          "multiplierRP": 1,
+          "prices": {
+            "listPrice": {
+              "amount": 2.7,
+              "currency": "EUR",
+              "info": {
+                "index": 1,
+                "text": "AVP / UVP"
+              },
+              "net": 2.27
+            },
+            "retailPrice": {
+              "amount": 1.49,
+              "currency": "EUR",
+              "net": 1.25
+            },
+            "totalAmount": {
+              "amount": 1.49,
+              "currency": "EUR",
+              "net": 1.25
+            }
+          },
+          "productId": "01126111",
+          "quantity": 1,
+          "redPoints": 14,
+          "redPointsMultiplierIsValid": true,
+          "stockStatus": {
+            "status": "",
+            "statusColor": "green",
+            "statusReason": "sofort lieferbar"
+          },
+          "subtitle": "20 St | Tabletten",
+          "thumbnailURL": "https://static.shop-apotheke.com/images/paracetamol-ratiopharm-500-mg-tabletten-D01126111-p1.jpg",
+          "title": "Paracetamol-ratiopharm® 500 mg",
+          "unitPricing": ""
+        }
+      },
+      "Message_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": 100,
+          "message": "test",
+          "type": "error"
+        }
+      },
+      "PaymentMethod_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "asdh123",
+          "name": "Paypal"
+        }
+      },
+      "PersistentCartInfo_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "userReadable": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": 0,
+          "errors": [],
+          "message": "",
+          "userReadable": "Produkte aus Ihrem letzten Besuch wurden Ihrem Warenkorb hinzugefügt. Überprüfen Sie bitte vor der Bestellung, ob alles korrekt ist."
+        }
+      },
+      "RedPointsBonusItems_v1": {
+        "type": "object",
+        "properties": {
+          "bonusText": {
+            "type": "string"
+          },
+          "multiplier": {
+            "type": "number"
+          },
+          "pointsOriginal": {
+            "type": "number"
+          },
+          "pointsAmount": {
+            "type": "number"
+          },
+          "bonusApplied": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "bonusApplied": true,
+          "bonusText": "bonus ;)",
+          "multiplier": 0,
+          "pointsAmount": 0,
+          "pointsOriginal": 0
+        }
+      },
+      "RedPointsCalculationItem_v1": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "multiplier": {
+            "type": "number"
+          },
+          "pointsAmount": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "description": "calc desc",
+          "multiplier": 0,
+          "pointsAmount": 0,
+          "quantity": 0,
+          "type": "type"
+        }
+      },
+      "RedPointsPointsPerItem_v1": {
+        "type": "object",
+        "properties": {
+          "pointsAmount": {
+            "type": "number"
+          },
+          "pointsMultiplier": {
+            "type": "number"
+          },
+          "pointsOriginal": {
+            "type": "number"
+          },
+          "pzn": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "pointsAmount": 0,
+          "pointsMultiplier": 0,
+          "pointsOriginal": 0,
+          "pzn": "008123123"
+        }
+      },
+      "RedPointsPointsPerItemMapEntry_v1": {
+        "type": "object",
+        "properties": {
+          "pointsAmount": {
+            "type": "number"
+          },
+          "pointsMultiplier": {
+            "type": "number"
+          },
+          "pointsOriginal": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "pointsAmount": 0,
+          "pointsMultiplier": 0,
+          "pointsOriginal": 0
+        }
+      },
+      "RedPointsPossibleDiscount_v1": {
+        "type": "object",
+        "properties": {
+          "discountCents": {
+            "type": "number"
+          },
+          "discountEuros": {
+            "type": "number"
+          },
+          "pointsToRedeem": {
+            "type": "number"
+          },
+          "voucherCode": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "discountCents": 0,
+          "discountEuros": 0,
+          "pointsToRedeem": 0,
+          "voucherCode": "redpoints-500"
+        }
+      },
+      "RedPointsOrderData_v1": {
+        "type": "object",
+        "properties": {
+          "possibleDiscounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RedPointsPossibleDiscount_v1"
+            }
+          },
+          "pointsPerItem": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RedPointsPointsPerItem_v1"
+            }
+          },
+          "pointsPerItemMap": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RedPointsPointsPerItemMapEntry_v1"
+            }
+          },
+          "pointsToCollect": {
+            "type": "number"
+          },
+          "euroAmountRedeemed": {
+            "type": "number"
+          },
+          "pointsAmountRedeemed": {
+            "type": "number"
+          },
+          "pointsRedeemable": {
+            "type": "number"
+          },
+          "pointsMinimumDiscount": {
+            "type": "number"
+          },
+          "pointsMaximumDiscount": {
+            "type": "number"
+          },
+          "bonusItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RedPointsBonusItems_v1"
+            }
+          },
+          "calculationItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RedPointsCalculationItem_v1"
+            }
+          }
+        },
+        "example": {
+          "bonusItems": [
+            {
+              "bonusApplied": true,
+              "bonusText": "bonus ;)",
+              "multiplier": 0,
+              "pointsAmount": 0,
+              "pointsOriginal": 0
+            }
+          ],
+          "calculationItems": [
+            {
+              "description": "calc desc",
+              "multiplier": 0,
+              "pointsAmount": 0,
+              "quantity": 0,
+              "type": "type"
+            }
+          ],
+          "euroAmountRedeemed": 0,
+          "pointsAmountRedeemed": 0,
+          "pointsMaximumDiscount": 0,
+          "pointsMinimumDiscount": 0,
+          "pointsPerItem": [
+            {
+              "pointsAmount": 0,
+              "pointsMultiplier": 0,
+              "pointsOriginal": 0,
+              "pzn": "008123123"
+            }
+          ],
+          "pointsPerItemMap": {
+            "example1": {
+              "pointsAmount": 0,
+              "pointsMultiplier": 0,
+              "pointsOriginal": 0
+            }
+          },
+          "pointsRedeemable": 0,
+          "pointsToCollect": 0,
+          "possibleDiscounts": [
+            {
+              "discountCents": 0,
+              "discountEuros": 0,
+              "pointsToRedeem": 0,
+              "voucherCode": "redpoints-500"
+            }
+          ]
+        }
+      },
+      "RedPoints_v1": {
+        "type": "object",
+        "properties": {
+          "isActive": {
+            "type": "boolean"
+          },
+          "checkoutOptInEnabled": {
+            "type": "boolean"
+          },
+          "orderData": {
+            "type": "object",
+            "$ref": "#/components/schemas/RedPointsOrderData_v1"
+          }
+        },
+        "example": {
+          "checkoutOptInEnabled": false,
+          "isActive": true,
+          "orderData": {
+            "bonusItems": [
+              {
+                "bonusApplied": true,
+                "bonusText": "bonus ;)",
+                "multiplier": 0,
+                "pointsAmount": 0,
+                "pointsOriginal": 0
+              }
+            ],
+            "calculationItems": [
+              {
+                "description": "calc desc",
+                "multiplier": 0,
+                "pointsAmount": 0,
+                "quantity": 0,
+                "type": "type"
+              }
+            ],
+            "euroAmountRedeemed": 0,
+            "pointsAmountRedeemed": 0,
+            "pointsMaximumDiscount": 0,
+            "pointsMinimumDiscount": 0,
+            "pointsPerItem": [
+              {
+                "pointsAmount": 0,
+                "pointsMultiplier": 0,
+                "pointsOriginal": 0,
+                "pzn": "008123123"
+              }
+            ],
+            "pointsPerItemMap": {
+              "example1": {
+                "pointsAmount": 0,
+                "pointsMultiplier": 0,
+                "pointsOriginal": 0
+              }
+            },
+            "pointsRedeemable": 0,
+            "pointsToCollect": 0,
+            "possibleDiscounts": [
+              {
+                "discountCents": 0,
+                "discountEuros": 0,
+                "pointsToRedeem": 0,
+                "voucherCode": "redpoints-500"
+              }
+            ]
+          }
+        }
+      },
+      "ShippingMethod_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "asdh123",
+          "name": "DHL"
+        }
+      },
+      "Voucher_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "discountMode": {
+            "type": "string"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "summer-2018",
+          "discount": 10,
+          "discountMode": "percent",
+          "thumbnailURL": "https://foobar/img",
+          "title": "Sommer Rabatt"
+        }
+      },
+      "Cart_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "totalProducts": {
+            "type": "number"
+          },
+          "persistentCartInfo": {
+            "type": "object",
+            "$ref": "#/components/schemas/PersistentCartInfo_v1"
+          },
+          "totalSum": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "subTotal": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "subTotalWithoutVouchers": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "billingAddress": {
+            "type": "object",
+            "$ref": "#/components/schemas/Address_v1"
+          },
+          "paymentMethod": {
+            "type": "object",
+            "$ref": "#/components/schemas/PaymentMethod_v1"
+          },
+          "collectiveOrder": {
+            "type": "boolean"
+          },
+          "shippingAddress": {
+            "type": "object",
+            "$ref": "#/components/schemas/Address_v1"
+          },
+          "shippingMethod": {
+            "type": "object",
+            "$ref": "#/components/schemas/ShippingMethod_v1"
+          },
+          "shippingCosts": {
+            "type": "object",
+            "$ref": "#/components/schemas/CartPrice_v1"
+          },
+          "shippingCostsChanged": {
+            "type": "boolean"
+          },
+          "neighbourhoodDispensing": {
+            "type": "boolean"
+          },
+          "containsMedicament": {
+            "type": "boolean"
+          },
+          "containsOTC": {
+            "type": "boolean"
+          },
+          "transactionCartId": {
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CartProduct_v1"
+            }
+          },
+          "vouchers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Voucher_v1"
+            }
+          },
+          "redPoints": {
+            "type": "object",
+            "$ref": "#/components/schemas/RedPoints_v1"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Message_v1"
+            }
+          }
+        },
+        "example": {
+          "billingAddress": {
+            "city": "Düsseldorf",
+            "company": "RedTecLab GmbH",
+            "country": "Deutschland",
+            "countryCode": "DE",
+            "firstName": "Mustermann",
+            "fon": "+49 211 1234567890",
+            "id": "asdfghj23",
+            "lastName": "Max",
+            "salutation": {
+              "code": "mr",
+              "name": "Herr"
+            },
+            "standardBilling": false,
+            "standardShipping": true,
+            "street": "Schießstr 68",
+            "street2": "",
+            "zipcode": "40189"
+          },
+          "collectiveOrder": false,
+          "containsMedicament": true,
+          "containsOTC": true,
+          "id": "",
+          "messages": [],
+          "neighbourhoodDispensing": true,
+          "paymentMethod": {
+            "id": "asdh123",
+            "name": "Paypal"
+          },
+          "persistentCartInfo": {
+            "code": 0,
+            "errors": [],
+            "message": "",
+            "userReadable": "Produkte aus Ihrem letzten Besuch wurden Ihrem Warenkorb hinzugefügt. Überprüfen Sie bitte vor der Bestellung, ob alles korrekt ist."
+          },
+          "products": [
+            {
+              "displayCode": "01126111",
+              "fromPersistentCart": true,
+              "id": "52t6ofrko1kie77y",
+              "manufacturer": "ratiopharm GmbH",
+              "messages": {
+                "confirmations": [],
+                "errors": [],
+                "infos": []
+              },
+              "multiplierRP": 1,
+              "prices": {
+                "listPrice": {
+                  "amount": 2.7,
+                  "currency": "EUR",
+                  "info": {
+                    "index": 1,
+                    "text": "AVP / UVP"
+                  },
+                  "net": 2.27
+                },
+                "retailPrice": {
+                  "amount": 1.49,
+                  "currency": "EUR",
+                  "net": 1.25
+                },
+                "totalAmount": {
+                  "amount": 1.49,
+                  "currency": "EUR",
+                  "net": 1.25
+                }
+              },
+              "productId": "01126111",
+              "quantity": 1,
+              "redPoints": 14,
+              "redPointsMultiplierIsValid": true,
+              "stockStatus": {
+                "status": "",
+                "statusColor": "green",
+                "statusReason": "sofort lieferbar"
+              },
+              "subtitle": "20 St | Tabletten",
+              "thumbnailURL": "https://static.shop-apotheke.com/images/paracetamol-ratiopharm-500-mg-tabletten-D01126111-p1.jpg",
+              "title": "Paracetamol-ratiopharm® 500 mg",
+              "unitPricing": ""
+            }
+          ],
+          "redPoints": {
+            "checkoutOptInEnabled": false,
+            "isActive": true,
+            "orderData": {
+              "bonusItems": [
+                {
+                  "bonusApplied": true,
+                  "bonusText": "bonus ;)",
+                  "multiplier": 0,
+                  "pointsAmount": 0,
+                  "pointsOriginal": 0
+                }
+              ],
+              "calculationItems": [
+                {
+                  "description": "calc desc",
+                  "multiplier": 0,
+                  "pointsAmount": 0,
+                  "quantity": 0,
+                  "type": "type"
+                }
+              ],
+              "euroAmountRedeemed": 0,
+              "pointsAmountRedeemed": 0,
+              "pointsMaximumDiscount": 0,
+              "pointsMinimumDiscount": 0,
+              "pointsPerItem": [
+                {
+                  "pointsAmount": 0,
+                  "pointsMultiplier": 0,
+                  "pointsOriginal": 0,
+                  "pzn": "008123123"
+                }
+              ],
+              "pointsPerItemMap": {
+                "example1": {
+                  "pointsAmount": 0,
+                  "pointsMultiplier": 0,
+                  "pointsOriginal": 0
+                }
+              },
+              "pointsRedeemable": 0,
+              "pointsToCollect": 0,
+              "possibleDiscounts": [
+                {
+                  "discountCents": 0,
+                  "discountEuros": 0,
+                  "pointsToRedeem": 0,
+                  "voucherCode": "redpoints-500"
+                }
+              ]
+            }
+          },
+          "shippingAddress": {
+            "city": "Düsseldorf",
+            "company": "RedTecLab GmbH",
+            "country": "Deutschland",
+            "countryCode": "DE",
+            "firstName": "Mustermann",
+            "fon": "+49 211 1234567890",
+            "id": "asdfghj23",
+            "lastName": "Max",
+            "salutation": {
+              "code": "mr",
+              "name": "Herr"
+            },
+            "standardBilling": false,
+            "standardShipping": true,
+            "street": "Schießstr 68",
+            "street2": "",
+            "zipcode": "40189"
+          },
+          "shippingCosts": {
+            "amount": 2.7,
+            "currency": "EUR",
+            "diff": 0,
+            "info": {
+              "index": 1,
+              "text": "AVP / UVP"
+            },
+            "net": 2.27
+          },
+          "shippingCostsChanged": false,
+          "shippingMethod": {
+            "id": "asdh123",
+            "name": "DHL"
+          },
+          "subTotal": {
+            "amount": 1.49,
+            "currency": "EUR",
+            "diff": 0.24,
+            "net": 1.25
+          },
+          "subTotalWithoutVouchers": {
+            "amount": 1.49,
+            "currency": "EUR",
+            "diff": 0.24,
+            "net": 1.25
+          },
+          "totalProducts": 1,
+          "totalSum": {
+            "amount": 1.49,
+            "currency": "EUR",
+            "diff": 0.24,
+            "net": 1.25
+          },
+          "transactionCartId": "",
+          "vouchers": []
+        }
+      },
+      "DeleteFromCartRequest_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "asd123f4"
+        }
+      },
+      "ModifyCartRequest_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "shopCode",
+          "quantity": 1,
+          "type": "product"
+        }
+      },
+      "Breadcrumb_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "categories",
+          "name": "Categories"
+        }
+      },
+      "SubCategory_v1": {
+        "type": "object",
+        "properties": {
+          "canonicalUrl": {
+            "type": "string"
+          },
+          "hasProducts": {
+            "type": "boolean"
+          },
+          "hasSubCategories": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "isCategory": {
+            "type": "boolean"
+          },
+          "isDirectChild": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "redirectUrl": {
+            "type": "string"
+          },
+          "subCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubCategory_v1"
+            }
+          }
+        },
+        "example": {
+          "canonicalUrl": "https://www.shop-apotheke.com/arzneimittel/",
+          "hasProducts": true,
+          "hasSubCategories": true,
+          "id": "csd00001",
+          "isCategory": true,
+          "isDirectChild": false,
+          "name": "Arzneimittel & weitere Produkte ",
+          "redirectUrl": "",
+          "subCategories": []
+        }
+      },
+      "Category_v1": {
+        "type": "object",
+        "properties": {
+          "breadcrumb": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Breadcrumb_v1"
+            }
+          },
+          "canonicalUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "subcategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubCategory_v1"
+            }
+          }
+        },
+        "example": {
+          "breadcrumb": [
+            {
+              "id": "categories",
+              "name": "Categories"
+            }
+          ],
+          "canonicalUrl": "https://www.shop-apotheke.com/categories-qk5psg6d63v.htm",
+          "id": "categories",
+          "name": "Categories",
+          "subcategories": [
+            {
+              "canonicalUrl": "https://www.shop-apotheke.com/arzneimittel/",
+              "hasProducts": true,
+              "hasSubCategories": true,
+              "id": "csd00001",
+              "isCategory": true,
+              "isDirectChild": false,
+              "name": "Arzneimittel & weitere Produkte ",
+              "redirectUrl": "",
+              "subCategories": []
+            }
+          ]
+        }
+      },
+      "ContentField_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "order": {
+            "type": "number"
+          },
+          "paragraphs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentField_v1"
+            }
+          }
+        },
+        "example": {
+          "content": "<div class=\"api-content\">...</div>",
+          "headline": "",
+          "paragraphs": [
+            {
+              "content": "<div class=\"api-content\">...</div>",
+              "headline": "",
+              "id": "privacy",
+              "name": "Datenschutz",
+              "order": 4711,
+              "paragraphs": []
+            }
+          ]
+        }
+      },
+      "Content_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ContentField_v1"
+            }
+          }
+        },
+        "example": {
+          "contents": [
+            {
+              "content": "<div class=\"api-content\">...</div>",
+              "headline": "",
+              "id": "privacy",
+              "name": "Datenschutz",
+              "order": 4711,
+              "paragraphs": []
+            }
+          ],
+          "format": "html",
+          "id": "privacy",
+          "title": "Datenschutz & Sicherheit"
+        }
+      },
+      "Flags_v1": {
+        "type": "object",
+        "properties": {
+          "herbal": {
+            "type": "boolean"
+          },
+          "homeopathic": {
+            "type": "boolean"
+          },
+          "medicament": {
+            "type": "boolean"
+          },
+          "prescriptionMedicine": {
+            "type": "boolean"
+          },
+          "refrigerated": {
+            "type": "boolean"
+          },
+          "vegan": {
+            "type": "boolean"
+          },
+          "vegetarian": {
+            "type": "boolean"
+          },
+          "veterinaryDrug": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "herbal": false,
+          "homeopathic": false,
+          "medicament": true,
+          "prescriptionMedicine": false,
+          "refrigerated": false,
+          "vegan": false,
+          "vegetarian": false,
+          "veterinaryDrug": false
+        }
+      },
+      "PriceInfo_v1": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "index": 1,
+          "text": "Information"
+        }
+      },
+      "Price_v1": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "float"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "net": {
+            "type": "number",
+            "format": "float"
+          },
+          "info": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceInfo_v1"
+          }
+        },
+        "example": {
+          "amount": 3.44,
+          "currency": "EUR",
+          "net": 2.89
+        }
+      },
+      "PriceList_v1": {
+        "type": "object",
+        "properties": {
+          "listPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/Price_v1"
+          },
+          "retailPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/Price_v1"
+          }
+        },
+        "example": {
+          "listPrice": {
+            "amount": 3.44,
+            "currency": "EUR",
+            "net": 2.89
+          }
+        }
+      },
+      "PromotionProduct_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "headline": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "ribbonText": {
+            "type": "string"
+          },
+          "packshot": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "08044994",
+          "description": "<p><strong>+ Kartenspiel GRATIS</strong></p>\r\n",
+          "headline": "Aktion",
+          "packshot": "https://static.shop-apotheke.com/images/b-regaine-kartenspiel-frauen-aktionsartikel-D08044994-p1.jpg",
+          "ribbonText": "Aktion",
+          "type": "oneforone"
+        }
+      },
+      "Video_v1": {
+        "type": "object",
+        "properties": {
+          "mp4": {
+            "type": "string"
+          },
+          "mp4Mobile": {
+            "type": "string"
+          },
+          "thumbnail": {
+            "type": "string"
+          },
+          "webm": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "mp4": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/2-znx9dyTgKr6jmCh3.mp4",
+          "mp4Mobile": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/3-Lb4BjxYCKrJNcVFg.mp4",
+          "thumbnail": "https://sdn-global-prog-cache.3qsdn.com/thumbs/2014/2538/289158/gzZt23cCf79LKXDM.png",
+          "webm": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/7-xWNjCHzTqLnXphGB.webm"
+        }
+      },
+      "Product_v1": {
+        "type": "object",
+        "properties": {
+          "activeSubstances": {
+            "type": "string"
+          },
+          "additiveSubstances": {
+            "type": "string"
+          },
+          "amountInCart": {
+            "type": "number"
+          },
+          "brandId": {
+            "type": "string"
+          },
+          "brandName": {
+            "type": "string"
+          },
+          "brandURL": {
+            "type": "string"
+          },
+          "canonicalURL": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "descriptionShort": {
+            "type": "string"
+          },
+          "descriptionLong": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "displayCode": {
+            "type": "string"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "endDateRP": {
+            "type": "string"
+          },
+          "famId": {
+            "type": "string"
+          },
+          "flags": {
+            "type": "object",
+            "$ref": "#/components/schemas/Flags_v1"
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "numberOfRatings": {
+            "type": "number"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "maxAmountInCart": {
+            "type": "number"
+          },
+          "multiplierRP": {
+            "type": "number"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "onNotepad": {
+            "type": "boolean"
+          },
+          "packageNormSize": {
+            "type": "string"
+          },
+          "packageVariants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pharmaForm": {
+            "type": "string"
+          },
+          "pharmaFormId": {
+            "type": "string"
+          },
+          "pharmaObl": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceList_v1"
+          },
+          "promotion": {
+            "type": "string"
+          },
+          "promotionProduct": {
+            "type": "object",
+            "$ref": "#/components/schemas/PromotionProduct_v1"
+          },
+          "rating": {
+            "type": "number",
+            "format": "float"
+          },
+          "redPoints": {
+            "type": "number"
+          },
+          "redPointsIsActive": {
+            "type": "boolean"
+          },
+          "redPointsMultiplierIsValid": {
+            "type": "boolean"
+          },
+          "showFoodInformation": {
+            "type": "boolean"
+          },
+          "stockStatus": {
+            "type": "object",
+            "$ref": "#/components/schemas/StockStatus_v1"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "topsellerFamId": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "unitPricing": {
+            "type": "string"
+          },
+          "unitQuantityString": {
+            "type": "string"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Video_v1"
+            }
+          }
+        },
+        "example": {
+          "activeSubstances": "<ul><li>200 mg Paracetamol</li><li>150 mg Ascorbinsäure</li><li>1.76 mg Chlorphenamin</li><li>2.5 mg Chlorphenamin hydrogenmaleat</li><li>25 mg Coffein</li></ul>",
+          "additiveSubstances": "<ul><li>Chinolingelb</li><li>Glycerol tristearat</li><li>Gelatine</li><li>Lactose-1-Wasser</li><li>Erythrosin</li><li>Titandioxid</li></ul>",
+          "brandId": "csd2454",
+          "brandName": "Grippostad C",
+          "brandURL": "https://www.shop-apotheke.com/brand/aspirin.htm",
+          "canonicalURL": "https://www.shop-apotheke.com/arzneimittel/571748/grippostad-c-hartkapseln.htm",
+          "category": "csd00065",
+          "descriptionLong": "<h3>Indikation/Anwendung</h3>...",
+          "descriptionShort": "Bei grippalen Infekten und Erkältungskrankheiten",
+          "discount": 50,
+          "displayCode": "00571748",
+          "documents": [
+            "https://static.shop-apotheke.com/pdf/D00571748-bp.pdf",
+            "https://static.shop-apotheke.com/pdf/D00571748-bz.pdf"
+          ],
+          "famId": "00571749",
+          "flags": {
+            "homoeopathisch": false,
+            "medicament": true,
+            "pflanzlich": false,
+            "prescriptionMedicine": false,
+            "refrigerated": false,
+            "vegan": false,
+            "vegetarian": false,
+            "veterinaryDrug": false
+          },
+          "id": "00571748",
+          "labels": [
+            "apothekenpflichtig"
+          ],
+          "manufacturer": "STADA GmbH",
+          "maxAmountInCart": 2,
+          "media": [
+            "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p1.jpg",
+            "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p2.jpg",
+            "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p3.jpg",
+            "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p4.jpg",
+            "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p5.jpg"
+          ],
+          "multiplierRP": 1,
+          "name": "Grippostad® C Hartkapseln",
+          "numberOfRatings": 114,
+          "packageVariants": [],
+          "pharmaForm": "Kapseln",
+          "pharmaFormId": "KPS",
+          "pharmaObl": false,
+          "price": {
+            "listPrice": {
+              "amount": 12.48,
+              "currency": "EUR",
+              "info": {
+                "index": 1,
+                "text": "AVP / UVP"
+              },
+              "net": 10.49
+            },
+            "retailPrice": {
+              "amount": 6.28,
+              "currency": "EUR",
+              "net": 5.28
+            }
+          },
+          "promotion": "00571748",
+          "promotionProduct": {},
+          "rating": 4.754,
+          "redPoints": 62,
+          "redPointsIsActive": true,
+          "redPointsMultiplierIsValid": true,
+          "stockStatus": {
+            "status": "",
+            "statusColor": "green",
+            "statusReason": "sofort lieferbar"
+          },
+          "subtitle": "24 St | Hartkapseln",
+          "thumbnailURL": "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p1.jpg",
+          "title": "GRIPPOSTAD C Hartkapseln",
+          "topsellerFamId": 3,
+          "unit": "St",
+          "unitQuantityString": "24",
+          "variants": [],
+          "videos": [
+            {
+              "mp4": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/2-znx9dyTgKr6jmCh3.mp4",
+              "mp4Mobile": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/3-Lb4BjxYCKrJNcVFg.mp4",
+              "thumbnail": "https://sdn-global-prog-cache.3qsdn.com/thumbs/2014/2538/289158/gzZt23cCf79LKXDM.png",
+              "webm": "https://sdn-global-prog-cache.3qsdn.com/2538/files/15/02/289158/7-xWNjCHzTqLnXphGB.webm"
+            }
+          ]
+        }
+      },
+      "Rating_v1": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "date": {
+            "type": "number",
+            "format": "float"
+          },
+          "feedbackNegative": {
+            "type": "number"
+          },
+          "feedbackPositive": {
+            "type": "number"
+          },
+          "id": {
+            "type": "string"
+          },
+          "inReview": {
+            "type": "boolean"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "productTitle": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number",
+            "format": "float"
+          },
+          "text": {
+            "type": "string"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "author": "einem Kunden",
+          "date": 1522172127000,
+          "feedbackNegative": 0,
+          "feedbackPositive": 0,
+          "id": "productRating_6ccim251b6zexske",
+          "inReview": false,
+          "productId": "00571748",
+          "productTitle": "Grippostad® C Hartkapseln",
+          "rating": 5,
+          "text": "Mit Grippostad habe ich meine Erkältung schnell überstanden. Bei den ersten Anzeichen hatte ich es bestellt und durch die schnelle Lieferung und der günstige Preis ist die shop-apotheke meine Adresse der erssten Wahl. Ich empfehle euch weiter!",
+          "thumbnailURL": "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p1.jpg",
+          "title": "Gippostad"
+        }
+      },
+      "Ratings_v1": {
+        "type": "object",
+        "properties": {
+          "ratings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rating_v1"
+            }
+          }
+        },
+        "example": {
+          "ratings": [
+            {
+              "link": "#/components/schemas/Rating_v1"
+            }
+          ]
+        }
+      },
+      "Variants_v1": {
+        "type": "object",
+        "properties": {
+          "totalItems": {
+            "type": "number"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product_v1"
+            }
+          }
+        },
+        "example": {
+          "totalItems": 1,
+          "variants": [
+            {
+              "activeSubstances": "<ul><li>200 mg Paracetamol</li><li>150 mg Ascorbinsäure</li><li>1.76 mg Chlorphenamin</li><li>2.5 mg Chlorphenamin hydrogenmaleat</li><li>25 mg Coffein</li></ul>",
+              "additiveSubstances": "<ul><li>Chinolingelb</li><li>Glycerol tristearat</li><li>Gelatine</li><li>Lactose-1-Wasser</li><li>Erythrosin</li><li>Titandioxid</li></ul>",
+              "brandId": "csd2454",
+              "brandName": "Grippostad C",
+              "canonicalURL": "https://www.shop-apotheke.com/arzneimittel/571748/grippostad-c-hartkapseln.htm",
+              "category": "csd00065",
+              "descriptionLong": "<h3>Indikation/Anwendung</h3>...",
+              "descriptionShort": "Bei grippalen Infekten und Erkältungskrankheiten",
+              "discount": 50,
+              "displayCode": "00571748",
+              "documents": [
+                "https://static.shop-apotheke.com/pdf/D00571748-bp.pdf",
+                "https://static.shop-apotheke.com/pdf/D00571748-bz.pdf"
+              ],
+              "flags": {
+                "homoeopathisch": false,
+                "medicament": true,
+                "pflanzlich": false,
+                "prescriptionMedicine": false,
+                "refrigerated": false,
+                "vegan": false,
+                "vegetarian": false,
+                "veterinaryDrug": false
+              },
+              "id": "00571748",
+              "manufacturer": "STADA GmbH",
+              "maxAmountInCart": 2,
+              "media": [
+                "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p1.jpg",
+                "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p2.jpg",
+                "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p3.jpg",
+                "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p4.jpg",
+                "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p5.jpg"
+              ],
+              "multiplierRP": 1,
+              "name": "Grippostad® C Hartkapseln",
+              "numberOfRatings": 114,
+              "packageVariants": [],
+              "price": {
+                "listPrice": {
+                  "amount": 12.48,
+                  "currency": "EUR",
+                  "info": {
+                    "index": 1,
+                    "text": "AVP / UVP"
+                  },
+                  "net": 10.49
+                },
+                "retailPrice": {
+                  "amount": 6.28,
+                  "currency": "EUR",
+                  "net": 5.28
+                }
+              },
+              "promotion": "00571748",
+              "promotionProduct": {},
+              "rating": 4.754,
+              "redPoints": 62,
+              "redPointsIsActive": true,
+              "redPointsMultiplierIsValid": true,
+              "stockStatus": {
+                "status": "",
+                "statusColor": "green",
+                "statusReason": "sofort lieferbar"
+              },
+              "subtitle": "24 St | Hartkapseln",
+              "thumbnailURL": "https://static.shop-apotheke.com/images/grippostad-c-hartkapseln-hartkapseln-D00571748-p1.jpg",
+              "title": "GRIPPOSTAD C Hartkapseln",
+              "topsellerFamId": 3,
+              "unit": "St",
+              "unitQuantityString": "24",
+              "variants": [],
+              "videos": [
+                "ee21e4dc-bc13-11e4-9476-002590c750be"
+              ]
+            }
+          ]
+        }
+      },
+      "FilterItemES_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "hits": {
+            "type": "number"
+          },
+          "isRequested": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "brausetabletten",
+          "hits": 4,
+          "isRequested": false,
+          "name": "Brausetabletten"
+        }
+      },
+      "FilterES_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterItemES_v1"
+            }
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "attributes",
+          "data": [
+            {
+              "code": "freeShipping",
+              "hits": 2,
+              "isRequested": false,
+              "name": "versandkostenfrei"
+            }
+          ],
+          "name": "Produkteigenschaften"
+        }
+      },
+      "FlagsES_v1": {
+        "type": "object",
+        "properties": {
+          "herbal": {
+            "type": "boolean"
+          },
+          "homeopathic": {
+            "type": "boolean"
+          },
+          "medicament": {
+            "type": "boolean"
+          },
+          "prescriptionMedicine": {
+            "type": "boolean"
+          },
+          "refrigerated": {
+            "type": "boolean"
+          },
+          "vegan": {
+            "type": "boolean"
+          },
+          "vegetarian": {
+            "type": "boolean"
+          },
+          "veterinaryDrug": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "herbal": false,
+          "homeopathic": false,
+          "medicament": true,
+          "prescriptionMedicine": false,
+          "refrigerated": false,
+          "vegan": false,
+          "vegetarian": false,
+          "veterinaryDrug": false
+        }
+      },
+      "PriceInfoES_v1": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "number"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "index": 1,
+          "text": "Information"
+        }
+      },
+      "PriceES_v1": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "float"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "net": {
+            "type": "number",
+            "format": "float"
+          },
+          "info": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceInfoES_v1"
+          }
+        },
+        "example": {
+          "amount": 3.44,
+          "currency": "EUR",
+          "net": 2.89
+        }
+      },
+      "PriceListES_v1": {
+        "type": "object",
+        "properties": {
+          "listPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceES_v1"
+          },
+          "retailPrice": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceES_v1"
+          }
+        },
+        "example": {
+          "listPrice": {
+            "amount": 3.44,
+            "currency": "EUR",
+            "net": 2.89
+          }
+        }
+      },
+      "PromotionProductES_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "headline": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "ribbonText": {
+            "type": "string"
+          },
+          "packshot": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "08044994",
+          "codes": [
+            "08044994"
+          ],
+          "description": "<p><strong>+ Kartenspiel GRATIS</strong></p>\r\n",
+          "headline": "Aktion",
+          "packshot": "https://static.shop-apotheke.com/images/b-regaine-kartenspiel-frauen-aktionsartikel-D08044994-p1.jpg",
+          "ribbonText": "Aktion",
+          "type": "oneforone"
+        }
+      },
+      "StockStatusES_v1": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "statusColor": {
+            "type": "string"
+          },
+          "statusReason": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "status": "",
+          "statusColor": "green",
+          "statusReason": "sofort lieferbar"
+        }
+      },
+      "SearchContentES_v1": {
+        "type": "object",
+        "properties": {
+          "canonicalURL": {
+            "type": "string"
+          },
+          "descriptionShort": {
+            "type": "string"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "displayCode": {
+            "type": "string"
+          },
+          "endDateRP": {
+            "type": "string"
+          },
+          "flags": {
+            "type": "object",
+            "$ref": "#/components/schemas/FlagsES_v1"
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "multiplierRP": {
+            "type": "number"
+          },
+          "numberOfRatings": {
+            "type": "number"
+          },
+          "packageNormSize": {
+            "type": "string"
+          },
+          "packageVariants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "price": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceListES_v1"
+          },
+          "promotion": {
+            "type": "string"
+          },
+          "promotionProduct": {
+            "type": "object",
+            "$ref": "#/components/schemas/PromotionProductES_v1"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "redPoints": {
+            "type": "number"
+          },
+          "redPointsIsActive": {
+            "type": "boolean"
+          },
+          "redPointsMultiplierIsValid": {
+            "type": "boolean"
+          },
+          "stockStatus": {
+            "type": "object",
+            "$ref": "#/components/schemas/StockStatusES_v1"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "unitPricing": {
+            "type": "string"
+          },
+          "unitQuantityString": {
+            "type": "string"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "example": {
+          "canonicalURL": "https://www.shop-apotheke.com/arzneimittel/583906/infusionszubehoer-perfusor-spritze-mit-aspirationskanuele.htm",
+          "descriptionShort": "3-teilige Spritzen für Infusionspumpen",
+          "discount": 0,
+          "displayCode": "00583906",
+          "endDateRP": "",
+          "flags": {
+            "herbal": false,
+            "homeopathic": false,
+            "medicament": true,
+            "prescriptionMedicine": false,
+            "refrigerated": false,
+            "vegan": false,
+            "vegetarian": false,
+            "veterinaryDrug": false
+          },
+          "id": "00583906",
+          "labels": [
+            "apothekenpflichtig"
+          ],
+          "manufacturer": "B. Braun Melsungen AG",
+          "multiplierRP": 1,
+          "numberOfRatings": 0,
+          "packageNormSize": "",
+          "packageVariants": [],
+          "price": {
+            "retailPrice": {
+              "amount": 0.91,
+              "currency": "EUR",
+              "net": 0.76
+            }
+          },
+          "promotion": "",
+          "promotionProduct": {},
+          "rating": 0,
+          "redPoints": 9,
+          "redPointsIsActive": false,
+          "redPointsMultiplierIsValid": true,
+          "stockStatus": {
+            "status": "",
+            "statusColor": "green",
+            "statusReason": "sofort lieferbar"
+          },
+          "subtitle": "50 ml | Spritzen",
+          "thumbnailURL": "https://static.../images/infusionszubehoer-perfusor-spritze-mit-aspirationskanuele-spritzen-D00583906-p1.jpg",
+          "title": "Infusionszubehör Perfusor®-Spritze mit Aspirationskanüle",
+          "unit": "ml",
+          "unitPricing": "1,82 € / 100 ml",
+          "unitQuantityString": "50",
+          "variants": [],
+          "videos": []
+        }
+      },
+      "SortCriteriumES_v1": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "relevance",
+          "name": "Relevanz"
+        }
+      },
+      "SearchResultES_v1": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchContentES_v1"
+            }
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilterES_v1"
+            }
+          },
+          "pageNumber": {
+            "type": "number"
+          },
+          "q": {
+            "type": "string"
+          },
+          "resultsPerPage": {
+            "type": "number"
+          },
+          "searchBy": {
+            "type": "string"
+          },
+          "sortAndOrder": {
+            "type": "string"
+          },
+          "sortCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortCriteriumES_v1"
+            }
+          },
+          "totalPages": {
+            "type": "number"
+          },
+          "totalItems": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "content": [],
+          "filters": [],
+          "pageNumber": 1,
+          "q": "aspir",
+          "resultsPerPage": 30,
+          "searchBy": "ElasticSearch",
+          "sortAndOrder": "relevance",
+          "sortCriterias": [],
+          "totalItems": 22,
+          "totalPages": 1
+        }
+      },
+      "SuggestContentES_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "price": {
+            "type": "object",
+            "$ref": "#/components/schemas/PriceListES_v1"
+          },
+          "thumbnailURL": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "00583906",
+          "name": "Infusionszubehör Perfusor®-Spritze mit Aspirationskanüle",
+          "price": {
+            "retailPrice": {
+              "amount": 0.91,
+              "currency": "EUR",
+              "info": {
+                "index": 0,
+                "text": ""
+              },
+              "net": 0.76
+            }
+          },
+          "thumbnailURL": "https://static.../images/infusionszubehoer-perfusor-spritze-mit-aspirationskanuele-spritzen-D00583906-p1.jpg"
+        }
+      },
+      "SuggestResultES_v1": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SuggestContentES_v1"
+            }
+          },
+          "pageNumber": {
+            "type": "number"
+          },
+          "q": {
+            "type": "string"
+          },
+          "resultsPerPage": {
+            "type": "number"
+          },
+          "searchBy": {
+            "type": "string"
+          },
+          "sortAndOrder": {
+            "type": "string"
+          },
+          "sortCriterias": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortCriteriumES_v1"
+            }
+          },
+          "totalPages": {
+            "type": "number"
+          },
+          "totalItems": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "content": [],
+          "pageNumber": 1,
+          "q": "aspir",
+          "resultsPerPage": 30,
+          "searchBy": "ElasticSearch",
+          "sortAndOrder": "relevance",
+          "sortCriterias": [],
+          "totalItems": 22,
+          "totalPages": 1
+        }
+      },
+      "BreadCrumbTrailItem_v1": {
+        "type": "object",
+        "properties": {
+          "associatedFieldName": {
+            "type": "string"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "associatedFieldName": "",
+          "paramObject": {
+            "channel": "shop-apotheke-com-dev",
+            "followSearch": "9997",
+            "format": "JSON",
+            "query": "aspririn"
+          },
+          "searchParams": "/fact-finder/Search.ff?query=aspirin&channel=shop-apotheke-com-dev&followSearch=9997&format=JSON",
+          "text": "aspirin",
+          "type": "search",
+          "value": "aspirin"
+        }
+      },
+      "Answer_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "params": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question_v1"
+            }
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "1",
+          "params": "/fact-finder/Search.ff?query=aspirin&channel=shop-apotheke-com-dev&advisorStatus=34-_0_0&format=JSON",
+          "questions": [],
+          "text": "q0a0"
+        }
+      },
+      "Question_v1": {
+        "type": "object",
+        "properties": {
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Answer_v1"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "visible": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "answers": [],
+          "id": "0",
+          "text": "q0",
+          "visible": true
+        }
+      },
+      "Target_v1": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "destination": "",
+          "name": ""
+        }
+      },
+      "Campaign_v1": {
+        "type": "object",
+        "properties": {
+          "activeQuestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question_v1"
+            }
+          },
+          "advisorTree": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Question_v1"
+            }
+          },
+          "category": {
+            "type": "string"
+          },
+          "feedbackTexts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "flavour": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pushedProductsRecords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "target": {
+            "type": "object",
+            "$ref": "#/components/schemas/Target_v1"
+          }
+        },
+        "example": {
+          "activeQuestions": [],
+          "advisorTree": [],
+          "category": "Push Products",
+          "feedbackTexts": [],
+          "flavour": "FEEDBACK",
+          "id": "1039",
+          "name": "Aspirin Ranking",
+          "pushedProductsRecords": [],
+          "target": {
+            "destination": "",
+            "name": ""
+          }
+        }
+      },
+      "ValueItem_v1": {
+        "type": "object",
+        "properties": {
+          "exclude": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "exclude": false,
+          "type": "or",
+          "value": "Specials"
+        }
+      },
+      "Filter_v1": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "substring": {
+            "type": "boolean"
+          },
+          "valueList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValueItem_v1"
+            }
+          }
+        },
+        "example": {
+          "name": "primaryCategoryROOT/Arzneimittel & weitere Produkte",
+          "substring": false,
+          "valueList": []
+        }
+      },
+      "Element_v1": {
+        "type": "object",
+        "properties": {
+          "associatedFieldName": {
+            "type": "string"
+          },
+          "clusterLevel": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "previewImageURL": {
+            "type": "string"
+          },
+          "recordCount": {
+            "type": "number"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "associatedFieldName": "primaryCategoryROOT",
+          "clusterLevel": 0,
+          "name": "Arzneimittel & weitere Produkte",
+          "previewImageURL": "",
+          "recordCount": 23,
+          "searchParams": "/fact-finder/Search.ff?query=aspirin&filterprimaryCategoryROOT=Arzneimittel+%26+weitere+Produkte&channel=shop-apotheke-com-dev&followSearch=9997&format=JSON",
+          "selected": false
+        }
+      },
+      "Group_v1": {
+        "type": "object",
+        "properties": {
+          "detailedLinks": {
+            "type": "number"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Element_v1"
+            }
+          },
+          "filterStyle": {
+            "type": "string"
+          },
+          "groupOrder": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "selectedElements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "selectionType": {
+            "type": "string"
+          },
+          "showPreviewImages": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "detailedLinks": 4,
+          "elements": [],
+          "filterStyle": "TREE",
+          "groupOrder": 0,
+          "name": "Kategorie",
+          "selectedElements": [],
+          "selectionType": "singleHideUnselected",
+          "showPreviewImages": false,
+          "type": "text",
+          "unit": ""
+        }
+      },
+      "Paging_v1": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "number"
+          },
+          "firstLink": {
+            "type": "string"
+          },
+          "lastLink": {
+            "type": "string"
+          },
+          "nextLink": {
+            "type": "string"
+          },
+          "pageCount": {
+            "type": "number"
+          },
+          "pageLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "previousLink": {
+            "type": "string"
+          },
+          "resultsPerPage": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "currentPage": 1,
+          "firstLink": "",
+          "lastLink": "",
+          "nextLink": "",
+          "pageCount": 1,
+          "pageLinks": [],
+          "previousLink": "",
+          "resultsPerPage": 30
+        }
+      },
+      "Variant_v1": {
+        "type": "object",
+        "properties": {
+          "deeplink": {
+            "type": "string"
+          },
+          "discountInPercent": {
+            "type": "string"
+          },
+          "index": {
+            "type": "number"
+          },
+          "packSize": {
+            "type": "string"
+          },
+          "pzn": {
+            "type": "string"
+          },
+          "retailPrice": {
+            "type": "string"
+          },
+          "stockStatus": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "deeplink": "arzneimittel/10203603/aspirin-500-mg.htm",
+          "discountInPercent": "33",
+          "index": 2,
+          "packSize": "20 Stk",
+          "pzn": "10203603",
+          "retailPrice": "444",
+          "stockStatus": "product.stockStatus.available"
+        }
+      },
+      "RecordItem_v1": {
+        "type": "object",
+        "properties": {
+          "activeSubstances": {
+            "type": "string"
+          },
+          "additiveSubstances": {
+            "type": "string"
+          },
+          "aggregatedVariants": {
+            "type": "number"
+          },
+          "applicablePromotions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "averageRating": {
+            "type": "number"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "brandIntern": {
+            "type": "string"
+          },
+          "deeplink": {
+            "type": "string"
+          },
+          "descriptionLong": {
+            "type": "string"
+          },
+          "descriptionShort": {
+            "type": "string"
+          },
+          "discountInPercent": {
+            "type": "number"
+          },
+          "dqAttributes": {
+            "type": "string"
+          },
+          "ean": {
+            "type": "string"
+          },
+          "ffAfterSearchReorder": {
+            "type": "string"
+          },
+          "ffAutomaticSearchOptimization": {
+            "type": "string"
+          },
+          "ffCampaign": {
+            "type": "number"
+          },
+          "ffCartCount": {
+            "type": "number"
+          },
+          "ffCheckoutCount": {
+            "type": "number"
+          },
+          "ffClickCount": {
+            "type": "number"
+          },
+          "filterAttributes": {
+            "type": "string"
+          },
+          "filterRating": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          },
+          "indicationRanges": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "string"
+          },
+          "listPrice": {
+            "type": "number"
+          },
+          "listPriceFormatted": {
+            "type": "string"
+          },
+          "manufacturer": {
+            "type": "string"
+          },
+          "masterID": {
+            "type": "string"
+          },
+          "origPosition": {
+            "type": "number"
+          },
+          "packSize": {
+            "type": "string"
+          },
+          "pharmaForm": {
+            "type": "string"
+          },
+          "potency": {
+            "type": "string"
+          },
+          "prescriptionMedicine": {
+            "type": "boolean"
+          },
+          "price": {
+            "type": "number"
+          },
+          "priceFormatted": {
+            "type": "string"
+          },
+          "pricePerUnit": {
+            "type": "string"
+          },
+          "primaryCategory": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "primaryCategoryLvl0": {
+            "type": "string"
+          },
+          "primaryCategoryLvl1": {
+            "type": "string"
+          },
+          "primaryCategoryLvl2": {
+            "type": "string"
+          },
+          "primaryCategoryLvl3": {
+            "type": "string"
+          },
+          "primaryCategoryLvl4": {
+            "type": "string"
+          },
+          "primaryCategoryLvl5": {
+            "type": "string"
+          },
+          "primaryCategoryLvl6": {
+            "type": "string"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "pzn": {
+            "type": "string"
+          },
+          "ratingCount": {
+            "type": "number"
+          },
+          "ratingsLink": {
+            "type": "string"
+          },
+          "ribbonText": {
+            "type": "string"
+          },
+          "rpMultiplier": {
+            "type": "number"
+          },
+          "secondaryCategories": {
+            "type": "string"
+          },
+          "stockStatusReason": {
+            "type": "string"
+          },
+          "subBrandIntern": {
+            "type": "string"
+          },
+          "suggestCategory": {
+            "type": "string"
+          },
+          "topsellerCount": {
+            "type": "number"
+          },
+          "unitQuantityString": {
+            "type": "string"
+          },
+          "variantDetails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Variant_v1"
+            }
+          }
+        },
+        "example": {
+          "activeSubstances": "..Acetylsalicylsäure..",
+          "additiveSubstances": "Zink(stearat, palmitat, oleat) Hypromellose Carnaubawachs Siliciumdioxid, hochdisperses Natriumcarbonat",
+          "aggregatedVariants": 4,
+          "applicablePromotions": [
+            ""
+          ],
+          "attributes": [
+            "attribute=apothekenpflichtig"
+          ],
+          "averageRating": 5,
+          "brand": "Aspirin überzogene Tabletten",
+          "brandIntern": "",
+          "deeplink": "arzneimittel/10203595/aspirin-500-mg.htm",
+          "descriptionLong": "Die weiterentwickelte Aspirin Tablette mit MicroAktiv-Technologie! Doppelt so schnell bei Kopf-, Nacken- und Rückenschmerzen*. *Die MicroAktiv-Technologie führt zu einer doppelt so schnellen deutlich spürbaren Schmerzlinderung im Vergleich zur klassischen ASPIRIN® Tablette. Schnell & effektiv dank MicroAktiv-Technologie Jede Tablette enthält – neben 500 mg Acetylsalicylsäure – auch einen Zerfallsbeschleuniger, der nach der Einnahme ein rasches Auflösen bewirkt. Dadurch wird der Wirkstoff schneller in den Blutkreislauf aufgenommen und sorgt so für eine doppelt so schnelle, deutlich spürbare Schmerzlinderung bei gleichzeitig guter Verträglichkeit. Wirkstoff: Acetylsalicylsäure Anwendungsgebiete:  Bei Fieber und/oder leichten bis mäßig starken Schmerzen wie z.B. Kopfschmerzen, Schmerzen im Rahmen eines grippalen Infekts, Zahnschmerzen sowie Muskelschmerzen. Bitte beachten Sie die Angaben für Kinder und Jugendliche.",
+          "descriptionShort": "Zur Anwendung bei Kopf-, Zahn- und Muskelschmerzen",
+          "discountInPercent": 30,
+          "dqAttributes": "",
+          "ean": "",
+          "ffAfterSearchReorder": "",
+          "ffAutomaticSearchOptimization": "",
+          "ffCampaign": 1039,
+          "ffCartCount": 0,
+          "ffCheckoutCount": 0,
+          "ffClickCount": 0,
+          "filterAttributes": "",
+          "filterRating": 0,
+          "image": "https://static.shop-apotheke.com/images/aspirin-500-mg-ueberzogene-tabletten-D10203595-p1.jpg",
+          "indicationRanges": "Analgetika/ Antipyretika,Antipyretisch wirkende Analgetika,Salicylsäure-Derivate (Monopräparate)",
+          "keywords": "Kopfschmerztabletten",
+          "listPrice": 355,
+          "listPriceFormatted": "€ 3,55",
+          "manufacturer": "Bayer Vital GmbH",
+          "masterID": "10203595",
+          "origPosition": 21,
+          "packSize": "8 St",
+          "pharmaForm": "Überzogene Tabletten",
+          "potency": "",
+          "prescriptionMedicine": false,
+          "price": 248,
+          "priceFormatted": "€ 2,48",
+          "pricePerUnit": "",
+          "primaryCategory": [
+            "primaryCategoryROOT=Arzneimittel & weitere Produkte",
+            "primaryCategoryROOT/Arzneimittel & weitere Produkte=Schmerzen",
+            "primaryCategoryROOT/Arzneimittel & weitere Produkte/Schmerzen=Kopfschmerzen",
+            "primaryCategoryROOT/Arzneimittel & weitere Produkte/Schmerzen/Kopfschmerzen=ASS & Aspirin"
+          ],
+          "primaryCategoryLvl0": "Arzneimittel & weitere Produkte",
+          "primaryCategoryLvl1": "Schmerzen",
+          "primaryCategoryLvl2": "Kopfschmerzen",
+          "primaryCategoryLvl3": "ASS & Aspirin",
+          "primaryCategoryLvl4": "",
+          "primaryCategoryLvl5": "",
+          "primaryCategoryLvl6": "",
+          "productName": "ASPIRIN® 500 mg",
+          "pzn": "10203595",
+          "ratingCount": 9,
+          "ratingsLink": "/produktbewertungen/10203595/aspirin-500-mg.htm",
+          "ribbonText": "",
+          "rpMultiplier": 1,
+          "secondaryCategories": "Schmerzen/Fiebersenkende%20Schmerzmittel, Themenshops/Aspirin%C2%AE%20-%20die%20schnelle%20Hilfe%20gegen%20Kopfschmerzen",
+          "stockStatusReason": "product.stockStatus.available",
+          "subBrandIntern": "",
+          "suggestCategory": "Kopfschmerzen Überzogene Tabletten",
+          "topsellerCount": 1,
+          "unitQuantityString": "8",
+          "variantDetails": [
+            "10203595",
+            "10203595",
+            "30",
+            "8 St",
+            "248",
+            "arzneimittel/10203595/aspirin-500-mg.htm",
+            "product.stockStatus.available"
+          ],
+          "variants": [
+            {
+              "deeplink": "arzneimittel/10203595/aspirin-500-mg.htm",
+              "discountInPercent": "30",
+              "index": 1,
+              "packSize": "8 Stk",
+              "pzn": "10203595",
+              "retailPrice": "248",
+              "stockStatus": "product.stockStatus.available"
+            },
+            {
+              "deeplink": "arzneimittel/10203603/aspirin-500-mg.htm",
+              "discountInPercent": "33",
+              "index": 2,
+              "packSize": "20 Stk",
+              "pzn": "10203603",
+              "retailPrice": "444",
+              "stockStatus": "product.stockStatus.available"
+            },
+            {
+              "deeplink": "arzneimittel/10203626/aspirin-500-mg.htm",
+              "discountInPercent": "36",
+              "index": 3,
+              "packSize": "40 Stk",
+              "pzn": "10203626",
+              "retailPrice": "768",
+              "stockStatus": "product.stockStatus.available"
+            },
+            {
+              "deeplink": "arzneimittel/10203632/aspirin-500-mg.htm",
+              "discountInPercent": "36",
+              "index": 4,
+              "packSize": "80 Stk",
+              "pzn": "10203632",
+              "retailPrice": "1238",
+              "stockStatus": "product.stockStatus.available"
+            }
+          ]
+        }
+      },
+      "Record_v1": {
+        "type": "object",
+        "properties": {
+          "foundWords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "position": {
+            "type": "number"
+          },
+          "record": {
+            "type": "object",
+            "$ref": "#/components/schemas/RecordItem_v1"
+          },
+          "searchSimilarity": {
+            "type": "number"
+          },
+          "simiMalusAdd": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "foundWords": [],
+          "id": "03227112",
+          "keywords": [],
+          "position": 2,
+          "record": {},
+          "searchSimilarity": 0,
+          "simiMalusAdd": 0
+        }
+      },
+      "ResultsPerPageList_v1": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "type": "boolean"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "default": false,
+          "searchParams": "/fact-finder/Search.ff?query=aspirin&channel=shop-apotheke-com-dev&productsPerPage=10&followSearch=9997&format=JSON",
+          "selected": false,
+          "value": 10
+        }
+      },
+      "SearchControlParam_v1": {
+        "type": "object",
+        "properties": {
+          "disableCache": {
+            "type": "boolean"
+          },
+          "generateAdvisorTree": {
+            "type": "boolean"
+          },
+          "idsOnly": {
+            "type": "boolean"
+          },
+          "useAsn": {
+            "type": "boolean"
+          },
+          "useAso": {
+            "type": "boolean"
+          },
+          "useCampaigns": {
+            "type": "boolean"
+          },
+          "useFoundWords": {
+            "type": "boolean"
+          },
+          "useKeywords": {
+            "type": "boolean"
+          },
+          "usePersonalization": {
+            "type": "boolean"
+          },
+          "useSemanticEnhancer": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "disableCache": false,
+          "generateAdvisorTree": true,
+          "idsOnly": false,
+          "useAsn": true,
+          "useAso": true,
+          "useCampaigns": true,
+          "useFoundWords": false,
+          "useKeywords": false,
+          "usePersonalization": true,
+          "useSemanticEnhancer": true
+        }
+      },
+      "SortsList_v1": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "string"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "description": "Relevanz",
+          "name": "",
+          "order": "desc",
+          "searchParams": "/fact-finder/Search.ff?query=aspirin&channel=shop-apotheke-com-dev&followSearch=9997&format=JSON",
+          "selected": true
+        }
+      },
+      "SearchResult_v1": {
+        "type": "object",
+        "properties": {
+          "breadCrumbTrailItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BreadCrumbTrailItem_v1"
+            }
+          },
+          "campaigns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Campaign_v1"
+            }
+          },
+          "channel": {
+            "type": "string"
+          },
+          "fieldRoles": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Filter_v1"
+            }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group_v1"
+            }
+          },
+          "paging": {
+            "type": "object",
+            "$ref": "#/components/schemas/Paging_v1"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Record_v1"
+            }
+          },
+          "resultArticleNumberStatus": {
+            "type": "string"
+          },
+          "resultCount": {
+            "type": "number"
+          },
+          "resultStatus": {
+            "type": "string"
+          },
+          "resultsPerPageList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResultsPerPageList_v1"
+            }
+          },
+          "searchControlParams": {
+            "type": "object",
+            "$ref": "#/components/schemas/SearchControlParam_v1"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "searchTime": {
+            "type": "number"
+          },
+          "simiFirstRecord": {
+            "type": "number"
+          },
+          "simiLastRecord": {
+            "type": "number"
+          },
+          "singleWordResults": {
+            "type": "number"
+          },
+          "sortsList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SortsList_v1"
+            }
+          },
+          "timedOut": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "breadCrumbTrailItems": [],
+          "campaigns": [],
+          "channel": "shop-apotheke-com-dev",
+          "fieldRoles": {},
+          "filters": [],
+          "groups": [],
+          "paging": {},
+          "records": [],
+          "resultArticleNumberStatus": "noArticleNumberSearch",
+          "resultCount": 24,
+          "resultStatus": "resultsFound",
+          "resultsPerPageList": [],
+          "searchControlParams": {},
+          "searchParams": "/fact-finder/Search.ff?query=aspirin&followSearch=9997",
+          "searchTime": 1108,
+          "simiFirstRecord": 10000,
+          "simiLastRecord": 8842,
+          "singleWordResults": 0,
+          "sortsList": [],
+          "timedOut": false
+        }
+      },
+      "Suggestion_v1": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "hitCount": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "searchParams": {
+            "type": "string"
+          },
+          "paramObject": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "attributes": {
+            "SuggestRankingReduction": "0.02999878%",
+            "articleNr": "08000059",
+            "campaignProductNr": "08000059",
+            "deeplink": "arzneimittel/8000059/erkaeltungsset-wick-medinait-grippostad-c.htm",
+            "id": "08000059",
+            "masterId": "08000059",
+            "price": "1629",
+            "pzn": "08000059",
+            "stockStatusReason": "product.stockStatus.available"
+          },
+          "hitCount": 0,
+          "image": "https://static.shop-apotheke.com/images/erkaeltungsset-wick-medinait-grippostad-c-set-D08000059-p1.jpg",
+          "name": "Erkältungsset WICK MediNait + Grippostad® C",
+          "paramObject": {
+            "query": "08000059"
+          },
+          "searchParams": "/fact-finder/Search.ff?query=08000059",
+          "type": "productName"
+        }
+      },
+      "SuggestResult_v1": {
+        "type": "object",
+        "properties": {
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Suggestion_v1"
+            }
+          }
+        },
+        "example": {
+          "suggestions": [
+            {
+              "attributes": {
+                "SuggestRankingReduction": "0.02999878%",
+                "articleNr": "08000059",
+                "campaignProductNr": "08000059",
+                "deeplink": "arzneimittel/8000059/erkaeltungsset-wick-medinait-grippostad-c.htm",
+                "id": "08000059",
+                "masterId": "08000059",
+                "price": "1629",
+                "pzn": "08000059",
+                "stockStatusReason": "product.stockStatus.available"
+              },
+              "hitCount": 0,
+              "image": "https://static.shop-apotheke.com/images/erkaeltungsset-wick-medinait-grippostad-c-set-D08000059-p1.jpg",
+              "name": "Erkältungsset WICK MediNait + Grippostad® C",
+              "paramObject": {
+                "query": "08000059"
+              },
+              "searchParams": "/fact-finder/Search.ff?query=08000059",
+              "type": "productName"
+            }
+          ]
+        }
+      },
+      "Themeshop_v1": {
+        "type": "object",
+        "properties": {
+          "contentBlockMap": {
+            "type": "object",
+            "$ref": "#/components/schemas/ContentBlockMap_v1"
+          },
+          "contentBlocks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "keyVisual": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "partnerId": {
+            "type": "string"
+          },
+          "seoName": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "showInBreadcrumb": {
+            "type": "boolean"
+          },
+          "sliderPix": {
+            "type": "string"
+          },
+          "sortOrder": {
+            "type": "number"
+          },
+          "tilePix": {
+            "type": "string"
+          },
+          "useContentBlocks": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "contentBlockMap": {
+            "content1": "<div>foo</div>",
+            "content2": "<div>bar</div>",
+            "headerBanner": "/media/themenshops/ehealth-connectedhealth-header-735x220.jpg",
+            "links": [
+              [
+                "",
+                "https://cloud.vitadock.com/",
+                "blank",
+                "VitaDock+ Online"
+              ]
+            ],
+            "productsBattery1": {
+              "headline": "Unsere Produkte",
+              "modus": "catsub",
+              "pzn": [
+                "8096190",
+                "8096187",
+                "8096185"
+              ],
+              "size": "21"
+            },
+            "video": {
+              "middleBanner": "",
+              "middleBannerHeadline": "",
+              "videos": [
+                "8c8dd9ae-3088-11e5-ac5e-0cc47a188158"
+              ]
+            }
+          },
+          "contentBlocks": [
+            "headerBanner",
+            "content1",
+            "video",
+            "productsBattery1",
+            "content2",
+            "links"
+          ],
+          "id": "csd01126",
+          "keyVisual": "/media/themenshops/ehealth-connectedhealth-keyvisual-230x.jpg",
+          "name": "Pulsoximeter",
+          "partnerId": "",
+          "seoName": "connected-health-pulsoximeter",
+          "shortName": "eHealth",
+          "showInBreadcrumb": true,
+          "sliderPix": "/media/themenshops/ehealth-connectedhealth-slider-980x220.jpg",
+          "sortOrder": 1,
+          "tilePix": "/media/themenshops/ehealth-connectedhealth-tile-232x158.jpg",
+          "useContentBlocks": true
+        }
+      },
+      "ThemeshopsItem_v1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "keyVisual": {
+            "type": "string"
+          },
+          "seoName": {
+            "type": "string"
+          },
+          "shortName": {
+            "type": "string"
+          },
+          "showInBreadcrumb": {
+            "type": "boolean"
+          },
+          "sortOrder": {
+            "type": "number"
+          },
+          "tilePix": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": "csd1810",
+          "keyVisual": "/media/markenshops/aronia-keyvisual-230x.jpg",
+          "name": "aronia+",
+          "seoName": "aronia",
+          "shortName": "aronia+",
+          "showInBreadcrumb": true,
+          "sortOrder": 34,
+          "tilePix": "/media/markenshops/aronia-tile-232x158.jpg"
+        }
+      },
+      "Themeshops_v1": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "number"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThemeshopsItem_v1"
+            }
+          },
+          "totalPages": {
+            "type": "number"
+          },
+          "totalResults": {
+            "type": "number"
+          }
+        },
+        "example": {
+          "currentPage": 1,
+          "items": [
+            {
+              "id": "csd1810",
+              "keyVisual": "/media/markenshops/aronia-keyvisual-230x.jpg",
+              "name": "aronia+",
+              "seoName": "aronia",
+              "shortName": "aronia+",
+              "showInBreadcrumb": true,
+              "sortOrder": 34,
+              "tilePix": "/media/markenshops/aronia-tile-232x158.jpg"
+            }
+          ],
+          "totalPages": 1,
+          "totalResults": 1
+        }
+      }
+    },
+    "responses": {
+      "400_ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "number"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "statusCode": 400,
+                "error": "Bad Request",
+                "message": "Validation Exception"
+              }
+            }
+          }
+        }
+      },
+      "401_ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "number"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "statusCode": 401,
+                "error": "UNAUTHORIZED",
+                "message": "A valid authorization is required"
+              }
+            }
+          }
+        }
+      },
+      "403_ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "number"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "statusCode": 403,
+                "error": "MISSING/WRONG INPUT",
+                "message": "parameter username is required"
+              }
+            }
+          }
+        }
+      },
+      "404_ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "number"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "statusCode": 404,
+                "error": "NOT FOUND",
+                "message": "requested resource not found"
+              }
+            }
+          }
+        }
+      },
+      "422_ErrorResponse": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "statusCode": {
+                  "type": "number"
+                },
+                "error": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "statusCode": 422,
+                "error": "UNPROCESSABLE",
+                "message": "password too weak"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Get a token via AuthController-Login (guest or registered user)",
+        "baererFormat": "JWT"
+      }
+    }
+  },
+  "paths": {
+    "/auth/v1/{tenant}/login": {
+      "post": {
+        "tags": [
+          "AuthController"
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/LoginRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "403": {
+            "$ref": "#/components/responses/403_ErrorResponse",
+            "description": "wrong credentials"
+          }
+        }
+      }
+    },
+    "/auth/v1/{tenant}/password": {
+      "post": {
+        "tags": [
+          "AuthController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/UpdateRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "no content"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "validation error"
+          },
+          "403": {
+            "$ref": "#/components/responses/403_ErrorResponse",
+            "description": "wrong/missing credentials"
+          },
+          "422": {
+            "$ref": "#/components/responses/422_ErrorResponse",
+            "description": "password validation error"
+          }
+        }
+      }
+    },
+    "/auth/v1/{tenant}/logout": {
+      "get": {
+        "tags": [
+          "AuthController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "no content"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "missing credentials"
+          },
+          "401": {
+            "$ref": "#/components/responses/401_ErrorResponse",
+            "description": "invalid token"
+          },
+          "403": {
+            "$ref": "#/components/responses/403_ErrorResponse",
+            "description": "tenant/token does not match"
+          }
+        }
+      }
+    },
+    "/auth/v1/{tenant}/register": {
+      "post": {
+        "tags": [
+          "AuthController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/RegisterRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "missing fields"
+          },
+          "422": {
+            "$ref": "#/components/responses/422_ErrorResponse",
+            "description": "user already exists or password validation error"
+          }
+        }
+      }
+    },
+    "/auth/v1/{tenant}/reset": {
+      "post": {
+        "tags": [
+          "AuthController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/RequestResetTokenRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetRequestResponse_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "403": {
+            "$ref": "#/components/responses/403_ErrorResponse",
+            "description": "wrong/missing credentials"
+          }
+        }
+      }
+    },
+    "/auth/v1/{tenant}/update": {
+      "post": {
+        "tags": [
+          "AuthController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/ResetRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "no content"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "missing fields"
+          },
+          "401": {
+            "$ref": "#/components/responses/401_ErrorResponse",
+            "description": "reset token wrong"
+          },
+          "422": {
+            "$ref": "#/components/responses/422_ErrorResponse",
+            "description": "password validation error"
+          }
+        }
+      }
+    },
+    "/brandshops/v1/{tenant}/{id}": {
+      "get": {
+        "tags": [
+          "BrandshopsController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "csd1812",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "name seoName tilePix",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Brandshop_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "403": {
+            "$ref": "#/components/responses/403_ErrorResponse",
+            "description": "ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "ErrorResponse"
+          }
+        }
+      }
+    },
+    "/brandshops/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "BrandshopsController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam page",
+            "example": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam perPage",
+            "example": 10,
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "items { name seoName tilePix }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Brandshops_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/carts/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "CartsController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cart_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CartsController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/ModifyCartRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cart_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CartsController"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#components/schemas/DeleteFromCartRequest_v1",
+                "required": []
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cart_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "ErrorResponse"
+          }
+        }
+      }
+    },
+    "/categories/v1/{tenant}/{id}": {
+      "get": {
+        "tags": [
+          "CategoriesController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "categories",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "name subcategories { name canonicalUrl } canonicalUrl",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "ErrorResponse"
+          }
+        }
+      }
+    },
+    "/categories/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "CategoriesController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "name subcategories { name canonicalUrl } canonicalUrl",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/content/v1/{tenant}/{id}": {
+      "get": {
+        "tags": [
+          "ContentController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "faq",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "id title contents { headline }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam contentsFilter",
+            "example": "headline:legalFooter",
+            "in": "query",
+            "name": "contentsFilter",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Content_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/content/v1/{tenant}/path/{id}": {
+      "get": {
+        "tags": [
+          "ContentController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "menu",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Content_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/products/v1/{tenant}/{id}": {
+      "get": {
+        "tags": [
+          "ProductController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "00571748",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "name price { listPrice { amount } } stockStatus { status }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/products/v1/{tenant}/{id}/ratings": {
+      "get": {
+        "tags": [
+          "ProductController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "00571748",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "ratings { author rating title }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ratings_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/products/v1/{tenant}/{id}/variants": {
+      "get": {
+        "tags": [
+          "ProductController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "00571748",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "variants { discount price { listPrice { amount } } }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Variants_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/search-es/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "SearchControllerES"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "Properties are from 'filters array' and are appended to the queryString",
+            "in": "query",
+            "name": "searchParams",
+            "required": false,
+            "schema": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "query": "Aspirin"
+              },
+              "type": "object",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "content { id }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResultES_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/search-es/v1/{tenant}/suggest": {
+      "get": {
+        "tags": [
+          "SearchControllerES"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "QueryParam query",
+            "example": "Aspirin",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuggestResultES_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/search/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "SearchController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "QueryParam query",
+            "example": "Aspirin",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "records { record { masterID productName price } }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "Properties are from 'paramObject' and are appended to the queryString",
+            "in": "query",
+            "name": "searchParameter",
+            "required": false,
+            "schema": {
+              "additionalProperties": {
+                "type": "string"
+              },
+              "example": {
+                "filterPackSize": "100 St",
+                "filtermanufacturer": "1 A Pharma GmbH",
+                "filterpharmaceuticalForm": "Tabletten~~~Set",
+                "followSearch": "9997"
+              },
+              "type": "object",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResult_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/search/v1/{tenant}/suggest": {
+      "get": {
+        "tags": [
+          "SearchController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "QueryParam query",
+            "example": "Aspirin",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuggestResult_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/themeshops/v1/{tenant}/{id}": {
+      "get": {
+        "tags": [
+          "ThemeshopsController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "PathParam id",
+            "example": "csd1812",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "name seoName tilePix",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Themeshop_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    },
+    "/themeshops/v1/{tenant}": {
+      "get": {
+        "tags": [
+          "ThemeshopsController"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam page",
+            "example": 1,
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam perPage",
+            "example": 10,
+            "in": "query",
+            "name": "perPage",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": true,
+            "deprecated": false,
+            "description": "QueryParam fields",
+            "example": "items { name seoName tilePix }",
+            "in": "query",
+            "name": "fields",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": []
+            }
+          },
+          {
+            "allowEmptyValue": false,
+            "deprecated": false,
+            "description": "ControllerParam tenant",
+            "in": "path",
+            "name": "tenant",
+            "required": true,
+            "schema": {
+              "enum": [
+                "com"
+              ],
+              "type": "string",
+              "required": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Themeshops_v1"
+                }
+              }
+            },
+            "description": "SuccessResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_ErrorResponse",
+            "description": "bad request"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_ErrorResponse",
+            "description": "not found"
+          }
+        }
+      }
+    }
+  },
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BuLLy documentation",
+    "contact": {
+      "name": "RedTecLab GmbH",
+      "url": "https://www.redteclab.com",
+      "email": "info@redteclab.com"
+    },
+    "description": "BuLLy Server",
+    "license": {
+      "name": "private"
+    },
+    "termsOfService": "",
+    "version": "0.0.0"
+  },
+  "servers": [
+    {
+      "name": "default",
+      "url": "/{cacheable}",
+      "variables": {
+        "cacheable": {
+          "enum": [
+            "cacheable",
+            "static"
+          ],
+          "default": "cacheable"
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": []
+}

@@ -16,7 +16,6 @@ class TsMetaClassFactory {
 
   /**
    * build TsClass element
-   * @param classDeclaration
    */
   public build(classDeclaration: ClassDeclaration): TsClass {
     const name: string = IdentifierToString(classDeclaration.name)

@@ -1,34 +1,37 @@
 module.exports = {
-  testEnvironment: 'node',
-  collectCoverage: true,
-  collectCoverageFrom: [
-    '**/*.ts',
-    '!**/index.ts',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
-    '!**/__mock__/**',
-    '!**/vendor/**',
-    '!**/bin.ts'
-  ],
-  coverageThreshold: {
-    global: {
-      branches: 90,
-      functions: 90,
-      lines: -10,
-      statements: 90
+  "globals": {
+    "ts-jest": {
+      tsConfig: "tsconfig.test.json"
     }
   },
-  coverageReporters: [
-    'json',
-    'lcov',
-    'text'
-  ],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest'
-  },
-  testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.ts$',
-  moduleFileExtensions: [
-    'ts',
-    'js'
-  ]
+  "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.ts",
+      "!**/index.ts",
+      "!**/*.d.ts",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__test__/.*|(\\.|/)(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
 }

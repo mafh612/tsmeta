@@ -24,14 +24,16 @@ const generateMalformedExample: ((exampleName: string, tsMetaJson: TsMeta) => an
   if (!tsMain) return undefined
 
   tsMain.properties.forEach((tsProperty: TsProperty) => {
-    const tsDecorator: TsDecorator = tsProperty.decorators ? tsProperty.decorators.find((it: TsDecorator) => it.name === 'Property') : undefined
+    const tsDecorator: TsDecorator = tsProperty.decorators
+      ? tsProperty.decorators.find((it: TsDecorator) => it.name === 'Property')
+      : undefined
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.BASIC:
-        example[tsProperty.name] = BuildMalformedValue(<string> tsProperty.tstype.basicType, tsDecorator)
+        example[tsProperty.name] = BuildMalformedValue(tsProperty.tstype.basicType as string, tsDecorator)
         break
       case TypescriptTypes.MULTIPLE:
-        example[tsProperty.name] = BuildMalformedValue((<string[]> tsProperty.tstype.basicType)[0], tsDecorator)
+        example[tsProperty.name] = BuildMalformedValue((tsProperty.tstype.basicType as string[])[0], tsDecorator)
         break
       case TypescriptTypes.ARRAY:
         example[tsProperty.name] = true

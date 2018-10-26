@@ -19,7 +19,7 @@ class TsMetaTypeFactory {
       }
     }
 
-    return <TsType> TypeNodeToTsType(typeNode)
+    return TypeNodeToTsType(typeNode) as TsType
   }
 }
 

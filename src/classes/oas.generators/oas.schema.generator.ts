@@ -21,7 +21,8 @@ class OasSchemaGenerator {
     let propertyParam: PropertyParam
 
     if (tsProperty.decorators) {
-      propertyDecorator = tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation(tsDecorator.name))
+      propertyDecorator = tsProperty.decorators
+        .find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation(tsDecorator.name))
       propertyParam = propertyDecorator.tsarguments.pop().representation
     }
 
@@ -42,16 +43,16 @@ class OasSchemaGenerator {
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.ARRAY:
-        const typeName: string = <string> tsProperty.tstype.basicType
+        const typeName: string = tsProperty.tstype.basicType as string
 
         if (['any', 'boolean', 'number', 'string'].includes(typeName)) schema = { type: 'array', items: { type: typeName } }
         else schema = { type: 'array', items: { $ref: `#/components/schemas/${typeName}${version}` } }
         break
       case TypescriptTypes.BASIC:
-        schema = { type: <string> tsProperty.tstype.basicType }
+        schema = { type: tsProperty.tstype.basicType as string }
         break
       case TypescriptTypes.MAP:
-        const propertiesType: string = <string> tsProperty.tstype.valueType
+        const propertiesType: string = tsProperty.tstype.valueType as string
         let _type: string
         let $ref: string
 
@@ -61,14 +62,14 @@ class OasSchemaGenerator {
         schema = { type: 'object', additionalProperties: { type: _type, $ref } }
         break
       case TypescriptTypes.MULTIPLE:
-        schema = { type: (<string[]> tsProperty.tstype.basicType).join('|') }
+        schema = { type: (tsProperty.tstype.basicType as string[]).join('|') }
         break
       case TypescriptTypes.PROMISE:
-        schema = { type: <string> tsProperty.tstype.valueType }
+        schema = { type: tsProperty.tstype.valueType as string }
         break
       case TypescriptTypes.PROP:
         const properties: { [key: string]: Schema } = {}
-        const keyTypes: string[] = <string[]> tsProperty.tstype.keyType
+        const keyTypes: string[] = tsProperty.tstype.keyType as string[]
 
         keyTypes.forEach((key: string, index: number) => {
           const value: string = tsProperty.tstype.valueType[index]
@@ -88,7 +89,7 @@ class OasSchemaGenerator {
       default:
     }
 
-    if (propertyParam && propertyParam.format) schema.format = <string> propertyParam.format
+    if (propertyParam && propertyParam.format) schema.format = propertyParam.format as string
 
     return schema
   }

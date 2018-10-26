@@ -5,4 +5,4 @@
  */
 'use strict'
 
-import './tsmeta.execute'
+import './tsmeta.execute' // tslint:disable-line

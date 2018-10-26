@@ -7,16 +7,16 @@ let graphQLGenerator: GraphQLGenerator
 let tsMeta: TsMeta
 
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/schema/package.mock.json',
+  basePackage: '__mock__/schema/package.mock.json',
   metaConfig: {
     compilerOptions: 'tsconfig.json',
     create: true,
     outputFilename: 'tsmeta.mock.json',
-    outputPath: '__mocks__'
+    outputPath: '__mock__'
   },
   graphQLConfig: {
     create: true,
-    outputPath: '__mocks__',
+    outputPath: '__mock__',
     model_annotation: 'Model',
     property_annotation: 'Property'
   }
@@ -24,7 +24,7 @@ const tsMetaConfigFake: TsMetaConfig = {
 
 beforeAll(() => {
   graphQLGenerator = new GraphQLGenerator(tsMetaConfigFake.graphQLConfig)
-  const tsMetaString: string = fs.readFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' })
+  const tsMetaString: string = fs.readFileSync('__mock__/schema/tsmeta.mock.json', { encoding: 'utf8' })
   tsMeta = JSON.parse(tsMetaString)
 })
 
@@ -40,7 +40,7 @@ describe('GraphQLGenerator test', () => {
     const result: { [key: string]: string } = graphQLGenerator.generate(tsMeta)
 
     for (const key of Object.keys(result)) {
-      fs.writeFile(`__mocks__/schema/${key}.mock.graphql`, result[key], (err) => { // tslint:disable-line
+      fs.writeFile(`__mock__/schema/${key}.mock.graphql`, result[key], (err) => { // tslint:disable-line
         if (err) console.log(err)// tslint:disable-line
       })
     }

@@ -2,7 +2,8 @@ import { readFileSync as ReadFileSync } from 'fs'
 import { TsMeta } from '../../src'
 import { GenerateMalformedExample } from '../../src/api/api.generate.malformed.example'
 
-const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
+const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mock__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
+// tslint:disable-next-line no-any
 const expectedExample: any = {
   count: 'text',
   dump: true,
@@ -26,7 +27,7 @@ const expectedExample: any = {
  */
 describe('GenerateExample test', () => {
   test('generateExample', async () => {
-    const example: any = GenerateMalformedExample('SomethingMock', tsmeta)
+    const example: any = GenerateMalformedExample('SomethingMock', tsmeta) // tslint:disable-line no-any
 
     expect(example.mapped).toEqual(expectedExample.mapped)
   })

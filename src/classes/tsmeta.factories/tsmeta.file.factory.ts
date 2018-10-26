@@ -17,7 +17,6 @@ class TsMetaFileFactory {
 
   /**
    * build TsFile element
-   * @param sourceFile
    */
   public build(sourceFile: SourceFile): TsFile {
     const sourceFilenameArray: string[] = sourceFile.fileName.split('/')
@@ -40,16 +39,16 @@ class TsMetaFileFactory {
         case SyntaxKind.VariableStatement:
           break
         case SyntaxKind.ClassDeclaration:
-          tsClass = this.tsMetaClassFactory.build(<ClassDeclaration> node)
+          tsClass = this.tsMetaClassFactory.build(node as ClassDeclaration)
           break
         case SyntaxKind.InterfaceDeclaration:
-          tsMains = tsMains.concat(this.tsMetaMainFactory.build(<InterfaceDeclaration> node))
+          tsMains = tsMains.concat(this.tsMetaMainFactory.build(node as InterfaceDeclaration))
           break
         case SyntaxKind.ExportDeclaration:
-          tsExports = tsExports.concat(this.tsMetaExportFactory.build(<ExportDeclaration> node))
+          tsExports = tsExports.concat(this.tsMetaExportFactory.build(node as ExportDeclaration))
           break
         case SyntaxKind.ImportDeclaration:
-          tsImports = tsImports.concat(this.tsMetaImportFactory.build(<ImportDeclaration> node))
+          tsImports = tsImports.concat(this.tsMetaImportFactory.build(node as ImportDeclaration))
           break
         case SyntaxKind.ExpressionStatement:
           break
@@ -59,11 +58,11 @@ class TsMetaFileFactory {
     })
 
     return {
-      path,
       filename,
+      path,
+      tsClass,
       tsExports,
       tsImports,
-      tsClass,
       tsMains
     }
   }

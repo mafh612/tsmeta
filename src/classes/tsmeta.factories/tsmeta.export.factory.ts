@@ -9,17 +9,16 @@ class TsMetaExportFactory {
 
   /**
    * build TsExport element
-   * @param exportDeclaration
    */
   public build(exportDeclaration: ExportDeclaration): TsExport[] {
     if (exportDeclaration.moduleSpecifier) {
-      return [this.createTsExport(<Identifier> exportDeclaration.moduleSpecifier)]
+      return [this.createTsExport(exportDeclaration.moduleSpecifier as Identifier)]
     }
 
     if (exportDeclaration.exportClause) {
       return exportDeclaration.exportClause.elements
         .map((exportSpecifier: ExportSpecifier) =>
-          this.createTsExport(<Identifier> exportSpecifier.name, <Identifier> exportSpecifier.propertyName))
+          this.createTsExport(exportSpecifier.name as Identifier, exportSpecifier.propertyName as Identifier))
     }
 
     return undefined

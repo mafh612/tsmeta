@@ -5,7 +5,7 @@ import { TsMeta } from '../../src/lib/tsmeta.schema'
 
 let tsMetaFactory: TsMetaFactory
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/package.mock.json',
+  basePackage: '__mock__/package.mock.json',
   scanAdditionalPackages: [],
   showScannedFiles: true,
   showWrittenFiles: true,
@@ -13,7 +13,7 @@ const tsMetaConfigFake: TsMetaConfig = {
     compilerOptions: 'tsconfig.json',
     create: true,
     outputFilename: 'tsmeta.mock.json',
-    outputPath: '__mocks__'
+    outputPath: '__mock__'
   }
 }
 
@@ -32,7 +32,7 @@ describe('TsMetaFactory test', () => {
   test('TsMetaFactory.build()', async () => {
     const result: TsMeta = tsMetaFactory.build()
 
-    fs.writeFile('__mocks__/schema/tsmeta.mock.json', JSON.stringify(result, undefined, 2), (err) => { // tslint:disable-line
+    fs.writeFile('__mock__/schema/tsmeta.mock.json', JSON.stringify(result, undefined, 2), (err) => { // tslint:disable-line
       if (err) console.log(err)// tslint:disable-line
     })
 

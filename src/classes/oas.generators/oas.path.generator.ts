@@ -17,7 +17,11 @@ class OasPathGenerator {
   /**
    * generated PathItem
    */
-  public generate(controllerName: string, controllerPath: string, tsMethod: TsMethod, controllerParameters: Parameter[]): { [key: string]: PathItem } {
+  public generate(
+      controllerName: string,
+      controllerPath: string,
+      tsMethod: TsMethod,
+      controllerParameters: Parameter[]): { [key: string]: PathItem } {
     SetAnnoationsMapping(this.oasConfig.annotationsMap)
     const pathItem: { [key: string]: PathItem } = {}
 

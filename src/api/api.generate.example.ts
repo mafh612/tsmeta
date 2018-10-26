@@ -30,30 +30,38 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta, buildPath?: st
   if (!tsMain) return undefined
 
   tsMain.properties.forEach((tsProperty: TsProperty) => {
-    const tsDecorator: TsDecorator = tsProperty.decorators ? tsProperty.decorators.find((it: TsDecorator) => it.name === 'Property') : undefined
+    const tsDecorator: TsDecorator = tsProperty.decorators
+      ? tsProperty.decorators.find((it: TsDecorator) => it.name === 'Property')
+      : undefined
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.BASIC:
-        example[tsProperty.name] = BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)
+        example[tsProperty.name] = BuildValue(tsProperty.tstype.basicType as string, tsDecorator)
         break
       case TypescriptTypes.MULTIPLE:
-        example[tsProperty.name] = BuildValue((<string[]> tsProperty.tstype.basicType)[0], tsDecorator)
+        example[tsProperty.name] = BuildValue(tsProperty.tstype.basicType[0], tsDecorator)
         break
       case TypescriptTypes.ARRAY:
-        if (repeated) example[tsProperty.name] = []
-        else if (tsProperty.tstype.basicType === 'array' && literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[BuildValue(<string> tsProperty.tstype.valueType, tsDecorator)]]
-        else if (tsProperty.tstype.basicType === 'array' && !literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = [[generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, buildPath)]]
-        else if (literals.includes(<string> tsProperty.tstype.basicType)) example[tsProperty.name] = [BuildValue(<string> tsProperty.tstype.basicType, tsDecorator)]
-        else example[tsProperty.name] = [generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, buildPath)]
+        if (repeated) {
+          example[tsProperty.name] = []
+        } else if (tsProperty.tstype.basicType === 'array' && literals.includes(tsProperty.tstype.valueType as string)) {
+            example[tsProperty.name] = [[BuildValue(tsProperty.tstype.valueType as string, tsDecorator)]]
+        } else if (tsProperty.tstype.basicType === 'array' && !literals.includes(tsProperty.tstype.valueType as string)) {
+          example[tsProperty.name] = [[generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath)]]
+        } else if (literals.includes(tsProperty.tstype.basicType as string)) {
+          example[tsProperty.name] = [BuildValue(tsProperty.tstype.basicType as string, tsDecorator)]
+        } else example[tsProperty.name] = [generateExample(tsProperty.tstype.basicType as string, tsMetaJson, buildPath)]
         break
       case TypescriptTypes.MAP:
-        if (literals.includes(<string> tsProperty.tstype.valueType)) example[tsProperty.name] = { key: BuildValue(<string> tsProperty.tstype.valueType, tsDecorator) }
-        else if (repeated) example[tsProperty.name] = {}
-        else example[tsProperty.name] = { key: generateExample(<string> tsProperty.tstype.valueType, tsMetaJson, buildPath) }
+        if (literals.includes(tsProperty.tstype.valueType as string)) {
+          example[tsProperty.name] = { key: BuildValue(tsProperty.tstype.valueType as string, tsDecorator) }
+        } else if (repeated) {
+          example[tsProperty.name] = {}
+        } else example[tsProperty.name] = { key: generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath) }
         break
       case TypescriptTypes.REFERENCE:
         if (repeated) example[tsProperty.name] = {}
-        else example[tsProperty.name] = generateExample(<string> tsProperty.tstype.basicType, tsMetaJson, buildPath)
+        else example[tsProperty.name] = generateExample(tsProperty.tstype.basicType as string, tsMetaJson, buildPath)
         break
       default:
         process.stdout.write(`could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`)

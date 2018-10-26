@@ -34,18 +34,18 @@ class OasRequestbodyGenerator {
 
     const requiredFields: any[] = this.requiredFields(parameterParam)
 
-    const required: boolean = <boolean> requiredFields.shift()
+    const required: boolean = requiredFields.shift() as boolean
 
     schema.required = requiredFields
 
     return {
-      description,
-      required,
       content: {
         'application/json': {
           schema
         }
-      }
+      },
+      description,
+      required
     }
   }
 
@@ -54,9 +54,9 @@ class OasRequestbodyGenerator {
    */
   private requiredFields(parameterParam: ParameterParam): (boolean|string)[] {
     if (!parameterParam || !parameterParam.required) return [false]
-    if (!Array.isArray(parameterParam.required)) return [<boolean> parameterParam.required]
+    if (!Array.isArray(parameterParam.required)) return [parameterParam.required as boolean]
 
-    return <(boolean|string)[]> parameterParam.required
+    return parameterParam.required as (boolean|string)[]
   }
 }
 

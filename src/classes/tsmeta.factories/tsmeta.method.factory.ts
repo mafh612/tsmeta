@@ -16,7 +16,6 @@ class TsMetaMethodFactory {
 
   /**
    * build TsMethod element
-   * @param methodDeclaration
    */
   public build(method: MethodDeclaration|MethodSignature): TsMethod {
     const name: string = PropertyNameToString(method.name)
@@ -31,8 +30,8 @@ class TsMetaMethodFactory {
     const tstype: TsType = this.tsMetaTypeFactory.build(method.type)
 
     return {
-      name,
       decorators,
+      name,
       parameters,
       tstype
     }

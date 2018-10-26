@@ -21,7 +21,7 @@ class TsMetaArgumentFactory {
         representation = ExpressionToString(expression)
         break
       case SyntaxKind.ObjectLiteralExpression:
-        representation = ObjectLiteralExpressionToString(<ObjectLiteralExpression> expression)
+        representation = ObjectLiteralExpressionToString(expression as ObjectLiteralExpression)
         break
       default:
     }

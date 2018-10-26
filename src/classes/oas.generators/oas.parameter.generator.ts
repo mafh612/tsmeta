@@ -10,10 +10,10 @@ class OasParameterGenerator {
 
   private parameterAnnotations: string[] = ['PathVariable', 'RequestParam', 'RequestHeader', 'CookieValue', 'ControllerParam']
   private parameterAnnotationMap: { [key: string]: string } = {
+    CookieValue: 'cookie',
     PathVariable: 'path',
-    RequestParam: 'query',
     RequestHeader: 'header',
-    CookieValue: 'cookie'
+    RequestParam: 'query'
   }
 
   /**
@@ -23,7 +23,8 @@ class OasParameterGenerator {
     let parameterDecorator: TsDecorator
 
     if (tsParameter.decorators) {
-      parameterDecorator = tsParameter.decorators.find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name)))
+      parameterDecorator = tsParameter.decorators
+        .find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name)))
     }
 
     if (!parameterDecorator) return undefined
@@ -33,13 +34,17 @@ class OasParameterGenerator {
     const $ref: string = parameterArgument.ref
     const allowEmptyValue: boolean = !parameterArgument.required
     const deprecated: boolean = false
-    const description: string = parameterArgument.description ? parameterArgument.description : `${parameterDecorator.name} ${tsParameter.name}`
+    const description: string = parameterArgument.description
+      ? parameterArgument.description
+      : `${parameterDecorator.name} ${tsParameter.name}`
     const example: any = parameterArgument.example
-    const _in: string = parameterArgument.in ? parameterArgument.in : this.parameterAnnotationMap[GetMappedAnnotation(parameterDecorator.name)]
+    const _in: string = parameterArgument.in
+      ? parameterArgument.in
+      : this.parameterAnnotationMap[GetMappedAnnotation(parameterDecorator.name)]
     const name: string = parameterArgument.name
 
     const requiredFields: any[] = this.requiredFields(parameterArgument)
-    const required: boolean = <boolean> requiredFields.shift()
+    const required: boolean = requiredFields.shift() as boolean
 
     const schema: any = parameterArgument.schema || { type: 'string' }
     schema.required = requiredFields
@@ -62,9 +67,9 @@ class OasParameterGenerator {
    */
   private requiredFields(parameterParam: ParameterParam): any[] {
     if (!parameterParam || !parameterParam.required) return [false]
-    if (!Array.isArray(parameterParam.required)) return [<boolean> parameterParam.required]
+    if (!Array.isArray(parameterParam.required)) return [parameterParam.required as boolean]
 
-    return <(boolean|string)[]> parameterParam.required
+    return parameterParam.required as (boolean|string)[]
   }
 }
 

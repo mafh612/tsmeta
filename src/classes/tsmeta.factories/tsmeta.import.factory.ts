@@ -10,7 +10,6 @@ class TsMetaImportFactory {
 
   /**
    * build TsImport element
-   * @param importDeclaration
    */
   public build(importDeclaration: ImportDeclaration): TsImport[] {
     const tsImports: TsImport[] = []

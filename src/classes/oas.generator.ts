@@ -41,8 +41,8 @@ class OasGenerator {
     return {
       components,
       info,
-      paths,
       openapi,
+      paths,
       security,
       servers,
       tags
@@ -96,14 +96,16 @@ class OasGenerator {
     let paths: { [key: string]: PathItem } = {}
 
     files.forEach((tsFile: TsFile) => {
-      const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'))
+      const controllerDecorator: TsDecorator = tsFile.tsClass.decorators
+        .find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'))
       const controllerParams: Parameter[] = tsFile.tsClass.decorators
         .filter((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('ControllerParam'))
         .map((tsDecorator: TsDecorator) => this.createControllerParams(tsDecorator))
       const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
-        const path: { [key: string]: PathItem } = this.oasPathGenerator.generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod, controllerParams)
+        const path: { [key: string]: PathItem } = this.oasPathGenerator
+          .generate(tsFile.tsClass.name, controllerArgument.representation, tsMethod, controllerParams)
 
         paths = deepAssign(paths, path)
       })
@@ -139,7 +141,8 @@ class OasGenerator {
     const schemas: { [key: string]: Schema } = {}
 
     files.forEach((tsFile: TsFile) => {
-      const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'))
+      const modelDecorator: TsDecorator = tsFile.tsClass.decorators
+        .find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'))
       const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments.pop().representation : {}
       const version: string = (modelParam && modelParam.version) ? `_${modelParam.version}` : ''
 
@@ -155,9 +158,9 @@ class OasGenerator {
       const example: any = modelParam.example
 
       schemas[schemaName] = {
-        type: 'object',
+        example,
         properties,
-        example
+        type: 'object'
       }
     })
 

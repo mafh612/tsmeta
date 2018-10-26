@@ -16,7 +16,7 @@ class TsMetaParameterFactory {
    * build TsParameter element
    */
   public build(parameterDeclaration: ParameterDeclaration): TsParameter {
-    const name: string = IdentifierToString(<Identifier> parameterDeclaration.name)
+    const name: string = IdentifierToString(parameterDeclaration.name as Identifier)
     const decorators: TsDecorator[] = parameterDeclaration.decorators
       ? parameterDeclaration.decorators.map((decorator: Decorator) => this.tsMetaDecoratorFactory.build(decorator))
       : undefined

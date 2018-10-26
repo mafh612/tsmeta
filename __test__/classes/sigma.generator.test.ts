@@ -8,7 +8,7 @@ let sigmaGenerator: SigmaGenerator
 let tsMeta: TsMeta
 
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/schema/package.mock.json',
+  basePackage: '__mock__/schema/package.mock.json',
   scanAdditionalPackages: [],
   showScannedFiles: true,
   showWrittenFiles: true,
@@ -16,7 +16,7 @@ const tsMetaConfigFake: TsMetaConfig = {
     compilerOptions: 'tsconfig.json',
     create: true,
     outputFilename: 'tsmeta.mock.json',
-    outputPath: '__mocks__'
+    outputPath: '__mock__'
   },
   sigmaConfig: {
     create: true,
@@ -36,7 +36,7 @@ const tsMetaConfigFake: TsMetaConfig = {
 
 beforeAll(() => {
   sigmaGenerator = new SigmaGenerator(tsMetaConfigFake.sigmaConfig)
-  const tsMetaString: string = fs.readFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' })
+  const tsMetaString: string = fs.readFileSync('__mock__/schema/tsmeta.mock.json', { encoding: 'utf8' })
   tsMeta = JSON.parse(tsMetaString)
 })
 
@@ -51,7 +51,7 @@ describe('SigmaGenerator test', () => {
   test('SigmaGenerator.generate()', async () => {
     const result: SigmaData = sigmaGenerator.generate(tsMeta)
 
-    fs.writeFile('__mocks__/schema/sigma.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
+    fs.writeFile('__mock__/schema/sigma.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
       if (err) console.log(err)// tslint:disable-line
     })
 

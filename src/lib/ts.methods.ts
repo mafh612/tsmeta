@@ -1,4 +1,5 @@
 // tslint:disable no-use-before-declare
+// tslint:disable max-file-line-count
 import {
   ArrayTypeNode,
   CompilerOptions,
@@ -25,8 +26,6 @@ import { TypescriptTypes } from './typescript.types.enum'
 
 /**
  * create typescript program file from rootNames
- * @param rootNames
- * @param compilerOptions
  */
 const createTypescriptProgram: ((rootNames: ReadonlyArray<string>, compilerOptions: CompilerOptions) => Program) = CreateProgram
 
@@ -54,7 +53,8 @@ const tokenToString: ((token: Identifier) => string) = (token: Identifier): stri
  * extract text from identifier
  * @param identifier<Identifier>
  */
-const identifierToString: ((identifier: Identifier) => string) = (identifier: Identifier): string => identifier.escapedText ? identifier.escapedText.toString() : ''
+const identifierToString: (identifier: Identifier) => string
+  = (identifier: Identifier): string => identifier.escapedText ? identifier.escapedText.toString() : ''
 
 /**
  * extract text from initializer
@@ -62,12 +62,12 @@ const identifierToString: ((identifier: Identifier) => string) = (identifier: Id
  */
 const initializerToString: ((initializer: Expression) => string|number|boolean) = (initializer: Expression): string|number|boolean => {
   switch (initializer.kind) {
-    case SyntaxKind.StringLiteral: return tokenToString(<Identifier> initializer)
-    case SyntaxKind.NumericLiteral: return +tokenToString(<Identifier> initializer)
+    case SyntaxKind.StringLiteral: return tokenToString(initializer as Identifier)
+    case SyntaxKind.NumericLiteral: return +tokenToString(initializer as Identifier)
     case SyntaxKind.TrueKeyword: return true
     case SyntaxKind.FalseKeyword: return false
-    case SyntaxKind.ObjectLiteralExpression: return objectLiteralExpressionToString(<ObjectLiteralExpression> initializer)
-    default: return tokenToString(<Identifier> initializer)
+    case SyntaxKind.ObjectLiteralExpression: return objectLiteralExpressionToString(initializer as ObjectLiteralExpression)
+    default: return tokenToString(initializer as Identifier)
   }
 }
 
@@ -76,7 +76,7 @@ const initializerToString: ((initializer: Expression) => string|number|boolean) 
  * @param propertyName<PropertyName>
  */
 const propertyNameToString: ((propertyName: PropertyName) => string)
-  = (propertyName: PropertyName): string => (<Identifier> propertyName).text
+  = (propertyName: PropertyName): string => (propertyName as Identifier).text
 
 /**
  * extract text from ObjectLiteralExpression
@@ -84,13 +84,13 @@ const propertyNameToString: ((propertyName: PropertyName) => string)
  */
 const objectLiteralExpressionToString: ((expression: ObjectLiteralExpression) => any) = (expression: ObjectLiteralExpression): any => {
   const expressionString: string = expression.getFullText(getSourceFile())
-  let obj: {} = {}
+  let obj: { [key: string]: any } = {}
 
   try {
     obj = evaluate(expressionString)
   } catch {
     expression.properties.forEach((propertyAssignment: PropertyAssignment): any => {
-      obj[identifierToString(<Identifier> propertyAssignment.name)] = initializerToString(propertyAssignment.initializer)
+      obj[identifierToString(propertyAssignment.name as Identifier)] = initializerToString(propertyAssignment.initializer)
     })
   }
 
@@ -101,15 +101,16 @@ const objectLiteralExpressionToString: ((expression: ObjectLiteralExpression) =>
  * extract text from token
  * @param identifier<Identifier>
  */
-const expressionToString: ((expression: Expression) => string) = (expression: Expression): string => (<Identifier> expression).text
+const expressionToString: ((expression: Expression) => string) = (expression: Expression): string => (expression as Identifier).text
 
 /**
  * extract TsType from IndexSignature
  */
-const indexSignaturToTsType: ((indexSignature: IndexSignatureDeclaration) => TsType) = (indexSignature: IndexSignatureDeclaration): TsType => {
+const indexSignaturToTsType: (indexSignature: IndexSignatureDeclaration) => TsType
+  = (indexSignature: IndexSignatureDeclaration): TsType => {
     const tsType: TsType = new TsTypeClass({ basicType: 'key', typescriptType: TypescriptTypes.MAP})
-    tsType.keyType = <string> typeNodeToTsType(indexSignature.parameters[0].type).basicType
-    tsType.valueType = <string> typeNodeToTsType(indexSignature.type).basicType
+    tsType.keyType = typeNodeToTsType(indexSignature.parameters[0].type).basicType as string
+    tsType.valueType = typeNodeToTsType(indexSignature.type).basicType as string
 
     return tsType
 }
@@ -119,8 +120,8 @@ const indexSignaturToTsType: ((indexSignature: IndexSignatureDeclaration) => TsT
  */
 const propertySignaturToTsType: ((propertySignature: PropertySignature) => TsType) = (propertySignature: PropertySignature): TsType => {
     const tsType: TsType = new TsTypeClass({ basicType: 'key', typescriptType: TypescriptTypes.MAP})
-    tsType.keyType = identifierToString(<Identifier> propertySignature.name)
-    tsType.valueType = <string> typeNodeToTsType(propertySignature.type).basicType
+    tsType.keyType = identifierToString(propertySignature.name as Identifier)
+    tsType.valueType = typeNodeToTsType(propertySignature.type).basicType as string
 
     return tsType
 }
@@ -128,9 +129,10 @@ const propertySignaturToTsType: ((propertySignature: PropertySignature) => TsTyp
 /**
  * extract TsType from TypeNode
  */
+// tslint:disable cyclomatic-complexity
 const typeNodeToTsType: (
-  (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode) => TsType)
-  = (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode): TsType => {
+  typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode) => TsType
+    = (typeNode: TypeNode|TypeElement|IndexSignatureDeclaration|ArrayTypeNode|UnionTypeNode): TsType => {
   let tsType: TsType
 
   switch (typeNode.kind) {
@@ -150,15 +152,15 @@ const typeNodeToTsType: (
       tsType = new TsTypeClass({ basicType: 'object', typescriptType: TypescriptTypes.BASIC })
       break
     case SyntaxKind.IndexSignature:
-      tsType = indexSignaturToTsType(<IndexSignatureDeclaration> typeNode)
+      tsType = indexSignaturToTsType(typeNode as IndexSignatureDeclaration)
       break
     case SyntaxKind.PropertySignature:
-      tsType = propertySignaturToTsType(<PropertySignature> typeNode)
+      tsType = propertySignaturToTsType(typeNode as PropertySignature)
       break
     case SyntaxKind.ArrayType:
-      const arrayType: TsType = new TsTypeClass(typeNodeToTsType((<ArrayTypeNode> typeNode).elementType))
+      const arrayType: TsType = new TsTypeClass(typeNodeToTsType((typeNode as ArrayTypeNode).elementType))
 
-      if ((<ArrayTypeNode> typeNode).elementType.kind === SyntaxKind.ArrayType) {
+      if ((typeNode as ArrayTypeNode).elementType.kind === SyntaxKind.ArrayType) {
         arrayType.valueType = arrayType.basicType
         arrayType.basicType = 'array'
       }
@@ -167,24 +169,25 @@ const typeNodeToTsType: (
       tsType = arrayType
       break
     case SyntaxKind.UnionType:
-      const unionTypes: TsType[] = (<UnionTypeNode> typeNode).types.map(typeNodeToTsType).filter((_tsType: TsType) => !!_tsType)
+      const unionTypes: TsType[] = (typeNode as UnionTypeNode).types.map(typeNodeToTsType).filter((_tsType: TsType) => !!_tsType)
       let mappedUnionTypes: string|string[] = ''
 
-      if (unionTypes) mappedUnionTypes = unionTypes.map((ut: TsType): string => <string> ut.basicType)
+      if (unionTypes) mappedUnionTypes = unionTypes.map((ut: TsType): string => ut.basicType as string)
 
       tsType = new TsTypeClass({ basicType: mappedUnionTypes, typescriptType: TypescriptTypes.MULTIPLE })
 
       break
     case SyntaxKind.TypeLiteral:
-      const tsTypes: TsType[] = (<TypeLiteralNode> typeNode).members.map((typeElement: TypeElement) => <TsType> typeNodeToTsType(typeElement))
+      const tsTypes: TsType[] = (typeNode as TypeLiteralNode).members
+        .map((typeElement: TypeElement) => typeNodeToTsType(typeElement) as TsType)
 
       if (tsTypes.length > 1) {
         tsType = tsTypes.reduce((prev: TsType, curr: TsType) => {
-          if (Array.isArray(prev.keyType)) prev.keyType.push(<string> curr.keyType)
-          else prev.keyType = [prev.keyType, <string> curr.keyType]
+          if (Array.isArray(prev.keyType)) prev.keyType.push(curr.keyType as string)
+          else prev.keyType = [prev.keyType, curr.keyType as string]
 
-          if (Array.isArray(prev.valueType)) prev.valueType.push(<string> curr.valueType)
-          else prev.valueType = [prev.valueType, <string> curr.valueType]
+          if (Array.isArray(prev.valueType)) prev.valueType.push(curr.valueType as string)
+          else prev.valueType = [prev.valueType, curr.valueType as string]
 
           return prev
         })
@@ -194,24 +197,24 @@ const typeNodeToTsType: (
 
       break
     case SyntaxKind.TypeReference:
-      let basicType: string = identifierToString(<Identifier> (<TypeReferenceNode> typeNode).typeName)
+      let basicType: string = identifierToString((typeNode as TypeReferenceNode).typeName as Identifier)
       let keyType: string
       let valueType: string
       let typescriptType: TypescriptTypes = TypescriptTypes.REFERENCE
 
-      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Array') {
-        basicType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
+      if ((typeNode as TypeReferenceNode).typeArguments && basicType === 'Array') {
+        basicType = typeNodeToTsType((typeNode as TypeReferenceNode).typeArguments[0]).basicType as string
         typescriptType = TypescriptTypes.ARRAY
       }
 
-      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Map') {
-        keyType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
-        valueType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[1]).basicType
+      if ((typeNode as TypeReferenceNode).typeArguments && basicType === 'Map') {
+        keyType = typeNodeToTsType((typeNode as TypeReferenceNode).typeArguments[0]).basicType as string
+        valueType = typeNodeToTsType((typeNode as TypeReferenceNode).typeArguments[1]).basicType as string
         typescriptType = TypescriptTypes.MAP
       }
 
-      if ((<TypeReferenceNode> typeNode).typeArguments && basicType === 'Promise') {
-        valueType = <string> typeNodeToTsType((<TypeReferenceNode> typeNode).typeArguments[0]).basicType
+      if ((typeNode as TypeReferenceNode).typeArguments && basicType === 'Promise') {
+        valueType = typeNodeToTsType((typeNode as TypeReferenceNode).typeArguments[0]).basicType as string
         typescriptType = TypescriptTypes.PROMISE
       }
 
@@ -225,7 +228,7 @@ const typeNodeToTsType: (
       tsType = new TsTypeClass({ basicType: 'undefined', typescriptType: TypescriptTypes.UNTYPED })
   }
 
-  if (tsType && 'createRepresentation' in tsType) (<TsTypeClass> tsType).createRepresentation()
+  if (tsType && 'createRepresentation' in tsType) (tsType as TsTypeClass).createRepresentation()
 
   return tsType
 }

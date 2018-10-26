@@ -26,30 +26,31 @@ class TsTypeClass implements TsType {
   public createRepresentation(): void {
     switch (this.typescriptType) {
       case TypescriptTypes.BASIC:
-        this.representation = <string> this.basicType
+        this.representation = this.basicType as string
         break
       case TypescriptTypes.MULTIPLE:
-        this.representation = (<string[]> this.basicType).join('|')
+        this.representation = (this.basicType as string[]).join('|')
         break
       case TypescriptTypes.ARRAY:
-        this.representation = <string> `${this.basicType}[]`
+        this.representation = `${this.basicType}[]` as string
         break
       case TypescriptTypes.MAP:
-        if (Array.isArray(this.valueType))  this.representation = <string> `Map<${this.keyType}, ${this.valueType.join('|')}>`
-        else this.representation = <string> `Map<${this.keyType}, ${this.valueType}>`
+        if (Array.isArray(this.valueType))  this.representation = `Map<${this.keyType}, ${this.valueType.join('|')}>` as string
+        else this.representation = `Map<${this.keyType}, ${this.valueType}>` as string
         break
       case TypescriptTypes.REFERENCE:
-        this.representation = <string> this.basicType
+        this.representation = this.basicType as string
         break
       case TypescriptTypes.PROMISE:
         this.representation = `Promise<${this.valueType}>`
         break
       case TypescriptTypes.PROP:
-        const propTypes: string = (<string[]> this.keyType).map((keyType: string, i: number) => `${keyType}: ${this.valueType[i]}`).join('; ')
+        const propTypes: string = (this.keyType as string[])
+          .map((keyType: string, i: number) => `${keyType}: ${this.valueType[i]}`).join('; ')
         this.representation = `{ ${propTypes} }`
         break
       case TypescriptTypes.UNTYPED:
-        this.representation = <string> this.basicType
+        this.representation = this.basicType as string
         break
       default:
     }

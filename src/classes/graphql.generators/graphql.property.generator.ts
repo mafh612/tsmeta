@@ -26,14 +26,14 @@ class GraphQLPropertyGenerator {
       : undefined
 
     const propertyParam: PropertyParam = (propertyArgument && propertyArgument.representation)
-      ? <PropertyParam> propertyArgument.representation
+      ? propertyArgument.representation as PropertyParam
       : undefined
 
     switch (tsType.typescriptType) {
       case TypescriptTypes.ARRAY:
         const arrayType: string = propertyParam && propertyParam.format
           ? this.mapTypeToGraphQLType(propertyParam.format)
-          : this.mapTypeToGraphQLType(tsProperty.tstype.basicType, <string> tsProperty.tstype.valueType)
+          : this.mapTypeToGraphQLType(tsProperty.tstype.basicType, tsProperty.tstype.valueType as string)
 
         if (tsProperty.tstype.basicType === 'array') {
           return `${tsProperty.name}: [[${arrayType}]]`
@@ -76,7 +76,7 @@ class GraphQLPropertyGenerator {
       case 'int64': return 'Int'
       case 'float': return 'Float'
       case 'number': return 'Int'
-      default: return <string> format
+      default: return format as string
     }
   }
 }

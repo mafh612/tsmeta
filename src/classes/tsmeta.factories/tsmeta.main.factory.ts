@@ -19,7 +19,6 @@ class TsMetaMainFactory {
 
   /**
    * build TsClass element
-   * @param classDeclaration
    */
   public build(declaration: InterfaceDeclaration): TsMain {
     const name: string = IdentifierToString(declaration.name)

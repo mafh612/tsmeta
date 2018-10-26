@@ -25,7 +25,6 @@ class SigmaGenerator {
 
   /**
    * generate SigmaData container
-   * @param tsMeta
    */
   public generate(tsMeta: TsMeta): SigmaData {
     if (this.sigmaConfig.createNodes.files) {
@@ -131,8 +130,12 @@ class SigmaGenerator {
     })
 
     edges.forEach((edge: SigmaEdge) => {
-      if (this.nodes.some((node: SigmaNode) => edge.source === node.id)) this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementTypes.PACKAGE, 1))
-      if (this.nodes.some((node: SigmaNode) => edge.target === node.id)) this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementTypes.PACKAGE, 1))
+      if (this.nodes.some((node: SigmaNode) => edge.source === node.id)) {
+        this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementTypes.PACKAGE, 1))
+      }
+      if (this.nodes.some((node: SigmaNode) => edge.target === node.id)) {
+        this.nodes.push(this.sigmaNodeGenerator.generate(edge.source, edge.source, ElementTypes.PACKAGE, 1))
+      }
     })
 
     return edges

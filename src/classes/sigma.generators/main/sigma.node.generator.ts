@@ -8,10 +8,6 @@ class SigmaNodeGenerator {
 
   /**
    * generate single SigmaNode
-   * @param id
-   * @param label
-   * @param elementType
-   * @param size
    */
   public generate(id: string, label: string, elementType: ElementTypes, size: number): SigmaNode {
     const color: string = elementType.color
@@ -21,10 +17,10 @@ class SigmaNodeGenerator {
 
     return {
       color,
+      etype,
       id,
       label,
       size,
-      etype,
       x,
       y
     }

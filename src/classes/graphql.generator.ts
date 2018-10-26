@@ -13,7 +13,6 @@ class GraphQLGenerator {
 
   /**
    * generate GraphQLSchema files
-   * @param tsMeta
    */
   public generate(tsMeta: TsMeta): { [key: string]: string } {
     const graphQLSchema: { [key: string]: string } = {}

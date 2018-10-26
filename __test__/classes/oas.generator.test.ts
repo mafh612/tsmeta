@@ -8,7 +8,7 @@ let oasGenerator: OasGenerator
 let tsMeta: TsMeta
 
 const tsMetaConfigFake: TsMetaConfig = {
-  basePackage: '__mocks__/package.mock.json',
+  basePackage: '__mock__/package.mock.json',
   scanAdditionalPackages: [],
   showScannedFiles: false,
   showWrittenFiles: false,
@@ -16,12 +16,12 @@ const tsMetaConfigFake: TsMetaConfig = {
     compilerOptions: 'tsconfig.json',
     create: true,
     outputFilename: 'schema/tsmeta.mock.json',
-    outputPath: '__mocks__'
+    outputPath: '__mock__'
   },
   oasConfig: {
     create: true,
     outputFilename: 'openapi.mock.json',
-    outputPath: '__mocks__',
+    outputPath: '__mock__',
     outputFormat: 'json',
     openapistring: '3.0.0',
     annotationsMap: {
@@ -32,7 +32,7 @@ const tsMetaConfigFake: TsMetaConfig = {
 
 beforeAll(() => {
   oasGenerator = new OasGenerator(tsMetaConfigFake.oasConfig)
-  const tsMetaString: string = fs.readFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' })
+  const tsMetaString: string = fs.readFileSync('__mock__/schema/tsmeta.mock.json', { encoding: 'utf8' })
   tsMeta = JSON.parse(tsMetaString)
 })
 
@@ -47,7 +47,7 @@ describe('OasGenerator test', () => {
   test('OasGenerator.generate()', async () => {
     const result: Openapi = oasGenerator.generate(tsMeta)
 
-    fs.writeFile('__mocks__/schema/openapi.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
+    fs.writeFile('__mock__/schema/openapi.mock.json', JSON.stringify(result, undefined, 4), (err) => { // tslint:disable-line
       if (err) console.log(err)// tslint:disable-line
     })
 

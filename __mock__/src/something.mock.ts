@@ -5,31 +5,31 @@ import { SimpleMock } from './simple.mock'
  * class SomethingMock
  */
 @Model({
-  version: 'v1',
   example: {
-    whatever: 'any',
-    indifferent: 'boolean|number|string|SimpleMock',
-    truth: true,
     count: 5,
-    text: 'string',
-    much: ['string1', 'string2'],
-    muchOther: [{ baseDirContent: ['nothing'] }],
-    many: ['string1', 'string2'],
-    manyOther: [{ baseDirContent: ['nothing'] }],
-    that: { that: 'this' },
-    thatOther: '{ [key: string]: SimpleMock }',
-    mapped: 'Map<string, string>',
-    mappedOther: 'Map<string, SimpleMock>',
-    prop: '{ name: string; tel: number }',
-    propOther: '{ name: string; tel: number; simple: SimpleMock }',
     dump: [
       [
         'eins',
         'zwü',
         'drü'
       ]
-    ]
-  }
+    ],
+    indifferent: 'boolean|number|string|SimpleMock',
+    many: ['string1', 'string2'],
+    manyOther: [{ baseDirContent: ['nothing'] }],
+    mapped: 'Map<string, string>',
+    mappedOther: 'Map<string, SimpleMock>',
+    much: ['string1', 'string2'],
+    muchOther: [{ baseDirContent: ['nothing'] }],
+    prop: '{ name: string; tel: number }',
+    propOther: '{ name: string; tel: number; simple: SimpleMock }',
+    text: 'string',
+    that: { that: 'this' },
+    thatOther: '{ [key: string]: SimpleMock }',
+    truth: true,
+    whatever: 'any'
+  },
+  version: 'v1'
 })
 class SomethingMock {
 

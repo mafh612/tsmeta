@@ -14,7 +14,6 @@ class TsMetaPropertyFactory {
 
   /**
    * build TsProperty element
-   * @param propertyDeclaration
    */
   public build(property: PropertyDeclaration|PropertySignature): TsProperty {
     let decorators: TsDecorator[]

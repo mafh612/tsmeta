@@ -2,7 +2,8 @@ import { readFileSync as ReadFileSync } from 'fs'
 import { TsMeta } from '../../src'
 import { GenerateExample } from '../../src/api/api.generate.example'
 
-const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mocks__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
+const tsmeta: TsMeta = JSON.parse(ReadFileSync('__mock__/schema/tsmeta.mock.json', { encoding: 'utf8' }))
+// tslint:disable-next-line no-any
 const expectedExample: any = {
   count: 1,
   dump: [['text']],
@@ -27,6 +28,7 @@ const expectedExample: any = {
  */
 describe('GenerateExample test', () => {
   test('generateExample', async () => {
+    // tslint:disable-next-line no-any
     const example: any = GenerateExample('SomethingMock', tsmeta)
 
     expect(example.much).toEqual(expectedExample.much)

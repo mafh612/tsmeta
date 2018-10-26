@@ -43,10 +43,10 @@ class OasOperationGenerator {
     const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
     return {
-      tags: [controllerName],
-      requestBody,
       parameters,
-      responses
+      requestBody,
+      responses,
+      tags: [controllerName]
     }
   }
 }

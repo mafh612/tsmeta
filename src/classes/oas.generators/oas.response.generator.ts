@@ -14,7 +14,8 @@ class OasResponseGenerator {
    * generate Response
    */
   public generate(tsMethod: TsMethod): { [key: number]: Response } {
-    const responseDecorators: TsDecorator[] = tsMethod.decorators.filter((tsDecorator: TsDecorator) => tsDecorator.name.includes('Response'))
+    const responseDecorators: TsDecorator[] = tsMethod.decorators
+      .filter((tsDecorator: TsDecorator) => tsDecorator.name.includes('Response'))
     const response: { [key: string]: Response } = {}
 
     GetMappedAnnotation('any') // tslint:disable-line
@@ -22,12 +23,14 @@ class OasResponseGenerator {
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
       const responseArgument: TsArgument = responseDecorator.tsarguments.pop()
       const responseParam: ResponseParam = responseArgument
-        ? <ResponseParam> responseArgument.representation
+        ? responseArgument.representation as ResponseParam
         : undefined
       const statusCode: number = responseParam && responseParam.statusCode || this.httpStatusOK
 
       response[statusCode] = { ...this.createContent(responseParam) }
-      response[statusCode].description = (responseParam && responseParam.description) ? responseParam.description : this.createDescription(responseDecorator, responseParam)
+      response[statusCode].description = (responseParam && responseParam.description)
+        ? responseParam.description
+        : this.createDescription(responseDecorator, responseParam)
     })
 
     return response
@@ -67,8 +70,8 @@ class OasResponseGenerator {
 
     if (responseParam && responseParam.schema) {
       const schema: Schema = {
-        properties: {},
-        example: responseParam.example || undefined
+        example: responseParam.example || undefined,
+        properties: {}
       }
 
       Object.keys(responseParam.schema).forEach((key: string) => {

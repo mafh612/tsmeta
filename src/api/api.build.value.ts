@@ -8,7 +8,8 @@ const _float: number = 0.1
 /**
  * build value by literal types
  */
-const buildValue: (propertyType: string, decorator: TsDecorator) => boolean|number|string = (propertyType: string, decorator: TsDecorator): boolean|number|string => {
+const buildValue: (propertyType: string, decorator: TsDecorator) => boolean|number|string
+  = (propertyType: string, decorator: TsDecorator): boolean|number|string => {
   const arg: TsArgument = decorator && decorator.tsarguments ? decorator.tsarguments.pop() : undefined
   switch (propertyType) {
     case 'boolean': return _boolean
@@ -20,7 +21,8 @@ const buildValue: (propertyType: string, decorator: TsDecorator) => boolean|numb
   }
 }
 
-const buildMalformedValue: (propertyType: string, decorator: TsDecorator) => boolean|number|string = (propertyType: string, decorator: TsDecorator): boolean|number|string => {
+const buildMalformedValue: (propertyType: string, decorator: TsDecorator) => boolean|number|string
+  = (propertyType: string, decorator: TsDecorator): boolean|number|string => {
   const arg: TsArgument = decorator && decorator.tsarguments ? decorator.tsarguments.pop() : undefined
   switch (propertyType) {
     case 'boolean': return _int

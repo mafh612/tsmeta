@@ -10,8 +10,6 @@ class OasPropertyGenerator {
 
   /**
    * generate property schema
-   * @param tsProperty
-   * @param propertyParam
    */
   public generate(tsProperty: TsProperty, propertyParam: PropertyParam, parameterParam?: ParameterParam): Schema {
     let schema: Schema = {}
@@ -22,16 +20,16 @@ class OasPropertyGenerator {
         schema = this.createArraySchema(tsProperty, version)
         break
       case TypescriptTypes.BASIC:
-        schema = { type: <string> tsProperty.tstype.basicType }
+        schema = { type: tsProperty.tstype.basicType as string }
         break
       case TypescriptTypes.MAP:
         schema = this.createMapSchema(tsProperty, version)
         break
       case TypescriptTypes.MULTIPLE:
-        schema = { type: (<string[]> tsProperty.tstype.basicType).join('|') }
+        schema = { type: (tsProperty.tstype.basicType as string[]).join('|') }
         break
       case TypescriptTypes.PROMISE:
-        schema = { type: <string> tsProperty.tstype.valueType }
+        schema = { type: tsProperty.tstype.valueType as string }
         break
       case TypescriptTypes.PROP:
         schema = this.createPropSchema(tsProperty, version)
@@ -51,18 +49,16 @@ class OasPropertyGenerator {
       default:
     }
 
-    if (propertyParam && propertyParam.format) schema.format = <string> propertyParam.format
+    if (propertyParam && propertyParam.format) schema.format = propertyParam.format as string
 
     return schema
   }
 
   /**
    * create array schema for property
-   * @param tsProperty
-   * @param version
    */
   private createArraySchema(tsProperty: TsProperty, version: string): Schema {
-    const typeName: string = <string> tsProperty.tstype.basicType
+    const typeName: string = tsProperty.tstype.basicType as string
 
     if (typeName === 'array') {
       const subProperty: TsProperty = {
@@ -78,8 +74,8 @@ class OasPropertyGenerator {
       }
 
       return {
-        type: 'array',
-        items: this.createArraySchema(subProperty, version)
+        items: this.createArraySchema(subProperty, version),
+        type: 'array'
       }
     }
 
@@ -89,11 +85,9 @@ class OasPropertyGenerator {
 
   /**
    * create map schema for property
-   * @param tsProperty
-   * @param version
    */
   private createMapSchema(tsProperty: TsProperty, version: string): Schema {
-    const propertiesType: string = <string> tsProperty.tstype.valueType
+    const propertiesType: string = tsProperty.tstype.valueType as string
     let _type: string
     let $ref: string
 
@@ -105,12 +99,10 @@ class OasPropertyGenerator {
 
   /**
    * create prop schema for property
-   * @param tsProperty
-   * @param version
    */
   private createPropSchema(tsProperty: TsProperty, version: string): Schema {
     const properties: { [key: string]: Schema } = {}
-    const keyTypes: string[] = <string[]> tsProperty.tstype.keyType
+    const keyTypes: string[] = tsProperty.tstype.keyType as string[]
 
     keyTypes.forEach((key: string, index: number) => {
       const value: string = tsProperty.tstype.valueType[index]

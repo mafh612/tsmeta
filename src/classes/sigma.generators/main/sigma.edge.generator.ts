@@ -7,9 +7,6 @@ class SigmaEdgeGenerator {
 
   /**
    * generate single SigmaEdge Element
-   * @param source
-   * @param target
-   * @param label
    */
   public generate(source: string, target: string, label?: string): SigmaEdge {
     return {

@@ -4,8 +4,8 @@ import { ModelParam, ParameterParam, PropertyParam, ResponseParam } from './anno
  * decorator functions
  */
 const classFunction: ((target: any) => any) = (target: any): any => target
-const methodFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[<string> key]
-const propertyFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[<string> key]
+const methodFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[key as string]
+const propertyFunction: ((target: any, key: string|Symbol) => any) = (target: any, key: string|Symbol): any => target[key as string]
 const parameterFunction: ((target: any, key: string|Symbol, index: number) => any) = (target: any, key: string|Symbol, index: number): any => target[<string> key][index] // tslint:disable-line
 /**
  * class annotations

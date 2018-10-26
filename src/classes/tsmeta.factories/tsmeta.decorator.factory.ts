@@ -12,21 +12,20 @@ class TsMetaDecoratorFactory {
 
   /**
    * build TsDecorator element
-   * @param decorator
    */
   public build(decorator: Decorator): TsDecorator {
     let expression: any
     if (isCallExpression(decorator.expression)) {
-      expression = <CallExpression> decorator.expression
+      expression = decorator.expression as CallExpression
     } else {
-      expression = <Identifier> decorator.expression
+      expression = decorator.expression as Identifier
     }
 
     let name: string
     let tsarguments: TsArgument[]
 
-    if (expression.expression) name = IdentifierToString(<Identifier> expression.expression)
-    else name = IdentifierToString(<Identifier> expression)
+    if (expression.expression) name = IdentifierToString(expression.expression as Identifier)
+    else name = IdentifierToString(expression as Identifier)
 
     if (expression.arguments) tsarguments = expression.arguments
       .map((xexpression: Expression) => this.tsMetaArgumentFactory.build(xexpression))

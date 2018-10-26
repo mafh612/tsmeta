@@ -43,7 +43,6 @@ class TsMetaFactory {
 
   /**
    * scan dependencies and devDependencies for linked packages
-   * @param baseTsPackage
    */
   private scanAdditionalPackages(baseTsPackage: TsPackage): TsPackage[] {
     let packagePaths: string[] = []
@@ -74,15 +73,17 @@ class TsMetaFactory {
     const program: Program = CreateTypescriptProgram([Resolve(pckg.source)], compilerOptions)
 
     return {
-      name: pckg.name,
       files: program.getSourceFiles()
         .filter((sourceFile: SourceFile) => sourceFile.fileName.includes(baseSourcePath))
         .map((sourceFile: SourceFile): TsFile => {
           setSourceFile(sourceFile)
-          if (process.env.NODE_ENV !== 'test' && this.tsMetaConfig.showScannedFiles) process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
+          if (process.env.NODE_ENV !== 'test' && this.tsMetaConfig.showScannedFiles) {
+            process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
+          }
 
           return this.tsMetaFileFactory.build(sourceFile)
-        })
+        }),
+      name: pckg.name
     }
   }
 }
