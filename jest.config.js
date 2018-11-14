@@ -8,6 +8,7 @@ module.exports = {
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.ts",
+      "!**/bin.ts",
       "!**/index.ts",
       "!**/*.d.ts",
       "!**/node_modules/**",
