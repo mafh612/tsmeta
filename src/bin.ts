@@ -1,13 +1,17 @@
 #!/usr/bin/env node
+import { TsMetaExecution } from './tsmeta.execute' // tslint:disable-line
 
 /**
  * bin file
  */
-'use strict'
+'use strict' // tslint:disable-line
 
-const [nodePath, execPath, ...args]: string[] = process.argv
+const [, , ...args]: string[] = process.argv
 
-console.log(args) // tslint:disable-line
+const projectFilenameIndex: number = args.findIndex((it: string): boolean => (it === '--project' || it === '-p')) + 1
+const tsMetaConfigFilename: string = args[projectFilenameIndex] || 'tsmeta.config.json'
 
-
-// import './tsmeta.execute' // tslint:disable-line
+if (process.env.NODE_ENV !== 'test') {
+  const tsMetaExecution: TsMetaExecution = new TsMetaExecution(tsMetaConfigFilename)
+  tsMetaExecution.execute()
+}

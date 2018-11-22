@@ -1,7 +1,5 @@
 /**
- * export all mocks
+ * export all
  */
 export * from './controller.mock'
-export * from './incoming.mock'
-export * from './simple.mock'
-export * from './something.mock'
+export * from './model.mock'
