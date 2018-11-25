@@ -47,7 +47,6 @@ class OasParameterGenerator {
     const required: boolean = requiredFields.shift() as boolean
 
     const schema: any = parameterArgument.schema || { type: 'string' }
-    schema.required = requiredFields
 
     return {
       $ref,

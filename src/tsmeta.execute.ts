@@ -18,7 +18,6 @@ import { TsMeta } from './lib/tsmeta.schema'
 class TsMetaExecution {
 
   private tsMetaConfigFilename: string = 'tsmeta.config.json'
-  private ignoreFiles: string[]
   private tsMetaConfig: TsMetaConfig
   private tsMeta: TsMeta
   private tsMetaFactory: TsMetaFactory
@@ -32,9 +31,8 @@ class TsMetaExecution {
   private graphQLSchemas: { [key: string]: string }
   private graphQLGenerator: GraphQLGenerator
 
-  constructor(tsMetaConfigFilename?: string, ignoreFiles?: string[]) {
+  constructor(tsMetaConfigFilename?: string) {
     if (tsMetaConfigFilename) this.tsMetaConfigFilename = tsMetaConfigFilename
-    if (ignoreFiles) this.ignoreFiles = ignoreFiles
   }
 
   /**

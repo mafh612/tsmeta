@@ -39,7 +39,7 @@ class OasPropertyGenerator {
           schema.properties = parameterParam.schema
           schema.example = parameterParam.example
         } else {
-          schema = { type: 'object', $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
+          schema = { $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
         }
 
         break
@@ -111,7 +111,7 @@ class OasPropertyGenerator {
       else properties[key] = { $ref: `#/components/schemas/${value}${version}` }
     })
 
-    return { type: 'object', properties }
+    return { properties }
   }
 }
 
