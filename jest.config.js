@@ -8,6 +8,7 @@ module.exports = {
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.ts",
+      "!**/bin.ts",
       "!**/index.ts",
       "!**/*.d.ts",
       "!**/node_modules/**",
@@ -29,7 +30,7 @@ module.exports = {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__test__/.*|(\\.|/)(test|spec))\\.ts$",
+    "testRegex": "((\\.|/)(test))\\.ts$",
     "moduleFileExtensions": [
       "ts",
       "js"

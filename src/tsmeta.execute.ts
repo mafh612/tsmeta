@@ -17,6 +17,7 @@ import { TsMeta } from './lib/tsmeta.schema'
  */
 class TsMetaExecution {
 
+  private tsMetaConfigFilename: string = 'tsmeta.config.json'
   private tsMetaConfig: TsMetaConfig
   private tsMeta: TsMeta
   private tsMetaFactory: TsMetaFactory
@@ -29,6 +30,10 @@ class TsMetaExecution {
 
   private graphQLSchemas: { [key: string]: string }
   private graphQLGenerator: GraphQLGenerator
+
+  constructor(tsMetaConfigFilename?: string) {
+    if (tsMetaConfigFilename) this.tsMetaConfigFilename = tsMetaConfigFilename
+  }
 
   /**
    * execute tsmeta
@@ -61,7 +66,7 @@ class TsMetaExecution {
    */
   private loadConfigFile(): TsMetaConfig {
     try {
-      return JSON.parse(ReadFileSync(ResolvePath('tsmeta.config.json'), { encoding: 'utf8' }))
+      return JSON.parse(ReadFileSync(ResolvePath(this.tsMetaConfigFilename), { encoding: 'utf8' }))
     } catch (err) {
       if (err) process.stderr.write(err.toString())
       else process.stderr.write('failed to load config file')
@@ -165,8 +170,3 @@ class TsMetaExecution {
 }
 
 export { TsMetaExecution }
-
-if (process.env.NODE_ENV !== 'test') {
-  const tsMetaExecution: TsMetaExecution = new TsMetaExecution()
-  tsMetaExecution.execute()
-}

@@ -1,4 +1,8 @@
 {
-  "name": "mock",
-  "source": "__mocks__/src/index.ts"
+  "name": "tsmeta",
+  "source": "__mock__/src/index.ts",
+  "version": "0.7.13",
+  "description": "typescript project meta analysis",
+  "author": "mafh",
+  "license": "MIT"
 }

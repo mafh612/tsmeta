@@ -1,0 +1,19 @@
+{
+
+  "basePackage": "__mock__/package.mock.json",
+  "scanAdditionalPackages": false,
+  "showScannedFiles": true,
+  "showWrittenFiles": true,
+  "metaConfig": {
+
+  },
+  "sigmaConfig": {
+
+  },
+  "oasConfig": {
+
+  },
+  "graphQLConfig": {
+
+  }
+}
