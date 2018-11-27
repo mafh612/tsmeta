@@ -31,7 +31,7 @@ class OasParameterGenerator {
 
     const parameterArgument: ParameterParam = parameterDecorator.tsarguments.pop().representation
 
-    const $ref: string = parameterArgument.ref
+    const $ref: string = parameterArgument.ref ? parameterArgument.ref : undefined
     const allowEmptyValue: boolean = !parameterArgument.required
     const deprecated: boolean = false
     const description: string = parameterArgument.description
