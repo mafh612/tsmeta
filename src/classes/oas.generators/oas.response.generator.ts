@@ -28,9 +28,12 @@ class OasResponseGenerator {
       const statusCode: number = responseParam && responseParam.statusCode || this.httpStatusOK
 
       response[statusCode] = { ...this.createContent(responseParam) }
-      response[statusCode].description = (responseParam && responseParam.description)
-        ? responseParam.description
-        : this.createDescription(responseDecorator, responseParam)
+      response[statusCode].description = responseParam && responseParam.description
+        || this.createDescription(responseDecorator, responseParam)
+
+      if ('$ref' in response[statusCode]) {
+        response[statusCode] = { $ref: response[statusCode].$ref }
+      }
     })
 
     return response
