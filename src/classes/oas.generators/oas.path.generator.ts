@@ -28,9 +28,9 @@ class OasPathGenerator {
     const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
 
     const mappingDecorator: TsDecorator = tsMethod.decorators
-      .reduce((prev: TsDecorator, curr: TsDecorator): TsDecorator => (usedMappingAnnotation.includes(curr.name)) ? curr : prev)
+      .reduce((prev: TsDecorator, curr: TsDecorator): TsDecorator => usedMappingAnnotation.includes(curr.name) ? curr : prev)
 
-    const methodPath: string = mappingDecorator.tsarguments && mappingDecorator.tsarguments.pop().representation
+    const methodPath: string = mappingDecorator.tsarguments.pop().representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
 
     this.oasOperationGeneration = new OasOperationGenerator()
@@ -67,12 +67,12 @@ class OasPathGenerator {
   private combineMappingAnnotations(): string[] {
     const usedMappingAnnotation: string[] = []
 
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.GetRequest || 'GetRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.PostRequest || 'PostRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.PutRequest || 'PutRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.PatchRequest || 'PatchRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.DeleteRequest || 'DeleteRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap.HeadRequest || 'HeadRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.GetRequest || 'GetRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PostRequest || 'PostRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PutRequest || 'PutRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PatchRequest || 'PatchRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.DeleteRequest || 'DeleteRequest')
+    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.HeadRequest || 'HeadRequest')
 
     return usedMappingAnnotation
   }
@@ -82,7 +82,7 @@ class OasPathGenerator {
    */
   private createFullPath(controllerPath: string, methodPath: string): string {
     const controllerPathArray: string[] = controllerPath .split('/').filter((part: string) => part !== '')
-    const methodPathArray: string[] = methodPath .split('/').filter((part: string) => part !== '')
+    const methodPathArray: string[] = methodPath && methodPath.split('/').filter((part: string) => part !== '') || []
 
     let fullPathArray: string[] = controllerPathArray.concat(methodPathArray)
 

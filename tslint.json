@@ -62,11 +62,11 @@
     "no-duplicate-case": false,
     "no-implicit-dependencies": [
       true,
-      [ "controller", "helper", "model", "src", "tsmeta" ]
+      [ "controller", "helper", "model", "src", "tsmeta", "jest" ]
     ],
     "no-import-side-effect": [
       true,
-      { "ignore-module": "reflect-metadata" }
+      { "ignore-module": "(reflect-metadata|jest)" }
     ],
     "no-inferred-empty-object-type": true,
     "no-magic-numbers": true,

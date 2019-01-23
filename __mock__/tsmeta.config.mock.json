@@ -1,17 +1,23 @@
 {
-
   "basePackage": "__mock__/package.mock.json",
   "scanAdditionalPackages": false,
   "showScannedFiles": true,
   "showWrittenFiles": true,
   "metaConfig": {
-
+    "create": true,
+    "outputPath": "schema",
+    "outputFilename": "tsm.schema.products-v1.json",
+    "compilerOptions": "tsconfig.json"
   },
   "sigmaConfig": {
 
   },
   "oasConfig": {
-
+    "create": true,
+    "openapistring": "3.0.0",
+    "outputFilename": "oaspec.api-module-products-v1-core",
+    "outputFormat": "json",
+    "outputPath": "schema"
   },
   "graphQLConfig": {
 

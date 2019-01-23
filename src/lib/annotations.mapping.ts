@@ -7,7 +7,7 @@ let annoationsMapping: { [key: string]: string } = {}
  * get mapped annotation
  */
 const getMappedAnnotation: ((map: string) => string) = (map: string): string => {
-  return annoationsMapping[map] || map
+  return annoationsMapping && annoationsMapping[map] || map
 }
 
 /**
