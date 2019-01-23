@@ -13,6 +13,9 @@
 
   },
   "oasConfig": {
+    "annotationsMap": {
+      "PostRequest": "Post"
+    },
     "create": true,
     "openapistring": "3.0.0",
     "outputFilename": "oaspec.api-module-products-v1-core",

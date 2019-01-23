@@ -74,6 +74,8 @@ class OasPathGenerator {
     usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.DeleteRequest || 'DeleteRequest')
     usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.HeadRequest || 'HeadRequest')
 
+    console.log(usedMappingAnnotation) // tslint:disable-line
+
     return usedMappingAnnotation
   }
 
