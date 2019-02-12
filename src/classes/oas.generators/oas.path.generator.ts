@@ -22,6 +22,7 @@ class OasPathGenerator {
       controllerPath: string,
       tsMethod: TsMethod,
       controllerParameters: Parameter[]): { [key: string]: PathItem } {
+    console.log('generate path') // tslint:disable-line
     SetAnnoationsMapping(this.oasConfig.annotationsMap)
     const pathItem: { [key: string]: PathItem } = {}
 
@@ -65,6 +66,7 @@ class OasPathGenerator {
    * combined set mapping annotations to string array
    */
   private combineMappingAnnotations(): string[] {
+    console.log('combineMappingAnnotation') // tslint:disable-line
     const usedMappingAnnotation: string[] = []
 
     usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.GetRequest || 'GetRequest')

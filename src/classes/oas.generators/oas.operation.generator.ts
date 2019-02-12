@@ -42,10 +42,18 @@ class OasOperationGenerator {
 
     const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
+    const securityKey: string = tsMethod.decorators
+      .find((it: TsDecorator) => it.name === 'Secured')
+      .tsarguments[0].representation
+    const securityObject: { [key: string]: string[] } = {}
+    securityObject[securityKey] = []
+    const security: any[] = securityObject ? [securityObject] : []
+
     return {
       parameters,
       requestBody,
       responses,
+      security,
       tags: [controllerName]
     }
   }
