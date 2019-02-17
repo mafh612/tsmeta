@@ -1,4 +1,5 @@
 import { Parameter, PathItem } from 'oasmodel'
+import { AnnotationsEnum } from '../../lib/annotations.enum'
 import { GetMappedAnnotation, SetAnnoationsMapping } from '../../lib/annotations.mapping'
 import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
 import { OasConfig } from '../../lib/tsmeta.config'
@@ -22,7 +23,6 @@ class OasPathGenerator {
       controllerPath: string,
       tsMethod: TsMethod,
       controllerParameters: Parameter[]): { [key: string]: PathItem } {
-    console.log('generate path') // tslint:disable-line
     SetAnnoationsMapping(this.oasConfig.annotationsMap)
     const pathItem: { [key: string]: PathItem } = {}
 
@@ -66,19 +66,18 @@ class OasPathGenerator {
    * combined set mapping annotations to string array
    */
   private combineMappingAnnotations(): string[] {
-    console.log('combineMappingAnnotation') // tslint:disable-line
-    const usedMappingAnnotation: string[] = []
+    const standardMappingAnnotations: string[] = [
+      AnnotationsEnum.GETREQUEST,
+      AnnotationsEnum.POSTREQUEST,
+      AnnotationsEnum.PUTREQUEST,
+      AnnotationsEnum.PATCHREQUEST,
+      AnnotationsEnum.DELETEREQUEST,
+      AnnotationsEnum.HEADREQUEST
+    ]
 
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.GetRequest || 'GetRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PostRequest || 'PostRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PutRequest || 'PutRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.PatchRequest || 'PatchRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.DeleteRequest || 'DeleteRequest')
-    usedMappingAnnotation.push(this.oasConfig.annotationsMap && this.oasConfig.annotationsMap.HeadRequest || 'HeadRequest')
-
-    console.log(usedMappingAnnotation) // tslint:disable-line
-
-    return usedMappingAnnotation
+    return standardMappingAnnotations.map((annotation: string) => {
+      return this.oasConfig.annotationsMap && this.oasConfig.annotationsMap[annotation] || annotation
+    })
   }
 
   /**

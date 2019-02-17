@@ -1,4 +1,5 @@
 import { Operation, Parameter, RequestBody, Response } from 'oasmodel'
+import { AnnotationsEnum } from '../../lib/annotations.enum'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { TsDecorator, TsMethod, TsParameter } from '../../lib/tsmeta.schema'
 import { OasParameterGenerator } from './oas.parameter.generator'
@@ -26,15 +27,16 @@ class OasOperationGenerator {
     let requestBody: RequestBody
 
     parameters = tsMethod.parameters
+      .filter((tsParameter: TsParameter) => !!tsParameter.decorators)
       .map((tsParameter: TsParameter) => this.oasParameterGenerator.generate(tsParameter))
       .filter((parameter: Parameter) => !!parameter)
 
     if (controllerParameters) parameters = parameters.concat(controllerParameters)
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
-      .find((tsParameter: TsParameter) => tsParameter.decorators
-        ? tsParameter.decorators.some((tsDecorator: TsDecorator) => GetMappedAnnotation(tsDecorator.name) === 'RequestBody')
-        : false)
+    .filter((tsParameter: TsParameter) => !!tsParameter.decorators)
+    .find((tsParameter: TsParameter) => tsParameter.decorators
+      .some((tsDecorator: TsDecorator) => tsDecorator && GetMappedAnnotation(tsDecorator.name) === AnnotationsEnum.REQUESTBODY))
 
     if (reqBodyParameter) {
       requestBody = this.oasRequestbodyGenerator.generate(reqBodyParameter)
@@ -42,14 +44,18 @@ class OasOperationGenerator {
 
     const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
-    const securityKey: string = tsMethod.decorators
-      .find((it: TsDecorator) => it.name === 'Secured')
-      .tsarguments[0].representation
+    const deprecated: boolean = tsMethod.decorators.some((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.DEPRECATED)
+
+    const securityDecorator: TsDecorator = tsMethod.decorators
+      .find((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.SECURED)
+
+    const securityKey: string = securityDecorator && securityDecorator.tsarguments[0].representation
     const securityObject: { [key: string]: string[] } = {}
     securityObject[securityKey] = []
     const security: any[] = securityObject ? [securityObject] : []
 
     return {
+      deprecated,
       parameters,
       requestBody,
       responses,

@@ -25,7 +25,8 @@ const headRequest: ((path: string) => any) = (path: string): MethodDecorator => 
 const optionsRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
 const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
 const errorResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
-const secured: MethodDecorator = methodFunction
+const secured: (securityKey: string) => MethodDecorator = (securityKey: string): MethodDecorator => methodFunction
+const deprecated: MethodDecorator = methodFunction
 /**
  * property annotations
  */
@@ -35,6 +36,7 @@ const property: ((propertyParam: PropertyParam) => any) = (propertyParam: Proper
  */
 const pathVariable: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
 const requestParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+const requestParams: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
 const requestBody: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
 
 export {
@@ -50,9 +52,11 @@ export {
   headRequest as HeadRequest,
   successResponse as SuccessResponse,
   errorResponse as ErrorResponse,
+  deprecated as Deprecated,
   secured as Secured,
   property as Property,
   pathVariable as PathVariable,
   requestParam as RequestParam,
+  requestParams as RequestParams,
   requestBody as RequestBody
 }

@@ -22,6 +22,8 @@ class OasParameterGenerator {
   public generate(tsParameter: TsParameter): Parameter {
     let parameterDecorator: TsDecorator
 
+    console.log(tsParameter)  // tslint:disable-line
+
     if (tsParameter.decorators) {
       parameterDecorator = tsParameter.decorators
         .find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name)))
