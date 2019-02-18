@@ -1,7 +1,7 @@
 import { Schema } from 'oasmodel'
-import { ParameterParam, PropertyParam } from '../../lib/annotation.schema'
-import { TsProperty } from '../../lib/tsmeta.schema'
-import { TypescriptTypes } from '../../lib/typescript.types.enum'
+import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
+import { ParameterParam, PropertyParam } from '../../lib/interfaces/annotation.schema'
+import { TsProperty } from '../../lib/interfaces/tsmeta.schema'
 
 /**
  * class OasPropertyGenerator

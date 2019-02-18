@@ -1,62 +1,55 @@
-import { ModelParam, ParameterParam, PropertyParam, ResponseParam } from './annotation.schema'
+import { ModelParam, ParameterParam, PropertyParam, ResponseParam } from './interfaces/annotation.schema'
 
-/**
- * decorator functions
- */
-const classFunction: (target: any) => any = (target: any): any => target
-const methodFunction: (target: any, key: string|Symbol) => any = (target: any, key: string|Symbol): any => target[key as string]
-const propertyFunction: (target: any, key: string|Symbol) => any = (target: any, key: string|Symbol): any => target[key as string]
-const parameterFunction: (target: any, key: string|Symbol, index: number) => any = (target: any, key: string|Symbol, index: number): any => target[<string> key][index] // tslint:disable-line
 /**
  * class annotations
  */
-const controller: ((name: string) => any) = (name: string): ClassDecorator => classFunction
-const controllerParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ClassDecorator => classFunction
-const model: ((modelParam: ModelParam|any) => any) = (modelParam: ModelParam|any): ClassDecorator => classFunction
+type Controller = ((name: string) => any)
+type ControllerParam = ((parameterParam: ParameterParam) => any)
+type Model = ((modelParam: ModelParam|any) => any)
 /**
  * method annotations
  */
-const getRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const postRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const putRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const patchRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const deleteRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const headRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const optionsRequest: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
-const errorResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
-const secured: (securityKey: string) => MethodDecorator = (securityKey: string): MethodDecorator => methodFunction
-const deprecated: MethodDecorator = methodFunction
+type GetRequest = ((path: string) => any)
+type PostRequest = ((path: string) => any)
+type PutRequest = ((path: string) => any)
+type PatchRequest = ((path: string) => any)
+type DeleteRequest = ((path: string) => any)
+type HeadRequest = ((path: string) => any)
+type OptionsRequest = ((path: string) => any)
+type SuccessResponse = ((responseParam?: ResponseParam) => any)
+type ErrorResponse = ((responseParam?: ResponseParam) => any)
+type Secured = (securityKey: string) => MethodDecorator
+type Deprecated = MethodDecorator
 /**
  * property annotations
  */
-const property: ((propertyParam: PropertyParam) => any) = (propertyParam: PropertyParam): PropertyDecorator => propertyFunction
+type Property = ((propertyParam: PropertyParam) => any)
 /**
  * parameter annotations
  */
-const pathVariable: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
-const requestParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
-const requestParams: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
-const requestBody: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+type PathVariable = ((parameterParam: ParameterParam) => any)
+type RequestParam = ((parameterParam: ParameterParam) => any)
+type RequestParams = ((parameterParam: ParameterParam) => any)
+type RequestBody = ((parameterParam: ParameterParam) => any)
 
 export {
-  controller as Controller,
-  controllerParam as ControllerParam,
-  model as Model,
-  getRequest as GetRequest,
-  postRequest as PostRequest,
-  putRequest as PutRequest,
-  patchRequest as PatchRequest,
-  deleteRequest as DeleteRequest,
-  optionsRequest as OptionsRequest,
-  headRequest as HeadRequest,
-  successResponse as SuccessResponse,
-  errorResponse as ErrorResponse,
-  deprecated as Deprecated,
-  secured as Secured,
-  property as Property,
-  pathVariable as PathVariable,
-  requestParam as RequestParam,
-  requestParams as RequestParams,
-  requestBody as RequestBody
+  Controller,
+  ControllerParam,
+  Model,
+  GetRequest,
+  PostRequest,
+  PutRequest,
+  PatchRequest,
+  DeleteRequest,
+  OptionsRequest,
+  HeadRequest,
+  SuccessResponse,
+  ErrorResponse,
+  Deprecated,
+  Secured,
+  Property,
+  PathVariable,
+  RequestParam,
+  RequestParams,
+  RequestBody
 }

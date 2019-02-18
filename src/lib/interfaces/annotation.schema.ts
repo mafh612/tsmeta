@@ -1,4 +1,4 @@
-import { OasFormat } from './oas.format.enum'
+import { OasFormat } from '../enums/oas.format.enum'
 /**
  * interface PropertyParam
  */

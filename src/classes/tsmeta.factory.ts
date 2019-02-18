@@ -1,10 +1,10 @@
 import { readFileSync as ReadFileSync } from 'fs'
 import { resolve as Resolve } from 'path'
 import { CompilerOptions, Program, SourceFile } from 'typescript'
+import { TsMetaConfig } from '../lib/interfaces/tsmeta.config'
+import { TsFile, TsMeta, TsPackage, TsProgram } from '../lib/interfaces/tsmeta.schema'
 import { setSourceFile } from '../lib/source.file.container'
 import { CreateTypescriptProgram } from '../lib/ts.methods'
-import { TsMetaConfig } from '../lib/tsmeta.config'
-import { TsFile, TsMeta, TsPackage, TsProgram } from '../lib/tsmeta.schema'
 import { TsMetaFileFactory } from './tsmeta.factories/tsmeta.file.factory'
 import { TsMetaPackageFactory } from './tsmeta.factories/tsmeta.package.factory'
 

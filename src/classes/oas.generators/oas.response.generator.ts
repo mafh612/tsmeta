@@ -1,7 +1,7 @@
 import { MediaType, Response, Schema } from 'oasmodel'
-import { ResponseParam } from '../../lib/annotation.schema'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
-import { TsArgument, TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
+import { ResponseParam } from '../../lib/interfaces/annotation.schema'
+import { TsArgument, TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.schema'
 
 /**
  * class OasResponseGenerator

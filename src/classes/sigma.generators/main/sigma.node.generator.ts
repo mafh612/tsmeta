@@ -1,5 +1,5 @@
-import { ElementTypes } from '../../../lib/element.types.enum'
-import { SigmaNode } from '../../../lib/sigma'
+import { ElementTypes } from '../../../lib/enums/element.types.enum'
+import { SigmaNode } from '../../../lib/interfaces/sigma'
 
 /**
  * class SigmaNodeGenerator

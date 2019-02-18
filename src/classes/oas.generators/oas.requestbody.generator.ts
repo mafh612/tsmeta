@@ -1,6 +1,6 @@
 import { RequestBody, Schema } from 'oasmodel'
-import { ParameterParam } from '../../lib/annotation.schema'
-import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
+import { ParameterParam } from '../../lib/interfaces/annotation.schema'
+import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
 import { OasPropertyGenerator } from './oas.property.generator'
 
 /**

@@ -1,4 +1,4 @@
-import { TypescriptTypes } from './typescript.types.enum'
+import { TypescriptTypes } from '../enums/typescript.types.enum'
 
 // tslint:disable no-reserved-keywords
 /**

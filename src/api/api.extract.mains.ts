@@ -1,4 +1,4 @@
-import { TsFile, TsMain, TsMeta, TsProgram } from '../lib/tsmeta.schema'
+import { TsFile, TsMain, TsMeta, TsProgram } from '../lib/interfaces/tsmeta.schema'
 
 /**
  * extract mains from tsmeta.json

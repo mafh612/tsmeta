@@ -1,6 +1,6 @@
 import { ClassDeclaration, ClassElement, Decorator, isMethodDeclaration, isPropertyDeclaration } from 'typescript'
+import { TsClass, TsDecorator, TsMethod, TsProperty } from '../../lib/interfaces/tsmeta.schema'
 import { IdentifierToString } from '../../lib/ts.methods'
-import { TsClass, TsDecorator, TsMethod, TsProperty } from '../../lib/tsmeta.schema'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaMethodFactory } from './tsmeta.method.factory'
 import { TsMetaPropertyFactory } from './tsmeta.property.factory'

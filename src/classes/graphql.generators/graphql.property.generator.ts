@@ -1,8 +1,8 @@
-import { PropertyParam } from '../../lib/annotation.schema'
-import { OasFormat } from '../../lib/oas.format.enum'
-import { GraphQLConfig } from '../../lib/tsmeta.config'
-import { TsArgument, TsDecorator, TsProperty, TsType } from '../../lib/tsmeta.schema'
-import { TypescriptTypes } from '../../lib/typescript.types.enum'
+import { OasFormat } from '../../lib/enums/oas.format.enum'
+import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
+import { PropertyParam } from '../../lib/interfaces/annotation.schema'
+import { GraphQLConfig } from '../../lib/interfaces/tsmeta.config'
+import { TsArgument, TsDecorator, TsProperty, TsType } from '../../lib/interfaces/tsmeta.schema'
 
 /**
  * class GraphQLPropertyGenerator

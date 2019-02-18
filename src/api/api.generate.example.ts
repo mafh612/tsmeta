@@ -1,5 +1,5 @@
-import { TsDecorator, TsMain, TsMeta, TsProperty } from '../lib/tsmeta.schema'
-import { TypescriptTypes } from '../lib/typescript.types.enum'
+import { TypescriptTypes } from '../lib/enums/typescript.types.enum'
+import { TsDecorator, TsMain, TsMeta, TsProperty } from '../lib/interfaces/tsmeta.schema'
 import { BuildValue } from './api.build.value'
 import { ExtractMains } from './api.extract.mains'
 

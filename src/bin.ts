@@ -5,10 +5,7 @@ import { TsMetaExecution } from './tsmeta.execute'
 /**
  * bin file
  */
-
-const [, , ...args]: string[] = process.argv
-
-const projectFilenameIndex: number = process.argv.findIndex((it: string): boolean => (it === '--project' || it === '-p')) + 1
+const projectFilenameIndex: number = +process.argv.findIndex((it: string): boolean => (it === '--project' || it === '-p')) + 1
 const tsMetaConfigFilename: string = process.argv[projectFilenameIndex] || 'tsmeta.config.json'
 
 if (process.env.NODE_ENV !== 'test') {

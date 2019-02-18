@@ -1,6 +1,6 @@
 import { CallExpression, Decorator, Expression, Identifier, isCallExpression } from 'typescript'
+import { TsArgument, TsDecorator } from '../../lib/interfaces/tsmeta.schema'
 import { IdentifierToString } from '../../lib/ts.methods'
-import { TsArgument, TsDecorator } from '../../lib/tsmeta.schema'
 import { TsMetaArgumentFactory } from './tsmeta.argument.factory'
 
 /**

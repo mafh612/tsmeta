@@ -1,5 +1,5 @@
-import { GraphQLConfig } from '../lib/tsmeta.config'
-import { TsDecorator, TsFile, TsMeta, TsProgram } from '../lib/tsmeta.schema'
+import { GraphQLConfig } from '../lib/interfaces/tsmeta.config'
+import { TsDecorator, TsFile, TsMeta, TsProgram } from '../lib/interfaces/tsmeta.schema'
 import { GraphQLSchemaGenerator } from './graphql.generators/graphql.schema.generator'
 
 /**

@@ -1,7 +1,7 @@
 import { Parameter } from 'oasmodel'
-import { ParameterParam } from '../../lib/annotation.schema'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
-import { TsDecorator, TsParameter } from '../../lib/tsmeta.schema'
+import { ParameterParam } from '../../lib/interfaces/annotation.schema'
+import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
 
 /**
  * class OasParameterGenerator

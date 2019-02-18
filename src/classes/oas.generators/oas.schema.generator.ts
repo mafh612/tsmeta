@@ -1,8 +1,8 @@
 import { Schema } from 'oasmodel'
-import { ModelParam, PropertyParam } from '../../lib/annotation.schema'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
-import { TsDecorator, TsProperty } from '../../lib/tsmeta.schema'
-import { TypescriptTypes } from '../../lib/typescript.types.enum'
+import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
+import { ModelParam, PropertyParam } from '../../lib/interfaces/annotation.schema'
+import { TsDecorator, TsProperty } from '../../lib/interfaces/tsmeta.schema'
 import { OasPropertyGenerator } from './oas.property.generator'
 
 /**

@@ -1,5 +1,5 @@
 import { ClassDeclaration, ExportDeclaration, ImportDeclaration, InterfaceDeclaration, Node, SourceFile, SyntaxKind } from 'typescript'
-import { TsClass, TsExport, TsFile, TsImport, TsMain } from '../../lib/tsmeta.schema'
+import { TsClass, TsExport, TsFile, TsImport, TsMain } from '../../lib/interfaces/tsmeta.schema'
 import { TsMetaClassFactory } from './tsmeta.class.factory'
 import { TsMetaExportFactory } from './tsmeta.export.factory'
 import { TsMetaImportFactory } from './tsmeta.import.factory'

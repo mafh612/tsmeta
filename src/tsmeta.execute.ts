@@ -8,9 +8,9 @@ import { GraphQLGenerator } from './classes/graphql.generator'
 import { OasGenerator } from './classes/oas.generator'
 import { SigmaGenerator } from './classes/sigma.generator'
 import { TsMetaFactory } from './classes/tsmeta.factory'
-import { SigmaData } from './lib/sigma'
-import { TsMetaConfig } from './lib/tsmeta.config'
-import { TsMeta } from './lib/tsmeta.schema'
+import { SigmaData } from './lib/interfaces/sigma'
+import { TsMetaConfig } from './lib/interfaces/tsmeta.config'
+import { TsMeta } from './lib/interfaces/tsmeta.schema'
 
 /**
  * class TsMeta

@@ -2,10 +2,10 @@
  * lib export
  */
 export * from './annotations'
-export * from './annotation.schema'
-export * from './element.types.enum'
-export * from './mapping.annotation.enum'
-export * from './oas.format.enum'
-export * from './sigma'
-export * from './tsmeta.config'
-export * from './tsmeta.schema'
+export * from './interfaces/annotation.schema'
+export * from './enums/element.types.enum'
+export * from './enums/mapping.annotation.enum'
+export * from './enums/oas.format.enum'
+export * from './interfaces/sigma'
+export * from './interfaces/tsmeta.config'
+export * from './interfaces/tsmeta.schema'

@@ -1,5 +1,5 @@
-import { GraphQLConfig } from '../../lib/tsmeta.config'
-import { TsClass, TsProperty } from '../../lib/tsmeta.schema'
+import { GraphQLConfig } from '../../lib/interfaces/tsmeta.config'
+import { TsClass, TsProperty } from '../../lib/interfaces/tsmeta.schema'
 import { GraphQLPropertyGenerator } from './graphql.property.generator'
 
 /**

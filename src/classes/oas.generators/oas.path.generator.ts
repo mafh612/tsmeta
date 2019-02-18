@@ -1,9 +1,9 @@
 import { Parameter, PathItem } from 'oasmodel'
-import { AnnotationsEnum } from '../../lib/annotations.enum'
 import { GetMappedAnnotation, SetAnnoationsMapping } from '../../lib/annotations.mapping'
-import { MappingAnnotations } from '../../lib/mapping.annotation.enum'
-import { OasConfig } from '../../lib/tsmeta.config'
-import { TsDecorator, TsMethod } from '../../lib/tsmeta.schema'
+import { AnnotationsEnum } from '../../lib/enums/annotations.enum'
+import { MappingAnnotations } from '../../lib/enums/mapping.annotation.enum'
+import { OasConfig } from '../../lib/interfaces/tsmeta.config'
+import { TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.schema'
 import { OasOperationGenerator } from './oas.operation.generator'
 
 /**
@@ -12,6 +12,14 @@ import { OasOperationGenerator } from './oas.operation.generator'
 class OasPathGenerator {
 
   private oasOperationGeneration: OasOperationGenerator
+  private standardMappingAnnotations: string[] = [
+    AnnotationsEnum.GETREQUEST,
+    AnnotationsEnum.POSTREQUEST,
+    AnnotationsEnum.PUTREQUEST,
+    AnnotationsEnum.PATCHREQUEST,
+    AnnotationsEnum.DELETEREQUEST,
+    AnnotationsEnum.HEADREQUEST
+  ]
 
   constructor(private oasConfig: OasConfig) {}
 
@@ -26,10 +34,8 @@ class OasPathGenerator {
     SetAnnoationsMapping(this.oasConfig.annotationsMap)
     const pathItem: { [key: string]: PathItem } = {}
 
-    const usedMappingAnnotation: string[] = this.combineMappingAnnotations()
-
     const mappingDecorator: TsDecorator = tsMethod.decorators
-      .reduce((prev: TsDecorator, curr: TsDecorator): TsDecorator => usedMappingAnnotation.includes(curr.name) ? curr : prev)
+      .find((it: TsDecorator): boolean => this.standardMappingAnnotations.includes(GetMappedAnnotation(it.name)))
 
     const methodPath: string = mappingDecorator.tsarguments.pop().representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
@@ -55,29 +61,10 @@ class OasPathGenerator {
       case MappingAnnotations.HEAD.name:
         pathItem[fullPath] = { head: this.oasOperationGeneration.generate(controllerName, tsMethod, controllerParameters) }
         break
-      // istanbul ignore next
       default:
     }
 
     return pathItem
-  }
-
-  /**
-   * combined set mapping annotations to string array
-   */
-  private combineMappingAnnotations(): string[] {
-    const standardMappingAnnotations: string[] = [
-      AnnotationsEnum.GETREQUEST,
-      AnnotationsEnum.POSTREQUEST,
-      AnnotationsEnum.PUTREQUEST,
-      AnnotationsEnum.PATCHREQUEST,
-      AnnotationsEnum.DELETEREQUEST,
-      AnnotationsEnum.HEADREQUEST
-    ]
-
-    return standardMappingAnnotations.map((annotation: string) => {
-      return this.oasConfig.annotationsMap && this.oasConfig.annotationsMap[annotation] || annotation
-    })
   }
 
   /**

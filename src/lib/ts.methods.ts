@@ -19,10 +19,10 @@ import {
   TypeReferenceNode,
   UnionTypeNode
 } from 'typescript'
+import { TypescriptTypes } from './enums/typescript.types.enum'
+import { TsType } from './interfaces/tsmeta.schema'
 import { getSourceFile } from './source.file.container'
-import { TsType } from './tsmeta.schema'
 import { TsTypeClass } from './tstype.class'
-import { TypescriptTypes } from './typescript.types.enum'
 
 /**
  * create typescript program file from rootNames
