@@ -1,7 +1,7 @@
 import 'jest'
 
 import * as fs from 'fs'
-import { CompilerOptions, Program } from 'typescript'
+import { CompilerOptions } from 'typescript'
 
 import {
   CreateTypescriptProgram/* ,

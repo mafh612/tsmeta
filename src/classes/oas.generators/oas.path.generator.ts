@@ -13,12 +13,12 @@ class OasPathGenerator {
 
   private oasOperationGeneration: OasOperationGenerator
   private standardMappingAnnotations: string[] = [
-    AnnotationsEnum.GETREQUEST,
-    AnnotationsEnum.POSTREQUEST,
-    AnnotationsEnum.PUTREQUEST,
-    AnnotationsEnum.PATCHREQUEST,
-    AnnotationsEnum.DELETEREQUEST,
-    AnnotationsEnum.HEADREQUEST
+    AnnotationsEnum.GETMAPPING,
+    AnnotationsEnum.POSTMAPPING,
+    AnnotationsEnum.PUTMAPPING,
+    AnnotationsEnum.PATCHMAPPING,
+    AnnotationsEnum.DELETEMAPPING,
+    AnnotationsEnum.HEADMAPPING
   ]
 
   constructor(private oasConfig: OasConfig) {}
@@ -36,6 +36,8 @@ class OasPathGenerator {
 
     const mappingDecorator: TsDecorator = tsMethod.decorators
       .find((it: TsDecorator): boolean => this.standardMappingAnnotations.includes(GetMappedAnnotation(it.name)))
+
+    if (!mappingDecorator) return
 
     const methodPath: string = mappingDecorator.tsarguments.pop().representation
     const fullPath: string = this.createFullPath(controllerPath, methodPath)

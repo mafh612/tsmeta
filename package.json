@@ -21,12 +21,12 @@
   },
   "scripts": {
     "test": "jest --config jest.config.js",
-    "prebuild": "tslint --project tslint.json -e '__test__/**'",
-    "build": "tsc --project tsconfig.json",
-    "dev": "npm run build && node dist/bin.js",
+    "prebuild": "tslint --project tsconfig.build.json",
+    "build": "tsc --project tsconfig.build.json",
+    "dev": "yarn run build && node dist/bin.js",
     "start": "node dist/bin.js",
     "view": "node view/server.js",
-    "watch": "npm run prebuild && tsc --project tsconfig.json --watch"
+    "watch": "yarn run prebuild && tsc --project tsconfig.build.json --watch"
   },
   "author": "mafh",
   "license": "MIT",

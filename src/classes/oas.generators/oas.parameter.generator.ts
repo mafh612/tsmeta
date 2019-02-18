@@ -1,5 +1,6 @@
 import { Parameter } from 'oasmodel'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
+import { AnnotationsEnum } from '../../lib/enums/annotations.enum'
 import { ParameterParam } from '../../lib/interfaces/annotation.schema'
 import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
 
@@ -8,7 +9,13 @@ import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
  */
 class OasParameterGenerator {
 
-  private parameterAnnotations: string[] = ['PathVariable', 'RequestParam', 'RequestHeader', 'CookieValue', 'ControllerParam']
+  private parameterAnnotations: string[] = [
+    AnnotationsEnum.PATHVARIABLE,
+    AnnotationsEnum.REQUESTPARAM,
+    AnnotationsEnum.REQUESTHEADER,
+    AnnotationsEnum.COOKIEVALUE,
+    AnnotationsEnum.CONTROLLERPARAM
+  ]
   private parameterAnnotationMap: { [key: string]: string } = {
     CookieValue: 'cookie',
     PathVariable: 'path',
@@ -21,8 +28,6 @@ class OasParameterGenerator {
    */
   public generate(tsParameter: TsParameter): Parameter {
     let parameterDecorator: TsDecorator
-
-    console.log(tsParameter)  // tslint:disable-line
 
     if (tsParameter.decorators) {
       parameterDecorator = tsParameter.decorators

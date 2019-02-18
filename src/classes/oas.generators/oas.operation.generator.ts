@@ -44,15 +44,19 @@ class OasOperationGenerator {
 
     const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
-    const deprecated: boolean = tsMethod.decorators.some((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.DEPRECATED)
+    const deprecated: boolean = tsMethod.decorators
+      .some((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.DEPRECATED) || undefined
 
-    const securityDecorator: TsDecorator = tsMethod.decorators
-      .find((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.SECURED)
+    let security: any[] = tsMethod.decorators
+      .filter((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.SECURED)
+      .map((it: TsDecorator) => {
+        const securityObject: { [key: string]: string[] } = {}
+        securityObject[it.tsarguments[0].representation] = []
 
-    const securityKey: string = securityDecorator && securityDecorator.tsarguments[0].representation
-    const securityObject: { [key: string]: string[] } = {}
-    securityObject[securityKey] = []
-    const security: any[] = securityObject ? [securityObject] : []
+        return securityObject
+      })
+
+    if (security.length < 1) security = undefined
 
     return {
       deprecated,
