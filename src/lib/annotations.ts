@@ -10,51 +10,60 @@ const parameterFunction: (target: any, key: string|Symbol, index: number) => any
 /**
  * class annotations
  */
-const controller: ((name: string) => any) = (name: string): ClassDecorator => classFunction
-const controllerParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ClassDecorator => classFunction
-const model: ((modelParam: ModelParam|any) => any) = (modelParam: ModelParam|any): ClassDecorator => classFunction
+const controller: (name: string) => ClassDecorator = classFunction
+const controllerParam: (parameterParam: ParameterParam) => ClassDecorator = classFunction
+const model: (modelParam: ModelParam|any) => ClassDecorator = classFunction
 /**
  * method annotations
  */
-const getMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const postMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const putMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const patchMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const deleteMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const headMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const optionsMapping: ((path: string) => any) = (path: string): MethodDecorator => methodFunction
-const successResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
-const errorResponse: ((responseParam?: ResponseParam) => any) = (responseParam: ResponseParam): MethodDecorator => methodFunction
-const secured: (securityMethod: string) => MethodDecorator = (securityMethod: string): MethodDecorator => methodFunction
+const getRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const postRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const putRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const patchRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const deleteRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const headRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const optionsRequest: (path: string) => MethodDecorator = (path: string): MethodDecorator => methodFunction
+const successResponse: (responseParam?: ResponseParam) => MethodDecorator
+  = (responseParam?: ResponseParam): MethodDecorator => methodFunction
+const errorResponse: (responseParam?: ResponseParam) => MethodDecorator
+  = (responseParam?: ResponseParam): MethodDecorator => methodFunction
+const secured: (securityKey: string) => MethodDecorator = (securityKey: string): MethodDecorator => methodFunction
 const deprecated: MethodDecorator = methodFunction
 /**
- * property annotations
+ * propertyannotations
  */
-const property: ((propertyParam: PropertyParam) => any) = (propertyParam: PropertyParam): PropertyDecorator => propertyFunction
+const property: (propertyParam: PropertyParam) => PropertyDecorator
+  = (propertyParam: PropertyParam): PropertyDecorator => propertyFunction
 /**
  * parameter annotations
  */
-const pathVariable: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
-const requestParam: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
-const requestBody: ((parameterParam: ParameterParam) => any) = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+const pathVariable: (parameterParam: ParameterParam) => ParameterDecorator
+  = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+const requestParam: (parameterParam: ParameterParam) => ParameterDecorator
+  = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+const requestParams: (parameterParam: ParameterParam) => ParameterDecorator
+  = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
+const requestBody: (parameterParam: ParameterParam) => ParameterDecorator
+  = (parameterParam: ParameterParam): ParameterDecorator => parameterFunction
 
 export {
   controller as Controller,
   controllerParam as ControllerParam,
   model as Model,
-  getMapping as GetMapping,
-  postMapping as PostMapping,
-  putMapping as PutMapping,
-  patchMapping as PatchMapping,
-  deleteMapping as DeleteMapping,
-  optionsMapping as OptionsMapping,
-  headMapping as HeadMapping,
+  getRequest as GetRequest,
+  postRequest as PostRequest,
+  putRequest as PutRequest,
+  patchRequest as PatchRequest,
+  deleteRequest as DeleteRequest,
+  optionsRequest as OptionsRequest,
+  headRequest as HeadRequest,
   successResponse as SuccessResponse,
   errorResponse as ErrorResponse,
-  secured as Secured,
   deprecated as Deprecated,
+  secured as Secured,
   property as Property,
   pathVariable as PathVariable,
   requestParam as RequestParam,
+  requestParams as RequestParams,
   requestBody as RequestBody
 }
