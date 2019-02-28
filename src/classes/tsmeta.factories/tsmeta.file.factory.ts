@@ -10,10 +10,10 @@ import { TsMetaMainFactory } from './tsmeta.main.factory'
  */
 class TsMetaFileFactory {
 
-  private tsMetaClassFactory: TsMetaClassFactory = new TsMetaClassFactory()
-  private tsMetaMainFactory: TsMetaMainFactory = new TsMetaMainFactory()
-  private tsMetaExportFactory: TsMetaExportFactory = new TsMetaExportFactory()
-  private tsMetaImportFactory: TsMetaImportFactory = new TsMetaImportFactory()
+  private readonly tsMetaClassFactory: TsMetaClassFactory = new TsMetaClassFactory()
+  private readonly tsMetaMainFactory: TsMetaMainFactory = new TsMetaMainFactory()
+  private readonly tsMetaExportFactory: TsMetaExportFactory = new TsMetaExportFactory()
+  private readonly tsMetaImportFactory: TsMetaImportFactory = new TsMetaImportFactory()
 
   /**
    * build TsFile element
@@ -21,7 +21,9 @@ class TsMetaFileFactory {
   public build(sourceFile: SourceFile): TsFile {
     const sourceFilenameArray: string[] = sourceFile.fileName.split('/')
 
-    const filename: string = sourceFilenameArray.pop().replace('.ts', '')
+    const filename: string = sourceFilenameArray
+      .pop()
+      .replace('.ts', '')
     const path: string = sourceFilenameArray.join('/')
     let tsExports: TsExport[] = []
     let tsImports: TsImport[] = []

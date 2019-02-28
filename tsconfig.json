@@ -15,6 +15,9 @@
   },
   "include": [
     "__test__/**/*",
-    "src/**/*"
-  ]
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

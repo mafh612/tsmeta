@@ -1,6 +1,6 @@
 import { Decorator, Identifier, ParameterDeclaration } from 'typescript'
 import { TsDecorator, TsParameter, TsType } from '../../lib/interfaces/tsmeta.schema'
-import { IdentifierToString } from '../../lib/ts.methods'
+import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaTypeFactory } from './tsmeta.type.factory'
 
@@ -9,8 +9,8 @@ import { TsMetaTypeFactory } from './tsmeta.type.factory'
  */
 class TsMetaParameterFactory {
 
-  private tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
-  private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
+  private readonly tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
+  private readonly tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
 
   /**
    * build TsParameter element

@@ -1,6 +1,7 @@
 import { Expression, ObjectLiteralExpression, SyntaxKind } from 'typescript'
 import { TsArgument } from '../../lib/interfaces/tsmeta.schema'
-import { ExpressionToString, ObjectLiteralExpressionToString } from '../../lib/ts.methods'
+import { ExpressionToString } from '../../lib/utils/expression.to.string'
+import { ObjectLiteralExpressionToString } from '../../lib/utils/object.literal.expression.to.string'
 
 /**
  * class TsMetaArgumentFactory

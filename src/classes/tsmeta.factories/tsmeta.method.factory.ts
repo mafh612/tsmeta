@@ -1,6 +1,6 @@
 import { Decorator, MethodDeclaration, MethodSignature, ParameterDeclaration } from 'typescript'
 import { TsDecorator, TsMethod, TsParameter, TsType } from '../../lib/interfaces/tsmeta.schema'
-import { PropertyNameToString } from '../../lib/ts.methods'
+import { PropertyNameToString } from '../../lib/utils/property.name.to.string'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaParameterFactory } from './tsmeta.parameter.factory'
 import { TsMetaTypeFactory } from './tsmeta.type.factory'
@@ -10,9 +10,9 @@ import { TsMetaTypeFactory } from './tsmeta.type.factory'
  */
 class TsMetaMethodFactory {
 
-  private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
-  private tsMetaParameterFactory: TsMetaParameterFactory = new TsMetaParameterFactory()
-  private tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
+  private readonly tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
+  private readonly tsMetaParameterFactory: TsMetaParameterFactory = new TsMetaParameterFactory()
+  private readonly tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
 
   /**
    * build TsMethod element

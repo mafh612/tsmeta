@@ -18,7 +18,7 @@ class OasGenerator {
   private oasParameterGenerator: OasParameterGenerator
   private oasSchemaGenerator: OasSchemaGenerator
 
-  constructor(private oasConfig: OasConfig) {}
+  constructor(private readonly oasConfig: OasConfig) {}
 
   /**
    * generate openapi specification
@@ -88,7 +88,7 @@ class OasGenerator {
   }
 
   /**
-   * construct pathItems
+   * construct pathItems from TsFile
    */
   private constructPaths(files: TsFile[]): { [key: string]: PathItem } {
     this.oasPathGenerator = new OasPathGenerator(this.oasConfig)
@@ -115,7 +115,7 @@ class OasGenerator {
   }
 
   /**
-   * create controller params
+   * create controller params from TsDecorator
    */
   private createControllerParams(controllerParamDecorator: TsDecorator): Parameter {
     this.oasParameterGenerator = new OasParameterGenerator()
@@ -133,7 +133,7 @@ class OasGenerator {
   }
 
   /**
-   * construct schemas
+   * construct schemas from  TsFile
    */
   private constructSchemas(files: TsFile[]): { [key: string]: Schema } {
     this.oasSchemaGenerator = new OasSchemaGenerator()

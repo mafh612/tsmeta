@@ -1,7 +1,8 @@
 import { resolve as ResolvePath } from 'path'
 import { Expression, ImportClause, ImportDeclaration, ImportSpecifier, isIdentifier } from 'typescript'
 import { TsImport } from '../../lib/interfaces/tsmeta.schema'
-import { ExpressionToString, IdentifierToString } from '../../lib/ts.methods'
+import { ExpressionToString } from '../../lib/utils/expression.to.string'
+import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 
 /**
  * class TsMetaImportFactory
@@ -61,7 +62,9 @@ class TsMetaImportFactory {
       fullpath = ResolvePath(fromLiteral)
     }
 
-    source = fromLiteral.split('/').pop()
+    source = fromLiteral
+      .split('/')
+      .pop()
 
     return {
       alias,

@@ -12,7 +12,7 @@ import { OasOperationGenerator } from './oas.operation.generator'
 class OasPathGenerator {
 
   private oasOperationGeneration: OasOperationGenerator
-  private standardMappingAnnotations: string[] = [
+  private readonly standardMappingAnnotations: string[] = [
     AnnotationsEnum.GETMAPPING,
     AnnotationsEnum.POSTMAPPING,
     AnnotationsEnum.PUTMAPPING,
@@ -21,7 +21,7 @@ class OasPathGenerator {
     AnnotationsEnum.HEADMAPPING
   ]
 
-  constructor(private oasConfig: OasConfig) {}
+  constructor(private readonly oasConfig: OasConfig) {}
 
   /**
    * generated PathItem
@@ -73,8 +73,12 @@ class OasPathGenerator {
    * create full pathing
    */
   private createFullPath(controllerPath: string, methodPath: string): string {
-    const controllerPathArray: string[] = controllerPath .split('/').filter((part: string) => part !== '')
-    const methodPathArray: string[] = methodPath && methodPath.split('/').filter((part: string) => part !== '') || []
+    const controllerPathArray: string[] = controllerPath
+      .split('/')
+      .filter((part: string) => part !== '')
+    const methodPathArray: string[] = methodPath && methodPath
+      .split('/')
+      .filter((part: string) => part !== '') || []
 
     let fullPathArray: string[] = controllerPathArray.concat(methodPathArray)
 

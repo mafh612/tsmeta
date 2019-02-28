@@ -9,7 +9,7 @@ class GraphQLSchemaGenerator {
 
   private graphQLPropertyGenerator: GraphQLPropertyGenerator
 
-  constructor(private graphQLConfig: GraphQLConfig) {}
+  constructor(private readonly graphQLConfig: GraphQLConfig) {}
 
   /**
    * generate GraphQL schema

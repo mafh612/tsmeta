@@ -7,9 +7,9 @@ import { GraphQLSchemaGenerator } from './graphql.generators/graphql.schema.gene
  */
 class GraphQLGenerator {
 
-  private graphQLSchemaGenerator: GraphQLSchemaGenerator = new GraphQLSchemaGenerator(this.graphQLConfig)
+  private readonly graphQLSchemaGenerator: GraphQLSchemaGenerator = new GraphQLSchemaGenerator(this.graphQLConfig)
 
-  constructor(private graphQLConfig: GraphQLConfig) {}
+  constructor(private readonly graphQLConfig: GraphQLConfig) {}
 
   /**
    * generate GraphQLSchema files

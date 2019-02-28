@@ -1,6 +1,6 @@
 import { ClassDeclaration, ClassElement, Decorator, isMethodDeclaration, isPropertyDeclaration } from 'typescript'
 import { TsClass, TsDecorator, TsMethod, TsProperty } from '../../lib/interfaces/tsmeta.schema'
-import { IdentifierToString } from '../../lib/ts.methods'
+import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 import { TsMetaDecoratorFactory } from './tsmeta.decorator.factory'
 import { TsMetaMethodFactory } from './tsmeta.method.factory'
 import { TsMetaPropertyFactory } from './tsmeta.property.factory'
@@ -10,9 +10,9 @@ import { TsMetaPropertyFactory } from './tsmeta.property.factory'
  */
 class TsMetaClassFactory {
 
-  private tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
-  private tsMetaMethdoFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
-  private tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
+  private readonly tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
+  private readonly tsMetaMethdoFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
+  private readonly tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
 
   /**
    * build TsClass element

@@ -31,31 +31,31 @@
   "author": "mafh",
   "license": "MIT",
   "dependencies": {
-    "deep-assign": "^2.0.0",
-    "graphql": "^0.13.2",
+    "deep-assign": "^3.0.0",
+    "graphql": "^14.1.1",
     "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
     "semantic-release": "^15.5.0",
-    "typescript": "^2.8.3",
+    "typescript": "^3.3.3333",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/deep-assign": "^0.1.1",
-    "@types/graphql": "^0.13.1",
-    "@types/jest": "^22.2.3",
+    "@types/graphql": "^14.0.7",
+    "@types/jest": "^24.0.9",
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.32",
     "@types/lodash": "^4.14.109",
     "@types/node": "^11.9.4",
     "@types/reflect-metadata": "^0.1.0",
     "@types/yamljs": "^0.2.30",
-    "jest": "^22.4.3",
+    "jest": "^24.1.0",
     "koa": "^2.6.1",
-    "ts-jest": "^22.4.4",
+    "ts-jest": "^24.0.0",
     "tslint": "^5.9.1",
-    "tslint-microsoft-contrib": "^5.0.3"
+    "tslint-microsoft-contrib": "^6.0.0"
   },
   "release": {
     "analyzeCommits": [

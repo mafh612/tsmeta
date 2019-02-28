@@ -46,7 +46,8 @@ class TsTypeClass implements TsType {
         break
       case TypescriptTypes.PROP:
         const propTypes: string = (this.keyType as string[])
-          .map((keyType: string, i: number) => `${keyType}: ${this.valueType[i]}`).join('; ')
+          .map((keyType: string, i: number) => `${keyType}: ${this.valueType[i]}`)
+          .join('; ')
         this.representation = `{ ${propTypes} }`
         break
       case TypescriptTypes.UNTYPED:

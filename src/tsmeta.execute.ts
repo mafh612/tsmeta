@@ -17,7 +17,7 @@ import { TsMeta } from './lib/interfaces/tsmeta.schema'
  */
 class TsMetaExecution {
 
-  private tsMetaConfigFilename: string = 'tsmeta.config.json'
+  private readonly tsMetaConfigFilename: string = 'tsmeta.config.json'
   private tsMetaConfig: TsMetaConfig
   private tsMeta: TsMeta
   private tsMetaFactory: TsMetaFactory
@@ -130,14 +130,15 @@ class TsMetaExecution {
     }
 
     if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
-      Object.keys(this.graphQLSchemas).forEach((key: string) => {
-        this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, `${key}.graphql`, this.graphQLSchemas[key])
-      })
+      Object.keys(this.graphQLSchemas)
+        .forEach((key: string) => {
+          this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, `${key}.graphql`, this.graphQLSchemas[key])
+        })
     }
   }
 
   /**
-   * write file
+   * write json or yaml to file
    */
   private writeToFile(path: string, filename: string, data: any, yaml: boolean = false): void {
     const resolvedPath: string = ResolvePath(path)

@@ -3,16 +3,7 @@ import 'jest'
 import * as fs from 'fs'
 import { CompilerOptions } from 'typescript'
 
-import {
-  CreateTypescriptProgram/* ,
-  ExpressionToString,
-  IdentifierToString,
-  InitializerToString,
-  ObjectLiteralExpressionToString,
-  PropertyNameToString,
-  TokenToString,
-  TypeNodeToTsType */
-} from '../../../src/lib/ts.methods'
+import { CreateTypescriptProgram } from '../../../src/lib/utils/create.typescript.program'
 
 let compilerOptions: CompilerOptions
 
@@ -25,6 +16,7 @@ beforeAll(() => {
  */
 describe('ts methods test', () => {
   test('CreateTypescriptProgram', () => {
-    expect(CreateTypescriptProgram(['../../../src/index.ts'], compilerOptions)).toEqual({})
+    expect(CreateTypescriptProgram(['../../../src/index.ts'], compilerOptions))
+      .toEqual({})
   })
 })

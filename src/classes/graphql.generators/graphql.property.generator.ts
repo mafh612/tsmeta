@@ -9,7 +9,7 @@ import { TsArgument, TsDecorator, TsProperty, TsType } from '../../lib/interface
  */
 class GraphQLPropertyGenerator {
 
-  constructor(private graphQLConfig: GraphQLConfig) {}
+  constructor(private readonly graphQLConfig: GraphQLConfig) {}
 
   /**
    * generate single schema property

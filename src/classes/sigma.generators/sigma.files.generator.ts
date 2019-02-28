@@ -9,11 +9,11 @@ import { SigmaNodeGenerator } from './main/sigma.node.generator'
  */
 class SigmaFilesGenerator {
 
-  private sigmaNodeGenerator: SigmaNodeGenerator = new SigmaNodeGenerator()
-  private sigmaEdgeGenerator: SigmaEdgeGenerator = new SigmaEdgeGenerator()
+  private readonly sigmaNodeGenerator: SigmaNodeGenerator = new SigmaNodeGenerator()
+  private readonly sigmaEdgeGenerator: SigmaEdgeGenerator = new SigmaEdgeGenerator()
 
   /**
-   * generate
+   * generate from TsFile
    */
   public generate(tsFile: TsFile): SigmaData {
     const nodes: SigmaNode[] = []

@@ -4,7 +4,7 @@ import { CompilerOptions, Program, SourceFile } from 'typescript'
 import { TsMetaConfig } from '../lib/interfaces/tsmeta.config'
 import { TsFile, TsMeta, TsPackage, TsProgram } from '../lib/interfaces/tsmeta.schema'
 import { setSourceFile } from '../lib/source.file.container'
-import { CreateTypescriptProgram } from '../lib/ts.methods'
+import { CreateTypescriptProgram } from '../lib/utils/create.typescript.program'
 import { TsMetaFileFactory } from './tsmeta.factories/tsmeta.file.factory'
 import { TsMetaPackageFactory } from './tsmeta.factories/tsmeta.package.factory'
 
@@ -13,10 +13,10 @@ import { TsMetaPackageFactory } from './tsmeta.factories/tsmeta.package.factory'
  */
 class TsMetaFactory {
 
-  private tsMetaPackageFactory: TsMetaPackageFactory = new TsMetaPackageFactory()
-  private tsMetaFileFactory: TsMetaFileFactory = new TsMetaFileFactory()
+  private readonly tsMetaPackageFactory: TsMetaPackageFactory = new TsMetaPackageFactory()
+  private readonly tsMetaFileFactory: TsMetaFileFactory = new TsMetaFileFactory()
 
-  constructor(private tsMetaConfig: TsMetaConfig) {}
+  constructor(private readonly tsMetaConfig: TsMetaConfig) {}
 
   /**
    * build TsMeta element
@@ -65,7 +65,8 @@ class TsMetaFactory {
    * add main program to programs
    */
   private createProgram(pckg: TsPackage): TsProgram {
-    const baseSourcePathArry: string[] = Resolve(pckg.source).split('/')
+    const baseSourcePathArry: string[] = Resolve(pckg.source)
+      .split('/')
     baseSourcePathArry.pop()
     const baseSourcePath: string = baseSourcePathArry.join('/')
 
@@ -78,7 +79,9 @@ class TsMetaFactory {
         .map((sourceFile: SourceFile): TsFile => {
           setSourceFile(sourceFile)
           if (process.env.NODE_ENV !== 'test' && this.tsMetaConfig.showScannedFiles) {
-            process.stdout.write(` - ${sourceFile.fileName.split('/').pop()}\n`)
+            process.stdout.write(` - ${sourceFile.fileName
+              .split('/')
+              .pop()}\n`)
           }
 
           return this.tsMetaFileFactory.build(sourceFile)

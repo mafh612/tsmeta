@@ -1,6 +1,6 @@
 import { CallExpression, Decorator, Expression, Identifier, isCallExpression } from 'typescript'
 import { TsArgument, TsDecorator } from '../../lib/interfaces/tsmeta.schema'
-import { IdentifierToString } from '../../lib/ts.methods'
+import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 import { TsMetaArgumentFactory } from './tsmeta.argument.factory'
 
 /**
@@ -8,7 +8,7 @@ import { TsMetaArgumentFactory } from './tsmeta.argument.factory'
  */
 class TsMetaDecoratorFactory {
 
-  private tsMetaArgumentFactory: TsMetaArgumentFactory = new TsMetaArgumentFactory()
+  private readonly tsMetaArgumentFactory: TsMetaArgumentFactory = new TsMetaArgumentFactory()
 
   /**
    * build TsDecorator element

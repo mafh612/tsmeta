@@ -1,7 +1,7 @@
 import { TypeNode } from 'typescript'
 import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
 import { TsType } from '../../lib/interfaces/tsmeta.schema'
-import { TypeNodeToTsType } from '../../lib/ts.methods'
+import { TypeNodeToTsType } from '../../lib/utils/type.node.to.ts.type'
 
 /**
  * class TsMetaTypeFactory

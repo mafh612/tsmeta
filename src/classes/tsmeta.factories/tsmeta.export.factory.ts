@@ -1,6 +1,6 @@
 import { ExportDeclaration, ExportSpecifier, Identifier } from 'typescript'
 import { TsExport } from '../../lib/interfaces/tsmeta.schema'
-import { TokenToString } from '../../lib/ts.methods'
+import { TokenToString } from '../../lib/utils/token.to.string'
 
 /**
  * class TsMetaExportFactory

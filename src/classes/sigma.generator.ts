@@ -12,16 +12,16 @@ import { SigmaInterfacesGenerator } from './sigma.generators/sigma.interfaces.ge
  */
 class SigmaGenerator {
 
-  private sigmaNodeGenerator: SigmaNodeGenerator = new SigmaNodeGenerator()
+  private readonly sigmaNodeGenerator: SigmaNodeGenerator = new SigmaNodeGenerator()
 
-  private sigmaFilesGenerator: SigmaFilesGenerator = new SigmaFilesGenerator()
-  private sigmaClassesGenerator: SigmaClassesGenerator = new SigmaClassesGenerator()
-  private sigmaInterfacesGenerator: SigmaInterfacesGenerator = new SigmaInterfacesGenerator()
+  private readonly sigmaFilesGenerator: SigmaFilesGenerator = new SigmaFilesGenerator()
+  private readonly sigmaClassesGenerator: SigmaClassesGenerator = new SigmaClassesGenerator()
+  private readonly sigmaInterfacesGenerator: SigmaInterfacesGenerator = new SigmaInterfacesGenerator()
 
   private nodes: SigmaNode[] = []
   private edges: SigmaEdge[] = []
 
-  constructor(private sigmaConfig: SigmaConfig) {}
+  constructor(private readonly sigmaConfig: SigmaConfig) {}
 
   /**
    * generate SigmaData container
@@ -118,7 +118,7 @@ class SigmaGenerator {
   }
 
   /**
-   * calculate edges
+   * calculate all edges
    */
   private calculateEdges(): SigmaEdge[] {
     const edges: SigmaEdge[] = []

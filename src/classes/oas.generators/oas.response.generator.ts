@@ -8,7 +8,7 @@ import { TsArgument, TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.s
  */
 class OasResponseGenerator {
 
-  private httpStatusOK: number = 200
+  private readonly httpStatusOK: number = 200
 
   /**
    * generate Response
@@ -77,9 +77,10 @@ class OasResponseGenerator {
         properties: {}
       }
 
-      Object.keys(responseParam.schema).forEach((key: string) => {
-        schema.properties[key] = { type: responseParam.schema[key] }
-      })
+      Object.keys(responseParam.schema)
+        .forEach((key: string) => {
+          schema.properties[key] = { type: responseParam.schema[key] }
+        })
 
       content = {
         'application/json': {

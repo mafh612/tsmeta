@@ -5,7 +5,7 @@ import {
   TypeElement
 } from 'typescript'
 import { TsMain, TsMethod, TsProperty } from '../../lib/interfaces/tsmeta.schema'
-import { IdentifierToString } from '../../lib/ts.methods'
+import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 import { TsMetaMethodFactory } from './tsmeta.method.factory'
 import { TsMetaPropertyFactory } from './tsmeta.property.factory'
 
@@ -14,8 +14,8 @@ import { TsMetaPropertyFactory } from './tsmeta.property.factory'
  */
 class TsMetaMainFactory {
 
-  private tsMetaMethodFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
-  private tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
+  private readonly tsMetaMethodFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
+  private readonly tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
 
   /**
    * build TsClass element

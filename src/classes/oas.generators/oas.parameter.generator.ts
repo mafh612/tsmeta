@@ -9,14 +9,14 @@ import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
  */
 class OasParameterGenerator {
 
-  private parameterAnnotations: string[] = [
+  private readonly parameterAnnotations: string[] = [
     AnnotationsEnum.PATHVARIABLE,
     AnnotationsEnum.REQUESTPARAM,
     AnnotationsEnum.REQUESTHEADER,
     AnnotationsEnum.COOKIEVALUE,
     AnnotationsEnum.CONTROLLERPARAM
   ]
-  private parameterAnnotationMap: { [key: string]: string } = {
+  private readonly parameterAnnotationMap: { [key: string]: string } = {
     CookieValue: 'cookie',
     PathVariable: 'path',
     RequestHeader: 'header',
