@@ -4,7 +4,7 @@
   <a href="https://www.npmjs.com/package/tsmeta"><img src="https://img.shields.io/npm/l/tsmeta.svg" alt="License"></a>
 </p>
 
-# tsmeta v.0.8.4
+# tsmeta
 <img width="100" height="100" src="https://github.com/mafh612/tsmeta/blob/master/logo/logo.png" title="tsmeta" />
 
 ## Contents
