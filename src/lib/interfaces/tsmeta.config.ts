@@ -43,8 +43,8 @@ export interface OasConfig extends BaseConfig {
  * interface GraphQLConfig
  */
 export interface GraphQLConfig extends BaseConfig {
-  model_annotation: string
-  property_annotation: string
+  modelAnnotation: string
+  propertyAnnotation: string
 }
 /**
  * interface TsMetaConfigJson
