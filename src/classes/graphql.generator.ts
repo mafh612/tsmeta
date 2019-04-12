@@ -31,7 +31,7 @@ class GraphQLGenerator {
    * filter TsMeta schema for Model annotated classes
    */
   private filterModel(tsMeta: TsMeta): TsFile[] {
-    const modelAnnotation: string = this.graphQLConfig.model_annotation || 'Model'
+    const modelAnnotation: string = this.graphQLConfig.modelAnnotation || 'Model'
 
     const tsFiles: TsFile[] = []
 

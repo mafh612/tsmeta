@@ -18,7 +18,7 @@ class GraphQLPropertyGenerator {
     const tsType: TsType = tsProperty.tstype
 
     const propertyDecorator: TsDecorator = (tsProperty && tsProperty.decorators)
-      ? tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.graphQLConfig.property_annotation)
+      ? tsProperty.decorators.find((tsDecorator: TsDecorator) => tsDecorator.name === this.graphQLConfig.propertyAnnotation)
       : undefined
 
     const propertyArgument: TsArgument = (propertyDecorator && propertyDecorator.tsarguments)

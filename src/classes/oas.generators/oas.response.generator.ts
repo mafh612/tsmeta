@@ -57,8 +57,8 @@ class OasResponseGenerator {
       content = undefined
     }
 
-    if (responseParam && responseParam.response_ref) {
-      return { $ref: `#/components/responses/${responseParam.response_ref}${version}` }
+    if (responseParam && responseParam.responseRef) {
+      return { $ref: `#/components/responses/${responseParam.responseRef}${version}` }
     }
 
     if (responseParam && responseParam.ref) {
