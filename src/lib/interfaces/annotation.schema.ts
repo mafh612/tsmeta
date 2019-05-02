@@ -3,9 +3,10 @@ import { OasFormat } from '../enums/oas.format.enum'
  * interface PropertyParam
  */
 export interface PropertyParam {
-  version?: string
-  required?: boolean
+  enum?: string[] // tslint:disable-line no-reserved-keywords
   format?: OasFormat
+  required?: boolean
+  version?: string
 }
 /**
  * interface ParameterParam

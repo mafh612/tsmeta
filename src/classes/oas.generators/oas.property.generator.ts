@@ -50,6 +50,7 @@ class OasPropertyGenerator {
     }
 
     if (propertyParam && propertyParam.format) schema.format = propertyParam.format as string
+    if (propertyParam && propertyParam.enum) schema.enum = propertyParam.enum
 
     return schema
   }
