@@ -1,6 +1,7 @@
 import * as deepAssign from 'deep-assign'
 import { Components, Info, Openapi, Parameter, PathItem, Schema, SecurityRequirement, Server, Tag } from 'oasmodel'
 import { GetMappedAnnotation } from '../lib/annotations.mapping'
+import { last } from '../lib/array.reducer'
 import { TypescriptTypes } from '../lib/enums/typescript.types.enum'
 import { ModelParam } from '../lib/interfaces/annotation.schema'
 import { OasConfig } from '../lib/interfaces/tsmeta.config'
@@ -101,7 +102,7 @@ class OasGenerator {
       const controllerParams: Parameter[] = tsFile.tsClass.decorators
         .filter((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('ControllerParam'))
         .map((tsDecorator: TsDecorator) => this.createControllerParams(tsDecorator))
-      const controllerArgument: TsArgument = controllerDecorator.tsarguments.pop()
+      const controllerArgument: TsArgument = controllerDecorator.tsarguments.reduce(last)
 
       tsFile.tsClass.methods.forEach((tsMethod: TsMethod) => {
         const path: { [key: string]: PathItem } = this.oasPathGenerator
@@ -143,7 +144,7 @@ class OasGenerator {
     files.forEach((tsFile: TsFile) => {
       const modelDecorator: TsDecorator = tsFile.tsClass.decorators
         .find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'))
-      const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments.pop().representation : {}
+      const modelParam: ModelParam = modelDecorator.tsarguments ? modelDecorator.tsarguments.reduce(last).representation : {}
       const version: string = (modelParam && modelParam.version) ? `_${modelParam.version}` : ''
 
       const schemaName: string = `${tsFile.tsClass.name}${version}`

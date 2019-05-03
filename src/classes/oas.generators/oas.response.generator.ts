@@ -1,5 +1,6 @@
 import { MediaType, Response, Schema } from 'oasmodel'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
+import { last } from '../../lib/array.reducer'
 import { ResponseParam } from '../../lib/interfaces/annotation.schema'
 import { TsArgument, TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.schema'
 
@@ -21,7 +22,7 @@ class OasResponseGenerator {
     GetMappedAnnotation('any') // tslint:disable-line
 
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
-      const responseArgument: TsArgument = responseDecorator.tsarguments.pop()
+      const responseArgument: TsArgument = responseDecorator.tsarguments && responseDecorator.tsarguments.reduce(last, undefined)
       const responseParam: ResponseParam = responseArgument
         ? responseArgument.representation as ResponseParam
         : undefined

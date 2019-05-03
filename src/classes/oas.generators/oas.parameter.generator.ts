@@ -1,5 +1,6 @@
 import { Parameter } from 'oasmodel'
 import { GetMappedAnnotation } from '../../lib/annotations.mapping'
+import { last } from '../../lib/array.reducer'
 import { AnnotationsEnum } from '../../lib/enums/annotations.enum'
 import { ParameterParam } from '../../lib/interfaces/annotation.schema'
 import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
@@ -36,7 +37,7 @@ class OasParameterGenerator {
 
     if (!parameterDecorator) return undefined
 
-    const parameterArgument: ParameterParam = parameterDecorator.tsarguments.pop().representation
+    const parameterArgument: ParameterParam = parameterDecorator.tsarguments.reduce(last).representation
 
     const $ref: string = parameterArgument.ref ? parameterArgument.ref : undefined
     const allowEmptyValue: boolean = !parameterArgument.required

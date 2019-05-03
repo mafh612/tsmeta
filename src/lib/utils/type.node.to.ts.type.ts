@@ -1,6 +1,7 @@
 import {
   ArrayTypeNode, Identifier, IndexSignatureDeclaration, PropertySignature, SyntaxKind,
   TypeElement, TypeLiteralNode, TypeNode, TypeReferenceNode, UnionTypeNode } from 'typescript'
+import { last } from '../array.reducer'
 import { TypescriptTypes } from '../enums/typescript.types.enum'
 import { TsType } from '../interfaces/tsmeta.schema'
 import { TsTypeClass } from '../tstype.class'
@@ -78,7 +79,7 @@ const typeNodeToTsType: (
         })
 
         tsType.typescriptType = TypescriptTypes.PROP
-      } else tsType = tsTypes.pop()
+      } else tsType = tsTypes && tsTypes.reduce(last, undefined)
 
       break
     case SyntaxKind.TypeReference:

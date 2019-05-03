@@ -1,3 +1,4 @@
+import { last } from '../../lib/array.reducer'
 import { OasFormat } from '../../lib/enums/oas.format.enum'
 import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
 import { PropertyParam } from '../../lib/interfaces/annotation.schema'
@@ -22,7 +23,7 @@ class GraphQLPropertyGenerator {
       : undefined
 
     const propertyArgument: TsArgument = (propertyDecorator && propertyDecorator.tsarguments)
-      ? propertyDecorator.tsarguments.pop()
+      ? propertyDecorator.tsarguments.reduce(last)
       : undefined
 
     const propertyParam: PropertyParam = (propertyArgument && propertyArgument.representation)

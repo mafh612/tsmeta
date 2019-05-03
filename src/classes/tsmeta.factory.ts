@@ -1,6 +1,7 @@
 import { readFileSync as ReadFileSync } from 'fs'
 import { resolve as Resolve } from 'path'
 import { CompilerOptions, Program, SourceFile } from 'typescript'
+import { last } from '../lib/array.reducer'
 import { TsMetaConfig } from '../lib/interfaces/tsmeta.config'
 import { TsFile, TsMeta, TsPackage, TsProgram } from '../lib/interfaces/tsmeta.schema'
 import { setSourceFile } from '../lib/source.file.container'
@@ -65,10 +66,12 @@ class TsMetaFactory {
    * add main program to programs
    */
   private createProgram(pckg: TsPackage): TsProgram {
-    const baseSourcePathArry: string[] = Resolve(pckg.source)
+    const baseSourcePathArray: string[] = Resolve(pckg.source)
       .split('/')
-    baseSourcePathArry.pop()
-    const baseSourcePath: string = baseSourcePathArry.join('/')
+
+    baseSourcePathArray.pop()
+
+    const baseSourcePath: string = baseSourcePathArray.join('/')
 
     const compilerOptions: CompilerOptions = JSON.parse(ReadFileSync(this.tsMetaConfig.metaConfig.compilerOptions, { encoding: 'utf8' }))
     const program: Program = CreateTypescriptProgram([Resolve(pckg.source)], compilerOptions)
@@ -81,7 +84,7 @@ class TsMetaFactory {
           if (process.env.NODE_ENV !== 'test' && this.tsMetaConfig.showScannedFiles) {
             process.stdout.write(` - ${sourceFile.fileName
               .split('/')
-              .pop()}\n`)
+              .reduce(last)}\n`)
           }
 
           return this.tsMetaFileFactory.build(sourceFile)

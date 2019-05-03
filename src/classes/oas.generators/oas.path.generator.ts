@@ -1,5 +1,6 @@
 import { Parameter, PathItem } from 'oasmodel'
 import { GetMappedAnnotation, SetAnnoationsMapping } from '../../lib/annotations.mapping'
+import { last } from '../../lib/array.reducer'
 import { AnnotationsEnum } from '../../lib/enums/annotations.enum'
 import { MappingAnnotations } from '../../lib/enums/mapping.annotation.enum'
 import { OasConfig } from '../../lib/interfaces/tsmeta.config'
@@ -39,7 +40,8 @@ class OasPathGenerator {
 
     if (!mappingDecorator) return
 
-    const methodPath: string = mappingDecorator.tsarguments.pop().representation
+    const methodPath: string = mappingDecorator.tsarguments.reduce(last).representation
+
     const fullPath: string = this.createFullPath(controllerPath, methodPath)
 
     this.oasOperationGeneration = new OasOperationGenerator()

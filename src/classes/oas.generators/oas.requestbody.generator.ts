@@ -1,4 +1,5 @@
 import { RequestBody, Schema } from 'oasmodel'
+import { last } from '../../lib/array.reducer'
 import { ParameterParam } from '../../lib/interfaces/annotation.schema'
 import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
 import { OasPropertyGenerator } from './oas.property.generator'
@@ -16,9 +17,9 @@ class OasRequestbodyGenerator {
   public generate(reqBodyParameter: TsParameter): RequestBody {
     this.oasPropertyGenerator = new OasPropertyGenerator()
 
-    const decorator: TsDecorator = reqBodyParameter.decorators.pop()
+    const decorator: TsDecorator = reqBodyParameter.decorators.reduce(last)
     const parameterParam: ParameterParam = (decorator && decorator.tsarguments.length)
-      ? decorator.tsarguments.pop().representation
+      ? decorator.tsarguments.reduce(last).representation
       : undefined
 
     const description: string = undefined

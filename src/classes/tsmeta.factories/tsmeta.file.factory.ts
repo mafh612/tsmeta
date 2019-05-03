@@ -24,6 +24,7 @@ class TsMetaFileFactory {
     const filename: string = sourceFilenameArray
       .pop()
       .replace('.ts', '')
+
     const path: string = sourceFilenameArray.join('/')
     let tsExports: TsExport[] = []
     let tsImports: TsImport[] = []
