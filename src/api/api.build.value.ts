@@ -14,8 +14,6 @@ const buildValue: (propertyType: string, decorator: TsDecorator, modelDecorator:
   const arg: TsArgument = decorator && decorator.tsarguments && decorator.tsarguments.reduce(last)
   const modelArg: TsArgument = modelDecorator && modelDecorator.tsarguments && modelDecorator.tsarguments.reduce(last)
 
-  if (modelDecorator) console.log(modelDecorator) // tslint:disable-line
-
   switch (propertyType) {
     case 'boolean': return _boolean
     case 'number':
