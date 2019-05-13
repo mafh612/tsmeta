@@ -1,0 +1,1 @@
+{"version":3,"file":"tsmeta.type.factory.js","sourceRoot":"","sources":["tsmeta.type.factory.ts"],"names":[],"mappings":";;AACA,iFAAuE;AAEvE,+EAAuE;AAEvE;;GAEG;AACH,MAAM,iBAAiB;IAErB;;OAEG;IACI,KAAK,CAAC,QAAkB;QAC7B,IAAI,CAAC,QAAQ,EAAE;YACb,OAAO;gBACL,SAAS,EAAE,WAAW;gBACtB,cAAc,EAAE,uCAAe,CAAC,OAAO;aACxC,CAAA;SACF;QAED,OAAO,uCAAgB,CAAC,QAAQ,CAAW,CAAA;IAC7C,CAAC;CACF;AAEQ,8CAAiB"}

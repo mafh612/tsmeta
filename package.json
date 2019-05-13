@@ -32,10 +32,9 @@
   "author": "mafh",
   "license": "MIT",
   "dependencies": {
-    "deep-assign": "^3.0.0",
     "graphql": "^14.1.1",
     "koa-router": "^7.4.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.14.126",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
     "semantic-release": "^15.5.0",
@@ -43,7 +42,6 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@types/deep-assign": "^0.1.1",
     "@types/graphql": "^14.0.7",
     "@types/jest": "^24.0.9",
     "@types/koa": "^2.0.46",
@@ -56,7 +54,7 @@
     "koa": "^2.6.1",
     "ts-jest": "^24.0.0",
     "tslint": "^5.9.1",
-    "tslint-microsoft-contrib": "^6.0.0"
+    "tslint-microsoft-contrib": "^6.1.1"
   },
   "release": {
     "analyzeCommits": [

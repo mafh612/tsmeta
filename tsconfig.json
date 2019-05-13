@@ -1,23 +1,33 @@
 {
   "compilerOptions": {
+    "pretty": false,
+    "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es2018",
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "outDir": "./dist",
-    "sourceMap": false,
+    "lib": ["es2018", "esnext.asynciterable"],
+
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "noEmitOnError": true,
+
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+
+    "skipLibCheck": true,
+
+    "alwaysStrict": true,
+    "preserveConstEnums": true,
+    // "importHelpers": true,
+    // "esModuleInterop": true, this leads to problems with tsjest :(
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "lib": ["es2018", "esnext.asynciterable"]
+    "emitDecoratorMetadata": true
   },
-  "include": [
-    "__test__/**/*",
-    "src/**/*",
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["__test__/**/*", "src/**/*"],
+  "exclude": ["node_modules"]
 }

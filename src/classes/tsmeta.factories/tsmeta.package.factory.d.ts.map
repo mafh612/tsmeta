@@ -1,0 +1,1 @@
+{"version":3,"file":"tsmeta.package.factory.d.ts","sourceRoot":"","sources":["tsmeta.package.factory.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,oCAAoC,CAAA;AAE9D;;GAEG;AACH,cAAM,oBAAoB;IAExB;;OAEG;IACI,KAAK,CAAC,QAAQ,EAAE,MAAM,GAAG,SAAS;IAIzC;;OAEG;IACI,eAAe,CAAC,QAAQ,EAAE,MAAM,GAAG,SAAS;CAGpD;AAED,OAAO,EAAE,oBAAoB,EAAE,CAAA"}
