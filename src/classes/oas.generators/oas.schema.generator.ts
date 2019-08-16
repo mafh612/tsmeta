@@ -10,7 +10,6 @@ import { OasPropertyGenerator } from './oas.property.generator'
  * class OasSchemaGenerator
  */
 class OasSchemaGenerator {
-
   private oasPropertyGenerator: OasPropertyGenerator
 
   /**
@@ -22,8 +21,9 @@ class OasSchemaGenerator {
     let propertyParam: PropertyParam
 
     if (tsProperty.decorators) {
-      propertyDecorator = tsProperty.decorators
-        .find((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation(tsDecorator.name))
+      propertyDecorator = tsProperty.decorators.find(
+        (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation(tsDecorator.name)
+      )
 
       propertyParam = propertyDecorator.tsarguments.reduce(last).representation
     }
@@ -41,13 +41,14 @@ class OasSchemaGenerator {
    */
   private createSubSchema(tsProperty: TsProperty, propertyParam: PropertyParam): Schema {
     let schema: Schema = {}
-    const version: string = (propertyParam && propertyParam.version) ? `_${propertyParam.version}` : ''
+    const version: string = propertyParam && propertyParam.version ? `_${propertyParam.version}` : ''
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.ARRAY:
         const typeName: string = tsProperty.tstype.basicType as string
 
-        if (['any', 'boolean', 'number', 'string'].includes(typeName)) schema = { type: 'array', items: { type: typeName } }
+        if (['any', 'boolean', 'number', 'string'].includes(typeName))
+          schema = { type: 'array', items: { type: typeName } }
         else schema = { type: 'array', items: { $ref: `#/components/schemas/${typeName}${version}` } }
         break
       case TypescriptTypes.BASIC:
@@ -58,7 +59,7 @@ class OasSchemaGenerator {
         let _type: string
         let $ref: string
 
-        if (['any', 'boolean', 'number', 'string'].includes(propertiesType))  _type = propertiesType
+        if (['any', 'boolean', 'number', 'string'].includes(propertiesType)) _type = propertiesType
         else $ref = `#/components/schemas/${propertiesType}${version}`
 
         schema = { type: 'object', additionalProperties: { type: _type, $ref } }
@@ -76,7 +77,7 @@ class OasSchemaGenerator {
         keyTypes.forEach((key: string, index: number) => {
           const value: string = tsProperty.tstype.valueType[index]
 
-          if (['any', 'boolean', 'number', 'string'].includes(value))  properties[key] = { type: value }
+          if (['any', 'boolean', 'number', 'string'].includes(value)) properties[key] = { type: value }
           else properties[key] = { $ref: `#/components/schemas/${value}${version}` }
         })
 

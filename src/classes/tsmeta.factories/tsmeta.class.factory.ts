@@ -9,7 +9,6 @@ import { TsMetaPropertyFactory } from './tsmeta.property.factory'
  * class TsMetaClassFactory
  */
 class TsMetaClassFactory {
-
   private readonly tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
   private readonly tsMetaMethdoFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
   private readonly tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
@@ -20,7 +19,9 @@ class TsMetaClassFactory {
   public build(classDeclaration: ClassDeclaration): TsClass {
     const name: string = IdentifierToString(classDeclaration.name)
     const decorators: TsDecorator[] = classDeclaration.decorators
-      ? classDeclaration.decorators.map((decorator: Decorator): TsDecorator => this.tsMetaDecoratorFactory.build(decorator))
+      ? classDeclaration.decorators.map(
+          (decorator: Decorator): TsDecorator => this.tsMetaDecoratorFactory.build(decorator)
+        )
       : undefined
 
     const methods: TsMethod[] = []

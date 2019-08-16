@@ -1,4 +1,9 @@
-import { existsSync as ExistsSync, mkdirSync as MkdirSync, readFileSync as ReadFileSync, writeFile as WriteFile } from 'fs'
+import {
+  existsSync as ExistsSync,
+  mkdirSync as MkdirSync,
+  readFileSync as ReadFileSync,
+  writeFile as WriteFile
+} from 'fs'
 import { cloneDeep } from 'lodash'
 import { Openapi } from 'oasmodel'
 import { resolve as ResolvePath } from 'path'
@@ -16,7 +21,6 @@ import { TsMeta } from './lib/interfaces/tsmeta.schema'
  * class TsMeta
  */
 class TsMetaExecution {
-
   private readonly tsMetaConfigFilename: string = 'tsmeta.config.json'
   private tsMetaConfig: TsMetaConfig
   private tsMeta: TsMeta
@@ -108,32 +112,57 @@ class TsMetaExecution {
    */
   private writeAllToFile(): void {
     if (this.tsMetaConfig.metaConfig && this.tsMetaConfig.metaConfig.create) {
-      this.writeToFile(this.tsMetaConfig.metaConfig.outputPath, this.tsMetaConfig.metaConfig.outputFilename, this.tsMeta)
+      this.writeToFile(
+        this.tsMetaConfig.metaConfig.outputPath,
+        this.tsMetaConfig.metaConfig.outputFilename,
+        this.tsMeta
+      )
     }
 
     if (this.tsMetaConfig.sigmaConfig && this.tsMetaConfig.sigmaConfig.create) {
-      this.writeToFile(this.tsMetaConfig.sigmaConfig.outputPath, this.tsMetaConfig.sigmaConfig.outputFilename, this.sigmaData)
+      this.writeToFile(
+        this.tsMetaConfig.sigmaConfig.outputPath,
+        this.tsMetaConfig.sigmaConfig.outputFilename,
+        this.sigmaData
+      )
     }
 
     if (this.tsMetaConfig.oasConfig && this.tsMetaConfig.oasConfig.create) {
       switch (this.tsMetaConfig.oasConfig.outputFormat) {
         case 'json':
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
+          this.writeToFile(
+            this.tsMetaConfig.oasConfig.outputPath,
+            `${this.tsMetaConfig.oasConfig.outputFilename}.json`,
+            this.openapi
+          )
           break
         case 'yaml':
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi, true)
+          this.writeToFile(
+            this.tsMetaConfig.oasConfig.outputPath,
+            `${this.tsMetaConfig.oasConfig.outputFilename}.yml`,
+            this.openapi,
+            true
+          )
           break
         default:
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.json`, this.openapi)
-          this.writeToFile(this.tsMetaConfig.oasConfig.outputPath, `${this.tsMetaConfig.oasConfig.outputFilename}.yml`, this.openapi, true)
+          this.writeToFile(
+            this.tsMetaConfig.oasConfig.outputPath,
+            `${this.tsMetaConfig.oasConfig.outputFilename}.json`,
+            this.openapi
+          )
+          this.writeToFile(
+            this.tsMetaConfig.oasConfig.outputPath,
+            `${this.tsMetaConfig.oasConfig.outputFilename}.yml`,
+            this.openapi,
+            true
+          )
       }
     }
 
     if (this.tsMetaConfig.graphQLConfig && this.tsMetaConfig.graphQLConfig.create) {
-      Object.keys(this.graphQLSchemas)
-        .forEach((key: string) => {
-          this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, `${key}.graphql`, this.graphQLSchemas[key])
-        })
+      Object.keys(this.graphQLSchemas).forEach((key: string) => {
+        this.writeToFile(this.tsMetaConfig.graphQLConfig.outputPath, `${key}.graphql`, this.graphQLSchemas[key])
+      })
     }
   }
 

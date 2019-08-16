@@ -9,7 +9,6 @@ import { TsMetaTypeFactory } from './tsmeta.type.factory'
  * class TsMetaMethodFactory
  */
 class TsMetaMethodFactory {
-
   private readonly tsMetaDecoratorFactory: TsMetaDecoratorFactory = new TsMetaDecoratorFactory()
   private readonly tsMetaParameterFactory: TsMetaParameterFactory = new TsMetaParameterFactory()
   private readonly tsMetaTypeFactory: TsMetaTypeFactory = new TsMetaTypeFactory()
@@ -17,14 +16,16 @@ class TsMetaMethodFactory {
   /**
    * build TsMethod element
    */
-  public build(method: MethodDeclaration|MethodSignature): TsMethod {
+  public build(method: MethodDeclaration | MethodSignature): TsMethod {
     const name: string = PropertyNameToString(method.name)
     const decorators: TsDecorator[] = method.decorators
       ? method.decorators.map((decorator: Decorator) => this.tsMetaDecoratorFactory.build(decorator))
       : undefined
 
     const parameters: TsParameter[] = method.parameters
-      ? method.parameters.map((parameterDeclaration: ParameterDeclaration) => this.tsMetaParameterFactory.build(parameterDeclaration))
+      ? method.parameters.map((parameterDeclaration: ParameterDeclaration) =>
+          this.tsMetaParameterFactory.build(parameterDeclaration)
+        )
       : undefined
 
     const tstype: TsType = this.tsMetaTypeFactory.build(method.type)

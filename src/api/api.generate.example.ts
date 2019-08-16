@@ -18,8 +18,12 @@ let tsMains: TsMain[]
 /**
  * generateExample from class or interface
  */
-const generateExample: ((exampleName: string, tsMetaJson: TsMeta, buildPath?: string, exampleModelName?: string) => any)
-  = (exampleName: string, tsMetaJson: TsMeta, buildPath: string = '', exampleModelName?: string): any => {
+const generateExample: (
+  exampleName: string,
+  tsMetaJson: TsMeta,
+  buildPath?: string,
+  exampleModelName?: string,
+) => any = (exampleName: string, tsMetaJson: TsMeta, buildPath: string = '', exampleModelName?: string): any => {
   buildPath += `^${exampleName}$`
   let tsModelMain: TsMain
 
@@ -43,10 +47,12 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta, buildPath?: st
     let tsModelDecorator: TsDecorator
 
     if (tsModelMain) {
-      const tsModelProperty: TsProperty = tsModelMain.properties && tsModelMain.properties
-        .find((item: TsProperty) => item.name === tsProperty.name)
-      tsModelDecorator = tsModelProperty && tsModelProperty.decorators && tsModelProperty.decorators
-        .find((item: TsDecorator) => item.name === AnnotationsEnum.PROPERTY)
+      const tsModelProperty: TsProperty =
+        tsModelMain.properties && tsModelMain.properties.find((item: TsProperty) => item.name === tsProperty.name)
+      tsModelDecorator =
+        tsModelProperty &&
+        tsModelProperty.decorators &&
+        tsModelProperty.decorators.find((item: TsDecorator) => item.name === AnnotationsEnum.PROPERTY)
     }
 
     switch (tsProperty.tstype.typescriptType) {
@@ -59,27 +65,43 @@ const generateExample: ((exampleName: string, tsMetaJson: TsMeta, buildPath?: st
       case TypescriptTypes.ARRAY:
         if (repeated) {
           example[tsProperty.name] = []
-        } else if (tsProperty.tstype.basicType === 'array' && literals.includes(tsProperty.tstype.valueType as string)) {
-            example[tsProperty.name] = [[BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator)]]
-        } else if (tsProperty.tstype.basicType === 'array' && !literals.includes(tsProperty.tstype.valueType as string)) {
+        } else if (
+          tsProperty.tstype.basicType === 'array' &&
+          literals.includes(tsProperty.tstype.valueType as string)
+        ) {
+          example[tsProperty.name] = [
+            [BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator)],
+          ]
+        } else if (
+          tsProperty.tstype.basicType === 'array' &&
+          !literals.includes(tsProperty.tstype.valueType as string)
+        ) {
           example[tsProperty.name] = [[generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath)]]
         } else if (literals.includes(tsProperty.tstype.basicType as string)) {
           example[tsProperty.name] = [BuildValue(tsProperty.tstype.basicType as string, tsDecorator, tsModelDecorator)]
-        } else example[tsProperty.name] = [generateExample(tsProperty.tstype.basicType as string, tsMetaJson, buildPath)]
+        } else
+          example[tsProperty.name] = [generateExample(tsProperty.tstype.basicType as string, tsMetaJson, buildPath)]
         break
       case TypescriptTypes.MAP:
         if (literals.includes(tsProperty.tstype.valueType as string)) {
-          example[tsProperty.name] = { key: BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator) }
+          example[tsProperty.name] = {
+            key: BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator),
+          }
         } else if (repeated) {
           example[tsProperty.name] = {}
-        } else example[tsProperty.name] = { key: generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath) }
+        } else
+          example[tsProperty.name] = {
+            key: generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath),
+          }
         break
       case TypescriptTypes.REFERENCE:
         if (repeated) example[tsProperty.name] = {}
         else example[tsProperty.name] = generateExample(tsProperty.tstype.basicType as string, tsMetaJson, buildPath)
         break
       default:
-        process.stdout.write(`could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`)
+        process.stdout.write(
+          `could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`,
+        )
     }
   })
 

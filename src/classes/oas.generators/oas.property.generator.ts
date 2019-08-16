@@ -7,13 +7,12 @@ import { TsProperty } from '../../lib/interfaces/tsmeta.schema'
  * class OasPropertyGenerator
  */
 class OasPropertyGenerator {
-
   /**
    * generate property schema
    */
   public generate(tsProperty: TsProperty, propertyParam: PropertyParam, parameterParam?: ParameterParam): Schema {
     let schema: Schema = {}
-    const version: string = (propertyParam && propertyParam.version) ? `_${propertyParam.version}` : ''
+    const version: string = propertyParam && propertyParam.version ? `_${propertyParam.version}` : ''
 
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.ARRAY:
@@ -92,7 +91,7 @@ class OasPropertyGenerator {
     let _type: string
     let $ref: string
 
-    if (['any', 'boolean', 'number', 'string'].includes(propertiesType))  _type = propertiesType
+    if (['any', 'boolean', 'number', 'string'].includes(propertiesType)) _type = propertiesType
     else $ref = `#/components/schemas/${propertiesType}${version}`
 
     return { type: 'object', additionalProperties: { type: _type, $ref } }
@@ -108,7 +107,7 @@ class OasPropertyGenerator {
     keyTypes.forEach((key: string, index: number) => {
       const value: string = tsProperty.tstype.valueType[index]
 
-      if (['any', 'boolean', 'number', 'string'].includes(value))  properties[key] = { type: value }
+      if (['any', 'boolean', 'number', 'string'].includes(value)) properties[key] = { type: value }
       else properties[key] = { $ref: `#/components/schemas/${value}${version}` }
     })
 

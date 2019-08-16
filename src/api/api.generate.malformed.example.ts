@@ -15,8 +15,10 @@ let tsMains: TsMain[]
 /**
  * generateExample from class or interface
  */
-const generateMalformedExample: ((exampleName: string, tsMetaJson: TsMeta) => any)
-  = (exampleName: string, tsMetaJson: TsMeta): any => {
+const generateMalformedExample: (exampleName: string, tsMetaJson: TsMeta) => any = (
+  exampleName: string,
+  tsMetaJson: TsMeta,
+): any => {
   if (!tsMains) tsMains = ExtractMains(tsMetaJson)
   const tsMain: TsMain = tsMains.find((item: TsMain) => item.name === exampleName)
   const example: KeySignature = {}
@@ -45,7 +47,9 @@ const generateMalformedExample: ((exampleName: string, tsMetaJson: TsMeta) => an
         example[tsProperty.name] = true
         break
       default:
-        process.stdout.write(`could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`)
+        process.stdout.write(
+          `could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`,
+        )
     }
   })
 

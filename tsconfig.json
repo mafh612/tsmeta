@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "pretty": false,
     "target": "es2018",
     "module": "commonjs",
@@ -9,7 +10,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "composite": true,
+    "composite": false,
     "noEmitOnError": true,
 
     "strictNullChecks": false,
@@ -28,6 +29,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["__test__/**/*", "src/**/*"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }

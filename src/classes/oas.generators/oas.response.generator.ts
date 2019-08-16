@@ -8,29 +8,30 @@ import { TsArgument, TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.s
  * class OasResponseGenerator
  */
 class OasResponseGenerator {
-
   private readonly httpStatusOK: number = 200
 
   /**
    * generate Response
    */
   public generate(tsMethod: TsMethod): { [key: number]: Response } {
-    const responseDecorators: TsDecorator[] = tsMethod.decorators
-      .filter((tsDecorator: TsDecorator) => tsDecorator.name.includes('Response'))
+    const responseDecorators: TsDecorator[] = tsMethod.decorators.filter((tsDecorator: TsDecorator) =>
+      tsDecorator.name.includes('Response')
+    )
     const response: { [key: string]: Response } = {}
 
     GetMappedAnnotation('any') // tslint:disable-line
 
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
-      const responseArgument: TsArgument = responseDecorator.tsarguments && responseDecorator.tsarguments.reduce(last, undefined)
+      const responseArgument: TsArgument =
+        responseDecorator.tsarguments && responseDecorator.tsarguments.reduce(last, undefined)
       const responseParam: ResponseParam = responseArgument
-        ? responseArgument.representation as ResponseParam
+        ? (responseArgument.representation as ResponseParam)
         : undefined
-      const statusCode: number = responseParam && responseParam.statusCode || this.httpStatusOK
+      const statusCode: number = (responseParam && responseParam.statusCode) || this.httpStatusOK
 
       response[statusCode] = { ...this.createContent(responseParam) }
-      response[statusCode].description = responseParam && responseParam.description
-        || this.createDescription(responseDecorator, responseParam)
+      response[statusCode].description =
+        (responseParam && responseParam.description) || this.createDescription(responseDecorator, responseParam)
 
       if ('$ref' in response[statusCode]) {
         response[statusCode] = { $ref: response[statusCode].$ref }
@@ -52,7 +53,7 @@ class OasResponseGenerator {
    */
   private createContent(responseParam: ResponseParam): Response {
     let content: { [key: string]: MediaType }
-    const version: string = (responseParam && responseParam.version) ? `_${responseParam.version}` : ''
+    const version: string = responseParam && responseParam.version ? `_${responseParam.version}` : ''
 
     if (!responseParam) {
       content = undefined
@@ -78,10 +79,9 @@ class OasResponseGenerator {
         properties: {}
       }
 
-      Object.keys(responseParam.schema)
-        .forEach((key: string) => {
-          schema.properties[key] = { type: responseParam.schema[key] }
-        })
+      Object.keys(responseParam.schema).forEach((key: string) => {
+        schema.properties[key] = { type: responseParam.schema[key] }
+      })
 
       content = {
         'application/json': {

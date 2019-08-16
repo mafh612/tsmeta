@@ -10,7 +10,6 @@ import { OasResponseGenerator } from './oas.response.generator'
  * class OasOperationGenerator
  */
 class OasOperationGenerator {
-
   private oasParameterGenerator: OasParameterGenerator
   private oasResponseGenerator: OasResponseGenerator
   private oasRequestbodyGenerator: OasRequestbodyGenerator
@@ -34,9 +33,13 @@ class OasOperationGenerator {
     if (controllerParameters) parameters = parameters.concat(controllerParameters)
 
     const reqBodyParameter: TsParameter = tsMethod.parameters
-    .filter((tsParameter: TsParameter) => !!tsParameter.decorators)
-    .find((tsParameter: TsParameter) => tsParameter.decorators
-      .some((tsDecorator: TsDecorator) => tsDecorator && GetMappedAnnotation(tsDecorator.name) === AnnotationsEnum.REQUESTBODY))
+      .filter((tsParameter: TsParameter) => !!tsParameter.decorators)
+      .find((tsParameter: TsParameter) =>
+        tsParameter.decorators.some(
+          (tsDecorator: TsDecorator) =>
+            tsDecorator && GetMappedAnnotation(tsDecorator.name) === AnnotationsEnum.REQUESTBODY
+        )
+      )
 
     if (reqBodyParameter) {
       requestBody = this.oasRequestbodyGenerator.generate(reqBodyParameter)
@@ -44,8 +47,9 @@ class OasOperationGenerator {
 
     const responses: { [key: number]: Response } = this.oasResponseGenerator.generate(tsMethod)
 
-    const deprecated: boolean = tsMethod.decorators
-      .some((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.DEPRECATED) || undefined
+    const deprecated: boolean =
+      tsMethod.decorators.some((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.DEPRECATED) ||
+      undefined
 
     let security: any[] = tsMethod.decorators
       .filter((it: TsDecorator) => GetMappedAnnotation(it.name) === AnnotationsEnum.SECURED)

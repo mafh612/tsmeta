@@ -9,7 +9,6 @@ import { TsDecorator, TsParameter } from '../../lib/interfaces/tsmeta.schema'
  * class OasParameterGenerator
  */
 class OasParameterGenerator {
-
   private readonly parameterAnnotations: string[] = [
     AnnotationsEnum.PATHVARIABLE,
     AnnotationsEnum.REQUESTPARAM,
@@ -31,8 +30,9 @@ class OasParameterGenerator {
     let parameterDecorator: TsDecorator
 
     if (tsParameter.decorators) {
-      parameterDecorator = tsParameter.decorators
-        .find((tsDecorator: TsDecorator) => this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name)))
+      parameterDecorator = tsParameter.decorators.find((tsDecorator: TsDecorator) =>
+        this.parameterAnnotations.includes(GetMappedAnnotation(tsDecorator.name))
+      )
     }
 
     if (!parameterDecorator) return undefined
@@ -76,7 +76,7 @@ class OasParameterGenerator {
     if (!parameterParam || !parameterParam.required) return [false]
     if (!Array.isArray(parameterParam.required)) return [parameterParam.required as boolean]
 
-    return parameterParam.required as (boolean|string)[]
+    return parameterParam.required as Array<boolean | string>
   }
 }
 

@@ -1,4 +1,12 @@
-import { ClassDeclaration, ExportDeclaration, ImportDeclaration, InterfaceDeclaration, Node, SourceFile, SyntaxKind } from 'typescript'
+import {
+  ClassDeclaration,
+  ExportDeclaration,
+  ImportDeclaration,
+  InterfaceDeclaration,
+  Node,
+  SourceFile,
+  SyntaxKind
+} from 'typescript'
 import { TsClass, TsExport, TsFile, TsImport, TsMain } from '../../lib/interfaces/tsmeta.schema'
 import { TsMetaClassFactory } from './tsmeta.class.factory'
 import { TsMetaExportFactory } from './tsmeta.export.factory'
@@ -9,7 +17,6 @@ import { TsMetaMainFactory } from './tsmeta.main.factory'
  * class TsMetaFileFactory
  */
 class TsMetaFileFactory {
-
   private readonly tsMetaClassFactory: TsMetaClassFactory = new TsMetaClassFactory()
   private readonly tsMetaMainFactory: TsMetaMainFactory = new TsMetaMainFactory()
   private readonly tsMetaExportFactory: TsMetaExportFactory = new TsMetaExportFactory()
@@ -21,9 +28,7 @@ class TsMetaFileFactory {
   public build(sourceFile: SourceFile): TsFile {
     const sourceFilenameArray: string[] = sourceFile.fileName.split('/')
 
-    const filename: string = sourceFilenameArray
-      .pop()
-      .replace('.ts', '')
+    const filename: string = sourceFilenameArray.pop().replace('.ts', '')
 
     const path: string = sourceFilenameArray.join('/')
     let tsExports: TsExport[] = []

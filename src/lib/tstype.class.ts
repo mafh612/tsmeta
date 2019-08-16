@@ -5,11 +5,10 @@ import { TsType } from './interfaces/tsmeta.schema'
  * class TsTypeFactory
  */
 class TsTypeClass implements TsType {
-
   public representation?: string
-  public basicType: string|string[]
-  public keyType?: string|string[]
-  public valueType?: string|string[]
+  public basicType: string | string[]
+  public keyType?: string | string[]
+  public valueType?: string | string[]
   public typescriptType: TypescriptTypes
 
   constructor(tsType: TsType) {
@@ -35,7 +34,8 @@ class TsTypeClass implements TsType {
         this.representation = `${this.basicType}[]` as string
         break
       case TypescriptTypes.MAP:
-        if (Array.isArray(this.valueType))  this.representation = `Map<${this.keyType}, ${this.valueType.join('|')}>` as string
+        if (Array.isArray(this.valueType))
+          this.representation = `Map<${this.keyType}, ${this.valueType.join('|')}>` as string
         else this.representation = `Map<${this.keyType}, ${this.valueType}>` as string
         break
       case TypescriptTypes.REFERENCE:

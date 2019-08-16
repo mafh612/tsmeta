@@ -8,7 +8,6 @@ import { OasPropertyGenerator } from './oas.property.generator'
  * class OasRequestbodyGenerator
  */
 class OasRequestbodyGenerator {
-
   private oasPropertyGenerator: OasPropertyGenerator
 
   /**
@@ -18,9 +17,8 @@ class OasRequestbodyGenerator {
     this.oasPropertyGenerator = new OasPropertyGenerator()
 
     const decorator: TsDecorator = reqBodyParameter.decorators.reduce(last)
-    const parameterParam: ParameterParam = (decorator && decorator.tsarguments.length)
-      ? decorator.tsarguments.reduce(last).representation
-      : undefined
+    const parameterParam: ParameterParam =
+      decorator && decorator.tsarguments.length ? decorator.tsarguments.reduce(last).representation : undefined
 
     const description: string = undefined
     let schema: Schema
@@ -53,11 +51,11 @@ class OasRequestbodyGenerator {
   /**
    * collect from required field
    */
-  private requiredFields(parameterParam: ParameterParam): (boolean|string)[] {
+  private requiredFields(parameterParam: ParameterParam): Array<boolean | string> {
     if (!parameterParam || !parameterParam.required) return [false]
     if (!Array.isArray(parameterParam.required)) return [parameterParam.required as boolean]
 
-    return parameterParam.required as (boolean|string)[]
+    return parameterParam.required as Array<boolean | string>
   }
 }
 

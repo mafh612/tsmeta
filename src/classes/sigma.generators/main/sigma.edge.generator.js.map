@@ -1,1 +1,0 @@
-{"version":3,"file":"sigma.edge.generator.js","sourceRoot":"","sources":["sigma.edge.generator.ts"],"names":[],"mappings":";;AAEA;;GAEG;AACH,MAAM,kBAAkB;IAEtB;;OAEG;IACI,QAAQ,CAAC,MAAc,EAAE,MAAc,EAAE,KAAc;QAC5D,OAAO;YACL,EAAE,EAAE,MAAM,GAAG,MAAM;YACnB,KAAK;YACL,MAAM;YACN,MAAM;SACP,CAAA;IACH,CAAC;CACF;AAEQ,gDAAkB"}
