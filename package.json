@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "typescript project meta analysis",
   "keywords": [
     "typescript",
@@ -20,14 +20,13 @@
     "url": "https://github.com/mafh612/tsmeta"
   },
   "scripts": {
-    "prepublish": "yarn build",
     "test": "jest --config jest.config.js",
-    "prebuild": "tslint --project tsconfig.build.json",
-    "build": "tsc --project tsconfig.build.json",
+    "prebuild": "tslint --project tsconfig.json",
+    "build": "tsc --project tsconfig.json",
     "dev": "yarn run build && node dist/bin.js",
-    "start": "node dist/bin.js",
+    "run": "node dist/bin.js",
     "view": "node view/server.js",
-    "watch": "yarn run prebuild && tsc --project tsconfig.build.json --watch"
+    "watch": "yarn run prebuild && tsc --project tsconfig.json --watch"
   },
   "author": "mafh",
   "license": "MIT",
@@ -39,6 +38,7 @@
     "reflect-metadata": "^0.1.12",
     "semantic-release": "^15.5.0",
     "typescript": "^3.3.3333",
+    "winston": "^3.2.1",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
@@ -49,6 +49,7 @@
     "@types/lodash": "^4.14.109",
     "@types/node": "12",
     "@types/reflect-metadata": "^0.1.0",
+    "@types/winston": "^2.4.4",
     "@types/yamljs": "^0.2.30",
     "jest": "^24.1.0",
     "koa": "^2.6.1",
