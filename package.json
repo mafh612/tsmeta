@@ -4,7 +4,7 @@
   "bin": "dist/bin.js",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "typescript project meta analysis",
   "keywords": [
     "typescript",
@@ -53,6 +53,7 @@
     "@types/yamljs": "^0.2.30",
     "jest": "^24.1.0",
     "koa": "^2.6.1",
+    "nodemon": "^1.19.3",
     "ts-jest": "^24.0.0",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^6.1.1"
