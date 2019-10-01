@@ -61,7 +61,7 @@ class TsMetaFileFactory {
         case SyntaxKind.ExpressionStatement:
           break
         default:
-          process.stderr.write(`node type ${node.kind.toString()} was not processed\n`)
+        // process.stderr.write(`node type ${node.kind.toString()} was not processed\n`)
       }
     })
 

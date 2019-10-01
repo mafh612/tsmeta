@@ -8,7 +8,7 @@ import {
   TypeLiteralNode,
   TypeNode,
   TypeReferenceNode,
-  UnionTypeNode,
+  UnionTypeNode
 } from 'typescript'
 import logger from '../../logger/logger'
 import { last } from '../array.reducer'
@@ -24,7 +24,7 @@ import { PropertySignaturToTsType } from './property.signature.to.ts.type'
  */
 // tslint:disable cyclomatic-complexity
 const typeNodeToTsType: (
-  typeNode: TypeNode | TypeElement | IndexSignatureDeclaration | ArrayTypeNode | UnionTypeNode,
+  typeNode: TypeNode | TypeElement | IndexSignatureDeclaration | ArrayTypeNode | UnionTypeNode
 ) => TsType =
   // tslint:disable-next-line:max-func-body-length
   (typeNode: TypeNode | TypeElement | IndexSignatureDeclaration | ArrayTypeNode | UnionTypeNode): TsType => {
@@ -85,7 +85,7 @@ const typeNodeToTsType: (
       case SyntaxKind.TypeLiteral:
         try {
           const tsTypes: TsType[] = (typeNode as TypeLiteralNode).members.map(
-            (typeElement: TypeElement) => typeNodeToTsType(typeElement) as TsType,
+            (typeElement: TypeElement) => typeNodeToTsType(typeElement) as TsType
           )
 
           if (tsTypes.length > 1) {
@@ -131,7 +131,7 @@ const typeNodeToTsType: (
 
           tsType = new TsTypeClass({ basicType, keyType, valueType, typescriptType })
         } catch (e) {
-          logger.info(`Error processing TypeReference on typeNode | ${e.message}`)
+          // logger.info(`Error processing TypeReference on typeNode | ${e.message}`)
         }
 
         break

@@ -19,7 +19,12 @@ class OasPropertyGenerator {
         schema = this.createArraySchema(tsProperty, version)
         break
       case TypescriptTypes.BASIC:
-        schema = { type: tsProperty.tstype.basicType as string }
+        if (parameterParam) {
+          schema = parameterParam.schema
+          schema.example = parameterParam.example
+        } else {
+          schema = { type: tsProperty.tstype.basicType as string }
+        }
         break
       case TypescriptTypes.MAP:
         schema = this.createMapSchema(tsProperty, version)
@@ -40,10 +45,9 @@ class OasPropertyGenerator {
         } else {
           schema = { $ref: `#/components/schemas/${tsProperty.tstype.basicType}${version}` }
         }
-
         break
       case TypescriptTypes.UNTYPED:
-        schema = { type: 'any' }
+        schema = parameterParam && parameterParam.schema
         break
       default:
     }

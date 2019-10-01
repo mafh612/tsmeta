@@ -31,11 +31,8 @@ class OasRequestbodyGenerator {
       schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam)
     }
 
-    const requiredFields: any[] = this.requiredFields(parameterParam)
-
-    const required: boolean = requiredFields.shift() as boolean
-
-    schema.required = requiredFields
+    schema.required = (Array.isArray(parameterParam.required) && (parameterParam.required as string[])) || undefined
+    const required: boolean = (typeof parameterParam.required === 'boolean' && parameterParam.required) || undefined
 
     return {
       content: {
@@ -46,16 +43,6 @@ class OasRequestbodyGenerator {
       description,
       required
     }
-  }
-
-  /**
-   * collect from required field
-   */
-  private requiredFields(parameterParam: ParameterParam): Array<boolean | string> {
-    if (!parameterParam || !parameterParam.required) return [false]
-    if (!Array.isArray(parameterParam.required)) return [parameterParam.required as boolean]
-
-    return parameterParam.required as Array<boolean | string>
   }
 }
 
