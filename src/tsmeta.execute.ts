@@ -7,7 +7,7 @@ import {
 import { cloneDeep } from 'lodash'
 import { Openapi } from 'oasmodel'
 import { resolve as ResolvePath } from 'path'
-import * as YAML from 'yamljs'
+import * as YAML from 'yaml'
 
 import { GraphQLGenerator } from './classes/graphql.generator'
 import { OasGenerator } from './classes/oas.generator'
@@ -176,9 +176,7 @@ class TsMetaExecution {
     const indent: number = 2
 
     if (yaml) {
-      const inline: number = 10
-
-      const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data, inline, indent)
+      const yamlDataString: string = typeof data === 'string' ? data : YAML.stringify(data)
 
       WriteFile(`${resolvedPath}/${filename}`, yamlDataString, { encoding: 'utf8' }, (err: Error) => {
         if (err) process.stderr.write(err.toString())

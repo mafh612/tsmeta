@@ -39,7 +39,7 @@
     "semantic-release": "^15.5.0",
     "typescript": "^3.3.3333",
     "winston": "^3.2.1",
-    "yamljs": "^0.3.0"
+    "yaml": "^1.7.0"
   },
   "devDependencies": {
     "@types/graphql": "^14.0.7",
@@ -50,7 +50,7 @@
     "@types/node": "12",
     "@types/reflect-metadata": "^0.1.0",
     "@types/winston": "^2.4.4",
-    "@types/yamljs": "^0.2.30",
+    "@types/yaml": "^1.0.2",
     "jest": "^24.1.0",
     "koa": "^2.6.1",
     "nodemon": "^1.19.3",
