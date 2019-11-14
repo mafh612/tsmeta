@@ -10,7 +10,12 @@ class OasPropertyGenerator {
   /**
    * generate property schema
    */
-  public generate(tsProperty: TsProperty, propertyParam: PropertyParam, parameterParam?: ParameterParam): Schema {
+  public generate(
+    tsProperty: TsProperty,
+    propertyParam: PropertyParam,
+    parameterParam?: ParameterParam,
+    parentRequiredList?: string[]
+  ): Schema {
     let schema: Schema = {}
     const version: string = propertyParam && propertyParam.version ? `_${propertyParam.version}` : ''
 
@@ -54,6 +59,9 @@ class OasPropertyGenerator {
 
     if (propertyParam && propertyParam.format) schema.format = propertyParam.format as string
     if (propertyParam && propertyParam.enum) schema.enum = propertyParam.enum
+    if (propertyParam && propertyParam.required) {
+      parentRequiredList.push(tsProperty.name)
+    }
 
     return schema
   }

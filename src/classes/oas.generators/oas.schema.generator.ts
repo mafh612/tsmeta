@@ -15,7 +15,11 @@ class OasSchemaGenerator {
   /**
    * generate schema
    */
-  public generate(modelParam: ModelParam, tsProperty: TsProperty): { [key: string]: Schema } {
+  public generate(
+    modelParam: ModelParam,
+    tsProperty: TsProperty,
+    parentRequiredList: string[]
+  ): { [key: string]: Schema } {
     const schemaObj: { [key: string]: Schema } = {}
     let propertyDecorator: TsDecorator
     let propertyParam: PropertyParam
@@ -30,7 +34,12 @@ class OasSchemaGenerator {
 
     this.oasPropertyGenerator = new OasPropertyGenerator()
 
-    schemaObj[tsProperty.name] = this.oasPropertyGenerator.generate(tsProperty, propertyParam)
+    schemaObj[tsProperty.name] = this.oasPropertyGenerator.generate(
+      tsProperty,
+      propertyParam,
+      undefined,
+      parentRequiredList
+    )
     this.createSubSchema(tsProperty, propertyParam)
 
     return schemaObj
