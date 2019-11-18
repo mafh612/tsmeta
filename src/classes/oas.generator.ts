@@ -13,7 +13,7 @@ import {
   TsMethod,
   TsParameter,
   TsProgram,
-  TsProperty,
+  TsProperty
 } from '../lib/interfaces/tsmeta.schema'
 import { OasParameterGenerator } from './oas.generators/oas.parameter.generator'
 import { OasPathGenerator } from './oas.generators/oas.path.generator'
@@ -54,7 +54,7 @@ class OasGenerator {
       paths,
       security,
       servers,
-      tags,
+      tags
     }
   }
 
@@ -70,7 +70,7 @@ class OasGenerator {
           tsFile.tsClass &&
           tsFile.tsClass.decorators &&
           tsFile.tsClass.decorators.some(
-            (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'),
+            (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller')
           )
         ) {
           tsFiles.push(tsFile)
@@ -93,7 +93,7 @@ class OasGenerator {
           tsFile.tsClass &&
           tsFile.tsClass.decorators &&
           tsFile.tsClass.decorators.some(
-            (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'),
+            (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model')
           )
         ) {
           tsFiles.push(tsFile)
@@ -114,7 +114,7 @@ class OasGenerator {
 
     files.forEach((tsFile: TsFile) => {
       const controllerDecorator: TsDecorator = tsFile.tsClass.decorators.find(
-        (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller'),
+        (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Controller')
       )
       const controllerParams: Parameter[] = tsFile.tsClass.decorators
         .filter((tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('ControllerParam'))
@@ -126,7 +126,7 @@ class OasGenerator {
           tsFile.tsClass.name,
           controllerArgument.representation,
           tsMethod,
-          controllerParams,
+          controllerParams
         )
 
         paths = merge(paths, path)
@@ -147,8 +147,8 @@ class OasGenerator {
       name: controllerParamDecorator.tsarguments[0].representation.name,
       tstype: {
         basicType: 'string',
-        typescriptType: TypescriptTypes.BASIC,
-      },
+        typescriptType: TypescriptTypes.BASIC
+      }
     }
 
     return this.oasParameterGenerator.generate(tsParameter)
@@ -164,7 +164,7 @@ class OasGenerator {
 
     files.forEach((tsFile: TsFile) => {
       const modelDecorator: TsDecorator = tsFile.tsClass.decorators.find(
-        (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model'),
+        (tsDecorator: TsDecorator) => tsDecorator.name === GetMappedAnnotation('Model')
       )
       const modelParam: ModelParam = modelDecorator.tsarguments
         ? modelDecorator.tsarguments.reduce(last).representation
@@ -173,13 +173,14 @@ class OasGenerator {
 
       const schemaName: string = `${tsFile.tsClass.name}${version}`
       let properties: { [key: string]: Schema } = {}
+      const required: string[] = []
 
       schemas[schemaName] = {}
 
       tsFile.tsClass.properties.forEach((tsProperty: TsProperty) => {
         properties = {
           ...properties,
-          ...this.oasSchemaGenerator.generate(modelParam, tsProperty),
+          ...this.oasSchemaGenerator.generate(modelParam, tsProperty, required)
         }
       })
 
@@ -188,7 +189,11 @@ class OasGenerator {
       schemas[schemaName] = {
         example,
         properties,
-        type: 'object',
+        type: 'object'
+      }
+
+      if (required.length > 0) {
+        schemas[schemaName].required = required
       }
     })
 
