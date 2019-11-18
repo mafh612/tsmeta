@@ -1,5 +1,5 @@
 import { MediaType, Response, Schema } from 'oasmodel'
-import { GetMappedAnnotation } from '../../lib/annotations.mapping'
+// import { GetMappedAnnotation } from '../../lib/annotations.mapping'
 import { last } from '../../lib/array.reducer'
 import { ResponseParam } from '../../lib/interfaces/annotation.schema'
 import { TsArgument, TsDecorator, TsMethod } from '../../lib/interfaces/tsmeta.schema'
@@ -17,9 +17,9 @@ class OasResponseGenerator {
     const responseDecorators: TsDecorator[] = tsMethod.decorators.filter((tsDecorator: TsDecorator) =>
       tsDecorator.name.includes('Response')
     )
-    const response: { [key: string]: Response } = {}
+    const responses: { [key: string]: Response } = {}
 
-    GetMappedAnnotation('any') // tslint:disable-line
+    // GetMappedAnnotation('any') // tslint:disable-line
 
     responseDecorators.forEach((responseDecorator: TsDecorator) => {
       const responseArgument: TsArgument =
@@ -29,16 +29,23 @@ class OasResponseGenerator {
         : undefined
       const statusCode: number = (responseParam && responseParam.statusCode) || this.httpStatusOK
 
-      response[statusCode] = { ...this.createContent(responseParam) }
-      response[statusCode].description =
+      responses[statusCode] = { ...this.createContent(responseParam) }
+      responses[statusCode].description =
         (responseParam && responseParam.description) || this.createDescription(responseDecorator, responseParam)
 
-      if ('$ref' in response[statusCode]) {
-        response[statusCode] = { $ref: response[statusCode].$ref }
+      if ('$ref' in responses[statusCode]) {
+        responses[statusCode] = { $ref: responses[statusCode].$ref }
       }
     })
 
-    return response
+    if (!Object.keys(responses).length) {
+      responses[this.httpStatusOK] = {
+        content: { 'application/json': { schema: { type: 'string' } } },
+        description: 'SuccessResponse'
+      }
+    }
+
+    return responses
   }
 
   /**
