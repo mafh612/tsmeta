@@ -12,6 +12,7 @@ class OasParameterGenerator {
   private readonly parameterAnnotations: string[] = [
     AnnotationsEnum.PATHVARIABLE,
     AnnotationsEnum.REQUESTPARAM,
+    AnnotationsEnum.REQUESTPARAMS,
     AnnotationsEnum.REQUESTHEADER,
     AnnotationsEnum.COOKIEVALUE,
     AnnotationsEnum.CONTROLLERPARAM
@@ -20,7 +21,8 @@ class OasParameterGenerator {
     CookieValue: 'cookie',
     PathVariable: 'path',
     RequestHeader: 'header',
-    RequestParam: 'query'
+    RequestParam: 'query',
+    RequestParams: 'query'
   }
 
   /**
