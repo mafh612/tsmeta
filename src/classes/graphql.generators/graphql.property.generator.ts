@@ -4,6 +4,7 @@ import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
 import { PropertyParam } from '../../lib/interfaces/annotation.schema'
 import { GraphQLConfig } from '../../lib/interfaces/tsmeta.config'
 import { TsArgument, TsDecorator, TsProperty, TsType } from '../../lib/interfaces/tsmeta.schema'
+import { addMultiType } from './graphql.scalar.type.generator'
 
 /**
  * class GraphQLPropertyGenerator
@@ -70,26 +71,35 @@ class GraphQLPropertyGenerator {
   /**
    * map typescript types to graphql types
    */
-  private mapTypeToGraphQLType(format: string | OasFormat, additional?: string): string {
+  private mapTypeToGraphQLType(format: string | string[] | OasFormat, additional?: string): string {
     if (!!additional) format = additional
 
-    switch (format) {
-      case 'any':
-        return 'Any'
-      case 'string':
-        return 'String'
-      case 'boolean':
-        return 'Boolean'
-      case 'int32':
-        return 'Int'
-      case 'int64':
-        return 'Int'
-      case 'float':
-        return 'Float'
-      case 'number':
-        return 'Int'
-      default:
-        return format as string
+    if (Array.isArray(format)) {
+      const mappedFormats: string[] = format.map((it: string): string => this.mapTypeToGraphQLType(it))
+      const multiTypeName: string = mappedFormats.join('')
+
+      addMultiType({ name: multiTypeName, multi: mappedFormats.join(' | ') })
+
+      return multiTypeName
+    } else {
+      switch (format) {
+        case 'any':
+          return 'Any'
+        case 'string':
+          return 'String'
+        case 'boolean':
+          return 'Boolean'
+        case 'int32':
+          return 'Int'
+        case 'int64':
+          return 'Int'
+        case 'float':
+          return 'Float'
+        case 'number':
+          return 'Int'
+        default:
+          return format as string
+      }
     }
   }
 }

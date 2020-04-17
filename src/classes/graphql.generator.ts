@@ -1,14 +1,13 @@
 import { GraphQLConfig } from '../lib/interfaces/tsmeta.config'
 import { TsDecorator, TsFile, TsMeta, TsProgram } from '../lib/interfaces/tsmeta.schema'
+import { getMultiTypes, MultiType } from './graphql.generators/graphql.scalar.type.generator'
 import { GraphQLSchemaGenerator } from './graphql.generators/graphql.schema.generator'
 
 /**
  * class GraphQLGenerator
  */
 class GraphQLGenerator {
-
   private readonly graphQLSchemaGenerator: GraphQLSchemaGenerator = new GraphQLSchemaGenerator(this.graphQLConfig)
-
   constructor(private readonly graphQLConfig: GraphQLConfig) {}
 
   /**
@@ -25,6 +24,15 @@ class GraphQLGenerator {
       graphQLSchema[model.tsClass.name] = this.graphQLSchemaGenerator.generate(model.tsClass)
     })
 
+    const multiTypes: MultiType[] = getMultiTypes()
+
+    multiTypes.forEach((multiType: MultiType): void => {
+      graphQLSchema[multiType.name] = `scalar ${multiType.name} {\n${multiType.multi
+        .split('|')
+        .map((it: string): string => `  ${it.trim().toLowerCase()}: ${it.trim()}\n`)
+        .join('')}}`
+    })
+
     return graphQLSchema
   }
   /**
@@ -37,9 +45,11 @@ class GraphQLGenerator {
 
     tsMeta.programs.forEach((tsProgram: TsProgram) => {
       tsProgram.files.forEach((tsFile: TsFile) => {
-        if (tsFile.tsClass
-          && tsFile.tsClass.decorators
-          && tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === modelAnnotation)) {
+        if (
+          tsFile.tsClass &&
+          tsFile.tsClass.decorators &&
+          tsFile.tsClass.decorators.some((tsDecorator: TsDecorator) => tsDecorator.name === modelAnnotation)
+        ) {
           tsFiles.push(tsFile)
         }
       })

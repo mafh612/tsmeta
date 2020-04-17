@@ -28,7 +28,7 @@
     "no-parameter-properties": false,
     "no-relative-imports": false,
     "no-unnecessary-type-assertion": false,
-    "no-unbound-method": [true, "ignore-static"],
+    "no-unbound-method": false,
     "only-arrow-functions": true,
     "quotemark": [true, "single"],
     "semicolon": [true, "never"],
