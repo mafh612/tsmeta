@@ -39,7 +39,7 @@ class OasSchemaGenerator {
       propertyParam,
       undefined,
       parentRequiredList
-    )
+    ) as Schema
     this.createSubSchema(tsProperty, propertyParam)
 
     return schemaObj

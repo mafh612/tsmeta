@@ -29,7 +29,7 @@ class OasPropertyGenerator {
         } else if (tsProperty.tstype.basicType === 'object') {
           schema = {
             additionalProperties: {
-              anyOf: ['string', 'number', 'boolean']
+              anyOf: [{ type: 'string' }, { type: 'number' }, { type: 'boolean' }]
             },
             type: tsProperty.tstype.basicType as string
           }

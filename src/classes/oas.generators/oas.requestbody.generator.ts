@@ -28,7 +28,7 @@ class OasRequestbodyGenerator {
 
       schema = { $ref: `#/components/schemas/${parameterParam.ref}${version}` }
     } else {
-      schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam)
+      schema = this.oasPropertyGenerator.generate(reqBodyParameter, undefined, parameterParam) as Schema
     }
 
     schema.required = (Array.isArray(parameterParam.required) && (parameterParam.required as string[])) || undefined
