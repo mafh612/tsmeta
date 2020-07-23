@@ -1,7 +1,7 @@
-import { Schema } from 'oasmodel'
 import { TypescriptTypes } from '../../lib/enums/typescript.types.enum'
 import { ParameterParam, PropertyParam } from '../../lib/interfaces/annotation.schema'
 import { TsProperty } from '../../lib/interfaces/tsmeta.schema'
+import { Schema } from '../../util/schema'
 
 /**
  * class OasPropertyGenerator
@@ -18,7 +18,6 @@ class OasPropertyGenerator {
   ): Schema {
     let schema: Schema = {}
     const version: string = propertyParam && propertyParam.version ? `_${propertyParam.version}` : ''
-
     switch (tsProperty.tstype.typescriptType) {
       case TypescriptTypes.ARRAY:
         schema = this.createArraySchema(tsProperty, version)
@@ -27,6 +26,13 @@ class OasPropertyGenerator {
         if (parameterParam) {
           schema = parameterParam.schema
           schema.example = parameterParam.example
+        } else if (tsProperty.tstype.basicType === 'object') {
+          schema = {
+            additionalProperties: {
+              anyOf: ['string', 'number', 'boolean']
+            },
+            type: tsProperty.tstype.basicType as string
+          }
         } else {
           schema = { type: tsProperty.tstype.basicType as string }
         }

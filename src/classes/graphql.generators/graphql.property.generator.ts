@@ -51,7 +51,7 @@ class GraphQLPropertyGenerator {
             ? this.mapTypeToGraphQLType(propertyParam.format)
             : this.mapTypeToGraphQLType(tsProperty.tstype.basicType)
 
-        return `${tsProperty.name}: ${basicType}`
+        return basicType === 'object' ? `${tsProperty.name}(key: String): Any` : `${tsProperty.name}: ${basicType}`
       case TypescriptTypes.REFERENCE:
         const referenceType: string = this.mapTypeToGraphQLType(tsProperty.tstype.basicType)
 
