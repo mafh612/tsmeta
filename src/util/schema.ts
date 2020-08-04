@@ -37,5 +37,5 @@ export interface Schema extends Reference {
     writeOnly?: boolean
     xml?: XML
   }
-  type?: string | Schema
+  type?: string | string[] | Schema
 }
