@@ -36,7 +36,7 @@
     "lodash": "^4.14.126",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
-    "semantic-release": "^15.5.0",
+    "semantic-release": "^17.2.3",
     "typescript": "^3.3.3333",
     "winston": "^3.2.1",
     "yaml": "^1.7.0"
