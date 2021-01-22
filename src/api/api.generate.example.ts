@@ -22,7 +22,7 @@ const generateExample: (
   exampleName: string,
   tsMetaJson: TsMeta,
   buildPath?: string,
-  exampleModelName?: string,
+  exampleModelName?: string
 ) => any = (exampleName: string, tsMetaJson: TsMeta, buildPath: string = '', exampleModelName?: string): any => {
   buildPath += `^${exampleName}$`
   let tsModelMain: TsMain
@@ -70,7 +70,7 @@ const generateExample: (
           literals.includes(tsProperty.tstype.valueType as string)
         ) {
           example[tsProperty.name] = [
-            [BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator)],
+            [BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator)]
           ]
         } else if (
           tsProperty.tstype.basicType === 'array' &&
@@ -85,13 +85,13 @@ const generateExample: (
       case TypescriptTypes.MAP:
         if (literals.includes(tsProperty.tstype.valueType as string)) {
           example[tsProperty.name] = {
-            key: BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator),
+            key: BuildValue(tsProperty.tstype.valueType as string, tsDecorator, tsModelDecorator)
           }
         } else if (repeated) {
           example[tsProperty.name] = {}
         } else
           example[tsProperty.name] = {
-            key: generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath),
+            key: generateExample(tsProperty.tstype.valueType as string, tsMetaJson, buildPath)
           }
         break
       case TypescriptTypes.REFERENCE:
@@ -100,7 +100,7 @@ const generateExample: (
         break
       default:
         process.stdout.write(
-          `could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`,
+          `could not generate example for type |${tsProperty.tstype.typescriptType}| of property |${tsProperty.name}|`
         )
     }
   })
