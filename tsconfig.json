@@ -24,8 +24,6 @@
 
     "alwaysStrict": true,
     "preserveConstEnums": true,
-    // "importHelpers": true,
-    // "esModuleInterop": true, this leads to problems with tsjest :(
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },

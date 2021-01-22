@@ -36,7 +36,6 @@
     "lodash": "^4.14.126",
     "oasmodel": "^1.0.0",
     "reflect-metadata": "^0.1.12",
-    "semantic-release": "^17.2.3",
     "typescript": "^3.3.3333",
     "winston": "^3.2.1",
     "yaml": "^1.7.0"
@@ -57,24 +56,5 @@
     "ts-jest": "^24.0.0",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^6.1.1"
-  },
-  "release": {
-    "analyzeCommits": [
-      "@semantic-release/commit-analyzer"
-    ],
-    "branch": "master",
-    "generateNotes": [
-      "@semantic-release/release-notes-generator"
-    ],
-    "githubUrl": "https://github.com/mafh612/tsmeta",
-    "noCi": true,
-    "publish": [
-      "@semantic-release/npm",
-      "@semantic-release/github"
-    ],
-    "verifyRelease": [
-      "@semantic-release/npm",
-      "@semantic-release/github"
-    ]
   }
 }
