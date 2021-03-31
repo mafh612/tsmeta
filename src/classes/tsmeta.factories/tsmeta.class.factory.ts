@@ -36,7 +36,7 @@ class TsMetaClassFactory {
       decorators,
       methods,
       name,
-      properties
+      properties: properties.filter((it: TsProperty): boolean => !!it)
     }
   }
 }

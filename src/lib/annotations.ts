@@ -46,6 +46,8 @@ const deprecated: MethodDecorator = methodFunction
 const property: (propertyParam: PropertyParam) => PropertyDecorator = (
   propertyParam: PropertyParam
 ): PropertyDecorator => propertyFunction
+const ignoreProperty: (target: any, key: string | Symbol) => any = (target: any, key: string | Symbol): any =>
+  target[key as string]
 /**
  * parameter annotations
  */
@@ -78,6 +80,7 @@ export {
   deprecated as Deprecated,
   secured as Secured,
   property as Property,
+  ignoreProperty as IgnoreProperty,
   pathVariable as PathVariable,
   requestParam as RequestParam,
   requestParams as RequestParams,

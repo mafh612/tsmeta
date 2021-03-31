@@ -1,9 +1,4 @@
-import {
-  InterfaceDeclaration,
-  isMethodSignature,
-  isPropertySignature,
-  TypeElement
-} from 'typescript'
+import { InterfaceDeclaration, isMethodSignature, isPropertySignature, TypeElement } from 'typescript'
 import { TsMain, TsMethod, TsProperty } from '../../lib/interfaces/tsmeta.schema'
 import { IdentifierToString } from '../../lib/utils/identifier.to.string'
 import { TsMetaMethodFactory } from './tsmeta.method.factory'
@@ -13,7 +8,6 @@ import { TsMetaPropertyFactory } from './tsmeta.property.factory'
  * class TsMetaMainFactory
  */
 class TsMetaMainFactory {
-
   private readonly tsMetaMethodFactory: TsMetaMethodFactory = new TsMetaMethodFactory()
   private readonly tsMetaPropertyFactory: TsMetaPropertyFactory = new TsMetaPropertyFactory()
 
@@ -34,7 +28,7 @@ class TsMetaMainFactory {
     return {
       methods,
       name,
-      properties
+      properties: properties.filter((it: TsProperty): boolean => !!it)
     }
   }
 }
