@@ -5,7 +5,7 @@
     "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": ["es2018", "esnext.asynciterable"],
+    "lib": ["es2020", "esnext.asynciterable"],
 
     "declaration": true,
     "declarationMap": true,
