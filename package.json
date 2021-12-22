@@ -23,12 +23,13 @@
     "url": "https://github.com/mafh612/tsmeta"
   },
   "scripts": {
-    "test": "jest --config jest.config.js",
     "build": "tsc --project tsconfig.json",
     "dev": "yarn run build && node dist/bin.js",
+    "prepublish": "yarn build",
     "run": "node dist/bin.js",
+    "test": "jest --config jest.config.js",
     "view": "node view/server.js",
-    "watch": "yarn run prebuild && tsc --project tsconfig.json --watch"
+    "watch": "tsc --project tsconfig.json --watch"
   },
   "author": "mafh",
   "license": "MIT",
@@ -52,11 +53,16 @@
     "@types/reflect-metadata": "^0.1.0",
     "@types/winston": "^2.4.4",
     "@types/yaml": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-jsdoc": "^36.0.7",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "jest": "^24.1.0",
     "koa": "^2.6.1",
     "nodemon": "^2.0.2",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.9.1",
-    "tslint-microsoft-contrib": "^6.1.1"
+    "ts-jest": "^24.0.0"
   }
 }

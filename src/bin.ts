@@ -1,22 +1,31 @@
-#!/usr/bin/env node
-'use strict' // tslint:disable-line
-import { existsSync } from 'fs'
-import logger from './logger/logger'
-import { TsMetaExecution } from './tsmeta.execute'
+import { defaultConfig } from './config/tsmeta.default.config'
+import { TsMeta } from './types/interfaces'
 
-/**
- * bin file
- */
-const projectFilenameIndex: number = +process.argv.findIndex((it: string): boolean => it === '--project' || it === '-p')
-const tsMetaConfigFilename: string =
-  projectFilenameIndex !== -1 ? process.argv[projectFilenameIndex + 1] : 'tsmeta.config.json'
+const [, , ...parameter] = process.argv
 
-if (!existsSync(tsMetaConfigFilename)) {
-  logger.error('no config file - please create tsmeta.config.json')
-  process.exit(0)
-}
+console.log(parameter)
 
-if (process.env.NODE_ENV !== 'test') {
-  const tsMetaExecution: TsMetaExecution = new TsMetaExecution(tsMetaConfigFilename)
-  tsMetaExecution.execute()
-}
+const config: TsMeta.Config = defaultConfig
+const configs: TsMeta.Config[] = []
+
+console.log(
+  parameter
+    .map((it: string, index: number, array: string[]): [string, string | boolean | number] => {
+      switch (it) {
+        case '-p':
+        case '--project':
+          return ['project', array[index + 1]]
+        case '-s':
+        case '--silent':
+          return ['silent', Boolean(array[index + 1])]
+        default:
+          return
+      }
+    }, configs)
+    .filter((it) => !!it)
+    .forEach(([key, value]: [string, string]) => {
+      config[key] = value
+    })
+)
+
+console.log(config)
